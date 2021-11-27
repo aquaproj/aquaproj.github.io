@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   0.7.8 (91ac6d29f77ecadc960e04c1b3b6cff704141fff)
+   0.8.0 (b6df16abbaae88a11837dd7304a6bdfbddfe37b6)
 
 COMMANDS:
    install, i   Install tools
@@ -61,6 +61,28 @@ USAGE:
    aqua exec [arguments...]
 ```
 
+## aqua list
+
+```console
+$ aqua help list
+NAME:
+   aqua list - List packages in Registries
+
+USAGE:
+   aqua list [arguments...]
+```
+
+## aqua which
+
+```console
+$ aqua help which
+NAME:
+   aqua which - Output the file path of the given command
+
+USAGE:
+   aqua which [arguments...]
+```
+
 ## aqua generate
 
 ```console
@@ -76,13 +98,3 @@ OPTIONS:
    
 ```
 
-## aqua list
-
-```console
-$ aqua help list
-NAME:
-   aqua list - List packages in Registries
-
-USAGE:
-   aqua list [arguments...]
-```
