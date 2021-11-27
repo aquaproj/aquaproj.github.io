@@ -12,8 +12,8 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'https://raw.githubusercontent.com/suzuki-shunsuke/aqua/main/logo/aqua_without_text.svg',
-  organizationName: 'suzuki-shunsuke', // Usually your GitHub org/user name.
+  favicon: 'https://raw.githubusercontent.com/aquaproj/aqua/main/logo/aqua_without_text.svg',
+  organizationName: 'aquaproj', // Usually your GitHub org/user name.
   projectName: 'aqua', // Usually your repo name.
 
   presets: [
@@ -40,7 +40,7 @@ const config = {
         title: 'aqua',
         logo: {
           alt: 'aqua Logo',
-          src: 'https://raw.githubusercontent.com/suzuki-shunsuke/aqua/main/logo/aqua_without_text.svg',
+          src: 'https://raw.githubusercontent.com/aquaproj/aqua/main/logo/aqua_without_text.svg',
         },
         items: [
           {
@@ -50,12 +50,12 @@ const config = {
             label: 'Tutorial',
           },
           {
-            href: 'https://github.com/suzuki-shunsuke/aqua-registry',
+            href: 'https://github.com/aquaproj/aqua-registry',
             label: 'Standard Registry',
             position: 'right',
           },
           {
-            href: 'https://github.com/suzuki-shunsuke/aqua',
+            href: 'https://github.com/aquaproj/aqua',
             label: 'GitHub',
             position: 'right',
           },
@@ -78,7 +78,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/suzuki-shunsuke/aqua',
+                href: 'https://github.com/aquaproj/aqua',
               },
             ],
           },

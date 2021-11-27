@@ -4,7 +4,7 @@ sidebar_position: 300
 
 # Configuration (registry.yaml)
 
-e.g. [registry.yaml](https://github.com/suzuki-shunsuke/aqua-registry/blob/main/registry.yaml)
+e.g. [registry.yaml](https://github.com/aquaproj/aqua-registry/blob/main/registry.yaml)
 
 ```yaml
 packages:
@@ -82,10 +82,10 @@ e.g.
 
 * replacements
   * [goreleaser.yml](https://github.com/aquasecurity/trivy/blob/v0.19.2/goreleaser.yml#L62-L73)
-  * [registry.yaml](https://github.com/suzuki-shunsuke/aqua-registry/blob/v0.8.0/registry.yaml#L44-L55)
+  * [registry.yaml](https://github.com/aquaproj/aqua-registry/blob/v0.8.0/registry.yaml#L44-L55)
 * format_overrides
   * [.goreleaser.yml](https://github.com/iawia002/annie/blob/v0.11.0/.goreleaser.yml#L51-L54)
-  * [registry.yaml](https://github.com/suzuki-shunsuke/aqua-registry/blob/v0.8.0/registry.yaml#L361-L364)
+  * [registry.yaml](https://github.com/aquaproj/aqua-registry/blob/v0.8.0/registry.yaml#L361-L364)
 
 ## Default values of `github_release`, `github_content`, and `github_archive` package
 
