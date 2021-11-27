@@ -1,0 +1,25 @@
+name: Deploy
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '17'
+        cache: 'yarn'
+    - run: yarn install
+    - run: yarn build
+    - uses: peaceiris/actions-gh-pages@v3
+      if: github.event_name != 'pull_request'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
+        destination_dir: ./docs
