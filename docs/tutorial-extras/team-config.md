@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Share aqua configuration for teams and organizations
 
-[#321](https://github.com/suzuki-shunsuke/aqua/issues/321) [#322](https://github.com/suzuki-shunsuke/aqua/pull/322)
+[#321](https://github.com/aquaproj/aqua/issues/321) [#322](https://github.com/aquaproj/aqua/pull/322)
 
 aqua reads configuration from the environment variable `AQUA_GLOBAL_CONFIG`.
 `AQUA_GLOBAL_CONFIG` is configuration file paths separated with semicolons `:`.

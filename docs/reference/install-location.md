@@ -19,7 +19,7 @@ sidebar_position: 600
   pkgs/
     github_release/
       github.com/
-        suzuki-shunsuke/
+        aquaproj/
           aqua-proxy/
             v0.1.0/
               aqua-proxy_darwin_amd64.tar.gz
@@ -27,7 +27,7 @@ sidebar_position: 600
   registries/
     github_content/
       github.com/
-        suzuki-shunsuke/
+        aquaproj/
           aqua-registry/
             v0.1.1-0/
               registry.yaml

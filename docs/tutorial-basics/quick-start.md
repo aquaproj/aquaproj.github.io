@@ -12,14 +12,14 @@ In this quick start, let's install aqua and install tools with aqua.
 Mac OSX
 
 ```console
-$ brew install suzuki-shunsuke/aqua/aqua
+$ brew install aquaproj/aqua/aqua
 ```
 
-Linux ([aqua-installer](https://github.com/suzuki-shunsuke/aqua-installer))
+Linux ([aqua-installer](https://github.com/aquaproj/aqua-installer))
 
 ```console
 $ curl -sSfL \
-  https://raw.githubusercontent.com/suzuki-shunsuke/aqua-installer/v0.2.0/aqua-installer |
+  https://raw.githubusercontent.com/aquaproj/aqua-installer/v0.2.0/aqua-installer |
   bash
 # You can change the install path.
 # bash -s -- -i ~/bin/aqua
@@ -46,7 +46,7 @@ Write a YAML configuration file `aqua.yaml`.
 ```yaml
 registries:
 - type: standard
-  ref: v0.10.8 # renovate: depName=suzuki-shunsuke/aqua-registry
+  ref: v0.10.8 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0

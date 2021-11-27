@@ -9,7 +9,7 @@ e.g. [suzuki-shunsuke/my-aqua-config](https://github.com/suzuki-shunsuke/my-aqua
 ```yaml
 registries:
 - type: standard
-  ref: v0.10.8 # renovate: depName=suzuki-shunsuke/aqua-registry
+  ref: v0.10.8 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: helm/helm@v3.7.0
@@ -49,12 +49,12 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v0.10.8 # renovate: depName=suzuki-shunsuke/aqua-registry
+  ref: v0.10.8 # renovate: depName=aquaproj/aqua-registry
 ```
 
 Registry types
 
-* [standard](#standard-registry): aqua's [Standard Registry](https://github.com/suzuki-shunsuke/aqua-registry)
+* [standard](#standard-registry): aqua's [Standard Registry](https://github.com/aquaproj/aqua-registry)
 * [local](#local-registry): local file
 * [github_content](#github_content-registry): Get the registry by GitHub Repository Content API
 
@@ -65,10 +65,10 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v0.10.8 # renovate: depName=suzuki-shunsuke/aqua-registry
+  ref: v0.10.8 # renovate: depName=aquaproj/aqua-registry
 ```
 
-* `ref`: the Registry Version. Please check [Releases](https://github.com/suzuki-shunsuke/aqua-registry/releases)
+* `ref`: the Registry Version. Please check [Releases](https://github.com/aquaproj/aqua-registry/releases)
 
 This is equivalent to the following definition.
 
@@ -76,9 +76,9 @@ This is equivalent to the following definition.
 registries:
 - name: standard
   type: github_content
-  repo_owner: suzuki-shunsuke
+  repo_owner: aquaproj
   repo_name: aqua-registry
-  ref: v0.10.8 # renovate: depName=suzuki-shunsuke/aqua-registry
+  ref: v0.10.8 # renovate: depName=aquaproj/aqua-registry
   path: registry.yaml
 ```
 
@@ -106,9 +106,9 @@ e.g.
 registries:
 - name: foo
   type: github_content
-  repo_owner: suzuki-shunsuke
+  repo_owner: aquaproj
   repo_name: aqua-registry
-  ref: v0.10.8 # renovate: depName=suzuki-shunsuke/aqua-registry
+  ref: v0.10.8 # renovate: depName=aquaproj/aqua-registry
   path: registry.yaml
 ```
 
@@ -187,7 +187,7 @@ aqua.yaml
 ```yaml
 registries:
 - type: standard # standard registry
-  ref: v0.10.8 # renovate: depName=suzuki-shunsuke/aqua-registry
+  ref: v0.10.8 # renovate: depName=aquaproj/aqua-registry
 - import: aqua/*.yaml
 ```
 
