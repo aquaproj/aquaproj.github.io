@@ -19,7 +19,7 @@ Install script ([aqua-installer](https://github.com/aquaproj/aqua-installer))
 
 ```console
 $ curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v0.2.0/aqua-installer |
+  https://raw.githubusercontent.com/aquaproj/aqua-installer/v0.3.0/aqua-installer |
   bash
 # You can change the install path.
 # bash -s -- -i ~/bin/aqua
@@ -57,7 +57,7 @@ Then run `aqua i`.
 
 ```console
 $ aqua i 
-INFO[0000] download and unarchive the package            aqua_version=0.7.16 package_name=aqua-proxy package_version=v0.1.2 program=aqua registry=inline
+INFO[0000] download and unarchive the package            aqua_version=0.7.16 package_name=aqua-proxy package_version=v0.2.0 program=aqua registry=inline
 INFO[0001] download and unarchive the package            aqua_version=0.7.16 package_name=junegunn/fzf package_version=0.28.0 program=aqua registry=standard
 INFO[0001] download and unarchive the package            aqua_version=0.7.16 package_name=cli/cli package_version=v2.2.0 program=aqua registry=standard
 ```
