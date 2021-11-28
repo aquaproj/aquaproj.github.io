@@ -9,13 +9,13 @@ In this quick start, let's install aqua and install tools with aqua.
 
 ## Install aqua
 
-Mac OSX
+Homebrew
 
 ```console
 $ brew install aquaproj/aqua/aqua
 ```
 
-Linux ([aqua-installer](https://github.com/aquaproj/aqua-installer))
+Install script ([aqua-installer](https://github.com/aquaproj/aqua-installer))
 
 ```console
 $ curl -sSfL \
