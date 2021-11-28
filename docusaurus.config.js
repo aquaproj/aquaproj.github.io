@@ -50,6 +50,12 @@ const config = {
             label: 'Tutorial',
           },
           {
+            type: 'doc',
+            docId: 'reference/install',
+            position: 'left',
+            label: 'Install',
+          },
+          {
             href: 'https://github.com/aquaproj/aqua-registry',
             label: 'Standard Registry',
             position: 'right',
