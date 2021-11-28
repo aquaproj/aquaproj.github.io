@@ -37,6 +37,21 @@ Confirm if aqua installed correctly.
 $ aqua -v
 ```
 
+If you want to try this tutorial in the clean environment, container is useful.
+
+```console
+$ docker run --rm -ti alpine:3.15.0 sh
+# apk add curl
+# curl -sSfL \
+  https://raw.githubusercontent.com/aquaproj/aqua-installer/v0.3.0/aqua-installer |
+  sh
+# adduser -D foo
+# su foo
+$ mkdir ~/workspace
+$ cd ~/workspace
+$ export PATH=$HOME/.aqua/bin:$PATH
+```
+
 ## Install tools with aqua
 
 Let's install [GitHub Official CLI](https://cli.github.com/) and [fzf](https://github.com/junegunn/fzf) with aqua.
