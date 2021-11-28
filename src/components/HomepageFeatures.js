@@ -22,7 +22,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Pin tool versions',
+    title: 'Pin tool version',
     description: (
       <>
         aqua forces to pin tool versions, which solves the problem due to the difference of tool versions.
@@ -33,7 +33,7 @@ const FeatureList = [
     title: 'Lazy Install',
     description: (
       <>
-        aqua installs a tool automatically when the tool is invoked but it isn't installed yet.
+        aqua installs a tool automatically when the tool is invoked.
       </>
     ),
   },
