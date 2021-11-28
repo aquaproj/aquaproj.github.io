@@ -36,3 +36,4 @@ On the other hand, in case of some package managers you can't install the latest
 
   aqua doesn't support running commands after unarchiving.
   So aqua doesn't support installing tools which some commands are required.
+* aqua doesn't support installing dependent tools automatically
