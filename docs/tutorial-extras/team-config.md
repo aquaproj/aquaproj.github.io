@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 100
 ---
 
 # Share aqua configuration for teams and organizations
