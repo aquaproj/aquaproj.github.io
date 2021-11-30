@@ -56,6 +56,12 @@ const config = {
             label: 'Install',
           },
           {
+            type: 'doc',
+            docId: 'comparison',
+            position: 'left',
+            label: 'Comparison',
+          },
+          {
             href: 'https://github.com/aquaproj/aqua-registry',
             label: 'Standard Registry',
             position: 'right',
