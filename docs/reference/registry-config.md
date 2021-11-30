@@ -2,7 +2,7 @@
 sidebar_position: 300
 ---
 
-# Configuration (registry.yaml)
+# Registry Configuration
 
 e.g. [registry.yaml](https://github.com/aquaproj/aqua-registry/blob/main/registry.yaml)
 

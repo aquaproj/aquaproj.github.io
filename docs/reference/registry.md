@@ -31,5 +31,7 @@ https://github.com/aquaproj/aqua-registry
 
 ## Create your own Registry
 
-Basically you don't have to create your own Registry,
-but you can create your own Registry easily.
+Please see the following document.
+
+* [Add Packages to Registry](../tutorial-extras/add-registry)
+* [Install private packages](../tutorial-extras/private-package)

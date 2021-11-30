@@ -2,7 +2,7 @@
 sidebar_position: 200
 ---
 
-# Configuration (aqua.yaml)
+# Configuration
 
 e.g. [suzuki-shunsuke/my-aqua-config](https://github.com/suzuki-shunsuke/my-aqua-config/blob/main/aqua.yaml)
 
