@@ -35,8 +35,8 @@ $ mkdir zoo
 $ cd zoo
 
 $ gh version # find the configuration file /home/foo/workspace/bar/aqua.yaml
-gh version 2.2.0 (2021-10-25)
-https://github.com/cli/cli/releases/tag/v2.2.0
+gh version 2.0.0 (2021-08-24)
+https://github.com/cli/cli/releases/tag/v2.0.0
 ```
 
 aqua reads configuration files until the tool is found.
@@ -45,6 +45,7 @@ tfmigrator isn't found in `../aqua.yaml`, but is found in `../../aqua.yaml`.
 
 ```console
 $ tfmigrator -v
+INFO[0000] download and unarchive the package            aqua_version=0.8.0 package_name=tfmigrator/cli package_version=v0.2.1 program=aqua registry=standard
 tfmigrator version 0.2.1 (3993c0824016673338530f4e7e8966c35efa5706)
 ```
 
