@@ -27,8 +27,6 @@ If `--all (-a)` is set, aqua installs all packages including `$AQUA_GLOBAL_CONFI
 
 ## How to share aqua configuration for teams and organizations
 
-I'll introduce one idea to share aqua configuration for teams and organizations.
-
 Let's create the repository `aqua-config` in your GitHub Organization, and add aqua configuration files for your teams and organization into the repository.
 
 ```
