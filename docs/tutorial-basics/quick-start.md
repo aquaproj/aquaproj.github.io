@@ -61,7 +61,7 @@ Write a YAML configuration file `aqua.yaml`.
 ```yaml
 registries:
 - type: standard
-  ref: v0.10.12 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.10.13 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0
