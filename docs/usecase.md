@@ -24,3 +24,5 @@ For detail, please see [Share aqua configuration for teams and organizations](tu
 
 With aqua, you can manage tools as code like `dotfiles`.
 You can set up your laptop quickly and install same version of tools in multiple laptops.
+
+Please see [Install tools globally](/docs/tutorial-extras/global-config).

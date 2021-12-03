@@ -78,8 +78,7 @@ inline_registry:
 #   version: "1.17"
 ```
 
-No package which includes `go` is found, so aqua checks the global configuration `~/.aqua/global/aqua.yaml`.
-If the package isn't found in the global configuration too,
+If the package isn't found in the configuration files,
 aqua finds the command from the environment variable `PATH`.
 For example, if the `PATH` is `~/.aqua/bin:/usr/local/bin:/bin`, aqua checks the following files.
 
