@@ -21,7 +21,7 @@ aqua.yaml
 ```yaml
 registries:
 - type: standard
-  ref: v0.10.8 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.10.12 # renovate: depName=aquaproj/aqua-registry
 - import: aqua/*.yaml
 ```
 

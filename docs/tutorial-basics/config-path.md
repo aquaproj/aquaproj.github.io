@@ -8,7 +8,7 @@ sidebar_position: 550
 # aqua.yaml
 registries:
 - type: standard
-  ref: v0.10.8 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.10.12 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.1.0
@@ -20,7 +20,7 @@ packages:
 # bar/aqua.yaml
 registries:
 - type: standard
-  ref: v0.10.8 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.10.12 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.0.0
