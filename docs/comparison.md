@@ -19,7 +19,6 @@ sidebar_position: 400
 
 * Package Manager such as Homebrew doesn't support changing tool versions per project.
 * Unlike these tools, aqua forces to pin tool version, which solves the problem due to the different of version.
-* aqua supports both Mac OSX and Linux, so aqua supports both local development and CI.
 * aqua's command is always `aqua i [-l]`. You don't have to specify tool names. It's user friendly.
 
 ### Cons
