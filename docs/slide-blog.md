@@ -2,6 +2,7 @@
 
 ## English
 
+* [2021-12-04 Manage CLI tool version with aqua](https://medium.com/@suzuki.shunsuke.1989/manage-cli-tool-version-with-aqua-cee38b2c4bf5)
 * [2021-11-23 aqua - CLI Version Manager (5min LT)](https://techblog.szksh.cloud/slides/aqua/introduction-5min)
 * [2021-09-08 aqua - Declarative CLI Version Manager](https://dev.to/suzukishunsuke/aqua-declarative-cli-version-manager-1ibe)
 * [2021-09-02 Slide - Introduction of aqua](https://speakerdeck.com/szksh/introduction-of-aqua)
