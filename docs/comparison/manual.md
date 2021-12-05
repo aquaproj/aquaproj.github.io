@@ -1,5 +1,5 @@
 ---
-sidebar_position: 50
+sidebar_position: 70
 ---
 
 # Manual download and install tools
