@@ -57,7 +57,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'comparison/manual',
+            docId: 'comparison/common',
             position: 'left',
             label: 'Comparison',
           },
