@@ -31,7 +31,7 @@ Add `~/.aqua/bin` to the environmenet variable `PATH`.
 $ export PATH=$HOME/.aqua/bin:$PATH
 ```
 
-Confirm if aqua installed correctly.
+Confirm if aqua is installed correctly.
 
 ```console
 $ aqua -v
