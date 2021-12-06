@@ -32,7 +32,7 @@ Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder
   rancher/cli (standard)                         │
   dapr/cli (standard)                            │
 > cli/cli (standard)                             │
-  28/229                                         │
+  33/264                                         │
 > cli                                            └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 ```
 
