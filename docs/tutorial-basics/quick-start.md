@@ -7,6 +7,16 @@ sidebar_position: 100
 aqua is a CLI tool to install CLI tools with declarative YAML configuration.
 In this quick start, let's install aqua and install tools with aqua.
 
+## Quick Start with Katacoda
+
+You can do the Quick Start with [Katacoda](https://www.katacoda.com/).
+You don't have to install anything in your laptop.
+The content is same as this document.
+
+https://www.katacoda.com/szksh/scenarios/aqua-quick-start
+
+ref. [Source code of the scenario](https://github.com/suzuki-shunsuke/katacoda-scenarios/tree/master/aqua-quick-start)
+
 ## Install aqua
 
 Homebrew
