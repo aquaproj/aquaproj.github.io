@@ -2,7 +2,7 @@
 sidebar_position: 700
 ---
 
-# How does Lazy Install works?
+# How does Lazy Install work?
 
 In this document we describe how the Lazy Install works.
 The Lazy Install is the aqua's characteristic feature, and maybe you feel it like magic.
