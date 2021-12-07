@@ -42,6 +42,7 @@ packages:
 * [format_overrides](#replacements-format_overrides): A list of the pair OS and the asset format
 * [version_constraint](#version_constraint-version_overrides): [expr](https://github.com/antonmedv/expr)'s expression. The evaluation result must be a boolean
 * [version_overrides](#version_constraint-version_overrides)
+* [supported_if](#supported_if)
 
 ### `files`
 
@@ -147,7 +148,7 @@ The evaluation result must be a boolean.
 
 Currently, the following values and functions are accessible in the expression.
 
-* `version`: (type: `string`) The package version
+* `Version`: (type: `string`) The package version
 * `semver`: (type: `func(string) bool`) Tests if the package version satisfies all the constraints. [hashicorp/go-version](https://github.com/hashicorp/go-version) is used
 
 ### version_overrides
@@ -175,4 +176,28 @@ e.g.
     files:
     - name: migrate
       src: 'migrate.{{.OS}}-{{.Arch}}'
+```
+
+## `supported_if`
+
+[#438](https://github.com/aquaproj/aqua/pull/438) [#439](https://github.com/aquaproj/aqua/pull/439)
+
+Some packages are available on only the specific environment.
+Some packages are available on only Linux, or some packages don't support Linux ARM64.
+
+`supported_if` is [expr](https://github.com/antonmedv/expr)'s expression.
+The evaluation result must be a boolean.
+
+If the evaluation result is `false`, aqua skips installing the package and outputs the debug log.
+If `supported_if` isn't set, the package is always installed.
+
+The following values and functions are accessible in the expression.
+
+* `GOOS`: (type: `string`) Go's [runtime.GOOS](https://pkg.go.dev/runtime#pkg-constants)
+* `GOARCH`: (type: `string`) Go's [runtime.GOARCH](https://pkg.go.dev/runtime#pkg-constants)
+
+For example, if the following configuration indicates the package doesn't support macOS.
+
+```yaml
+supported_if: GOOS != "darwin"
 ```
