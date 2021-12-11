@@ -1,3 +1,7 @@
+---
+sidebar_position: 700
+---
+
 # Nix OS
 
 :warning: Note that we aren't familiar with Nix OS.
