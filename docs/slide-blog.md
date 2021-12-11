@@ -9,6 +9,7 @@
 
 ## Japanese
 
+* [2021-12-10 新しいツールへの対応を asdf と aqua で比較](https://zenn.dev/shunsuke_suzuki/articles/create-asdf-plugin-to-compare-aqua)
 * [2021-12-09 aqua と asdf の違い](https://zenn.dev/shunsuke_suzuki/articles/compare-aqua-with-asdf)
 * [2021-12-04 aqua で CLI ツールを YAML でバージョン管理](https://zenn.dev/shunsuke_suzuki/articles/what-is-aqua)
 * [2021-11-18 aqua の最近の update (v0.7.4 ~ v0.7.16)](https://techblog.szksh.cloud/update-aqua-v0.7.16/)
