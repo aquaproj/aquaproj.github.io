@@ -22,6 +22,6 @@ Furthermore, you can update tools easily with Renovate. aqua is CI friendly. You
 
 On the other hand, Nix OS is too complicated to introduce it to team and project.
 Compared with aqua, the learning cost is high.
-If your team is small and every member has high tecnical skill, this may not be a problem.
+If your team is small and every member has high technical skill, this may not be a problem.
 
 The scope and goal of aqua are different from Nix OS.
