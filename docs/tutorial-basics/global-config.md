@@ -10,7 +10,7 @@ aqua finds the configuration files from the current directory to the root direct
 $ pwd
 /tmp
 $ gh version
-FATA[0000] aqua failed                                   aqua_version=0.8.0 error="command is not found" exe_name=gh program=aqua
+FATA[0000] aqua failed                                   aqua_version=0.8.3 error="command is not found" exe_name=gh program=aqua
 ```
 
 If you want to install tools regardless the current directory,
@@ -24,7 +24,7 @@ $ vi ~/.aqua/global/aqua.yaml
 ```yaml
 registries:
 - type: standard
-  ref: v0.10.18 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.11.2 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0
