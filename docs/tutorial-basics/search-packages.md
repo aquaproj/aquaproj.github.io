@@ -13,28 +13,27 @@ $ aqua g
 Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder](https://github.com/ktr0731/go-fuzzyfinder)).
 
 ```console
-  xtaci/kcptun (standard) (kcptun-client, kcptun-server)        ┌─────────────────────────────────────────────────┐
-  influxdata/influx-cli (standard) (influx)                     │ cli/cli                                         │
-  newrelic/newrelic-cli (standard) (newrelic)                   │                                                 │
-  pivotal-cf/pivnet-cli (standard) (pivnet)                     │ https://cli.github.com/                         │
-  scaleway/scaleway-cli (standard) (scw)                        │ GitHub’s official command line tool             │
-  tfmigrator/cli (standard) (tfmigrator)                        │                                                 │
-  aws/copilot-cli (standard) (copilot)                          │                                                 │
-  codeclimate/test-reporter (standard)                          │                                                 │
-  create-go-app/cli (standard) (cgapp)                          │                                                 │
-  harness/drone-cli (standard) (drone)                          │                                                 │
-  sigstore/rekor (standard) (rekor-cli)                         │                                                 │
-  getsentry/sentry-cli (standard)                               │                                                 │
-  rancher/cli (standard) (rancher)                              │                                                 │
-  tektoncd/cli (standard) (tkn)                                 │                                                 │
-  civo/cli (standard) (civo)                                    │                                                 │
-  dapr/cli (standard) (dapr)                                    │                                                 │
-  mongodb/mongocli (standard)                                   │                                                 │
-  openfaas/faas-cli (standard)                                  │                                                 │
-> cli/cli (standard) (gh)                                       │                                                 │
-  41/300                                                        │                                                 │
-> cli                                                           └─────────────────────────────────────────────────┘
-
+  influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
+  newrelic/newrelic-cli (standard) (newrelic)                   │  cli/cli
+  pivotal-cf/pivnet-cli (standard) (pivnet)                     │
+  scaleway/scaleway-cli (standard) (scw)                        │  https://cli.github.com/
+  tfmigrator/cli (standard) (tfmigrator)                        │  GitHub’cs official command line tool
+  aws/copilot-cli (standard) (copilot)                          │
+  codeclimate/test-reporter (standard)                          │
+  create-go-app/cli (standard) (cgapp)                          │
+  harness/drone-cli (standard) (drone)                          │
+  sigstore/rekor (standard) (rekor-cli)                         │
+  getsentry/sentry-cli (standard)                               │
+  knative/client (standard) (kn)                                │
+  rancher/cli (standard) (rancher)                              │
+  tektoncd/cli (standard) (tkn)                                 │
+  civo/cli (standard) (civo)                                    │
+  dapr/cli (standard) (dapr)                                    │
+  mongodb/mongocli (standard)                                   │
+  openfaas/faas-cli (standard)                                  │
+> cli/cli (standard) (gh)                                       │
+  48/380                                                        │
+> cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
 ```
 
 Please select `tfmigrator/cli`, then the package configuration is outputted.

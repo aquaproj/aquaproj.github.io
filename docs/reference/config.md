@@ -9,7 +9,7 @@ e.g. [suzuki-shunsuke/my-aqua-config](https://github.com/suzuki-shunsuke/my-aqua
 ```yaml
 registries:
 - type: standard
-  ref: v0.11.2 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.11.4 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: helm/helm@v3.7.0
@@ -49,7 +49,7 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v0.11.2 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.11.4 # renovate: depName=aquaproj/aqua-registry
 ```
 
 Registry types
@@ -65,7 +65,7 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v0.11.2 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.11.4 # renovate: depName=aquaproj/aqua-registry
 ```
 
 * `ref`: the Registry Version. Please check [Releases](https://github.com/aquaproj/aqua-registry/releases)
@@ -78,7 +78,7 @@ registries:
   type: github_content
   repo_owner: aquaproj
   repo_name: aqua-registry
-  ref: v0.11.2 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.11.4 # renovate: depName=aquaproj/aqua-registry
   path: registry.yaml
 ```
 
@@ -108,7 +108,7 @@ registries:
   type: github_content
   repo_owner: aquaproj
   repo_name: aqua-registry
-  ref: v0.11.2 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.11.4 # renovate: depName=aquaproj/aqua-registry
   path: registry.yaml
 ```
 
