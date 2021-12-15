@@ -62,6 +62,11 @@ const config = {
             label: 'Comparison',
           },
           {
+            href: 'https://github.com/aquaproj/aqua/discussions',
+            label: 'Discussions (Q&A)',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/aquaproj/aqua-registry',
             label: 'Standard Registry',
             position: 'right',
