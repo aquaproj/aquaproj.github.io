@@ -30,19 +30,19 @@ aqua is designed to allow to use aqua combined with other version managers, but 
 
 Please assume the following usecase.
 You develop the project A and B.
-In the project A Node.js is managed with asdf, and in the project B Node.js is managed with aqua.
+In the project A [Waypoint](https://www.waypointproject.io/) is managed with asdf, and in the project B Waypoint is managed with aqua.
 
 ```
 project-a/
-  .tool-versions # Manage Node.js with asdf
+  .tool-versions # Manage Waypoint with asdf
 project-b/
-  aqua.yaml # Manage Node.js with aqua
+  aqua.yaml # Manage Waypoint with aqua
 ```
 
 project-a/.tool-versions
 
 ```
-nodejs 17.2.0
+waypoint v0.6.3
 ```
 
 project-b/aqua.yaml
@@ -53,11 +53,11 @@ registries:
   ref: v0.11.4 # renovate: depName=aquaproj/aqua-registry
 
 packages:
-- name: nodejs/node@v17.1.0
+- name: hashicorp/waypoint@v0.6.2
 ```
 
 If you configure .bash_profile as the following,
-you can manage Node.js with asdf in the project A, but you can't manage Node.js with aqua in the project B.
+you can manage Waypoint with asdf in the project A, but you can't manage Waypoint with aqua in the project B.
 
 ```bash
 export PATH=$HOME/.aqua/bin:$PATH
@@ -67,16 +67,16 @@ export PATH=$HOME/.aqua/bin:$PATH
 
 ```console
 $ cd project-b
-$ node --version
-No version is set for command node
+$ waypoint --version
+No version is set for command waypoint
 Consider adding one of the following versions in your config file at 
-nodejs 17.2.0
+waypoint 0.6.3
 ```
 
 This is because asdf is used in the project-b too.
 
 On the other hand, if you configure .bash_profile as the following,
-you can manage Node.js with asdf in the project A, and manage Node.js with aqua in the project B.
+you can manage Waypoint with asdf in the project A, and manage Waypoint with aqua in the project B.
 
 ```bash
 . $HOME/.asdf/asdf.sh
@@ -86,12 +86,12 @@ export PATH=$HOME/.aqua/bin:$PATH
 
 ```console
 $ cd project-a
-$ node --version
-v17.2.0
+$ waypoint --version
+CLI: v0.6.3 (bd303e12)
 
 $ cd ../project-b
-$ node --version
-v17.1.0
+$ waypoint --version
+CLI: v0.6.2 (99350730)
 ```
 
 This is because if aqua can't find the command in the configuration files aqua finds the command from the environment variable `PATH`.
