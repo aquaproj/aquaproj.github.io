@@ -62,6 +62,11 @@ const config = {
             label: 'Comparison',
           },
           {
+            href: 'https://asciinema.org/a/456914?autoplay=1&t=2',
+            label: 'Demo',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/aquaproj/aqua/discussions',
             label: 'Discussions (Q&A)',
             position: 'right',
