@@ -62,7 +62,7 @@ const config = {
             label: 'Comparison',
           },
           {
-            href: 'https://asciinema.org/a/457021?autoplay=1&t=2',
+            href: 'https://asciinema.org/a/457021?autoplay=1',
             label: 'Demo',
             position: 'right',
           },
