@@ -7,6 +7,10 @@ sidebar_position: 100
 aqua is a CLI tool to install CLI tools with declarative YAML configuration.
 In this quick start, let's install aqua and install tools with aqua.
 
+## Demo
+
+Please see [Demo](https://asciinema.org/a/456914?autoplay=1&t=2).
+
 ## Quick Start with Katacoda
 
 You can do the Quick Start with [Katacoda](https://www.katacoda.com/).
