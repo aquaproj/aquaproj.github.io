@@ -62,6 +62,12 @@ const config = {
             label: 'Comparison',
           },
           {
+            type: 'doc',
+            docId: 'slide-blog',
+            position: 'left',
+            label: 'Blog',
+          },
+          {
             href: 'https://asciinema.org/a/457021?autoplay=1',
             label: 'Demo',
             position: 'right',
