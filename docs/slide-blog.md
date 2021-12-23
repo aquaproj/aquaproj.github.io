@@ -2,6 +2,7 @@
 
 ## English
 
+* [2021-12-23 Why I use aqua](https://dev.to/suzukishunsuke/why-i-use-aqua-230)
 * [2021-12-21 Demo of aqua - Declarative CLI Version Manager written in Go](https://dev.to/suzukishunsuke/demo-of-aqua-declarative-cli-version-manager-written-in-go-3mmd)
 * [2021-12-04 Manage CLI tool version with aqua](https://medium.com/@suzuki.shunsuke.1989/manage-cli-tool-version-with-aqua-cee38b2c4bf5)
 * [2021-11-23 aqua - CLI Version Manager (5min LT)](https://techblog.szksh.cloud/slides/aqua/introduction-5min)
