@@ -83,6 +83,8 @@ registries:
 packages:
 ```
 
+`packages` is still empty, so let's add packages to install them.
+
 ## Install tools with aqua
 
 Let's install [GitHub Official CLI](https://cli.github.com/) and [fzf](https://github.com/junegunn/fzf) with aqua.

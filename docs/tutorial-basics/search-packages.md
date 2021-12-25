@@ -13,7 +13,7 @@ $ aqua g
 Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder](https://github.com/ktr0731/go-fuzzyfinder)).
 
 ```console
-  influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
+  influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
   newrelic/newrelic-cli (standard) (newrelic)                   │  cli/cli
   pivotal-cf/pivnet-cli (standard) (pivnet)                     │
   scaleway/scaleway-cli (standard) (scw)                        │  https://cli.github.com/
@@ -32,8 +32,8 @@ Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder
   mongodb/mongocli (standard)                                   │
   openfaas/faas-cli (standard)                                  │
 > cli/cli (standard) (gh)                                       │
-  48/380                                                        │
-> cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
+  48/384                                                        │
+> cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 ```
 
 Please select `tfmigrator/cli`, then the package configuration is outputted.
