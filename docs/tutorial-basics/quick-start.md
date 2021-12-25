@@ -66,16 +66,36 @@ $ cd ~/workspace
 $ export PATH=$HOME/.aqua/bin:$PATH
 ```
 
+## Create a configuration file
+
+Create a configuration file by `aqua init` command.
+
+```console
+$ aqua init # aqua.yaml is created
+$ cat aqua.yaml
+---
+# aqua - Declarative CLI Version Manager
+# https://aquaproj.github.io/
+registries:
+- type: standard
+  ref: v0.12.1 # renovate: depName=aquaproj/aqua-registry
+
+packages:
+```
+
 ## Install tools with aqua
 
 Let's install [GitHub Official CLI](https://cli.github.com/) and [fzf](https://github.com/junegunn/fzf) with aqua.
 
-Write a YAML configuration file `aqua.yaml`.
+Add packages to `aqua.yaml`.
 
 ```yaml
+---
+# aqua - Declarative CLI Version Manager
+# https://aquaproj.github.io/
 registries:
 - type: standard
-  ref: v0.11.4 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.12.1 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0
