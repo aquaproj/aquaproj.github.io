@@ -175,7 +175,7 @@ DESCRIPTION:
    If the command isn't found, exits with non zero exit code.
    
    $ aqua which foo
-   FATA[0000] aqua failed                                   aqua_version=0.8.6 error="command is not found" exe_name=foo program=aqua
+   FATA[0000] aqua failed                                   aqua_version=0.8.7 error="command is not found" exe_name=foo program=aqua
 ```
 
 ## aqua list
