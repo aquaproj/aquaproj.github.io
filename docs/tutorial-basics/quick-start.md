@@ -66,16 +66,38 @@ $ cd ~/workspace
 $ export PATH=$HOME/.aqua/bin:$PATH
 ```
 
+## Create a configuration file
+
+Create a configuration file by `aqua init` command.
+
+```console
+$ aqua init # aqua.yaml is created
+$ cat aqua.yaml
+---
+# aqua - Declarative CLI Version Manager
+# https://aquaproj.github.io/
+registries:
+- type: standard
+  ref: v0.12.1 # renovate: depName=aquaproj/aqua-registry
+
+packages:
+```
+
+`packages` is still empty, so let's add packages to install them.
+
 ## Install tools with aqua
 
 Let's install [GitHub Official CLI](https://cli.github.com/) and [fzf](https://github.com/junegunn/fzf) with aqua.
 
-Write a YAML configuration file `aqua.yaml`.
+Add packages to `aqua.yaml`.
 
 ```yaml
+---
+# aqua - Declarative CLI Version Manager
+# https://aquaproj.github.io/
 registries:
 - type: standard
-  ref: v0.11.4 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.12.1 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0
@@ -86,12 +108,12 @@ Then run `aqua i`.
 
 ```console
 $ aqua i 
-INFO[0000] download and unarchive the package            aqua_version=0.8.6 package_name=aqua-proxy package_version=v0.2.0 program=aqua registry=inline
-INFO[0002] create a symbolic link                        aqua_version=0.8.6 link_file=/home/foo/.aqua/bin/aqua-proxy new=../pkgs/github_release/github.com/aquaproj/aqua-proxy/v0.2.0/aqua-proxy_linux_amd64.tar.gz/aqua-proxy program=aqua
-INFO[0003] create a symbolic link                        aqua_version=0.8.6 link_file=/home/foo/.aqua/bin/gh new=aqua-proxy program=aqua
-INFO[0003] create a symbolic link                        aqua_version=0.8.6 link_file=/home/foo/.aqua/bin/fzf new=aqua-proxy program=aqua
-INFO[0003] download and unarchive the package            aqua_version=0.8.6 package_name=junegunn/fzf package_version=0.28.0 program=aqua registry=standard
-INFO[0003] download and unarchive the package            aqua_version=0.8.6 package_name=cli/cli package_version=v2.2.0 program=aqua registry=standard
+INFO[0000] download and unarchive the package            aqua_version=0.8.7 package_name=aqua-proxy package_version=v0.2.0 program=aqua registry=inline
+INFO[0002] create a symbolic link                        aqua_version=0.8.7 link_file=/home/foo/.aqua/bin/aqua-proxy new=../pkgs/github_release/github.com/aquaproj/aqua-proxy/v0.2.0/aqua-proxy_linux_amd64.tar.gz/aqua-proxy program=aqua
+INFO[0003] create a symbolic link                        aqua_version=0.8.7 link_file=/home/foo/.aqua/bin/gh new=aqua-proxy program=aqua
+INFO[0003] create a symbolic link                        aqua_version=0.8.7 link_file=/home/foo/.aqua/bin/fzf new=aqua-proxy program=aqua
+INFO[0003] download and unarchive the package            aqua_version=0.8.7 package_name=junegunn/fzf package_version=0.28.0 program=aqua registry=standard
+INFO[0003] download and unarchive the package            aqua_version=0.8.7 package_name=cli/cli package_version=v2.2.0 program=aqua registry=standard
 ```
 
 Congratulation! Tools are installed correctly.
