@@ -15,13 +15,14 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   0.8.0 (b6df16abbaae88a11837dd7304a6bdfbddfe37b6)
+   0.8.7 (3ca7bf40c3cdd766d39d588da2f594dda7585b8a)
 
 COMMANDS:
    install, i   Install tools
    exec         Execute tool
+   init         Create a configuration file if it doesn't exist
    list         List packages in Registries
-   which        Output the file path of the given command
+   which        Output the absolute file path of the given command
    generate, g  Search packages in registries and output the configuration interactively
    version      Show version
    help, h      Shows a list of commands or help for one command
@@ -43,44 +44,27 @@ NAME:
 USAGE:
    aqua install [command options] [arguments...]
 
+DESCRIPTION:
+   Install tools according to the configuration files.
+   
+   e.g.
+   $ aqua i
+   
+   If you want to create only symbolic links and want to skip downloading package, please set "-l" option.
+   
+   $ aqua i -l
+   
+   By default aqua doesn't install packages in the global configuration.
+   If you want to install packages in the global configuration too,
+   please set "-a" option.
+   
+   $ aqua i -a
+
 OPTIONS:
-   --only-link, -l  create links but skip download packages (default: false)
+   --only-link, -l  create links but skip downloading packages (default: false)
    --test           test file.src after installing the package (default: false)
    --all, -a        install all aqua configuration packages (default: false)
    
-```
-
-## aqua exec
-
-```console
-$ aqua help exec
-NAME:
-   aqua exec - Execute tool
-
-USAGE:
-   aqua exec [arguments...]
-```
-
-## aqua list
-
-```console
-$ aqua help list
-NAME:
-   aqua list - List packages in Registries
-
-USAGE:
-   aqua list [arguments...]
-```
-
-## aqua which
-
-```console
-$ aqua help which
-NAME:
-   aqua which - Output the file path of the given command
-
-USAGE:
-   aqua which [arguments...]
 ```
 
 ## aqua generate
@@ -93,8 +77,146 @@ NAME:
 USAGE:
    aqua generate [command options] [arguments...]
 
-OPTIONS:
-   -f value  the file path of packages list.
+DESCRIPTION:
+   Search packages in registries and output the configuration interactively.
+   Interactive fuzzy finder is launched.
    
+   $ aqua g
+   
+     influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
+     newrelic/newrelic-cli (standard) (newrelic)                   │  cli/cli
+     pivotal-cf/pivnet-cli (standard) (pivnet)                     │
+     scaleway/scaleway-cli (standard) (scw)                        │  https://cli.github.com/
+     tfmigrator/cli (standard) (tfmigrator)                        │  GitHub’cs official command line tool
+     aws/copilot-cli (standard) (copilot)                          │
+     codeclimate/test-reporter (standard)                          │
+     create-go-app/cli (standard) (cgapp)                          │
+     harness/drone-cli (standard) (drone)                          │
+     sigstore/rekor (standard) (rekor-cli)                         │
+     getsentry/sentry-cli (standard)                               │
+     knative/client (standard) (kn)                                │
+     rancher/cli (standard) (rancher)                              │
+     tektoncd/cli (standard) (tkn)                                 │
+     civo/cli (standard) (civo)                                    │
+     dapr/cli (standard) (dapr)                                    │
+     mongodb/mongocli (standard)                                   │
+     openfaas/faas-cli (standard)                                  │
+   > cli/cli (standard) (gh)                                       │
+     48/380                                                        │
+   > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
+   
+   Please select the package you want to install, then the package configuration is outptted.
+   Please copy and paste the outputted configuration in the aqua configuration file.
+   
+   $ aqua g # tfmigrator/cli is selected
+   - name: tfmigrator/cli@v0.2.1
+   
+   You can update the configuration file directly by "aqua g >> <configuration file>".
+   
+   $ aqua g >> aqua.yaml
+   
+   With "-f" option, you can pass packages without interactive UI.
+   
+   $ aqua g -f packages.txt # list of <registry name>,<package name>
+   - name: cli/cli@v2.2.0
+   - name: junegunn/fzf@0.28.0
+   - name: tfmigrator/cli@v0.2.1
+   
+   $ cat packages.txt | aqua g -f -
+   - name: cli/cli@v2.2.0
+   - name: junegunn/fzf@0.28.0
+   - name: tfmigrator/cli@v0.2.1
+   
+   $ aqua list | aqua g -f - # Generate configuration to install all packages
+
+OPTIONS:
+   -f value  the file path of packages list. When the value is "-", the list is passed from the standard input
+   
+```
+
+## aqua init
+
+```console
+$ aqua help init
+NAME:
+   aqua init - Create a configuration file if it doesn't exist
+
+USAGE:
+   aqua init [<created file path. The default value is "aqua.yaml">]
+
+DESCRIPTION:
+   Create a configuration file if it doesn't exist
+   e.g.
+   $ aqua init # create "aqua.yaml"
+   $ aqua init foo.yaml # create foo.yaml
+```
+
+## aqua which
+
+```console
+$ aqua help which
+NAME:
+   aqua which - Output the absolute file path of the given command
+
+USAGE:
+   aqua which <command name>
+
+DESCRIPTION:
+   Output the absolute file path of the given command
+   e.g.
+   $ aqua which gh
+   /home/foo/.aqua/pkgs/github_release/github.com/cli/cli/v2.4.0/gh_2.4.0_macOS_amd64.tar.gz/gh_2.4.0_macOS_amd64/bin/gh
+   
+   If the command isn't found in the configuration files, aqua searches the command in the environment variable PATH
+   
+   $ aqua which ls
+   /bin/ls
+   
+   If the command isn't found, exits with non zero exit code.
+   
+   $ aqua which foo
+   FATA[0000] aqua failed                                   aqua_version=0.8.6 error="command is not found" exe_name=foo program=aqua
+```
+
+## aqua list
+
+```console
+$ aqua help list
+NAME:
+   aqua list - List packages in Registries
+
+USAGE:
+   aqua list [arguments...]
+
+DESCRIPTION:
+   Output the list of packages in registries.
+   The output format is <registry name>,<package name>
+   
+   e.g.
+   $ aqua list
+   standard,99designs/aws-vault
+   standard,abiosoft/colima
+   standard,abs-lang/abs
+   ...
+```
+
+## aqua exec
+
+```console
+$ aqua help exec
+NAME:
+   aqua exec - Execute tool
+
+USAGE:
+   aqua exec <executed command> [<arg> ...]
+
+DESCRIPTION:
+   Basically you don't have to use this command, because this is used by aqua internally. aqua-proxy invokes this command.
+   When you execute the command installed by aqua, "aqua exec" is executed internally.
+   
+   e.g.
+   $ aqua exec -- gh version
+   gh version 2.4.0 (2021-12-21)
+   https://github.com/cli/cli/releases/tag/v2.4.0
 ```
 

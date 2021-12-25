@@ -13,7 +13,7 @@ command_console() {
 }
 
 commands() {
-  for cmd in install exec list which generate; do
+  for cmd in install generate init which list exec; do
     echo "
 ## aqua $cmd
 
