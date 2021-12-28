@@ -22,11 +22,7 @@ $ export PATH=$HOME/.aqua/bin:$PATH
 
 ## GitHub Actions
 
-* [int128/aqua-action](https://github.com/int128/aqua-action)
 * [aqua-installer](https://github.com/aquaproj/aqua-installer)
-
-aqua-installer just installs aqua.
-On the other hand, [int128/aqua-action](https://github.com/int128/aqua-action) installs aqua and runs `aqua install` and cache tools.
 
 ## CircleCI Orb
 
