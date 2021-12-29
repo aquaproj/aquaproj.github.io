@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   0.8.7 (3ca7bf40c3cdd766d39d588da2f594dda7585b8a)
+   0.8.8 (5f97f6e8749a62e448c7049fcc6c97aedd9a5c0d)
 
 COMMANDS:
    install, i   Install tools
@@ -75,11 +75,12 @@ NAME:
    aqua generate - Search packages in registries and output the configuration interactively
 
 USAGE:
-   aqua generate [command options] [arguments...]
+   aqua generate [command options] [<registry name>,<package name> ...]
 
 DESCRIPTION:
    Search packages in registries and output the configuration interactively.
-   Interactive fuzzy finder is launched.
+   
+   If no argument is passed, interactive fuzzy finder is launched.
    
    $ aqua g
    
@@ -115,7 +116,20 @@ DESCRIPTION:
    
    $ aqua g >> aqua.yaml
    
-   With "-f" option, you can pass packages without interactive UI.
+   You can pass packages with positional arguments.
+   
+   $ aqua g [<registry name>,<package name> ...]
+   
+   $ aqua g standard,cli/cli standard,junegunn/fzf
+   - name: cli/cli@v2.2.0
+   - name: junegunn/fzf@0.28.0
+   
+   You can omit the registry name if it is "standard".
+   
+   $ aqua g cli/cli
+   - name: cli/cli@v2.2.0
+   
+   With "-f" option, you can pass packages.
    
    $ aqua g -f packages.txt # list of <registry name>,<package name>
    - name: cli/cli@v2.2.0
@@ -128,6 +142,11 @@ DESCRIPTION:
    - name: tfmigrator/cli@v0.2.1
    
    $ aqua list | aqua g -f - # Generate configuration to install all packages
+   
+   You can omit the registry name if it is "standard".
+   
+   echo "cli/cli" | aqua g -f -
+   - name: cli/cli@v2.2.0
 
 OPTIONS:
    -f value  the file path of packages list. When the value is "-", the list is passed from the standard input
@@ -175,7 +194,7 @@ DESCRIPTION:
    If the command isn't found, exits with non zero exit code.
    
    $ aqua which foo
-   FATA[0000] aqua failed                                   aqua_version=0.8.7 error="command is not found" exe_name=foo program=aqua
+   FATA[0000] aqua failed                                   aqua_version=0.8.6 error="command is not found" exe_name=foo program=aqua
 ```
 
 ## aqua list
