@@ -11,6 +11,7 @@
 
 ## Japanese
 
+* [2021-12-29 aqua をより導入しやすくする最近の update (2021-12-29)](https://zenn.dev/shunsuke_suzuki/articles/aqua-recent-update-2021-12-29)
 * [2021-12-22 なぜ aqua を使うのか](https://zenn.dev/shunsuke_suzuki/articles/why-should-you-use-aqua)
 * [2021-12-10 新しいツールへの対応を asdf と aqua で比較](https://zenn.dev/shunsuke_suzuki/articles/create-asdf-plugin-to-compare-aqua)
 * [2021-12-09 aqua と asdf の違い](https://zenn.dev/shunsuke_suzuki/articles/compare-aqua-with-asdf)
