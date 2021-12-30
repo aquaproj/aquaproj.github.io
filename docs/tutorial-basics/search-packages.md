@@ -13,17 +13,17 @@ $ aqua g
 Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder](https://github.com/ktr0731/go-fuzzyfinder)).
 
 ```console
-  influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
-  newrelic/newrelic-cli (standard) (newrelic)                   │  cli/cli
-  pivotal-cf/pivnet-cli (standard) (pivnet)                     │
-  scaleway/scaleway-cli (standard) (scw)                        │  https://cli.github.com/
-  tfmigrator/cli (standard) (tfmigrator)                        │  GitHub’cs official command line tool
-  aws/copilot-cli (standard) (copilot)                          │
+  newrelic/newrelic-cli (standard) (newrelic)                   ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+  pivotal-cf/pivnet-cli (standard) (pivnet)                     │  cli/cli
+  scaleway/scaleway-cli (standard) (scw)                        │
+  tfmigrator/cli (standard) (tfmigrator)                        │  https://cli.github.com/
+  aws/copilot-cli (standard) (copilot)                          │  GitHub’cs official command line tool
   codeclimate/test-reporter (standard)                          │
   create-go-app/cli (standard) (cgapp)                          │
   harness/drone-cli (standard) (drone)                          │
   sigstore/rekor (standard) (rekor-cli)                         │
   getsentry/sentry-cli (standard)                               │
+  grafana/loki/logcli (standard)                                │
   knative/client (standard) (kn)                                │
   rancher/cli (standard) (rancher)                              │
   tektoncd/cli (standard) (tkn)                                 │
@@ -32,7 +32,7 @@ Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder
   mongodb/mongocli (standard)                                   │
   openfaas/faas-cli (standard)                                  │
 > cli/cli (standard) (gh)                                       │
-  48/384                                                        │
+  50/394                                                        │
 > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 ```
 
