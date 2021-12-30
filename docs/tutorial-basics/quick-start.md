@@ -108,12 +108,12 @@ Then run `aqua i`.
 
 ```console
 $ aqua i 
-INFO[0000] download and unarchive the package            aqua_version=0.8.7 package_name=aqua-proxy package_version=v0.2.0 program=aqua registry=inline
-INFO[0002] create a symbolic link                        aqua_version=0.8.7 link_file=/home/foo/.aqua/bin/aqua-proxy new=../pkgs/github_release/github.com/aquaproj/aqua-proxy/v0.2.0/aqua-proxy_linux_amd64.tar.gz/aqua-proxy program=aqua
-INFO[0003] create a symbolic link                        aqua_version=0.8.7 link_file=/home/foo/.aqua/bin/gh new=aqua-proxy program=aqua
-INFO[0003] create a symbolic link                        aqua_version=0.8.7 link_file=/home/foo/.aqua/bin/fzf new=aqua-proxy program=aqua
-INFO[0003] download and unarchive the package            aqua_version=0.8.7 package_name=junegunn/fzf package_version=0.28.0 program=aqua registry=standard
-INFO[0003] download and unarchive the package            aqua_version=0.8.7 package_name=cli/cli package_version=v2.2.0 program=aqua registry=standard
+INFO[0000] download and unarchive the package            aqua_version=0.8.10 package_name=aqua-proxy package_version=v0.2.0 program=aqua registry=inline
+INFO[0002] create a symbolic link                        aqua_version=0.8.10 link_file=/home/foo/.aqua/bin/aqua-proxy new=../pkgs/github_release/github.com/aquaproj/aqua-proxy/v0.2.0/aqua-proxy_linux_amd64.tar.gz/aqua-proxy program=aqua
+INFO[0003] create a symbolic link                        aqua_version=0.8.10 link_file=/home/foo/.aqua/bin/gh new=aqua-proxy program=aqua
+INFO[0003] create a symbolic link                        aqua_version=0.8.10 link_file=/home/foo/.aqua/bin/fzf new=aqua-proxy program=aqua
+INFO[0003] download and unarchive the package            aqua_version=0.8.10 package_name=junegunn/fzf package_version=0.28.0 program=aqua registry=standard
+INFO[0003] download and unarchive the package            aqua_version=0.8.10 package_name=cli/cli package_version=v2.2.0 program=aqua registry=standard
 ```
 
 Congratulation! Tools are installed correctly.
