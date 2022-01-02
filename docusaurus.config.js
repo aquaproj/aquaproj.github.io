@@ -45,6 +45,12 @@ const config = {
         items: [
           {
             type: 'doc',
+            docId: 'overview',
+            position: 'left',
+            label: 'Overview',
+          },
+          {
+            type: 'doc',
             docId: 'tutorial-basics/quick-start',
             position: 'left',
             label: 'Tutorial',
@@ -78,11 +84,6 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/aquaproj/aqua-registry',
-            label: 'Standard Registry',
-            position: 'right',
-          },
-          {
             href: 'https://github.com/aquaproj/aqua',
             label: 'GitHub',
             position: 'right',
@@ -107,6 +108,10 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/aquaproj/aqua',
+              },
+              {
+                href: 'https://github.com/aquaproj/aqua-registry',
+                label: 'Standard Registry',
               },
             ],
           },
