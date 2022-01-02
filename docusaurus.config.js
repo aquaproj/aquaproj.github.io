@@ -74,7 +74,7 @@ const config = {
           },
           {
             href: 'https://github.com/aquaproj/aqua/discussions',
-            label: 'Discussions (Q&A)',
+            label: 'Question',
             position: 'right',
           },
           {

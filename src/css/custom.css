@@ -30,3 +30,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .top__logo {
   width: 300px;
 }
+
+.button--lg {
+  margin: 2px;
+}
