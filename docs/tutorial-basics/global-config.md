@@ -24,7 +24,7 @@ $ vi ~/.aqua/global/aqua.yaml
 ```yaml
 registries:
 - type: standard
-  ref: v0.12.3 # renovate: depName=aquaproj/aqua-registry
+  ref: v0.12.4 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0
