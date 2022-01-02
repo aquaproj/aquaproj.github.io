@@ -97,8 +97,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/tutorial-basics/quick-start',
+                label: 'Overview',
+                to: '/docs/overview',
+              },
+              {
+                label: 'Comparison',
+                to: '/docs/comparison/common',
               },
             ],
           },
