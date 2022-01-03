@@ -31,8 +31,6 @@ packages:
 ## Package's Common attributes
 
 * `type`: (string, required) the package type
-  * `github_release`
-  * `http`
 * `name`: (string) the package name. This is used to specify the package in `aqua.yaml`. name must be unique in the same registry
 * [files](#files): The list of executable files
 * `format`: The asset format (e.g. `zip`, `tar.gz`). This is used to unarchive or decompress the asset. If this isn't specified, aqua tries to specify the format from the file extenstion. If the file isn't archived and isn't compressed, please specify `raw`
@@ -44,6 +42,7 @@ packages:
 * [version_overrides](#version_constraint-version_overrides)
 * [supported_if](#supported_if)
 * [rosetta2](#rosetta2)
+* [version_filter](#version_filter)
 
 ### `files`
 
@@ -89,7 +88,7 @@ e.g.
   * [.goreleaser.yml](https://github.com/iawia002/annie/blob/v0.11.0/.goreleaser.yml#L51-L54)
   * [registry.yaml](https://github.com/aquaproj/aqua-registry/blob/v0.8.0/registry.yaml#L361-L364)
 
-## Default values of `github_release`, `github_content`, and `github_archive` package
+## Default values if `repo_owner` and `repo_name` are set
 
 * `name`: `<repo owner>/<repo name>`
 * `link`: `https://github.com/<repo owner>/<repo name>`
@@ -228,4 +227,23 @@ TO BE
 ```yaml
 rosetta2: true
 asset: 'argo-{{.OS}}-{{.Arch}}.gz'
+```
+
+## `version_filter`
+
+[v0.8.13](https://github.com/aquaproj/aqua/releases/tag/v0.8.13)
+
+`aqua g` gets the latest version of the package.
+If `version_filter` is set, the version which matches with `version_filter` is used.
+`version_filter` is [expr](https://github.com/antonmedv/expr)'s expression.
+The evaluation result must be a boolean.
+
+This is used in `kubernetes-sigs/kustomize` to exclude [releases of kyaml](https://github.com/kubernetes-sigs/kustomize/releases?q=kyaml&expanded=true).
+
+```yaml
+- type: github_release
+  repo_owner: kubernetes-sigs
+  repo_name: kustomize
+  asset: 'kustomize_{{trimPrefix "kustomize/" .Version}}_{{.OS}}_{{.Arch}}.tar.gz'
+  version_filter: 'Version startsWith "kustomize/"'
 ```
