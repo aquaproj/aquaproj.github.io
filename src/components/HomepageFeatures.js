@@ -42,7 +42,7 @@ const FeatureList = [
     description: (
       <>
         aqua manages tool versions per configuration.
-        You can install multiple versions and switch versions seamulessly.
+        You can install multiple versions and switch versions seamlessly.
       </>
     ),
   },
