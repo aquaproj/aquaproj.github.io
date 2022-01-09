@@ -33,7 +33,7 @@ Install script ([aqua-installer](https://github.com/aquaproj/aqua-installer))
 
 ```console
 $ curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v0.4.0/aqua-installer |
+  https://raw.githubusercontent.com/aquaproj/aqua-installer/v0.5.0/aqua-installer |
   bash
 # You can change the install path.
 # bash -s -- -i ~/bin/aqua
@@ -57,7 +57,7 @@ If you want to try this tutorial in the clean environment, container is useful.
 $ docker run --rm -ti alpine:3.15.0 sh
 # apk add curl
 # curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v0.4.0/aqua-installer |
+  https://raw.githubusercontent.com/aquaproj/aqua-installer/v0.5.0/aqua-installer |
   sh
 # adduser -D foo
 # su foo
