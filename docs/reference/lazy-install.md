@@ -22,22 +22,32 @@ The symbolic link name is the package's file name.
 
 For example, by the following configuration symbolic links `go` and `gofmt` are created.
 
+aqua.yaml
+
 ```yaml
-inline_registry:
-  packages:
-  - name: go
-    type: http
-    url: https://golang.org/dl/go{{.Version}}.{{.OS}}-{{.Arch}}.tar.gz
-    files:
-    - name: go # the symbolic `go` is created
-      src: go/bin/go
-    - name: gofmt # the symbolic `gofmt` is created
-      src: go/bin/gofmt
+registries:
+- name: local
+  type: local
+  path: registry.yaml
 
 packages:
 - name: go
-  registry: inline
+  registry: local
   version: "1.17"
+```
+
+registry.yaml
+
+```yaml
+packages:
+- name: go
+  type: http
+  url: https://golang.org/dl/go{{.Version}}.{{.OS}}-{{.Arch}}.tar.gz
+  files:
+  - name: go # the symbolic `go` is created
+    src: go/bin/go
+  - name: gofmt # the symbolic `gofmt` is created
+    src: go/bin/gofmt
 ```
 
 ```
@@ -59,22 +69,14 @@ Then aqua executes the command `~/.aqua/pkgs/http/golang.org/dl/go1.17.darwin-am
 Please comment out the package `go` and execute `go version` again.
 
 ```yaml
-inline_registry:
-  packages:
-  - name: go
-    type: http
-    url: https://golang.org/dl/go{{.Version}}.{{.OS}}-{{.Arch}}.tar.gz
-    link: https://golang.org/
-    description: The Go programming language
-    files:
-    - name: go # the symbolic `go` is created
-      src: go/bin/go
-    - name: gofmt # the symbolic `gofmt` is created
-      src: go/bin/gofmt
+registries:
+- name: local
+  type: local
+  path: registry.yaml
 
-# packages:
+packages:
 # - name: go
-#   registry: inline
+#   registry: local
 #   version: "1.17"
 ```
 
