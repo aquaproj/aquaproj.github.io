@@ -13,12 +13,12 @@ $ aqua g
 Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder](https://github.com/ktr0731/go-fuzzyfinder)).
 
 ```console
-  newrelic/newrelic-cli (standard) (newrelic)                   ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
-  pivotal-cf/pivnet-cli (standard) (pivnet)                     │  cli/cli
-  scaleway/scaleway-cli (standard) (scw)                        │
-  tfmigrator/cli (standard) (tfmigrator)                        │  https://cli.github.com/
-  aws/copilot-cli (standard) (copilot)                          │  GitHub’cs official command line tool
-  codeclimate/test-reporter (standard)                          │
+  influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+  newrelic/newrelic-cli (standard) (newrelic)                   │  cli/cli
+  pivotal-cf/pivnet-cli (standard) (pivnet)                     │
+  scaleway/scaleway-cli (standard) (scw)                        │  https://github.com/cli/cli
+  tfmigrator/cli (standard) (tfmigrator)                        │  GitHub’cs official command line tool
+  aws/copilot-cli (standard) (copilot)                          │
   create-go-app/cli (standard) (cgapp)                          │
   harness/drone-cli (standard) (drone)                          │
   sigstore/rekor (standard) (rekor-cli)                         │
@@ -32,7 +32,7 @@ Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder
   mongodb/mongocli (standard)                                   │
   openfaas/faas-cli (standard)                                  │
 > cli/cli (standard) (gh)                                       │
-  50/399                                                        │
+  50/401                                                        │
 > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 ```
 
