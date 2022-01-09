@@ -40,7 +40,8 @@ aqua searches the following configuration files.
 
 * [registries](#registries): The list of registries
 * [packages](#packages): The list of installed packages
-* [inline_registry](#inline_registry): The inline registry
+
+:warning: `inline_registry` was removed from `aqua >= v0.9.0`. Please use [local registry](#local-registry).
 
 ## `registries`
 
@@ -169,18 +170,3 @@ If the package name in the code comment is wrong, the package version is changed
 ```
 
 On the other hand, you can prevent such a mis configuration by the first style.
-
-## `inline_registry`
-
-e.g.
-
-```yaml
-inline_registry:
-  packages:
-  - type: github_release
-    repo_owner: suzuki-shunsuke
-    repo_name: cmdx
-    asset: 'cmdx_{{trimV .Version}}_{{.OS}}_{{.Arch}}.tar.gz'
-```
-
-Please see [Configuration (registry.yaml)](registry-config).
