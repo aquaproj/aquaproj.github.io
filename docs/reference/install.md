@@ -7,13 +7,13 @@ sidebar_position: 100
 aqua is a single binary written in Go.
 
 1. Install the binary `aqua` in `PATH`
-1. add `~/.aqua/bin` to the environment variable `PATH`
+1. add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH`
 
 ## Homebrew
 
 ```console
 $ brew install aquaproj/aqua/aqua
-$ export PATH=$HOME/.aqua/bin:$PATH
+$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
 ```
 
 ## Install script

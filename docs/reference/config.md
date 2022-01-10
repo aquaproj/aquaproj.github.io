@@ -31,7 +31,7 @@ aqua searches the following configuration files.
 * `AQUA_LOG_LEVEL`: (default: `info`) Log level
 * `AQUA_CONFIG`: configuration file path
 * `AQUA_GLOBAL_CONFIG`: global configuration file paths separated by semicolon `:`
-* `AQUA_ROOT_DIR`: (default: `$HOME/.aqua`)
+* `AQUA_ROOT_DIR`: (default: `${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua`)
 * `AQUA_MAX_PARALLELISM`: (default: `5`) The maximum number of packages which are installed in parallel at the same time
 * `AQUA_GITHUB_TOKEN`, `GITHUB_TOKEN`: GitHub Access Token. This is required to install private repository's package
 

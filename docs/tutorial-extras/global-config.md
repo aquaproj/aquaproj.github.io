@@ -15,4 +15,5 @@ $ git clone suzuki-shunsuke/my-aqua-config
 $ ln -s $PWD/my-aqua-config ~/.config/aquaproj-aqua
 $ cd my-aqua-config
 $ aqua i -l
+$ export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
 ```
