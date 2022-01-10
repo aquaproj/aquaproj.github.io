@@ -10,7 +10,7 @@ aqua reads configuration from the environment variable `AQUA_GLOBAL_CONFIG`.
 e.g.
 
 ```sh
-export AQUA_GLOBAL_CONFIG=/home/foo/aqua-config/sre.yaml:/home/foo/aqua-config/all.yaml
+export AQUA_GLOBAL_CONFIG="/home/foo/aqua-config/sre.yaml:/home/foo/aqua-config/all.yaml:${AQUA_GLOBAL_CONFIG:-}"
 ```
 
 About the priority of configuration, plase see [Configuration File Path](../reference/config/#configuration-file-path).
@@ -35,11 +35,11 @@ Then checkout the repository and set the environment variable `AQUA_GLOBAL_CONFI
 If you belong to SRE team,
 
 ```sh
-export AQUA_GLOBAL_CONFIG=/home/foo/aqua-config/sre.yaml:/home/foo/aqua-config/all.yaml
+export AQUA_GLOBAL_CONFIG="/home/foo/aqua-config/sre.yaml:/home/foo/aqua-config/all.yaml:${AQUA_GLOBAL_CONFIG:-}"
 ```
 
 Otherwise
 
 ```sh
-export AQUA_GLOBAL_CONFIG=/home/foo/aqua-config/all.yaml
+export AQUA_GLOBAL_CONFIG="/home/foo/aqua-config/all.yaml:${AQUA_GLOBAL_CONFIG:-}"
 ```
