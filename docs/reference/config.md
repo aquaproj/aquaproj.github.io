@@ -23,7 +23,6 @@ aqua searches the following configuration files.
 1. `--config (-c)` option (environment variable `AQUA_CONFIG`
 1. `\.?aqua\.ya?ml` from the current directory to the root directory. If configuration files are found in the multiple directories, aqua read all of them
 1. global configuration: environment variable `AQUA_GLOBAL_CONFIG`
-1. global configuration: `$AQUA_ROOT_DIR/global/\.?aqua\.ya?ml`
 
 `aqua exec` and `aqua install -a` reads global configuration files, but otherwise aqua doesn't read global configuration files.
 
