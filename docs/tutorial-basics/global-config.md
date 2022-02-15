@@ -10,7 +10,7 @@ aqua finds the configuration files from the current directory to the root direct
 $ pwd
 /tmp
 $ gh version
-FATA[0000] aqua failed                                   aqua_version=0.10.0 error="command is not found" exe_name=gh program=aqua
+FATA[0000] aqua failed                                   aqua_version=0.10.2 error="command is not found" exe_name=gh program=aqua
 ```
 
 If you want to install tools regardless the current directory,
@@ -27,7 +27,7 @@ $ export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.co
 ```yaml
 registries:
 - type: standard
-  ref: v0.13.1 # renovate: depName=aquaproj/aqua-registry
+  ref: v1.1.3 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0
@@ -39,3 +39,7 @@ $ gh version
 gh version 2.2.0 (2021-10-25)
 https://github.com/cli/cli/releases/tag/v2.2.0
 ```
+
+## :warning: `aqua g` command doesn't read global configuration
+
+`aqua exec` and `aqua install -a` read global configuration files, but other aqua commands don't read them.

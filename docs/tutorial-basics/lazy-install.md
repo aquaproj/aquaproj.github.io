@@ -11,7 +11,7 @@ Let's change the tool version.
 $ sed -i "s|cli/cli@v2\.2\.0|cli/cli@v2.1.0|" aqua.yaml
 
 $ gh version
-INFO[0000] download and unarchive the package            aqua_version=0.10.0 package_name=cli/cli package_version=v2.1.0 program=aqua registry=standard
+INFO[0000] download and unarchive the package            aqua_version=0.10.2 package_name=cli/cli package_version=v2.1.0 program=aqua registry=standard
 gh version 2.1.0 (2021-10-14)
 https://github.com/cli/cli/releases/tag/v2.1.0
 ```

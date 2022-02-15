@@ -16,7 +16,7 @@ $ vi bar/aqua.yaml
 # foo/aqua.yaml
 registries:
 - type: standard
-  ref: v0.13.1 # renovate: depName=aquaproj/aqua-registry
+  ref: v1.1.3 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.1.0
@@ -26,7 +26,7 @@ packages:
 # bar/aqua.yaml
 registries:
 - type: standard
-  ref: v0.13.1 # renovate: depName=aquaproj/aqua-registry
+  ref: v1.1.3 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.0.0
@@ -40,7 +40,7 @@ https://github.com/cli/cli/releases/tag/v2.1.0
 
 $ cd ../bar
 $ gh version # In foo, the version is v2.0.0.
-INFO[0000] download and unarchive the package            aqua_version=0.10.0 package_name=cli/cli package_version=v2.0.0 program=aqua registry=standard
+INFO[0000] download and unarchive the package            aqua_version=0.10.2 package_name=cli/cli package_version=v2.0.0 program=aqua registry=standard
 gh version 2.0.0 (2021-08-24)
 https://github.com/cli/cli/releases/tag/v2.0.0
 ```
