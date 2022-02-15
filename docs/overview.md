@@ -16,7 +16,7 @@ You write a configuration file `aqua.yaml` and execute the command `aqua i`, the
 ```yaml
 registries:
 - type: standard
-  ref: v0.13.1 # renovate: depName=aquaproj/aqua-registry
+  ref: v1.1.3 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0
