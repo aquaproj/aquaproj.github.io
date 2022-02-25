@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   0.8.8 (5f97f6e8749a62e448c7049fcc6c97aedd9a5c0d)
+   1.1.0 (78d3ca8cab9eb8c941584507d08e6add63ed7d44)
 
 COMMANDS:
    install, i   Install tools
@@ -107,14 +107,15 @@ DESCRIPTION:
    > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
    
    Please select the package you want to install, then the package configuration is outptted.
+   You can select multiple packages by tab key.
    Please copy and paste the outputted configuration in the aqua configuration file.
    
    $ aqua g # tfmigrator/cli is selected
    - name: tfmigrator/cli@v0.2.1
    
-   You can update the configuration file directly by "aqua g >> <configuration file>".
+   You can update the configuration file directly with "-i" option.
    
-   $ aqua g >> aqua.yaml
+   $ aqua g -i
    
    You can pass packages with positional arguments.
    
@@ -150,6 +151,7 @@ DESCRIPTION:
 
 OPTIONS:
    -f value  the file path of packages list. When the value is "-", the list is passed from the standard input
+   -i        Insert packages to configuration file (default: false)
    
 ```
 
