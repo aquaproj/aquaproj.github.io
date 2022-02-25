@@ -32,7 +32,7 @@ Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder
   mongodb/mongocli (standard)                                   │
   openfaas/faas-cli (standard)                                  │
 > cli/cli (standard) (gh)                                       │
-  50/401                                                        │
+  50/418                                                        │
 > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 ```
 
