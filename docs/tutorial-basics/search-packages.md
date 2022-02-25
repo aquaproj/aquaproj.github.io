@@ -4,7 +4,7 @@ sidebar_position: 200
 
 # Search packages
 
-You can search packages by `aqua g` command.
+You can search packages by [aqua g](/docs/reference/usage#aqua-generate) command.
 
 ```console
 $ aqua g
@@ -43,7 +43,13 @@ $ aqua g
 - name: tfmigrator/cli@v0.2.1
 ```
 
-Please copy and paste the output to aqua.yaml.
+You can select multiple packages by tab key.
+
+If `-i` option is set, then the package is added to `aqua.yaml`.
+
+```console
+$ aqua g -i
+```
 
 ```yaml
 packages:
