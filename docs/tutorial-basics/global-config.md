@@ -39,7 +39,3 @@ $ gh version
 gh version 2.2.0 (2021-10-25)
 https://github.com/cli/cli/releases/tag/v2.2.0
 ```
-
-## :warning: `aqua g` command doesn't read global configuration
-
-`aqua exec` and `aqua install -a` read global configuration files, but other aqua commands don't read them.
