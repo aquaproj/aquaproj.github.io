@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   1.1.0 (78d3ca8cab9eb8c941584507d08e6add63ed7d44)
+   1.2.0 (ae6ea617989d0b131ba7717138bcf527160f3adc)
 
 COMMANDS:
    install, i   Install tools
