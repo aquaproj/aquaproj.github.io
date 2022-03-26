@@ -10,7 +10,7 @@ aqua finds the configuration files from the current directory to the root direct
 $ pwd
 /tmp
 $ gh version
-FATA[0000] aqua failed                                   aqua_version=1.1.0 error="command is not found" exe_name=gh program=aqua
+FATA[0000] aqua failed                                   aqua_version=1.2.0 error="command is not found" exe_name=gh program=aqua
 ```
 
 If you want to install tools regardless the current directory,
