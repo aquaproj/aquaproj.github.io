@@ -33,7 +33,7 @@ Install script ([aqua-installer](https://github.com/aquaproj/aqua-installer))
 
 ```console
 $ curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v0.6.0/aqua-installer |
+  https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/aqua-installer |
   bash
 # You can change the install path.
 # bash -s -- -i ~/bin/aqua
@@ -57,7 +57,7 @@ If you want to try this tutorial in the clean environment, container is useful.
 $ docker run --rm -ti alpine:3.15.0 sh
 # apk add curl
 # curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v0.6.0/aqua-installer |
+  https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/aqua-installer |
   sh
 # adduser -D foo
 # su foo
@@ -78,7 +78,7 @@ $ cat aqua.yaml
 # https://aquaproj.github.io/
 registries:
 - type: standard
-  ref: v1.5.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v1.10.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 ```
@@ -97,7 +97,7 @@ Add packages to `aqua.yaml`.
 # https://aquaproj.github.io/
 registries:
 - type: standard
-  ref: v1.5.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v1.10.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0
@@ -108,13 +108,13 @@ Then run `aqua i`.
 
 ```console
 $ aqua i 
-INFO[0000] download and unarchive the package            aqua_version=1.1.0 package_name=aqua-proxy package_version=v0.2.1 program=aqua registry=
-INFO[0001] create a symbolic link                        aqua_version=1.1.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/aqua-proxy new=../pkgs/github_release/github.com
+INFO[0000] download and unarchive the package            aqua_version=1.2.0 package_name=aqua-proxy package_version=v0.2.1 program=aqua registry=
+INFO[0001] create a symbolic link                        aqua_version=1.2.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/aqua-proxy new=../pkgs/github_release/github.com
 /aquaproj/aqua-proxy/v0.2.1/aqua-proxy_linux_amd64.tar.gz/aqua-proxy program=aqua
-INFO[0001] create a symbolic link                        aqua_version=1.1.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/gh new=aqua-proxy program=aqua
-INFO[0001] create a symbolic link                        aqua_version=1.1.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/fzf new=aqua-proxy program=aqua
-INFO[0001] download and unarchive the package            aqua_version=1.1.0 package_name=cli/cli package_version=v2.2.0 program=aqua registry=standard
-INFO[0001] download and unarchive the package            aqua_version=1.1.0 package_name=junegunn/fzf package_version=0.28.0 program=aqua registry=standard
+INFO[0001] create a symbolic link                        aqua_version=1.2.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/gh new=aqua-proxy program=aqua
+INFO[0001] create a symbolic link                        aqua_version=1.2.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/fzf new=aqua-proxy program=aqua
+INFO[0001] download and unarchive the package            aqua_version=1.2.0 package_name=cli/cli package_version=v2.2.0 program=aqua registry=standard
+INFO[0001] download and unarchive the package            aqua_version=1.2.0 package_name=junegunn/fzf package_version=0.28.0 program=aqua registry=standard
 ```
 
 Congratulation! Tools are installed correctly.
