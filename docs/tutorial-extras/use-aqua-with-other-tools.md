@@ -50,7 +50,7 @@ project-b/aqua.yaml
 ```yaml
 registries:
 - type: standard
-  ref: v1.5.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v1.10.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: hashicorp/waypoint@v0.6.2
