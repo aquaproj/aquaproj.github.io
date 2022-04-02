@@ -21,6 +21,12 @@ packages:
 
 * `packages`: The list of packages
 
+## JSON Schema
+
+* https://github.com/aquaproj/aqua/tree/main/json-schema
+* https://github.com/aquaproj/aqua/blob/main/json-schema/registry.json
+* https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/registry.json
+
 ## Package types
 
 * [github_release](#github_release-package): The package is downloaded from GitHub Releases

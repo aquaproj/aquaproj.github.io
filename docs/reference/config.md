@@ -4,16 +4,17 @@ sidebar_position: 200
 
 # Configuration
 
-e.g. [suzuki-shunsuke/my-aqua-config](https://github.com/suzuki-shunsuke/my-aqua-config/blob/main/aqua.yaml)
+e.g. [aqua.yaml](https://github.com/aquaproj/aqua/blob/main/aqua.yaml)
 
 ```yaml
 registries:
 - type: standard
-  ref: v1.10.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v1.11.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: helm/helm@v3.7.0
 - name: golangci/golangci-lint@v1.42.1
+- import: aqua/*.yaml
 ```
 
 ## Configuration File Path
@@ -34,6 +35,12 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * `AQUA_ROOT_DIR`: (default: `${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua`)
 * `AQUA_MAX_PARALLELISM`: (default: `5`) The maximum number of packages which are installed in parallel at the same time
 * `AQUA_GITHUB_TOKEN`, `GITHUB_TOKEN`: GitHub Access Token. This is required to install private repository's package
+
+## JSON Schema
+
+* https://github.com/aquaproj/aqua/tree/main/json-schema
+* https://github.com/aquaproj/aqua/blob/main/json-schema/aqua-yaml.json
+* https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/aqua-yaml.json
 
 ## Configuration attributes
 
