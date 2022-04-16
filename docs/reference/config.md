@@ -56,7 +56,7 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v1.10.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.5.0 # renovate: depName=aquaproj/aqua-registry
 ```
 
 Registry types
@@ -72,7 +72,7 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v1.10.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.5.0 # renovate: depName=aquaproj/aqua-registry
 ```
 
 * `ref`: the Registry Version. Please check [Releases](https://github.com/aquaproj/aqua-registry/releases)
@@ -85,7 +85,7 @@ registries:
   type: github_content
   repo_owner: aquaproj
   repo_name: aqua-registry
-  ref: v1.10.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.5.0 # renovate: depName=aquaproj/aqua-registry
   path: registry.yaml
 ```
 
@@ -115,7 +115,7 @@ registries:
   type: github_content
   repo_owner: aquaproj
   repo_name: aqua-registry
-  ref: v1.10.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.5.0 # renovate: depName=aquaproj/aqua-registry
   path: registry.yaml
 ```
 
