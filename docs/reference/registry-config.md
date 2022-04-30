@@ -38,6 +38,7 @@ packages:
 
 * `type`: (string, required) the package type
 * `name`: (string) the package name. This is used to specify the package in `aqua.yaml`. name must be unique in the same registry
+* [aliases](#aliases): Aliases of the package
 * [files](#files): The list of executable files
 * `format`: The asset format (e.g. `zip`, `tar.gz`). This is used to unarchive or decompress the asset. If this isn't specified, aqua tries to specify the format from the file extenstion. If the file isn't archived and isn't compressed, please specify `raw`
 * `link`: URL about the package. This is used for `aqua g`
@@ -50,6 +51,26 @@ packages:
 * [supported_if](#supported_if)
 * [rosetta2](#rosetta2)
 * [version_filter](#version_filter)
+
+### `aliases`
+
+[#674](https://github.com/aquaproj/aqua/pull/674) [#675](https://github.com/aquaproj/aqua/pull/675) aqua >= v1.5.0 is required
+
+Aliases of packages.
+
+e.g.
+
+```yaml
+packages:
+- name: ahmetb/kubectx/kubens
+  aliases:
+  - name: ahmetb/kubens
+```
+
+You can use the alias as the package name in `aqua.yaml`, and alias can be used in `aqua g` command.
+
+`aliases` is used to keep the compatibility when the package name is changed.
+Sometimes the package name is changed because the repository is renamed or transfered.
 
 ### `files`
 
