@@ -1,12 +1,12 @@
 ---
-title: "Support building tools written in Go"
+title: "Support building tools with Go"
 date: 2022-05-30T09:32:46+09:00
 authors:
 - suzuki-shunsuke
 ---
 
 In this post, I describe the feature introduced from aqua [v1.7.0](https://github.com/aquaproj/aqua/releases/tag/v1.7.0).
-From v1.7.0, aqua supports building tools written in Go when they are installed.
+From v1.7.0, aqua supports building tools with Go when they are installed.
 
 For example, [mitchellh/gox](https://github.com/mitchellh/gox) doesn't provide built binaries, so you have to build it yourself.
 
@@ -98,7 +98,7 @@ In the [release of aqua-registry v2.19.0](https://github.com/aquaproj/aqua-regis
 ## Conclusion
 
 In this post, I've described the feature introduced from aqua [v1.7.0](https://github.com/aquaproj/aqua/releases/tag/v1.7.0).
-From v1.7.0, aqua supports building tools written in Go when they are installed.
+From v1.7.0, aqua supports building tools with Go when they are installed.
 This feature is powerful and changes the management of Go tools that don't provide binaries.
 
 ## Reference
