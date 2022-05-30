@@ -29,6 +29,13 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        blog: {
+          routeBasePath: '/blog',
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © 2021 Shunsuke Suzuki. Built with Docusaurus.`,
+          },
+        },
       }),
     ],
   ],
@@ -68,8 +75,7 @@ const config = {
             label: 'Comparison',
           },
           {
-            type: 'doc',
-            docId: 'slide-blog',
+            to: 'blog',
             position: 'left',
             label: 'Blog',
           },
