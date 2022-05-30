@@ -18,7 +18,7 @@ So it was difficult for aqua to support gox.
 
 But from v1.7.0, aqua has introduced a new package type named `go` to support these tools.
 When packages of the type `go` are installed, GitHub Repository archives (tarball) are downloaded and unarchived, and binaries are built by `go build` command.
-To run `go build`, **Go is required**. In my understanding, we can run `go build` safely because any external commands aren't run in `go build`.
+To run `go build`, **Go is required**. In my understanding, we can run `go build` safely because any external malicious commands aren't run in `go build`.
 
 ## Usage
 
