@@ -155,6 +155,17 @@ INFO[0000] download and unarchive the package            aqua_version= env=darwi
 INFO[0001] building Go tool                              aqua_version= env=darwin/arm64 exe_path=/home/foo/.local/share/aquaproj-aqua/pkgs/go/github.com/google/wire/v0.5.0/bin/wire file_name=wire go_build_dir=/home/foo/.local/share/aquaproj-aqua/pkgs/go/github.com/google/wire/v0.5.0/src/wire-0.5.0 go_src=./cmd/wire package_name=google/wire package_version=v0.5.0 program=aqua registry=standard
 ```
 
+From aqua [v1.9.0](https://github.com/aquaproj/aqua/releases/tag/v1.9.0), if there is no GitHub Repository tag or the latest tag is old, you can specify Git revision instead of tag.
+
+e.g.
+
+```yaml
+packages:
+  - name: google/wire
+    registry: local
+    version: 79660af94317b9c466adc39f27f469f1079c779b
+```
+
 ### File parameter
 
 ```yaml
