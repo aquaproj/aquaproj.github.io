@@ -9,7 +9,7 @@ In this quick start, let's install aqua and install tools with aqua.
 
 ## Demo
 
-Please see [Demo](https://asciinema.org/a/457021?autoplay=1).
+Please see [Demo](https://asciinema.org/a/498262?autoplay=1).
 
 ## Quick Start with Katacoda
 

@@ -17,7 +17,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="https://asciinema.org/a/457021?autoplay=1">
+            to="https://asciinema.org/a/498262?autoplay=1">
             Demo
           </Link>
           <Link

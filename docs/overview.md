@@ -9,7 +9,7 @@ You can install CLI tools and manage their versions with YAML declaratively.
 
 The short demo would be useful to understand aqua.
 
-[![asciicast](https://asciinema.org/a/457021.svg)](https://asciinema.org/a/457021?autoplay=1)
+[![asciicast](https://asciinema.org/a/498262.svg)](https://asciinema.org/a/498262?autoplay=1)
 
 You write a configuration file `aqua.yaml` and execute the command `aqua i`, then tools are installed.
 
