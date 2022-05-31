@@ -80,7 +80,7 @@ const config = {
             label: 'Blog',
           },
           {
-            href: 'https://asciinema.org/a/457021?autoplay=1',
+            href: 'https://asciinema.org/a/498262?autoplay=1',
             label: 'Demo',
             position: 'right',
           },
