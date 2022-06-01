@@ -34,6 +34,7 @@ packages:
 * [github_content](#github_content-package): The package is downloaded from GitHub Content
 * [github_archive](#github_archive-package): The package is downloaded from GitHub Archive
 * [go](#go-package): The package is downloaded from GitHub Archive and is built by `go build` command
+* [go_install](#go_install-package): The package is installed by `go install` command
 
 ## Package's Common attributes
 
@@ -191,6 +192,53 @@ The following command is run.
 
 ```console
 $ go build -o "${AQUA_ROOT_DIR}/pkgs/go/github.com/google/wire/v0.5.0/bin/wire" "./cmd/wire"
+```
+
+## `go_install` Package
+
+[#823](https://github.com/aquaproj/aqua/issues/823) [#826](https://github.com/aquaproj/aqua/pull/826), aqua >= [v1.10.0](https://github.com/aquaproj/aqua/releases/tag/v1.10.0) is required.
+
+* `path`: Go package path. If `path` is not set but `repo_owner` and `repo_name` are set, the package path is `github.com/<repo_owner>/<repo_name>`
+* `name`: The package name. If `name` is not set but `repo_owner` and `repo_name` are set, the package name is `<repo_owner>/<repo_name>`. If `name`, `repo_owner`, and `repo_name` aren't set, `path` is used as the package name
+
+The package is installed by `go install` command.
+So the command `go` is required.
+When aqua runs `go install`, aqua sets the environment variable `GOBIN`.
+
+aqua is a CLI Version Manager, you have to specify the version. You can't specify `latest`.
+
+e.g. [golang.org/x/perf/cmd/benchstat](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat)
+
+registry.yaml
+
+```yaml
+packages:
+  - type: go_install
+    path: golang.org/x/perf/cmd/benchstat
+    description: Benchstat computes and compares statistics about benchmarks
+```
+
+aqua.yaml
+
+```yaml
+registries:
+  - name: local
+    type: local
+    path: registry.yaml
+packages:
+  - name: golang.org/x/perf/cmd/benchstat
+    registry: local
+    version: 84e58bfe0a7e5416369e236afa007d5d9c58a0fa
+```
+
+```console
+$ aqua i
+INFO[0000] create a symbolic link                        aqua_version= env=darwin/arm64 link_file=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/bin/benchstat new=aqua-proxy package_name=golang.org/x/perf/cmd/benchstat package_version=84e58bfe0a7e5416369e236afa007d5d9c58a0fa program=aqua registry=local
+INFO[0000] Installing a Go tool                          aqua_version= env=darwin/arm64 go_package_path=golang.org/x/perf/cmd/benchstat@84e58bfe0a7e5416369e236afa007d5d9c58a0fa gobin=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/go_install/golang.org/x/perf/cmd/benchstat/84e58bfe0a7e5416369e236afa007d5d9c58a0fa/bin package_name=golang.org/x/perf/cmd/benchstat package_version=84e58bfe0a7e5416369e236afa007d5d9c58a0fa program=aqua registry=local
+go: downloading golang.org/x/perf v0.0.0-20220411212318-84e58bfe0a7e
+
+$ aqua which benchstat
+/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/go_install/golang.org/x/perf/cmd/benchstat/84e58bfe0a7e5416369e236afa007d5d9c58a0fa/bin/github-compare
 ```
 
 ## `replacements`, `format_overrides`
