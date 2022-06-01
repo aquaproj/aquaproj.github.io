@@ -17,9 +17,13 @@ DEBU[0000] command failed                                error="fork/exec /Users
 
 In the above case, kind is already installed but the `exec format error` occured. I reinstalled kind then the problem has been solved.
 
-```
+```console
 # uninstall kind
 $ rm -R /Users/shunsuke-suzuki/.aqua/pkgs/http/kind.sigs.k8s.io/dl/v0.11.1/kind-darwin-amd64
 # kind is reinstalled by Lazy Install
 $ kind --help
 ```
+
+## Tracing and CPU Profiling
+
+If you encounter any performance issue, please see [Tracing and CPU Profiling](/docs/reference/trace-profile).
