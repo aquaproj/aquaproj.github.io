@@ -19,13 +19,13 @@ packages:
 - name: junegunn/fzf@0.28.0
 ```
 
-You don't have to define how to install tools by yourself because it is defined in the Registry.
+You don't have to define how to install tools yourself because it is defined in the Registry.
 Registry is reusable across multiple configuration.
 
 ## Standard Registry
 
 In the above configuration, the Standard Registry v2.5.0 is used.
-The Standard Registry is a registry which we maintain.
+The Standard Registry is a registry that we maintain.
 
 https://github.com/aquaproj/aqua-registry
 
