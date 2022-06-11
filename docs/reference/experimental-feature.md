@@ -43,7 +43,7 @@ $ pstree -s nvim
 ```
 
 You can confirm three processes are started.
-By enabling this feature, aqua executes commands by [execve(2)](https://pkg.go.dev/golang.org/x/sys@v0.0.0-20220503163025-988cb79eb6c6/unix#Exec),
+By enabling this feature, aqua executes commands by [execve(2)](https://pkg.go.dev/golang.org/x/sys/unix#Exec),
 
 ```
      \-+= 00719 shunsukesuzuki -zsh
