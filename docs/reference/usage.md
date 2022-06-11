@@ -9,13 +9,13 @@ sidebar_position: 400
 ```console
 $ aqua help
 NAME:
-   aqua - Version Manager of CLI. https://github.com/aquaproj/aqua
+   aqua - Version Manager of CLI. https://aquaproj.github.io/
 
 USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   1.2.0 (ae6ea617989d0b131ba7717138bcf527160f3adc)
+   1.10.2 (911a8f7f6f78b2a3f09d1c515546b5d461ef414f)
 
 COMMANDS:
    install, i   Install tools
@@ -28,10 +28,13 @@ COMMANDS:
    help, h      Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --log-level value         log level [$AQUA_LOG_LEVEL]
    --config value, -c value  configuration file path [$AQUA_CONFIG]
+   --cpu-profile value       cpu profile output file path
    --help, -h                show help (default: false)
+   --log-level value         log level [$AQUA_LOG_LEVEL]
+   --trace value             trace output file path
    --version, -v             print the version (default: false)
+   
 ```
 
 ## aqua install
@@ -61,9 +64,9 @@ DESCRIPTION:
    $ aqua i -a
 
 OPTIONS:
+   --all, -a        install all aqua configuration packages (default: false)
    --only-link, -l  create links but skip downloading packages (default: false)
    --test           test file.src after installing the package (default: false)
-   --all, -a        install all aqua configuration packages (default: false)
    
 ```
 
