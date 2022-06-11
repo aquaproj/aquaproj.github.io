@@ -49,7 +49,9 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * [registries](#registries): The list of registries
 * [packages](#packages): The list of installed packages
 
-:warning: `inline_registry` was removed from `aqua >= v0.9.0`. Please use [local registry](#local-registry).
+:::caution
+`inline_registry` was removed from `aqua >= v0.9.0`. Please use [local registry](#local-registry).
+:::
 
 ## `registries`
 
@@ -91,6 +93,25 @@ registries:
   path: registry.yaml
 ```
 
+You can also specify a commit hash as `ref`.
+
+```yaml
+registries:
+- type: standard
+  ref: 0d1572334a460e5a74f2a6455e510d8a4d6c8e93
+```
+
+:::caution
+Don't specify a branch name as `ref`, because aqua treats the ref as immutable.
+
+```yaml
+registries:
+- type: standard
+  ref: main # Specify a tag or commit hash
+```
+
+:::
+
 ### `local` registry
 
 e.g.
@@ -124,7 +145,7 @@ registries:
 * `name`: Registry Name
 * `repo_owner`: Repository Owner name
 * `repo_name`: Repository name
-* `ref`: Repository tag or revision
+* `ref`: Repository tag or commit hash. Don't specify a branch name as `ref`, because aqua treats the ref as immutable
 * `path`: file path from the repository root directory
 
 ## `packages`

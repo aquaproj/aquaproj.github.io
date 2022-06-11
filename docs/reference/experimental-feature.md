@@ -23,7 +23,9 @@ To enable this feature, please set `true` to the enviornment variable `AQUA_EXPE
 $ export AQUA_EXPERIMENTAL_X_SYS_EXEC=true
 ````
 
-:warning: Note that there is a known issue of this feature on macOS, so we don't recommend this feature for macOS users. [#729](https://github.com/aquaproj/aqua/issues/729)
+:::caution
+Note that there is a known issue of this feature on macOS, so we don't recommend this feature for macOS users. [#729](https://github.com/aquaproj/aqua/issues/729)
+:::
 
 By default, aqua executes commands as sub commands.
 
