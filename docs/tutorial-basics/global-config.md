@@ -39,3 +39,14 @@ $ gh version
 gh version 2.2.0 (2021-10-25)
 https://github.com/cli/cli/releases/tag/v2.2.0
 ```
+
+## `aqua i` ignores global configuration by default
+
+:::caution
+`aqua i` ignores global configuration by default.
+To install tools of global configuration by `aqua i`, please set the `-a` option.
+
+```console
+$ aqua i -a
+```
+:::
