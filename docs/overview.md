@@ -74,4 +74,4 @@ https://github.com/aquaproj/aqua-registry
 * [Comparison](/docs/comparison/common)
 * [Quick Start](/docs/tutorial-basics/quick-start)
 * [Introduce aqua to your repository](/docs/tutorial-extras/introduce-aqua)
-* [Install tools globally](/docs/tutorial-extras/global-config)
+* [Install tools globally](/docs/tutorial-basics/global-config)
