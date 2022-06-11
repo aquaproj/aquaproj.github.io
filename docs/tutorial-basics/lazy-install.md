@@ -7,8 +7,8 @@ sidebar_position: 300
 Let's change the tool version.
 
 ```console
-# Change cli/cli version from v2.2.0 to v2.1.0
-$ sed -i "s|cli/cli@v2\.2\.0|cli/cli@v2.1.0|" aqua.yaml
+# Change cli/cli version to v2.1.0
+$ sed -i "s|cli/cli@.*|cli/cli@v2.1.0|" aqua.yaml
 
 $ gh version
 INFO[0000] download and unarchive the package            aqua_version=1.3.0 package_name=cli/cli package_version=v2.1.0 program=aqua registry=standard
