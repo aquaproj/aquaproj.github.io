@@ -54,7 +54,7 @@ registries:
   path: registry.yaml
 
 packages:
-- name: suzuki-shunsuke/tfcmt
+- name: suzuki-shunsuke/tfcmt@v3.2.4
   registry: foo
 ```
 
@@ -84,6 +84,6 @@ registries:
   path: registry.yaml
 
 packages:
-- name: suzuki-shunsuke/tfcmt
+- name: suzuki-shunsuke/tfcmt@v3.2.4
   registry: foo
 ```
