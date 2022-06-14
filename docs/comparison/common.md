@@ -19,6 +19,12 @@ sidebar_position: 50
 ## Cons
 
 * aqua doesn't support Windows
+
+:::info
+aqua doesn't support Windows yet, but we are working on it.
+Please see [Windows Support](/docs/reference/windows-support) too.
+:::
+
 * aqua's install process is very simple.
 
     1. Download tool
@@ -26,4 +32,10 @@ sidebar_position: 50
 
   aqua doesn't support running commands after unarchiving.
   So aqua doesn't support installing tools which some commands are required.
+
+:::info
+aqua supports building Go tools. Pl
+Please see [`go` Package](/docs/reference/registry-config/go-package), [`go_install` Package](http://localhost:3000/docs/reference/registry-config/go-install-package), and [blog post](/blog/2022/05/30/support-building-go-tools).
+:::
+
 * aqua doesn't support installing dependent tools automatically
