@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   1.10.2 (911a8f7f6f78b2a3f09d1c515546b5d461ef414f)
+   1.11.0 (8cb3ef2ca56dc98f38920422a137c1f17150a069)
 
 COMMANDS:
    install, i   Install tools
@@ -24,6 +24,7 @@ COMMANDS:
    list         List packages in Registries
    which        Output the absolute file path of the given command
    generate, g  Search packages in registries and output the configuration interactively
+   completion   Output shell completion script for bash or zsh
    version      Show version
    help, h      Shows a list of commands or help for one command
 
@@ -222,6 +223,17 @@ DESCRIPTION:
    standard,abiosoft/colima
    standard,abs-lang/abs
    ...
+```
+
+## aqua completion
+
+```console
+$ aqua help completion
+NAME:
+   aqua completion - Output shell completion script for bash or zsh
+
+USAGE:
+   aqua completion [arguments...]
 ```
 
 ## aqua exec
