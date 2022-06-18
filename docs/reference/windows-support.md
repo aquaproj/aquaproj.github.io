@@ -13,6 +13,7 @@ aqua doesn't support Windows yet. You shouldn't use aqua on Windows yet.
 aqua doesn't support Windows yet, but we are working on it.
 
 https://github.com/aquaproj/aqua/issues/850
+https://github.com/orgs/aquaproj/projects/4
 
 The current Windows Support is still **alpha** version.
 Some specification would be changed.
@@ -28,11 +29,11 @@ The author [@suzuki-shunsuke](https://github.com/suzuki-shunsuke) tests the Wind
 
 ## The install path (AQUA_ROOT_DIR)
 
-Currently, the default value of `AQUA_ROOT_DIR` is `${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua`, but maybe it will be changed.
+From aqua v1.12.0, the default value of `AQUA_ROOT_DIR` is `$HOME/AppData/Local/aquaproj-aqua`.
 
 ## Auto complesion of the file extension `.exe`
 
-Coming soon.
+Please see [complete_windows_exe](/docs/reference/registry-config/complete-windows-exe).
 
 ## Trouble Shooting
 
@@ -40,9 +41,12 @@ Coming soon.
 
 We are working on it.
 
+https://github.com/aquaproj/aqua-installer/issues/116
+https://github.com/aquaproj/aqua-installer/issues/117
+
 ### Windows Support of the Standard Registry
 
-We are working on it.
+Almost completed.
 
 https://github.com/aquaproj/aqua/issues/850#issuecomment-1153578462
 

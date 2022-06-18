@@ -51,9 +51,11 @@ packages:
 * [version_constraint](version-overrides): [expr](https://github.com/antonmedv/expr)'s expression. The evaluation result must be a boolean
 * [version_overrides](version-overrides)
 * [supported_if](supported-if)
+* [supported_envs](supported-envs)
 * [rosetta2](rosetta2)
 * [version_filter](version-filter)
 * [version_source](version-source)
+* [complete_windows_exe](complete-windows-exe)
 
 ## Default values if `repo_owner` and `repo_name` are set
 
