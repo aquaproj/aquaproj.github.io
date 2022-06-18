@@ -4,6 +4,11 @@ sidebar_position: 1900
 
 # supported_if
 
+:::caution
+From aqua v1.12.0 or later, we strongly recommend [supported_envs](supported-envs) instead of supported_if.
+supported_envs is simpler than supported_if, and better in terms of the performance.
+:::
+
 [#438](https://github.com/aquaproj/aqua/pull/438) [#439](https://github.com/aquaproj/aqua/pull/439)
 
 Some packages are available on only the specific environment.
