@@ -12,8 +12,8 @@ aqua doesn't support Windows yet. You shouldn't use aqua on Windows yet.
 
 aqua doesn't support Windows yet, but we are working on it.
 
-https://github.com/aquaproj/aqua/issues/850
-https://github.com/orgs/aquaproj/projects/4
+* https://github.com/aquaproj/aqua/issues/850
+* https://github.com/orgs/aquaproj/projects/4
 
 The current Windows Support is still **alpha** version.
 Some specification would be changed.
@@ -27,13 +27,76 @@ The author [@suzuki-shunsuke](https://github.com/suzuki-shunsuke) tests the Wind
 * [Amazon Workspaces](https://aws.amazon.com/workspaces/) `Standard with Windows 10 (Server 2019 based) (PCoIP)`
 * GitHub Actions' `windows-latest`
 
+Terminals
+
+* Command Prompt
+* PowerShell
+* Git Bash (mingw)
+
+## How to install
+
+Please download an asset from [GitHub Releases](https://github.com/aquaproj/aqua/releases) and deploy the binary into `PATH`.
+
 ## The install path (AQUA_ROOT_DIR)
 
 From aqua v1.12.0, the default value of `AQUA_ROOT_DIR` is `$HOME/AppData/Local/aquaproj-aqua`.
 
-## Auto complesion of the file extension `.exe`
+## PATH
 
-Please see [complete_windows_exe](/docs/reference/registry-config/complete-windows-exe).
+* Command Prompt,PowerShell: `AQUA_ROOT_DIR/bat`
+* Git Bash: `AQUA_ROOT_DIR/bin`
+
+## The separator of AQUA_GLOBAL_CONFIG
+
+* Command Prompt, PowerShell: `;`
+* Git Bash: `:`
+
+## Windows Settings
+
+aqua works even if `Developer Mode` is disabled.
+And you don't have to run the terminal as Administrator.
+
+### Windows Security
+
+:::caution
+Please change the settings at your own risk.
+:::
+
+Security softwares may prevent aqua from installing and running tools.
+In that case, you may have to add `AQUA_ROOT_DIR` to security software's exclusion. 
+
+## Windows Support of installed tools
+
+Note that some tools don't support Windows.
+aqua skips installing those tools on Windows with [supported_if](/docs/reference/registry-config/supported-if) or [supported_envs](/docs/reference/registry-config/supported-envs).
+
+### tools written in shell scripts aren't supported
+
+Currently, tools written in shell scripts aren't supported.
+
+## Windows specific features
+
+### Auto complesion of the file extension
+
+Please see [complete_windows_ext](/docs/reference/registry-config/complete-windows-ext).
+
+### Create BAT files and shell scripts instead of symbolic links and aqua-proxy
+
+[#885](https://github.com/aquaproj/aqua/issues/885) [#892](https://github.com/aquaproj/aqua/pull/892) [#893](https://github.com/aquaproj/aqua/issues/893) aqua >= v1.12.0
+
+Reference (Japanese): https://zenn.dev/link/comments/725555a2b1b034
+
+aqua creates executable BAT files and shell scripts in directories `AQUA_ROOT_DIR/bin` and `AQUA_ROOT_DIR/bat` instead of symbolic links.
+
+If you use PowerShell or Command Prompt, please add `AQUA_ROOT_DIR/bat` to the environment variable `PATH`.
+Or if you use Git Bash, please add `AQUA_ROOT_DIR/bin` to the environment variable `PATH`.
+
+#### Why is this change needed?
+
+On Windows, there are two problems regarding symbolic links.
+
+1. To create symbolic links, you have to run Terminal (cmd.exe, PowerShell, Git Bash, etc) as Administrator or enable Developer Mode
+1. PowerShell has a bug about symbolic link https://github.com/PowerShell/PowerShell/issues/16171
 
 ## Trouble Shooting
 
@@ -41,8 +104,8 @@ Please see [complete_windows_exe](/docs/reference/registry-config/complete-windo
 
 We are working on it.
 
-https://github.com/aquaproj/aqua-installer/issues/116
-https://github.com/aquaproj/aqua-installer/issues/117
+* https://github.com/aquaproj/aqua-installer/issues/116
+* https://github.com/aquaproj/aqua-installer/issues/117
 
 ### Windows Support of the Standard Registry
 
