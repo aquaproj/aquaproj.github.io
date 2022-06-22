@@ -9,6 +9,10 @@ aqua is a single binary written in Go.
 1. Install the binary `aqua` in `PATH`
 1. add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH`
 
+## Windows
+
+Pleaase see [here](/docs/reference/windows-support#how-to-install).
+
 ## Homebrew
 
 ```console

@@ -55,7 +55,7 @@ packages:
 * [rosetta2](rosetta2)
 * [version_filter](version-filter)
 * [version_source](version-source)
-* [complete_windows_exe](complete-windows-exe)
+* [complete_windows_ext](complete-windows-ext)
 
 ## Default values if `repo_owner` and `repo_name` are set
 
