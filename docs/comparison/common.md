@@ -15,15 +15,15 @@ sidebar_position: 50
 * aqua provides GitHub Actions and CircleCI Orb
 * aqua supports Lazy Install
 * aqua supports installing tools from the private repositories
+* aqua supports Windows, macOS, and Linux
+
+:::info
+From aqua v1.12.0, aqua supports Windows.
+Please see [Windows Support](/docs/reference/windows-support) too.
+:::
 
 ## Cons
 
-* aqua doesn't support Windows
-
-:::info
-aqua doesn't support Windows yet, but we are working on it.
-Please see [Windows Support](/docs/reference/windows-support) too.
-:::
 
 * aqua's install process is very simple.
 

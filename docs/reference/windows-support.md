@@ -4,19 +4,10 @@ sidebar_position: 880
 
 # Windows Support
 
-`aqua >= v1.11.0`
+`aqua >= v1.12.0`
 
-:::caution
-aqua doesn't support Windows yet. You shouldn't use aqua on Windows yet.
-:::
-
-aqua doesn't support Windows yet, but we are working on it.
-
-* https://github.com/aquaproj/aqua/issues/850
-* https://github.com/orgs/aquaproj/projects/4
-
-The current Windows Support is still **alpha** version.
-Some specification would be changed.
+[#850](https://github.com/aquaproj/aqua/issues/850)
+[Project#4](https://github.com/orgs/aquaproj/projects/4)
 
 The author [@suzuki-shunsuke](https://github.com/suzuki-shunsuke) doesn't use Windows, so the help of Windows Users is welcome.
 
@@ -106,12 +97,6 @@ We are working on it.
 
 * https://github.com/aquaproj/aqua-installer/issues/116
 * https://github.com/aquaproj/aqua-installer/issues/117
-
-### Windows Support of the Standard Registry
-
-Almost completed.
-
-https://github.com/aquaproj/aqua/issues/850#issuecomment-1153578462
 
 ### Interactive Search by `aqua g` doesn't work on Git Bash
 
