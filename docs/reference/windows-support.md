@@ -42,6 +42,10 @@ From aqua v1.12.0, the default value of `AQUA_ROOT_DIR` is `$HOME/AppData/Local/
 * Command Prompt, PowerShell: `;`
 * Git Bash: `:`
 
+## Required Standard Registry Version
+
+Please upgrade [Standard Registry](https://github.com/aquaproj/aqua-registry) to v2.28.1 or later.
+
 ## Windows Settings
 
 aqua works even if `Developer Mode` is disabled.
