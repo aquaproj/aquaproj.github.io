@@ -16,8 +16,7 @@ const FeatureList = [
     title: 'Single binary written in Go',
     description: (
       <>
-        aqua is written in Go. Mac OSX and Linux are supported.
-        aqua doesn't depend on the specific shell.
+        aqua is written in Go and supports Windows, macOS, and Linux.
       </>
     ),
   },
