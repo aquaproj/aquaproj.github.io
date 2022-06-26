@@ -13,7 +13,7 @@ command_console() {
 }
 
 commands() {
-  for cmd in install generate init which list completion exec; do
+  for cmd in install generate init which generate-registry list completion exec; do
     echo "
 ## aqua $cmd
 

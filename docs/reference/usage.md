@@ -15,18 +15,19 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   1.11.0 (8cb3ef2ca56dc98f38920422a137c1f17150a069)
+   1.14.0 (7b763f221349366f644f76b3e9d4455fb6d389a1)
 
 COMMANDS:
-   install, i   Install tools
-   exec         Execute tool
-   init         Create a configuration file if it doesn't exist
-   list         List packages in Registries
-   which        Output the absolute file path of the given command
-   generate, g  Search packages in registries and output the configuration interactively
-   completion   Output shell completion script for bash or zsh
-   version      Show version
-   help, h      Shows a list of commands or help for one command
+   init                   Create a configuration file if it doesn't exist
+   install, i             Install tools
+   generate, g            Search packages in registries and output the configuration interactively
+   which                  Output the absolute file path of the given command
+   exec                   Execute tool
+   list                   List packages in Registries
+   generate-registry, gr  Generate a registry's package configuration
+   completion             Output shell completion script for bash or zsh
+   version                Show version
+   help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
    --config value, -c value  configuration file path [$AQUA_CONFIG]
@@ -63,6 +64,7 @@ DESCRIPTION:
    please set "-a" option.
    
    $ aqua i -a
+   
 
 OPTIONS:
    --all, -a        install all aqua configuration packages (default: false)
@@ -201,6 +203,47 @@ DESCRIPTION:
    
    $ aqua which foo
    FATA[0000] aqua failed                                   aqua_version=0.8.6 error="command is not found" exe_name=foo program=aqua
+   
+```
+
+## aqua generate-registry
+
+```console
+$ aqua help generate-registry
+NAME:
+   aqua generate-registry - Generate a registry's package configuration
+
+USAGE:
+   aqua generate-registry <package name>
+
+DESCRIPTION:
+   Generate a template of Registry package configuration.
+   
+   Note that you probably fix the generate code manually.
+   The generate code is not perfect and may include the wrong configuration.
+   It is just a template.
+   
+   e.g.
+   
+   $ aqua gr cli/cli # Outputs the configuration.
+   packages:
+     - type: github_release
+       repo_owner: cli
+       repo_name: cli
+       asset: gh_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+       format: tar.gz
+       description: GitHub’s official command line tool
+       replacements:
+         darwin: macOS
+       overrides:
+         - goos: windows
+           format: zip
+       supported_envs:
+         - darwin
+         - linux
+         - amd64
+       rosetta2: true
+   
 ```
 
 ## aqua list
@@ -223,6 +266,7 @@ DESCRIPTION:
    standard,abiosoft/colima
    standard,abs-lang/abs
    ...
+   
 ```
 
 ## aqua completion
@@ -234,6 +278,19 @@ NAME:
 
 USAGE:
    aqua completion [arguments...]
+
+DESCRIPTION:
+   Output shell completion script for bash or zsh
+   Run these commands in .bash_profile or .zprofile
+   e.g.
+   .bash_profile
+   
+   if command -v aqua &> /dev/null; then source <(aqua completion bash); fi
+   
+   .zprofile
+   
+   if command -v aqua &> /dev/null; then source <(aqua completion zsh); fi
+   
 ```
 
 ## aqua exec
