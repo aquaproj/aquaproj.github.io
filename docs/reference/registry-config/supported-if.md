@@ -5,11 +5,11 @@ sidebar_position: 1900
 # supported_if
 
 :::caution
-From aqua v1.12.0 or later, we strongly recommend [supported_envs](supported-envs) instead of supported_if.
+From clivm v1.12.0 or later, we strongly recommend [supported_envs](supported-envs) instead of supported_if.
 supported_envs is simpler than supported_if, and better in terms of the performance.
 :::
 
-[#438](https://github.com/clivm/aqua/pull/438) [#439](https://github.com/clivm/aqua/pull/439)
+[#438](https://github.com/clivm/clivm/pull/438) [#439](https://github.com/clivm/clivm/pull/439)
 
 Some packages are available on only the specific environment.
 For example, some packages are available on only Linux, or don't support Linux ARM64.
@@ -17,7 +17,7 @@ For example, some packages are available on only Linux, or don't support Linux A
 `supported_if` is [expr](https://github.com/antonmedv/expr)'s expression.
 The evaluation result must be a boolean.
 
-If the evaluation result is `false`, aqua skips installing the package and outputs the debug log.
+If the evaluation result is `false`, clivm skips installing the package and outputs the debug log.
 If `supported_if` isn't set, the package is always installed.
 
 The following values and functions are accessible in the expression.

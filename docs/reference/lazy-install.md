@@ -5,24 +5,24 @@ sidebar_position: 700
 # How does Lazy Install work?
 
 In this document we describe how the Lazy Install works.
-The Lazy Install is the aqua's characteristic feature, and maybe you feel it like magic.
+The Lazy Install is the clivm's characteristic feature, and maybe you feel it like magic.
 
-By `aqua i`, aqua installs [aqua-proxy](https://github.com/clivm/aqua-proxy) regardless the aqua's configuration.
+By `clivm i`, clivm installs [clivm-proxy](https://github.com/clivm/clivm-proxy) regardless the clivm's configuration.
 
 ```
 $CLIVM_ROOT_DIR/
   bin/
-    aqua-proxy -> ../pkgs/github_release/github.com/clivm/aqua-proxy/v0.2.0/aqua-proxy_darwin_amd64.tar.gz/aqua-proxy
+    clivm-proxy -> ../pkgs/github_release/github.com/clivm/clivm-proxy/v0.2.0/clivm-proxy_darwin_amd64.tar.gz/clivm-proxy
   pkgs/
-    github_release/github.com/clivm/aqua-proxy/v0.2.0/aqua-proxy_darwin_amd64.tar.gz/aqua-proxy
+    github_release/github.com/clivm/clivm-proxy/v0.2.0/clivm-proxy_darwin_amd64.tar.gz/clivm-proxy
 ```
 
-And by `aqua i`, aqua reads the configuration file and creates symbolic links to aqua-proxy in `$CLIVM_ROOT_DIR/bin`.
+And by `clivm i`, clivm reads the configuration file and creates symbolic links to clivm-proxy in `$CLIVM_ROOT_DIR/bin`.
 The symbolic link name is the package's file name.
 
 For example, by the following configuration symbolic links `go` and `gofmt` are created.
 
-aqua.yaml
+clivm.yaml
 
 ```yaml
 registries:
@@ -53,19 +53,19 @@ packages:
 ```
 $CLIVM_ROOT_DIR/
   bin/
-    go -> aqua-proxy
-    gofmt -> aqua-proxy
+    go -> clivm-proxy
+    gofmt -> clivm-proxy
 ```
 
 Add `$CLIVM_ROOT_DIR/bin` to the environment variable `PATH`.
-When `go version` is executed, `$CLIVM_ROOT_DIR/bin/go` is a symbolic link to aqua-proxy so aqua-proxy is executed.
-Then aqua-proxy executes `aqua exec` passing the program name and command line arguments.
-In case of `go version`, `aqua exec -- go version` is executed.
-`aqua exec` reads the configuration file and finds the package which includes `go` and gets the package versions.
-aqua installs the package version in `$CLIVM_ROOT_DIR/pkgs` if it isn't installed yet
-Then aqua executes the command `$CLIVM_ROOT_DIR/pkgs/http/golang.org/dl/go1.17.darwin-amd64.tar.gz/go/bin/go version`.
+When `go version` is executed, `$CLIVM_ROOT_DIR/bin/go` is a symbolic link to clivm-proxy so clivm-proxy is executed.
+Then clivm-proxy executes `clivm exec` passing the program name and command line arguments.
+In case of `go version`, `clivm exec -- go version` is executed.
+`clivm exec` reads the configuration file and finds the package which includes `go` and gets the package versions.
+clivm installs the package version in `$CLIVM_ROOT_DIR/pkgs` if it isn't installed yet
+Then clivm executes the command `$CLIVM_ROOT_DIR/pkgs/http/golang.org/dl/go1.17.darwin-amd64.tar.gz/go/bin/go version`.
 
-`$CLIVM_ROOT_DIR/bin` is shared by every `aqua.yaml`, so maybe in `aqua exec` the package isn't found.
+`$CLIVM_ROOT_DIR/bin` is shared by every `clivm.yaml`, so maybe in `clivm exec` the package isn't found.
 Please comment out the package `go` and execute `go version` again.
 
 ```yaml
@@ -81,14 +81,14 @@ packages:
 ```
 
 If the package isn't found in the configuration files,
-aqua finds the command from the environment variable `PATH`.
-For example, if the `PATH` is `$CLIVM_ROOT_DIR/bin:/usr/local/bin:/bin`, aqua checks the following files.
+clivm finds the command from the environment variable `PATH`.
+For example, if the `PATH` is `$CLIVM_ROOT_DIR/bin:/usr/local/bin:/bin`, clivm checks the following files.
 
 1. `$CLIVM_ROOT_DIR/bin/go`
 1. `/usr/local/bin/go`
 1. `/bin/go`
 
-To prevent the infinite loop, aqua ignores the symbolic to aqua-proxy.
-`$CLIVM_ROOT_DIR/bin/go` is a symbolic link to aqua-proxy, so this is ignored.
+To prevent the infinite loop, clivm ignores the symbolic to clivm-proxy.
+`$CLIVM_ROOT_DIR/bin/go` is a symbolic link to clivm-proxy, so this is ignored.
 If go is installed in `/usr/local/bin/go`, `/usr/local/bin/go version` is executed.
-If `go` isn't found, aqua exits with non zero exit code.
+If `go` isn't found, clivm exits with non zero exit code.

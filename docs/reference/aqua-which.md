@@ -2,12 +2,12 @@
 sidebar_position: 800
 ---
 
-# Get an executable file by `aqua which`
+# Get an executable file by `clivm which`
 
-`aqua which` outputs the absolute path of the executable file.
+`clivm which` outputs the absolute path of the executable file.
 
 ```console
-$ aqua which <COMMAND>
+$ clivm which <COMMAND>
 ```
 
 e.g.
@@ -16,14 +16,14 @@ e.g.
 $ which golangci-lint
 /home/foo/.local/share/clivm/bin/golangci-lint
 
-$ aqua which golangci-lint
+$ clivm which golangci-lint
 /home/foo/.local/share/clivm/pkgs/github_release/github.com/golangci/golangci-lint/v1.42.1/golangci-lint-1.42.1-linux-amd64.tar.gz/golangci-lint-1.42.1-linux-amd64/golangci-lint
 ```
 
-If you want to copy the executable file to the other path, `aqua which` is useful.
+If you want to copy the executable file to the other path, `clivm which` is useful.
 
 e.g.
 
 ```console
-$ cp "$(aqua which golangci-lint)" src/golangci-lint
+$ cp "$(clivm which golangci-lint)" src/golangci-lint
 ```

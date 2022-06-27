@@ -4,9 +4,9 @@ sidebar_position: 100
 
 # Install
 
-aqua is a single binary written in Go.
+clivm is a single binary written in Go.
 
-1. Install the binary `aqua` in `PATH`
+1. Install the binary `clivm` in `PATH`
 1. add `${CLIVM_ROOT_DIR}/bin` to the environment variable `PATH`
 
 ## Windows
@@ -16,22 +16,22 @@ Pleaase see [here](/docs/reference/windows-support#how-to-install).
 ## Homebrew
 
 ```console
-$ brew install clivm/aqua/aqua
+$ brew install clivm/clivm/clivm
 $ export PATH="${CLIVM_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
 ```
 
 ## Install script
 
-[aqua-installer](https://github.com/clivm/aqua-installer)
+[clivm-installer](https://github.com/clivm/clivm-installer)
 
 ## GitHub Actions
 
-* [aqua-installer](https://github.com/clivm/aqua-installer)
+* [clivm-installer](https://github.com/clivm/clivm-installer)
 
 ## CircleCI Orb
 
-https://circleci.com/developer/orbs/orb/clivm/aqua
+https://circleci.com/developer/orbs/orb/clivm/clivm
 
 ## Download from GitHub Releases
 
-https://github.com/clivm/aqua/releases
+https://github.com/clivm/clivm/releases

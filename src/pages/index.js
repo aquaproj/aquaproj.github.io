@@ -13,7 +13,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <img src="https://raw.githubusercontent.com/clivm/aqua/main/logo/aqua_without_text.svg" alt="aqua Logo" className="top__logo" />
+        <img src="https://raw.githubusercontent.com/clivm/clivm/main/logo/clivm_without_text.svg" alt="clivm Logo" className="top__logo" />
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
@@ -42,7 +42,7 @@ function VideoContainer() {
             <LiteYouTubeEmbed
               id="adX_lloB3mY"
               params="autoplay=1&autohide=1&showinfo=0&rel=0"
-              title="Introduction of aqua"
+              title="Introduction of clivm"
               poster="maxresdefault"
               webp
             />
@@ -57,8 +57,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`aqua Official Website`}
-      description="aqua Official Website">
+      title={`clivm Official Website`}
+      description="clivm Official Website">
       <HomepageHeader />
       <VideoContainer />
       <main>

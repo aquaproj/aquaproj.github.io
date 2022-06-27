@@ -4,29 +4,29 @@ sidebar_position: 500
 
 # Use different version per project
 
-aqua supports changing the tool versions per project.
+clivm supports changing the tool versions per project.
 
 ```console
 $ mkdir foo bar
-$ vi foo/aqua.yaml
-$ vi bar/aqua.yaml
+$ vi foo/clivm.yaml
+$ vi bar/clivm.yaml
 ```
 
 ```yaml
-# foo/aqua.yaml
+# foo/clivm.yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/clivm-registry
 
 packages:
 - name: cli/cli@v2.1.0
 ```
 
 ```yaml
-# bar/aqua.yaml
+# bar/clivm.yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/clivm-registry
 
 packages:
 - name: cli/cli@v2.0.0
@@ -40,7 +40,7 @@ https://github.com/cli/cli/releases/tag/v2.1.0
 
 $ cd ../bar
 $ gh version # In foo, the version is v2.0.0.
-INFO[0000] download and unarchive the package            aqua_version=1.3.0 package_name=cli/cli package_version=v2.0.0 program=aqua registry=standard
+INFO[0000] download and unarchive the package            clivm_version=1.3.0 package_name=cli/cli package_version=v2.0.0 program=clivm registry=standard
 gh version 2.0.0 (2021-08-24)
 https://github.com/cli/cli/releases/tag/v2.0.0
 ```

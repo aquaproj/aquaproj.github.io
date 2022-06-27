@@ -4,8 +4,8 @@ sidebar_position: 500
 
 # Clean unused packages
 
-aqua installs packages in `$CLIVM_ROOT_DIR}/pkgs` and doesn't remove them.
-Even if you change the package version, aqua doesn't remove the old package.
+clivm installs packages in `$CLIVM_ROOT_DIR}/pkgs` and doesn't remove them.
+Even if you change the package version, clivm doesn't remove the old package.
 If `${CLIVM_ROOT_DIR}/pkgs` consumes the disk usage and you want it to be slim, you can remove packages in `${CLIVM_ROOT_DIR}/pkgs` by yourself.
 
 The simplest way is to remove `${CLIVM_ROOT_DIR}`.
@@ -14,7 +14,7 @@ The simplest way is to remove `${CLIVM_ROOT_DIR}`.
 $ rm -R "~/.local/share/clivm"
 ```
 
-By keeping `${CLIVM_ROOT_DIR}/bin`, you can install tools by the Lazy Install without running `aqua i`.
+By keeping `${CLIVM_ROOT_DIR}/bin`, you can install tools by the Lazy Install without running `clivm i`.
 
 You can also remove the specific package or package version.
 

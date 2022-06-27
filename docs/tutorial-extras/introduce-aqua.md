@@ -2,11 +2,11 @@
 sidebar_position: 25
 ---
 
-# Introduce aqua to your repository
+# Introduce clivm to your repository
 
-1. [Install aqua](/docs/reference/install)
-1. Create `aqua.yaml` by `aqua init`
-1. Search tools from the Standard Registry and add them to `aqua.yaml` by `aqua g -i`
-1. Create links by `aqua i -l`
-1. Configure Renovate with [aqua-renovate-config](https://github.com/clivm/aqua-renovate-config)
-1. Set up CI with [aqua-installer](https://github.com/clivm/aqua-installer) (GitHub Acitons, Shell Script) or [circleci-orb-aqua](https://circleci.com/developer/orbs/orb/suzuki-shunsuke/aqua)
+1. [Install clivm](/docs/reference/install)
+1. Create `clivm.yaml` by `clivm init`
+1. Search tools from the Standard Registry and add them to `clivm.yaml` by `clivm g -i`
+1. Create links by `clivm i -l`
+1. Configure Renovate with [clivm-renovate-config](https://github.com/clivm/clivm-renovate-config)
+1. Set up CI with [clivm-installer](https://github.com/clivm/clivm-installer) (GitHub Acitons, Shell Script) or [circleci-orb-clivm](https://circleci.com/developer/orbs/orb/suzuki-shunsuke/clivm)

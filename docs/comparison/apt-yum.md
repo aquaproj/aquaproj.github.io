@@ -7,8 +7,8 @@ sidebar_position: 200
 ## Pros
 
 * Please see [Homebrew#pros](homebrew#pros)
-* aqua doesn't require the root priviledge
-* aqua supports both macOS and Linux
+* clivm doesn't require the root priviledge
+* clivm supports both macOS and Linux
 
 ## Cons
 

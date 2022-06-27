@@ -15,9 +15,9 @@ It's very easy to use, but there are some problems.
 * GitHub Actions doesn't support installing tools for local development
 * It is difficult to unify the tool version in local development and CI
 
-aqua solves these problems.
+clivm solves these problems.
 
-* aqua forces to pin the tool version
-* aqua provides [Renovate Preset](https://github.com/clivm/aqua-renovate-config), so you can update tools by Renovate without configuring
-* aqua supports both local development and CI
+* clivm forces to pin the tool version
+* clivm provides [Renovate Preset](https://github.com/clivm/clivm-renovate-config), so you can update tools by Renovate without configuring
+* clivm supports both local development and CI
 * you can use the same tool version in local development and CI naturally

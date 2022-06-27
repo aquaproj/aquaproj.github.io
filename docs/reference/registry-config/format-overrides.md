@@ -11,4 +11,4 @@ you may copy and paste `replacements` and `format_overrides` from `.goreleaser.y
 e.g.
 
 * [.goreleaser.yml](https://github.com/iawia002/annie/blob/v0.11.0/.goreleaser.yml#L51-L54)
-* [registry.yaml](https://github.com/clivm/aqua-registry/blob/v0.8.0/registry.yaml#L361-L364)
+* [registry.yaml](https://github.com/clivm/clivm-registry/blob/v0.8.0/registry.yaml#L361-L364)

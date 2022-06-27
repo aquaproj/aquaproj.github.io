@@ -11,23 +11,23 @@ e.g.
 Directory structure
 
 ```
-aqua.yaml
-aqua/
+clivm.yaml
+clivm/
   conftest.yaml
 ```
 
-aqua.yaml
+clivm.yaml
 
 ```yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/clivm-registry
 
 packages:
-- import: aqua/*.yaml
+- import: clivm/*.yaml
 ```
 
-aqua/conftest.yaml
+clivm/conftest.yaml
 
 ```yaml
 packages:
@@ -45,5 +45,5 @@ on:
   pull_request:
     paths:
     - policy/**.rego
-    - aqua/conftest.yaml
+    - clivm/conftest.yaml
 ```

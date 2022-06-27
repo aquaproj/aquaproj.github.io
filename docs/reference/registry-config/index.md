@@ -4,7 +4,7 @@ sidebar_position: 100
 
 # Registry Configuration
 
-e.g. [registry.yaml](https://github.com/clivm/aqua-registry/blob/main/registry.yaml)
+e.g. [registry.yaml](https://github.com/clivm/clivm-registry/blob/main/registry.yaml)
 
 ```yaml
 packages:
@@ -23,9 +23,9 @@ packages:
 
 ## JSON Schema
 
-* https://github.com/clivm/aqua/tree/main/json-schema
-* https://github.com/clivm/aqua/blob/main/json-schema/registry.json
-* https://raw.githubusercontent.com/clivm/aqua/main/json-schema/registry.json
+* https://github.com/clivm/clivm/tree/main/json-schema
+* https://github.com/clivm/clivm/blob/main/json-schema/registry.json
+* https://raw.githubusercontent.com/clivm/clivm/main/json-schema/registry.json
 
 ## Package types
 
@@ -39,12 +39,12 @@ packages:
 ## Common attributes
 
 * `type`: (string, required) the package type
-* `name`: (string) the package name. This is used to specify the package in `aqua.yaml`. name must be unique in the same registry
+* `name`: (string) the package name. This is used to specify the package in `clivm.yaml`. name must be unique in the same registry
 * [aliases](aliases): Aliases of the package
 * [files](files): The list of executable files
-* `format`: The asset format (e.g. `zip`, `tar.gz`). This is used to unarchive or decompress the asset. If this isn't specified, aqua tries to specify the format from the file extenstion. If the file isn't archived and isn't compressed, please specify `raw`
-* `link`: URL about the package. This is used for `aqua g`
-* `description`: The description about the package. This is used for `aqua g`
+* `format`: The asset format (e.g. `zip`, `tar.gz`). This is used to unarchive or decompress the asset. If this isn't specified, clivm tries to specify the format from the file extenstion. If the file isn't archived and isn't compressed, please specify `raw`
+* `link`: URL about the package. This is used for `clivm g`
+* `description`: The description about the package. This is used for `clivm g`
 * [replacements](replacements): A map which is used to replace some Template Variables like `OS` and `Arch`
 * [format_overrides](format-overrides): A list of the pair OS and the asset format
 * [overrides](overrides)

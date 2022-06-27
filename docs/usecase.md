@@ -10,19 +10,19 @@ sidebar_position: 600
 
 ## Install tools for the repository
 
-With aqua, you can install tools for the repository.
-Add `aqua.yaml` to the repository, then you can install tools by `aqua i`.
+With clivm, you can install tools for the repository.
+Add `clivm.yaml` to the repository, then you can install tools by `clivm i`.
 
 ## Install tools for your organization and team
 
-With aqua, you can install tools for your organization and team.
-Let's create a repository and add aqua configuration files to the repository.
+With clivm, you can install tools for your organization and team.
+Let's create a repository and add clivm configuration files to the repository.
 
-For detail, please see [Share aqua configuration for teams and organizations](tutorial-extras/team-config).
+For detail, please see [Share clivm configuration for teams and organizations](tutorial-extras/team-config).
 
 ## Install tools for your laptops (like dotfiles)
 
-With aqua, you can manage tools as code like `dotfiles`.
+With clivm, you can manage tools as code like `dotfiles`.
 You can set up your laptop quickly and install same version of tools in multiple laptops.
 
 Please see [Install tools globally](/docs/tutorial-basics/global-config).

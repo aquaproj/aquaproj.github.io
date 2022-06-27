@@ -17,16 +17,16 @@ Basically when you add new packages, we recommend using the `go_install` package
 
 :::
 
-[#798](https://github.com/clivm/aqua/issues/798) [#799](https://github.com/clivm/aqua/issues/799)
+[#798](https://github.com/clivm/clivm/issues/798) [#799](https://github.com/clivm/clivm/issues/799)
 
-aqua >= [v1.7.0](https://github.com/clivm/aqua/releases/tag/v1.7.0) is required.
+clivm >= [v1.7.0](https://github.com/clivm/clivm/releases/tag/v1.7.0) is required.
 
 * `repo_owner`: The repository owner name
 * `repo_name`: The repository name
 
 The repository archive is downloaded from GitHub and the package is built by command `go build` when it is installed.
 So the command `go` is required.
-aqua is a CLI Version Manager, you have to specify the version. Unlike `go install` command, you can't specify the head of the default branch.
+clivm is a CLI Version Manager, you have to specify the version. Unlike `go install` command, you can't specify the head of the default branch.
 
 e.g. https://github.com/google/wire
 
@@ -44,7 +44,7 @@ packages:
         dir: "wire-{{trimV .Version}}"
 ```
 
-aqua.yaml
+clivm.yaml
 
 ```yaml
 registries:
@@ -57,16 +57,16 @@ packages:
 ```
 
 ```console
-$ aqua which wire
+$ clivm which wire
 /home/foo/.local/share/clivm/pkgs/go/github.com/google/wire/v0.5.0/bin/wire
 
-$ aqua install
-INFO[0000] create a symbolic link                        aqua_version= env=darwin/arm64 link_file=/home/foo/.local/share/clivm/bin/wire new=aqua-proxy package_name=google/wire package_version=v0.5.0 program=aqua registry=standard
-INFO[0000] download and unarchive the package            aqua_version= env=darwin/arm64 package_name=google/wire package_version=v0.5.0 program=aqua registry=standard
-INFO[0001] building Go tool                              aqua_version= env=darwin/arm64 exe_path=/home/foo/.local/share/clivm/pkgs/go/github.com/google/wire/v0.5.0/bin/wire file_name=wire go_build_dir=/home/foo/.local/share/clivm/pkgs/go/github.com/google/wire/v0.5.0/src/wire-0.5.0 go_src=./cmd/wire package_name=google/wire package_version=v0.5.0 program=aqua registry=standard
+$ clivm install
+INFO[0000] create a symbolic link                        clivm_version= env=darwin/arm64 link_file=/home/foo/.local/share/clivm/bin/wire new=clivm-proxy package_name=google/wire package_version=v0.5.0 program=clivm registry=standard
+INFO[0000] download and unarchive the package            clivm_version= env=darwin/arm64 package_name=google/wire package_version=v0.5.0 program=clivm registry=standard
+INFO[0001] building Go tool                              clivm_version= env=darwin/arm64 exe_path=/home/foo/.local/share/clivm/pkgs/go/github.com/google/wire/v0.5.0/bin/wire file_name=wire go_build_dir=/home/foo/.local/share/clivm/pkgs/go/github.com/google/wire/v0.5.0/src/wire-0.5.0 go_src=./cmd/wire package_name=google/wire package_version=v0.5.0 program=clivm registry=standard
 ```
 
-From aqua [v1.9.0](https://github.com/clivm/aqua/releases/tag/v1.9.0), if there is no GitHub Repository tag or the latest tag is old, you can specify Git revision instead of tag.
+From clivm [v1.9.0](https://github.com/clivm/clivm/releases/tag/v1.9.0), if there is no GitHub Repository tag or the latest tag is old, you can specify Git revision instead of tag.
 
 e.g.
 

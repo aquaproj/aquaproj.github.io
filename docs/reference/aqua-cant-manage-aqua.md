@@ -2,24 +2,24 @@
 sidebar_position: 850
 ---
 
-# aqua doesn't support installing aqua
+# clivm doesn't support installing clivm
 
-aqua doesn't support installing aqua.
-You shouldn't write the configuration to install the command `aqua` with aqua,
+clivm doesn't support installing clivm.
+You shouldn't write the configuration to install the command `clivm` with clivm,
 because it causes the infinite loop.
 
-From aqua v0.8.6 (aqua-proxy v0.2.1), aqua prevents the infinite loop.
+From clivm v0.8.6 (clivm-proxy v0.2.1), clivm prevents the infinite loop.
 
 ```console
 # Create the symbolic link accidentally
-$ ln -s ~/.local/share/clivm/bin/aqua-proxy ~/.local/share/clivm/bin/aqua
-$ aqua i
-[ERROR] the command "aqua" can't be executed via aqua-proxy to prevent the infinite loop
+$ ln -s ~/.local/share/clivm/bin/clivm-proxy ~/.local/share/clivm/bin/clivm
+$ clivm i
+[ERROR] the command "clivm" can't be executed via clivm-proxy to prevent the infinite loop
 ```
 
-If you encounter the error `[ERROR] the command "aqua" can't be executed via aqua-proxy to prevent the infinite loop`,
-remove the symbolic link `$CLIVM_ROOT_DIR/bin/aqua`.
+If you encounter the error `[ERROR] the command "clivm" can't be executed via clivm-proxy to prevent the infinite loop`,
+remove the symbolic link `$CLIVM_ROOT_DIR/bin/clivm`.
 
 ```console
-$ rm $CLIVM_ROOT_DIR/bin/aqua
+$ rm $CLIVM_ROOT_DIR/bin/clivm
 ```

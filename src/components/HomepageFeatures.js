@@ -7,7 +7,7 @@ const FeatureList = [
     title: 'Install tools quickly and easily',
     description: (
       <>
-        You can install tools quickly. Just run <code>aqua i</code>
+        You can install tools quickly. Just run <code>clivm i</code>
         You don't have to specify packages in the command.
       </>
     ),
@@ -16,7 +16,7 @@ const FeatureList = [
     title: 'Single binary written in Go',
     description: (
       <>
-        aqua is written in Go and supports Windows, macOS, and Linux.
+        clivm is written in Go and supports Windows, macOS, and Linux.
       </>
     ),
   },
@@ -24,7 +24,7 @@ const FeatureList = [
     title: 'Pin tool version',
     description: (
       <>
-        aqua forces to pin tool versions, which solves the problem due to the difference of tool versions.
+        clivm forces to pin tool versions, which solves the problem due to the difference of tool versions.
       </>
     ),
   },
@@ -32,7 +32,7 @@ const FeatureList = [
     title: 'Lazy Install',
     description: (
       <>
-        aqua installs a tool automatically when the tool is invoked.
+        clivm installs a tool automatically when the tool is invoked.
       </>
     ),
   },
@@ -40,7 +40,7 @@ const FeatureList = [
     title: 'Change tool versions per project',
     description: (
       <>
-        aqua manages tool versions per configuration.
+        clivm manages tool versions per configuration.
         You can install multiple versions and switch versions seamlessly.
       </>
     ),
@@ -50,7 +50,7 @@ const FeatureList = [
     description: (
       <>
         You can update tools continuously by Renovate.
-        <a target="_blank" href="https://github.com/clivm/aqua-renovate-config">Renovate preset for aqua</a> is provided.
+        <a target="_blank" href="https://github.com/clivm/clivm-renovate-config">Renovate preset for clivm</a> is provided.
       </>
     ),
   },
@@ -58,7 +58,7 @@ const FeatureList = [
     title: 'GitHub Actions and CircleCI Orb',
     description: (
       <>
-        GitHub Actions and CircleCI Orb for aqua are provided.
+        GitHub Actions and CircleCI Orb for clivm are provided.
       </>
     ),
   },

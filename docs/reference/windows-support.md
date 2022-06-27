@@ -4,9 +4,9 @@ sidebar_position: 880
 
 # Windows Support
 
-`aqua >= v1.12.0`
+`clivm >= v1.12.0`
 
-[#850](https://github.com/clivm/aqua/issues/850)
+[#850](https://github.com/clivm/clivm/issues/850)
 [Project#4](https://github.com/orgs/clivm/projects/4)
 
 The author [@suzuki-shunsuke](https://github.com/suzuki-shunsuke) doesn't use Windows, so the help of Windows Users is welcome.
@@ -26,11 +26,11 @@ Terminals
 
 ## How to install
 
-Please download an asset from [GitHub Releases](https://github.com/clivm/aqua/releases) and deploy the binary into `PATH`.
+Please download an asset from [GitHub Releases](https://github.com/clivm/clivm/releases) and deploy the binary into `PATH`.
 
 ## The install path (CLIVM_ROOT_DIR)
 
-From aqua v1.12.0, the default value of `CLIVM_ROOT_DIR` is `$HOME/AppData/Local/clivm`.
+From clivm v1.12.0, the default value of `CLIVM_ROOT_DIR` is `$HOME/AppData/Local/clivm`.
 
 ## PATH
 
@@ -44,11 +44,11 @@ From aqua v1.12.0, the default value of `CLIVM_ROOT_DIR` is `$HOME/AppData/Local
 
 ## Required Standard Registry Version
 
-Please upgrade [Standard Registry](https://github.com/clivm/aqua-registry) to v2.28.1 or later.
+Please upgrade [Standard Registry](https://github.com/clivm/clivm-registry) to v2.28.1 or later.
 
 ## Windows Settings
 
-aqua works even if `Developer Mode` is disabled.
+clivm works even if `Developer Mode` is disabled.
 And you don't have to run the terminal as Administrator.
 
 ### Windows Security
@@ -57,13 +57,13 @@ And you don't have to run the terminal as Administrator.
 Please change the settings at your own risk.
 :::
 
-Security softwares may prevent aqua from installing and running tools.
+Security softwares may prevent clivm from installing and running tools.
 In that case, you may have to add `CLIVM_ROOT_DIR` to security software's exclusion. 
 
 ## Windows Support of installed tools
 
 Note that some tools don't support Windows.
-aqua skips installing those tools on Windows with [supported_if](/docs/reference/registry-config/supported-if) or [supported_envs](/docs/reference/registry-config/supported-envs).
+clivm skips installing those tools on Windows with [supported_if](/docs/reference/registry-config/supported-if) or [supported_envs](/docs/reference/registry-config/supported-envs).
 
 ### tools written in shell scripts aren't supported
 
@@ -75,13 +75,13 @@ Currently, tools written in shell scripts aren't supported.
 
 Please see [complete_windows_ext](/docs/reference/registry-config/complete-windows-ext).
 
-### Create BAT files and shell scripts instead of symbolic links and aqua-proxy
+### Create BAT files and shell scripts instead of symbolic links and clivm-proxy
 
-[#885](https://github.com/clivm/aqua/issues/885) [#892](https://github.com/clivm/aqua/pull/892) [#893](https://github.com/clivm/aqua/issues/893) aqua >= v1.12.0
+[#885](https://github.com/clivm/clivm/issues/885) [#892](https://github.com/clivm/clivm/pull/892) [#893](https://github.com/clivm/clivm/issues/893) clivm >= v1.12.0
 
 Reference (Japanese): https://zenn.dev/link/comments/725555a2b1b034
 
-aqua creates executable BAT files and shell scripts in directories `CLIVM_ROOT_DIR/bin` and `CLIVM_ROOT_DIR/bat` instead of symbolic links.
+clivm creates executable BAT files and shell scripts in directories `CLIVM_ROOT_DIR/bin` and `CLIVM_ROOT_DIR/bat` instead of symbolic links.
 
 If you use PowerShell or Command Prompt, please add `CLIVM_ROOT_DIR/bat` to the environment variable `PATH`.
 Or if you use Git Bash, please add `CLIVM_ROOT_DIR/bin` to the environment variable `PATH`.
@@ -95,14 +95,14 @@ On Windows, there are two problems regarding symbolic links.
 
 ## Trouble Shooting
 
-### GitHub Action aqua-installer doesn't work on Windows Runner
+### GitHub Action clivm-installer doesn't work on Windows Runner
 
 We are working on it.
 
-* https://github.com/clivm/aqua-installer/issues/116
-* https://github.com/clivm/aqua-installer/issues/117
+* https://github.com/clivm/clivm-installer/issues/116
+* https://github.com/clivm/clivm-installer/issues/117
 
-### Interactive Search by `aqua g` doesn't work on Git Bash
+### Interactive Search by `clivm g` doesn't work on Git Bash
 
 The guide of `gh auth login` is helpful.
 

@@ -4,11 +4,11 @@ sidebar_position: 1960
 
 # complete_windows_ext
 
-aqua >= v1.12.0
+clivm >= v1.12.0
 
-Many Windows executable files have the suffix `.exe`, so aqua completes the suffix automatically.
+Many Windows executable files have the suffix `.exe`, so clivm completes the suffix automatically.
 
-aqua completes the suffix `.exe` to the following attributes.
+clivm completes the suffix `.exe` to the following attributes.
 
 * asset
 * url

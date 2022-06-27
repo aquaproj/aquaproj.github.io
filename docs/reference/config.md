@@ -4,47 +4,47 @@ sidebar_position: 200
 
 # Configuration
 
-e.g. [aqua.yaml](https://github.com/clivm/aqua/blob/main/aqua.yaml)
+e.g. [clivm.yaml](https://github.com/clivm/clivm/blob/main/clivm.yaml)
 
 ```yaml
 registries:
 - type: standard
-  ref: v1.11.0 # renovate: depName=clivm/aqua-registry
+  ref: v1.11.0 # renovate: depName=clivm/clivm-registry
 
 packages:
 - name: helm/helm@v3.7.0
 - name: golangci/golangci-lint@v1.42.1
-- import: aqua/*.yaml
+- import: clivm/*.yaml
 ```
 
 ## Configuration File Path
 
-aqua searches the following configuration files.
+clivm searches the following configuration files.
 
 1. `--config (-c)` option (environment variable `CLIVM_CONFIG`
-1. `\.?aqua\.ya?ml` from the current directory to the root directory. If configuration files are found in the multiple directories, aqua read all of them
+1. `\.?clivm\.ya?ml` from the current directory to the root directory. If configuration files are found in the multiple directories, clivm read all of them
 1. global configuration: environment variable `CLIVM_GLOBAL_CONFIG`
 
-To install tools in global configuration files, you have to set `-a` to `aqua install` command.
+To install tools in global configuration files, you have to set `-a` to `clivm install` command.
 
 ## Environment variables
 
 * `CLIVM_LOG_LEVEL`: (default: `info`) Log level
 * `CLIVM_CONFIG`: configuration file path
 * `CLIVM_GLOBAL_CONFIG`: global configuration file paths separated by semicolon `:`
-* `CLIVM_ROOT_DIR`: The directory path where aqua install tools
+* `CLIVM_ROOT_DIR`: The directory path where clivm install tools
   * default (linux and macOS): `${XDG_DATA_HOME:-$HOME/.local/share}/clivm`
   * default (windows): `${HOME/AppData/Local}/clivm`
 * `CLIVM_MAX_PARALLELISM`: (default: `5`) The maximum number of packages which are installed in parallel at the same time
 * `CLIVM_GITHUB_TOKEN`, `GITHUB_TOKEN`: GitHub Access Token. This is required to install private repository's package
 * [CLIVM_GOOS, CLIVM_GOARCH](change-os-arch-for-test)
-* [CLIVM_EXPERIMENTAL_X_SYS_EXEC](experimental-feature#aqua_experimental_x_sys_exec)
+* [CLIVM_EXPERIMENTAL_X_SYS_EXEC](experimental-feature#clivm_experimental_x_sys_exec)
 
 ## JSON Schema
 
-* https://github.com/clivm/aqua/tree/main/json-schema
-* https://github.com/clivm/aqua/blob/main/json-schema/aqua-yaml.json
-* https://raw.githubusercontent.com/clivm/aqua/main/json-schema/aqua-yaml.json
+* https://github.com/clivm/clivm/tree/main/json-schema
+* https://github.com/clivm/clivm/blob/main/json-schema/clivm-yaml.json
+* https://raw.githubusercontent.com/clivm/clivm/main/json-schema/clivm-yaml.json
 
 ## Configuration attributes
 
@@ -52,7 +52,7 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * [packages](#packages): The list of installed packages
 
 :::caution
-`inline_registry` was removed from `aqua >= v0.9.0`. Please use [local registry](#local-registry).
+`inline_registry` was removed from `clivm >= v0.9.0`. Please use [local registry](#local-registry).
 :::
 
 ## `registries`
@@ -62,12 +62,12 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/clivm-registry
 ```
 
 Registry types
 
-* [standard](#standard-registry): aqua's [Standard Registry](https://github.com/clivm/aqua-registry)
+* [standard](#standard-registry): clivm's [Standard Registry](https://github.com/clivm/clivm-registry)
 * [local](#local-registry): local file
 * [github_content](#github_content-registry): Get the registry by GitHub Repository Content API
 
@@ -78,10 +78,10 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/clivm-registry
 ```
 
-* `ref`: the Registry Version. Please check [Releases](https://github.com/clivm/aqua-registry/releases)
+* `ref`: the Registry Version. Please check [Releases](https://github.com/clivm/clivm-registry/releases)
 
 This is equivalent to the following definition.
 
@@ -90,8 +90,8 @@ registries:
 - name: standard
   type: github_content
   repo_owner: clivm
-  repo_name: aqua-registry
-  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
+  repo_name: clivm-registry
+  ref: v2.22.0 # renovate: depName=clivm/clivm-registry
   path: registry.yaml
 ```
 
@@ -104,7 +104,7 @@ registries:
 ```
 
 :::caution
-Don't specify a branch name as `ref`, because aqua treats the ref as immutable.
+Don't specify a branch name as `ref`, because clivm treats the ref as immutable.
 
 ```yaml
 registries:
@@ -126,7 +126,7 @@ registries:
 ```
 
 * `name`: Registry name
-* `path`: The file path. Either absolute path or relative path from `aqua.yaml`
+* `path`: The file path. Either absolute path or relative path from `clivm.yaml`
 
 Please see [Configuration (registry.yaml)](registry-config).
 
@@ -139,15 +139,15 @@ registries:
 - name: foo
   type: github_content
   repo_owner: clivm
-  repo_name: aqua-registry
-  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
+  repo_name: clivm-registry
+  ref: v2.22.0 # renovate: depName=clivm/clivm-registry
   path: registry.yaml
 ```
 
 * `name`: Registry Name
 * `repo_owner`: Repository Owner name
 * `repo_name`: Repository name
-* `ref`: Repository tag or commit hash. Don't specify a branch name as `ref`, because aqua treats the ref as immutable
+* `ref`: Repository tag or commit hash. Don't specify a branch name as `ref`, because clivm treats the ref as immutable
 * `path`: file path from the repository root directory
 
 ## `packages`

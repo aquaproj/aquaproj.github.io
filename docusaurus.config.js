@@ -6,15 +6,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'aqua',
+  title: 'clivm',
   tagline: 'Declarative CLI Version Manager. Install tools easily and quickly',
   url: 'https://clivm.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'https://raw.githubusercontent.com/clivm/aqua/main/logo/aqua_without_text.svg',
+  favicon: 'https://raw.githubusercontent.com/clivm/clivm/main/logo/clivm_without_text.svg',
   organizationName: 'clivm', // Usually your GitHub org/user name.
-  projectName: 'aqua', // Usually your repo name.
+  projectName: 'clivm', // Usually your repo name.
 
   presets: [
     [
@@ -44,10 +44,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'aqua',
+        title: 'clivm',
         logo: {
-          alt: 'aqua Logo',
-          src: 'https://raw.githubusercontent.com/clivm/aqua/main/logo/aqua_without_text.svg',
+          alt: 'clivm Logo',
+          src: 'https://raw.githubusercontent.com/clivm/clivm/main/logo/clivm_without_text.svg',
         },
         items: [
           {
@@ -85,12 +85,12 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/clivm/aqua/discussions',
+            href: 'https://github.com/clivm/clivm/discussions',
             label: 'Question',
             position: 'right',
           },
           {
-            href: 'https://github.com/clivm/aqua',
+            href: 'https://github.com/clivm/clivm',
             label: 'GitHub',
             position: 'right',
           },
@@ -117,10 +117,10 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/clivm/aqua',
+                href: 'https://github.com/clivm/clivm',
               },
               {
-                href: 'https://github.com/clivm/aqua-registry',
+                href: 'https://github.com/clivm/clivm-registry',
                 label: 'Standard Registry',
               },
             ],

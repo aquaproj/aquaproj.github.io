@@ -4,40 +4,40 @@ sidebar_position: 100
 
 # Overview
 
-aqua is a declarative CLI Version Manager written in Go.
+clivm is a declarative CLI Version Manager written in Go.
 You can install CLI tools and manage their versions with YAML declaratively.
 
-The short demo would be useful to understand aqua.
+The short demo would be useful to understand clivm.
 
 [![asciicast](https://asciinema.org/a/498262.svg)](https://asciinema.org/a/498262?autoplay=1)
 
-You write a configuration file `aqua.yaml` and execute the command `aqua i`, then tools are installed.
+You write a configuration file `clivm.yaml` and execute the command `clivm i`, then tools are installed.
 
 ```yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/clivm-registry
 
 packages:
 - name: cli/cli@v2.2.0
 - name: junegunn/fzf@0.28.0
 ```
 
-Unlike Package Manager such as Homebrew, aqua supports changing tool version per project, so aqua is useful to manage tools for your project.
-aqua installs a tool automatically when the tool is invoked.
-aqua solves the problem due to the difference of tool version by forcing to pin tool version.
-aqua supports continuous update with [Renovate](https://docs.renovatebot.com/).
-aqua provides [Renovate Preset Config](https://docs.renovatebot.com/config-presets/), so you can update tools very easily.
+Unlike Package Manager such as Homebrew, clivm supports changing tool version per project, so clivm is useful to manage tools for your project.
+clivm installs a tool automatically when the tool is invoked.
+clivm solves the problem due to the difference of tool version by forcing to pin tool version.
+clivm supports continuous update with [Renovate](https://docs.renovatebot.com/).
+clivm provides [Renovate Preset Config](https://docs.renovatebot.com/config-presets/), so you can update tools very easily.
 
-https://github.com/clivm/aqua-renovate-config
+https://github.com/clivm/clivm-renovate-config
 
-aqua provides GitHub Actions, CircleCI Orb, and shell script to install aqua easily.
-aqua provides the unified way to install tools both in local development and CI.
+clivm provides GitHub Actions, CircleCI Orb, and shell script to install clivm easily.
+clivm provides the unified way to install tools both in local development and CI.
 
-aqua provides the Standard Registry. You can install tools which are registered at the Registry easily, and you can search the Registry interactively with `aqua g` command.
+clivm provides the Standard Registry. You can install tools which are registered at the Registry easily, and you can search the Registry interactively with `clivm g` command.
 
 ```console
-$ aqua g
+$ clivm g
 ```
 
 ```console
@@ -66,12 +66,12 @@ $ aqua g
 
 If you can't find the tool, you can send a pull request.
 
-https://github.com/clivm/aqua-registry
+https://github.com/clivm/clivm-registry
 
 ## See Also
 
-* [Why I use aqua](https://dev.to/suzukishunsuke/why-i-use-aqua-230)
+* [Why I use clivm](https://dev.to/suzukishunsuke/why-i-use-clivm-230)
 * [Comparison](/docs/comparison/common)
 * [Quick Start](/docs/tutorial-basics/quick-start)
-* [Introduce aqua to your repository](/docs/tutorial-extras/introduce-aqua)
+* [Introduce clivm to your repository](/docs/tutorial-extras/introduce-clivm)
 * [Install tools globally](/docs/tutorial-basics/global-config)

@@ -4,15 +4,15 @@ sidebar_position: 300
 
 # Add Packages to Registry
 
-You can install tools registered in the [Standard Registry](https://github.com/clivm/aqua-registry) easily.
+You can install tools registered in the [Standard Registry](https://github.com/clivm/clivm-registry) easily.
 
-You can search packages from Registries by `aqua g`.
+You can search packages from Registries by `clivm g`.
 Please see [Search Packages](../tutorial-basics/search-packages).
 
 If tools aren't found, you have some options.
 
-* [Create an issue for request](https://github.com/clivm/aqua-registry/issues)
-* [Send a Pull Request to the Standard Registry](https://github.com/clivm/aqua-registry#request-for-new-packages)
+* [Create an issue for request](https://github.com/clivm/clivm-registry/issues)
+* [Send a Pull Request to the Standard Registry](https://github.com/clivm/clivm-registry#request-for-new-packages)
 * Write Registry Configuration
   * [local registry](../reference/config#local-registry)
   * [github_content registry](../reference/config#github_content-registry)
@@ -21,7 +21,7 @@ If tools aren't found, you have some options.
 
 Please see the Registry Configuration in the Standard Registry.
 
-https://github.com/clivm/aqua-registry/blob/v0.10.10/registry.yaml#L1838-L1842
+https://github.com/clivm/clivm-registry/blob/v0.10.10/registry.yaml#L1838-L1842
 
 ```yaml
 - type: github_release
@@ -47,7 +47,7 @@ packages:
 ```
 
 ```yaml
-# aqua.yaml
+# clivm.yaml
 registries:
 - name: foo
   type: local
@@ -74,12 +74,12 @@ packages:
 ```
 
 ```yaml
-# aqua.yaml
+# clivm.yaml
 registries:
 - name: foo
   type: github_content
   repo_owner: suzuki-shunsuke
-  repo_name: private-aqua-registry # private repository
+  repo_name: private-clivm-registry # private repository
   ref: v0.1.0
   path: registry.yaml
 

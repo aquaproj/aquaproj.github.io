@@ -4,16 +4,16 @@ sidebar_position: 1950
 
 # supported_envs
 
-[#882](https://github.com/clivm/aqua/issues/882) [#884](https://github.com/clivm/aqua/pull/884)
+[#882](https://github.com/clivm/clivm/issues/882) [#884](https://github.com/clivm/clivm/pull/884)
 
-aqua >= v1.12.0
+clivm >= v1.12.0
 
 You can specify the list of supported environments (GOOS and GOARCH) in `supported_envs`.
 
 `supported_envs` has been introduced to solve the following `supported_if` problems.
 
 1. Complicated. There are multiple ways to express the same environments. The expression is too flexible 
-1. Performance. aqua has to compile and evaluate the expression per tool. It may affect the performance although we should do the performance test
+1. Performance. clivm has to compile and evaluate the expression per tool. It may affect the performance although we should do the performance test
 
 ## Example Code
 

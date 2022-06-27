@@ -4,9 +4,9 @@ sidebar_position: 1600
 
 # `overrides`
 
-aqua >= v1.3.0
+clivm >= v1.3.0
 
-[#607](https://github.com/clivm/aqua/issues/607)
+[#607](https://github.com/clivm/clivm/issues/607)
 
 You can override the following attributes on the specific `GOOS` and `GOARCH`.
 

@@ -2,15 +2,15 @@
 sidebar_position: 1000
 ---
 
-# Uninstall aqua
+# Uninstall clivm
 
-Remove `aqua` and `$CLIVM_ROOT_DIR`.
+Remove `clivm` and `$CLIVM_ROOT_DIR`.
 
 e.g.
 
 ```console
-$ rm /usr/local/bin/aqua
+$ rm /usr/local/bin/clivm
 $ rm -R ~/.local/share/clivm
 ```
 
-Unset the environment variables you set for aqua.
+Unset the environment variables you set for clivm.

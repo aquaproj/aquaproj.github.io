@@ -4,13 +4,13 @@ sidebar_position: 600
 
 # Global Configuration
 
-aqua finds the configuration files from the current directory to the root directory.
+clivm finds the configuration files from the current directory to the root directory.
 
 ```console
 $ pwd
 /tmp
 $ gh version
-FATA[0000] aqua failed                                   aqua_version=1.3.0 error="command is not found" exe_name=gh program=aqua
+FATA[0000] clivm failed                                   clivm_version=1.3.0 error="command is not found" exe_name=gh program=clivm
 ```
 
 If you want to install tools regardless the current directory,
@@ -20,14 +20,14 @@ You can change the global configuration file path freely.
 
 ```console
 $ mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/clivm"
-$ vi "${XDG_CONFIG_HOME:-$HOME/.config}/clivm/aqua.yaml"
-$ export CLIVM_GLOBAL_CONFIG=${CLIVM_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/clivm/aqua.yaml
+$ vi "${XDG_CONFIG_HOME:-$HOME/.config}/clivm/clivm.yaml"
+$ export CLIVM_GLOBAL_CONFIG=${CLIVM_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/clivm/clivm.yaml
 ```
 
 ```yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/clivm-registry
 
 packages:
 - name: cli/cli@v2.2.0
@@ -40,13 +40,13 @@ gh version 2.2.0 (2021-10-25)
 https://github.com/cli/cli/releases/tag/v2.2.0
 ```
 
-## `aqua i` ignores global configuration by default
+## `clivm i` ignores global configuration by default
 
 :::caution
-`aqua i` ignores global configuration by default.
-To install tools of global configuration by `aqua i`, please set the `-a` option.
+`clivm i` ignores global configuration by default.
+To install tools of global configuration by `clivm i`, please set the `-a` option.
 
 ```console
-$ aqua i -a
+$ clivm i -a
 ```
 :::
