@@ -23,11 +23,11 @@ clivm supports the `Lazy Install` and Sharable Configuration mechanism named `Re
 Compared to other package manager like `Homebrew`, clivm supports switching tool versions per `clivm.yaml`.
 Of course, you can use clivm with other package managers too.
 
-You can install clivm with [clivm-installer](https://github.com/clivm/clivm-installer).
+You can install clivm with [clivm-installer](https://github.com/aquaproj/aqua-installer).
 
 ```console
 $ curl -sSfL \
-  https://raw.githubusercontent.com/clivm/clivm-installer/v1.0.0/clivm-installer |
+  https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/clivm-installer |
   bash -s -- -i ~/bin/clivm -v v1.9.0
 ```
 
@@ -42,7 +42,7 @@ For example, let's install jq with clivm. Write the following `clivm.yaml`.
 ```yaml
 registries:
 - type: standard
-  ref: v2.19.0 # renovate: depName=clivm/clivm-registry
+  ref: v2.19.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: stedolan/jq
   version: jq-1.5
@@ -145,12 +145,12 @@ packages:
   version: jq-1.5
 ```
 
-In the above configuration, the [Standard Registry](https://github.com/clivm/clivm-registry) is being used.
+In the above configuration, the [Standard Registry](https://github.com/aquaproj/aqua-registry) is being used.
 The Standard Registry is the Registry maintained by clivm's maintainers.
 
 Please see the configuration.
 
-https://github.com/clivm/clivm-registry/blob/v2.19.0/pkgs/stedolan/jq/registry.yaml
+https://github.com/aquaproj/aqua-registry/blob/v2.19.0/pkgs/stedolan/jq/registry.yaml
 
 ```yaml
 packages:
@@ -208,19 +208,19 @@ $ clivm g
 > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 ```
 
-If the tool you need isn't found, please create the issue or send the pull request to the [Standard Registry](https://github.com/clivm/clivm-registry)!
+If the tool you need isn't found, please create the issue or send the pull request to the [Standard Registry](https://github.com/aquaproj/aqua-registry)!
 By adding various packages to the Standard Registry, clivm becomes more useful and attractive.
 Your contribution is needed!
 
 It is also easy to create your own Registries.
-Just create GitHub Repositories and add Registry Configuration like [the Standard Registry](https://github.com/clivm/clivm-registry/blob/main/registry.yaml) and add it to `clivm.yaml`'s registries.
+Just create GitHub Repositories and add Registry Configuration like [the Standard Registry](https://github.com/aquaproj/aqua-registry/blob/main/registry.yaml) and add it to `clivm.yaml`'s registries.
 The private repository is also supported.
 
 e.g.
 
 ```yaml
 registries:
-  - name: clivm/clivm-registry
+  - name: aquaproj/aqua-registry
     type: github_content
     repo_owner: clivm
     repo_name: clivm-registry
@@ -237,8 +237,8 @@ It is recommended to manage `clivm.yaml` with Git and update versions by [Renova
 
 Using Renovate's [Regex Manager](https://docs.renovatebot.com/modules/manager/regex/), you can update versions.
 
-The Renovate Preset Configuration https://github.com/clivm/clivm-renovate-config is useful.
-For the detail, please see the [README](https://github.com/clivm/clivm-renovate-config).
+The Renovate Preset Configuration https://github.com/aquaproj/aqua-renovate-config is useful.
+For the detail, please see the [README](https://github.com/aquaproj/aqua-renovate-config).
 
 ## Summary
 
@@ -247,6 +247,6 @@ You can install CLI tools and manage their versions with YAML declaratively.
 clivm supports the `Lazy Install` and Sharable Configuration mechanism named `Registry`.
 
 You can search tools from Registries by `clivm g` command.
-If the tool you need isn't found, please create the issue or send the pull request to the [Standard Registry](https://github.com/clivm/clivm-registry)!
+If the tool you need isn't found, please create the issue or send the pull request to the [Standard Registry](https://github.com/aquaproj/aqua-registry)!
 By adding various packages to the Standard Registry, clivm becomes more useful and attractive.
 Your contribution is needed!
