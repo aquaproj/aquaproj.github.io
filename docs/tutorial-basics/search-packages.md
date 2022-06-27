@@ -4,10 +4,10 @@ sidebar_position: 200
 
 # Search packages
 
-You can search packages by [aqua g](/docs/reference/usage#aqua-generate) command.
+You can search packages by [clivm g](/docs/reference/usage#clivm-generate) command.
 
 ```console
-$ aqua g
+$ clivm g
 ```
 
 Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder](https://github.com/ktr0731/go-fuzzyfinder)).
@@ -39,16 +39,16 @@ Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder
 Please select `tfmigrator/cli`, then the package configuration is outputted.
 
 ```console
-$ aqua g
+$ clivm g
 - name: tfmigrator/cli@v0.2.1
 ```
 
 You can select multiple packages by tab key.
 
-If `-i` option is set, then the package is added to `aqua.yaml`.
+If `-i` option is set, then the package is added to `clivm.yaml`.
 
 ```console
-$ aqua g -i
+$ clivm g -i
 ```
 
 ```yaml

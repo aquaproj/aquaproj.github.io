@@ -4,15 +4,15 @@ sidebar_position: 1000
 
 # `github_content` Package
 
-e.g. [aquaproj/aqua-installer](https://github.com/aquaproj/aqua-registry/blob/main/pkgs/aquaproj/aqua-installer/registry.yaml)
+e.g. [clivm/clivm-installer](https://github.com/clivm/clivm-registry/blob/main/pkgs/clivm/clivm-installer/registry.yaml)
 
 ```yaml
 packages:
   - type: github_content
-    repo_owner: aquaproj
-    repo_name: aqua-installer
-    path: aqua-installer
-    description: Install aqua quickly
+    repo_owner: clivm
+    repo_name: clivm-installer
+    path: clivm-installer
+    description: Install clivm quickly
 ```
 
 ## Required fields

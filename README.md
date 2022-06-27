@@ -1,6 +1,6 @@
-# aquaproj.github.io
+# clivm.github.io
 
-Website of [aqua](https://github.com/aquaproj/aqua).
+Website of [clivm](https://github.com/clivm/clivm).
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 

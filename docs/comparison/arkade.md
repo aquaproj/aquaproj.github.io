@@ -12,7 +12,7 @@ https://github.com/alexellis/arkade#download-cli-tools-with-arkade
 > With automatic detection of: Windows / MacOS / Linux / Intel / ARM.
 
 Note that arkade is not a CLI installer but `Open Source Kubernetes Marketplace`,
-so it might not be appropriate to compare arkade with aqua.
+so it might not be appropriate to compare arkade with clivm.
 But in this context, we compare them in terms of installing CLI tools.
 
 ## Pros and Cons
