@@ -12,7 +12,7 @@ In `aqua.yaml`, you specify Registries in `registries`.
 ```yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0
@@ -27,7 +27,7 @@ Registry is reusable across multiple configuration.
 In the above configuration, the Standard Registry v2.22.0 is used.
 The Standard Registry is a registry that we maintain.
 
-https://github.com/aquaproj/aqua-registry
+https://github.com/clivm/aqua-registry
 
 ## Create your own Registry
 

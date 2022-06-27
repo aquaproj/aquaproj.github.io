@@ -60,7 +60,7 @@ You can only write declarative YAML configuration based on existing Registry con
 
 For example, plase see the pull request to support velero.
 
-https://github.com/aquaproj/aqua-registry/pull/1281
+https://github.com/clivm/aqua-registry/pull/1281
 
 This pull request includes only 11 lines YAML configuration.
 The configuration would be maintained in the Standard Registry.
@@ -95,8 +95,8 @@ asdf outputs the guide and exits with non zero code.
 
 ## aqua's additional features
 
-* [Share aqua configuration for teams and organizations with AQUA_GLOBAL_CONFIG](https://aquaproj.github.io/docs/tutorial-extras/team-config)
-* [Split the list of packages](https://aquaproj.github.io/docs/tutorial-extras/split-config)
+* [Share aqua configuration for teams and organizations with AQUA_GLOBAL_CONFIG](https://clivm.github.io/docs/tutorial-extras/team-config)
+* [Split the list of packages](https://clivm.github.io/docs/tutorial-extras/split-config)
 * CircleCI Orb
 
 ## asdf's additional features

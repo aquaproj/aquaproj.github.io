@@ -4,7 +4,7 @@ sidebar_position: 600
 
 # aliases
 
-[#674](https://github.com/aquaproj/aqua/pull/674) [#675](https://github.com/aquaproj/aqua/pull/675) aqua >= v1.5.0 is required
+[#674](https://github.com/clivm/aqua/pull/674) [#675](https://github.com/clivm/aqua/pull/675) aqua >= v1.5.0 is required
 
 Aliases of packages.
 

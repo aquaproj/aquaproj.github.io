@@ -9,7 +9,7 @@ From aqua v1.12.0 or later, we strongly recommend [supported_envs](supported-env
 supported_envs is simpler than supported_if, and better in terms of the performance.
 :::
 
-[#438](https://github.com/aquaproj/aqua/pull/438) [#439](https://github.com/aquaproj/aqua/pull/439)
+[#438](https://github.com/clivm/aqua/pull/438) [#439](https://github.com/clivm/aqua/pull/439)
 
 Some packages are available on only the specific environment.
 For example, some packages are available on only Linux, or don't support Linux ARM64.

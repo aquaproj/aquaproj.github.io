@@ -7,9 +7,9 @@ We recommend to manage `aqua.yaml` with Git and update versions by [Renovate](ht
 
 Using Renovate's [Regex Manager](https://docs.renovatebot.com/modules/manager/regex/), you can update versions.
 
-We provide the Renovate Preset Configuration [aqua-renovate-config](https://github.com/aquaproj/aqua-renovate-config). For the detail, please see the [README](https://github.com/aquaproj/aqua-renovate-config).
+We provide the Renovate Preset Configuration [aqua-renovate-config](https://github.com/clivm/aqua-renovate-config). For the detail, please see the [README](https://github.com/clivm/aqua-renovate-config).
 
 Example pull requests by Renovate.
 
-* [chore(deps): update dependency golangci/golangci-lint to v1.42.0](https://github.com/aquaproj/aqua/pull/193)
-* [chore(deps): update dependency aquaproj/aqua-registry to v0.2.2](https://github.com/aquaproj/aqua/pull/194)
+* [chore(deps): update dependency golangci/golangci-lint to v1.42.0](https://github.com/clivm/aqua/pull/193)
+* [chore(deps): update dependency clivm/aqua-registry to v0.2.2](https://github.com/clivm/aqua/pull/194)

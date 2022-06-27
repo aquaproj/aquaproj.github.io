@@ -4,11 +4,11 @@ sidebar_position: 850
 
 # Change `GOOS` and `GOARCH` for testing Registry
 
-[#643](https://github.com/aquaproj/aqua/issues/643) [#644](https://github.com/aquaproj/aqua/issues/644)
+[#643](https://github.com/clivm/aqua/issues/643) [#644](https://github.com/clivm/aqua/issues/644)
 
 aqua >= v1.4.0 is required.
 
-When you develop aqua Registry such as [Standard Registry](https://github.com/aquaproj/aqua-registry), you have to consider mainly the following platforms.
+When you develop aqua Registry such as [Standard Registry](https://github.com/clivm/aqua-registry), you have to consider mainly the following platforms.
 
 * darwin / amd64
 * darwin / arm64
@@ -17,7 +17,7 @@ When you develop aqua Registry such as [Standard Registry](https://github.com/aq
 
 But if you don't have laptops for the above platforms, it is difficult to test the Registry on the platforms.
 
-Furthermore, [Standard Registry](https://github.com/aquaproj/aqua-registry) is tested with GitHub Actions but GitHub Actions doesn't support arm64, so we can't test the Registry on arm64.
+Furthermore, [Standard Registry](https://github.com/clivm/aqua-registry) is tested with GitHub Actions but GitHub Actions doesn't support arm64, so we can't test the Registry on arm64.
 
 To solve the problem, aqua supports changing `GOOS` and `GOARCH` for testing the Registry.
 

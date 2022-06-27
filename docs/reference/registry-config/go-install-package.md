@@ -4,7 +4,7 @@ sidebar_position: 1300
 
 # `go_install` Package
 
-[#823](https://github.com/aquaproj/aqua/issues/823) [#826](https://github.com/aquaproj/aqua/pull/826), aqua >= [v1.10.0](https://github.com/aquaproj/aqua/releases/tag/v1.10.0) is required.
+[#823](https://github.com/clivm/aqua/issues/823) [#826](https://github.com/clivm/aqua/pull/826), aqua >= [v1.10.0](https://github.com/clivm/aqua/releases/tag/v1.10.0) is required.
 
 * `path`: Go package path. If `path` is not set but `repo_owner` and `repo_name` are set, the package path is `github.com/<repo_owner>/<repo_name>`
 * `name`: The package name. If `name` is not set but `repo_owner` and `repo_name` are set, the package name is `<repo_owner>/<repo_name>`. If `name`, `repo_owner`, and `repo_name` aren't set, `path` is used as the package name

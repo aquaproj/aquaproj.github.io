@@ -16,22 +16,22 @@ Pleaase see [here](/docs/reference/windows-support#how-to-install).
 ## Homebrew
 
 ```console
-$ brew install aquaproj/aqua/aqua
+$ brew install clivm/aqua/aqua
 $ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
 ```
 
 ## Install script
 
-[aqua-installer](https://github.com/aquaproj/aqua-installer)
+[aqua-installer](https://github.com/clivm/aqua-installer)
 
 ## GitHub Actions
 
-* [aqua-installer](https://github.com/aquaproj/aqua-installer)
+* [aqua-installer](https://github.com/clivm/aqua-installer)
 
 ## CircleCI Orb
 
-https://circleci.com/developer/orbs/orb/aquaproj/aqua
+https://circleci.com/developer/orbs/orb/clivm/aqua
 
 ## Download from GitHub Releases
 
-https://github.com/aquaproj/aqua/releases
+https://github.com/clivm/aqua/releases

@@ -4,7 +4,7 @@ sidebar_position: 900
 
 # Experimental Feature
 
-[#725](https://github.com/aquaproj/aqua/issues/725), `aqua >= v1.6.0`
+[#725](https://github.com/clivm/aqua/issues/725), `aqua >= v1.6.0`
 
 aqua supports the mechanithm for experimental features.
 They are disabled by default, but you can enable them with environment variables or somehow.
@@ -15,7 +15,7 @@ But experimental features are exception of semantic versioning, so maybe we abor
 
 ## AQUA_EXPERIMENTAL_X_SYS_EXEC
 
-[#710](https://github.com/aquaproj/aqua/issues/710) [#715](https://github.com/aquaproj/aqua/pull/715) [#726](https://github.com/aquaproj/aqua/pull/726), `aqua >= v1.6.0`
+[#710](https://github.com/clivm/aqua/issues/710) [#715](https://github.com/clivm/aqua/pull/715) [#726](https://github.com/clivm/aqua/pull/726), `aqua >= v1.6.0`
 
 To enable this feature, please set `true` to the enviornment variable `AQUA_EXPERIMENTAL_X_SYS_EXEC`.
 
@@ -24,7 +24,7 @@ $ export AQUA_EXPERIMENTAL_X_SYS_EXEC=true
 ````
 
 :::caution
-Note that there is a known issue of this feature on macOS, so we don't recommend this feature for macOS users. [#729](https://github.com/aquaproj/aqua/issues/729)
+Note that there is a known issue of this feature on macOS, so we don't recommend this feature for macOS users. [#729](https://github.com/clivm/aqua/issues/729)
 :::
 
 By default, aqua executes commands as sub commands.

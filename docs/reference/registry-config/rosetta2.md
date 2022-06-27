@@ -4,7 +4,7 @@ sidebar_position: 500
 
 # rosetta2
 
-[#442](https://github.com/aquaproj/aqua/pull/442) [#444](https://github.com/aquaproj/aqua/pull/444)
+[#442](https://github.com/clivm/aqua/pull/442) [#444](https://github.com/clivm/aqua/pull/444)
 
 If a package isn't built for apple silicon (i.e. `GOOS=darwin, GOARCH=arm64`), you have to install the package built for amd64 (i.e. `GOOS=darwin, GOARCH=amd64`).
 With the field `rosetta2`, you don't have to write `if` condition to support such a case.

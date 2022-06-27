@@ -4,12 +4,12 @@ sidebar_position: 200
 
 # Configuration
 
-e.g. [aqua.yaml](https://github.com/aquaproj/aqua/blob/main/aqua.yaml)
+e.g. [aqua.yaml](https://github.com/clivm/aqua/blob/main/aqua.yaml)
 
 ```yaml
 registries:
 - type: standard
-  ref: v1.11.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v1.11.0 # renovate: depName=clivm/aqua-registry
 
 packages:
 - name: helm/helm@v3.7.0
@@ -42,9 +42,9 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 
 ## JSON Schema
 
-* https://github.com/aquaproj/aqua/tree/main/json-schema
-* https://github.com/aquaproj/aqua/blob/main/json-schema/aqua-yaml.json
-* https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/aqua-yaml.json
+* https://github.com/clivm/aqua/tree/main/json-schema
+* https://github.com/clivm/aqua/blob/main/json-schema/aqua-yaml.json
+* https://raw.githubusercontent.com/clivm/aqua/main/json-schema/aqua-yaml.json
 
 ## Configuration attributes
 
@@ -62,12 +62,12 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
 ```
 
 Registry types
 
-* [standard](#standard-registry): aqua's [Standard Registry](https://github.com/aquaproj/aqua-registry)
+* [standard](#standard-registry): aqua's [Standard Registry](https://github.com/clivm/aqua-registry)
 * [local](#local-registry): local file
 * [github_content](#github_content-registry): Get the registry by GitHub Repository Content API
 
@@ -78,10 +78,10 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
 ```
 
-* `ref`: the Registry Version. Please check [Releases](https://github.com/aquaproj/aqua-registry/releases)
+* `ref`: the Registry Version. Please check [Releases](https://github.com/clivm/aqua-registry/releases)
 
 This is equivalent to the following definition.
 
@@ -89,9 +89,9 @@ This is equivalent to the following definition.
 registries:
 - name: standard
   type: github_content
-  repo_owner: aquaproj
+  repo_owner: clivm
   repo_name: aqua-registry
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
   path: registry.yaml
 ```
 
@@ -138,9 +138,9 @@ e.g.
 registries:
 - name: foo
   type: github_content
-  repo_owner: aquaproj
+  repo_owner: clivm
   repo_name: aqua-registry
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
   path: registry.yaml
 ```
 

@@ -6,7 +6,7 @@ sidebar_position: 1100
 
 The package is downloaded from GitHub Archive.
 
-e.g. [tfutils/tfenv](https://github.com/aquaproj/aqua-registry/blob/main/pkgs/tfutils/tfenv/registry.yaml)
+e.g. [tfutils/tfenv](https://github.com/clivm/aqua-registry/blob/main/pkgs/tfutils/tfenv/registry.yaml)
 
 ```yaml
 packages:

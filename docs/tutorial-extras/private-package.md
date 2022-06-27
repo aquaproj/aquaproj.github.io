@@ -4,7 +4,7 @@ sidebar_position: 400
 
 # Install private packages
 
-Of course, [Standard Registry](https://github.com/aquaproj/aqua-registry) doesn't include private packages.
+Of course, [Standard Registry](https://github.com/clivm/aqua-registry) doesn't include private packages.
 `private packages` are tools hosted in private GitHub Repositories.
 
 To install private packages, you have to write Registry Configuration by yourself.

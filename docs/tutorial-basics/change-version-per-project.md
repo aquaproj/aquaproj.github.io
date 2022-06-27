@@ -16,7 +16,7 @@ $ vi bar/aqua.yaml
 # foo/aqua.yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
 
 packages:
 - name: cli/cli@v2.1.0
@@ -26,7 +26,7 @@ packages:
 # bar/aqua.yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
 
 packages:
 - name: cli/cli@v2.0.0

@@ -26,14 +26,14 @@ ref. [Source code of the scenario](https://github.com/suzuki-shunsuke/katacoda-s
 Homebrew
 
 ```console
-$ brew install aquaproj/aqua/aqua
+$ brew install clivm/aqua/aqua
 ```
 
-Install script ([aqua-installer](https://github.com/aquaproj/aqua-installer))
+Install script ([aqua-installer](https://github.com/clivm/aqua-installer))
 
 ```console
 $ curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/aqua-installer |
+  https://raw.githubusercontent.com/clivm/aqua-installer/v1.0.0/aqua-installer |
   bash
 # You can change the install path.
 # bash -s -- -i ~/bin/aqua
@@ -57,7 +57,7 @@ If you want to try this tutorial in the clean environment, container is useful.
 $ docker run --rm -ti alpine:3.15.0 sh
 # apk add curl
 # curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/aqua-installer |
+  https://raw.githubusercontent.com/clivm/aqua-installer/v1.0.0/aqua-installer |
   sh
 # adduser -D foo
 # su foo
@@ -75,10 +75,10 @@ $ aqua init # aqua.yaml is created
 $ cat aqua.yaml
 ---
 # aqua - Declarative CLI Version Manager
-# https://aquaproj.github.io/
+# https://clivm.github.io/
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
 packages:
 ```
 
@@ -97,10 +97,10 @@ $ aqua g -i cli/cli junegunn/fzf
 ```yaml
 ---
 # aqua - Declarative CLI Version Manager
-# https://aquaproj.github.io/
+# https://clivm.github.io/
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
 packages:
 - name: cli/cli@v2.2.0
 - name: junegunn/fzf@0.28.0
@@ -112,7 +112,7 @@ Then run `aqua i`.
 $ aqua i 
 INFO[0000] download and unarchive the package            aqua_version=1.3.0 package_name=aqua-proxy package_version=v0.2.1 program=aqua registry=
 INFO[0001] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/clivm/bin/aqua-proxy new=../pkgs/github_release/github.com
-/aquaproj/aqua-proxy/v0.2.1/aqua-proxy_linux_amd64.tar.gz/aqua-proxy program=aqua
+/clivm/aqua-proxy/v0.2.1/aqua-proxy_linux_amd64.tar.gz/aqua-proxy program=aqua
 INFO[0001] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/clivm/bin/gh new=aqua-proxy program=aqua
 INFO[0001] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/clivm/bin/fzf new=aqua-proxy program=aqua
 INFO[0001] download and unarchive the package            aqua_version=1.3.0 package_name=cli/cli package_version=v2.2.0 program=aqua registry=standard

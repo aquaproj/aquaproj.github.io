@@ -6,8 +6,8 @@ sidebar_position: 880
 
 `aqua >= v1.12.0`
 
-[#850](https://github.com/aquaproj/aqua/issues/850)
-[Project#4](https://github.com/orgs/aquaproj/projects/4)
+[#850](https://github.com/clivm/aqua/issues/850)
+[Project#4](https://github.com/orgs/clivm/projects/4)
 
 The author [@suzuki-shunsuke](https://github.com/suzuki-shunsuke) doesn't use Windows, so the help of Windows Users is welcome.
 
@@ -26,7 +26,7 @@ Terminals
 
 ## How to install
 
-Please download an asset from [GitHub Releases](https://github.com/aquaproj/aqua/releases) and deploy the binary into `PATH`.
+Please download an asset from [GitHub Releases](https://github.com/clivm/aqua/releases) and deploy the binary into `PATH`.
 
 ## The install path (AQUA_ROOT_DIR)
 
@@ -44,7 +44,7 @@ From aqua v1.12.0, the default value of `AQUA_ROOT_DIR` is `$HOME/AppData/Local/
 
 ## Required Standard Registry Version
 
-Please upgrade [Standard Registry](https://github.com/aquaproj/aqua-registry) to v2.28.1 or later.
+Please upgrade [Standard Registry](https://github.com/clivm/aqua-registry) to v2.28.1 or later.
 
 ## Windows Settings
 
@@ -77,7 +77,7 @@ Please see [complete_windows_ext](/docs/reference/registry-config/complete-windo
 
 ### Create BAT files and shell scripts instead of symbolic links and aqua-proxy
 
-[#885](https://github.com/aquaproj/aqua/issues/885) [#892](https://github.com/aquaproj/aqua/pull/892) [#893](https://github.com/aquaproj/aqua/issues/893) aqua >= v1.12.0
+[#885](https://github.com/clivm/aqua/issues/885) [#892](https://github.com/clivm/aqua/pull/892) [#893](https://github.com/clivm/aqua/issues/893) aqua >= v1.12.0
 
 Reference (Japanese): https://zenn.dev/link/comments/725555a2b1b034
 
@@ -99,8 +99,8 @@ On Windows, there are two problems regarding symbolic links.
 
 We are working on it.
 
-* https://github.com/aquaproj/aqua-installer/issues/116
-* https://github.com/aquaproj/aqua-installer/issues/117
+* https://github.com/clivm/aqua-installer/issues/116
+* https://github.com/clivm/aqua-installer/issues/117
 
 ### Interactive Search by `aqua g` doesn't work on Git Bash
 

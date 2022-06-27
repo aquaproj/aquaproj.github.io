@@ -11,7 +11,7 @@ authors:
 
 Original Post: https://dev.to/suzukishunsuke/aqua-declarative-cli-version-manager-1ibe
 
-In this post, I introduce [aqua](https://aquaproj.github.io), which is a declarative CLI Version Manager. 
+In this post, I introduce [aqua](https://clivm.github.io), which is a declarative CLI Version Manager. 
 You can install CLI tools and manage their versions with YAML declaratively.
 Mainly the following use cases are assumed.
 
@@ -23,11 +23,11 @@ aqua supports the `Lazy Install` and Sharable Configuration mechanism named `Reg
 Compared to other package manager like `Homebrew`, aqua supports switching tool versions per `aqua.yaml`.
 Of course, you can use aqua with other package managers too.
 
-You can install aqua with [aqua-installer](https://github.com/aquaproj/aqua-installer).
+You can install aqua with [aqua-installer](https://github.com/clivm/aqua-installer).
 
 ```console
 $ curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/aqua-installer |
+  https://raw.githubusercontent.com/clivm/aqua-installer/v1.0.0/aqua-installer |
   bash -s -- -i ~/bin/aqua -v v1.9.0
 ```
 
@@ -42,7 +42,7 @@ For example, let's install jq with aqua. Write the following `aqua.yaml`.
 ```yaml
 registries:
 - type: standard
-  ref: v2.19.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.19.0 # renovate: depName=clivm/aqua-registry
 packages:
 - name: stedolan/jq
   version: jq-1.5
@@ -145,12 +145,12 @@ packages:
   version: jq-1.5
 ```
 
-In the above configuration, the [Standard Registry](https://github.com/aquaproj/aqua-registry) is being used.
+In the above configuration, the [Standard Registry](https://github.com/clivm/aqua-registry) is being used.
 The Standard Registry is the Registry maintained by aqua's maintainers.
 
 Please see the configuration.
 
-https://github.com/aquaproj/aqua-registry/blob/v2.19.0/pkgs/stedolan/jq/registry.yaml
+https://github.com/clivm/aqua-registry/blob/v2.19.0/pkgs/stedolan/jq/registry.yaml
 
 ```yaml
 packages:
@@ -208,21 +208,21 @@ $ aqua g
 > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 ```
 
-If the tool you need isn't found, please create the issue or send the pull request to the [Standard Registry](https://github.com/aquaproj/aqua-registry)!
+If the tool you need isn't found, please create the issue or send the pull request to the [Standard Registry](https://github.com/clivm/aqua-registry)!
 By adding various packages to the Standard Registry, aqua becomes more useful and attractive.
 Your contribution is needed!
 
 It is also easy to create your own Registries.
-Just create GitHub Repositories and add Registry Configuration like [the Standard Registry](https://github.com/aquaproj/aqua-registry/blob/main/registry.yaml) and add it to `aqua.yaml`'s registries.
+Just create GitHub Repositories and add Registry Configuration like [the Standard Registry](https://github.com/clivm/aqua-registry/blob/main/registry.yaml) and add it to `aqua.yaml`'s registries.
 The private repository is also supported.
 
 e.g.
 
 ```yaml
 registries:
-  - name: aquaproj/aqua-registry
+  - name: clivm/aqua-registry
     type: github_content
-    repo_owner: aquaproj
+    repo_owner: clivm
     repo_name: aqua-registry
     ref: v2.19.0
     path: registry.yaml
@@ -237,16 +237,16 @@ It is recommended to manage `aqua.yaml` with Git and update versions by [Renovat
 
 Using Renovate's [Regex Manager](https://docs.renovatebot.com/modules/manager/regex/), you can update versions.
 
-The Renovate Preset Configuration https://github.com/aquaproj/aqua-renovate-config is useful.
-For the detail, please see the [README](https://github.com/aquaproj/aqua-renovate-config).
+The Renovate Preset Configuration https://github.com/clivm/aqua-renovate-config is useful.
+For the detail, please see the [README](https://github.com/clivm/aqua-renovate-config).
 
 ## Summary
 
-In this post, I introduced [aqua](https://aquaproj.github.io), which is a declarative CLI Version Manager. 
+In this post, I introduced [aqua](https://clivm.github.io), which is a declarative CLI Version Manager. 
 You can install CLI tools and manage their versions with YAML declaratively.
 aqua supports the `Lazy Install` and Sharable Configuration mechanism named `Registry`.
 
 You can search tools from Registries by `aqua g` command.
-If the tool you need isn't found, please create the issue or send the pull request to the [Standard Registry](https://github.com/aquaproj/aqua-registry)!
+If the tool you need isn't found, please create the issue or send the pull request to the [Standard Registry](https://github.com/clivm/aqua-registry)!
 By adding various packages to the Standard Registry, aqua becomes more useful and attractive.
 Your contribution is needed!

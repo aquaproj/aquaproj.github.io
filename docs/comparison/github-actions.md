@@ -18,6 +18,6 @@ It's very easy to use, but there are some problems.
 aqua solves these problems.
 
 * aqua forces to pin the tool version
-* aqua provides [Renovate Preset](https://github.com/aquaproj/aqua-renovate-config), so you can update tools by Renovate without configuring
+* aqua provides [Renovate Preset](https://github.com/clivm/aqua-renovate-config), so you can update tools by Renovate without configuring
 * aqua supports both local development and CI
 * you can use the same tool version in local development and CI naturally

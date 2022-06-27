@@ -4,7 +4,7 @@ sidebar_position: 890
 
 # Shell Completion
 
-`aqua >= v1.11.0` [#856](https://github.com/aquaproj/aqua/issues/856) [#859](https://github.com/aquaproj/aqua/pull/859)
+`aqua >= v1.11.0` [#856](https://github.com/clivm/aqua/issues/856) [#859](https://github.com/clivm/aqua/pull/859)
 
 The commands `aqua completion <SHELL>` outputs shell completion code.
 By sourcing the output of `aqua completion <SHELL>` in .bashrc or .zshrc,

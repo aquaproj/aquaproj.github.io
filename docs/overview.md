@@ -16,7 +16,7 @@ You write a configuration file `aqua.yaml` and execute the command `aqua i`, the
 ```yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.22.0 # renovate: depName=clivm/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0
@@ -29,7 +29,7 @@ aqua solves the problem due to the difference of tool version by forcing to pin 
 aqua supports continuous update with [Renovate](https://docs.renovatebot.com/).
 aqua provides [Renovate Preset Config](https://docs.renovatebot.com/config-presets/), so you can update tools very easily.
 
-https://github.com/aquaproj/aqua-renovate-config
+https://github.com/clivm/aqua-renovate-config
 
 aqua provides GitHub Actions, CircleCI Orb, and shell script to install aqua easily.
 aqua provides the unified way to install tools both in local development and CI.
@@ -66,7 +66,7 @@ $ aqua g
 
 If you can't find the tool, you can send a pull request.
 
-https://github.com/aquaproj/aqua-registry
+https://github.com/clivm/aqua-registry
 
 ## See Also
 

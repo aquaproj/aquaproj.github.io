@@ -4,7 +4,7 @@ sidebar_position: 870
 
 # Tracing and CPU Profiling
 
-[#825](https://github.com/aquaproj/aqua/pull/825), aqua >= v1.10.0
+[#825](https://github.com/clivm/aqua/pull/825), aqua >= v1.10.0
 
 You can set global command line options `-trace` and `-cpu-profile` for tracing and CPU Profiling.
 This is useful for the performance tuning.

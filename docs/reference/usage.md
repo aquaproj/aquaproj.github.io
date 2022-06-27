@@ -9,7 +9,7 @@ sidebar_position: 400
 ```console
 $ aqua help
 NAME:
-   aqua - Version Manager of CLI. https://aquaproj.github.io/
+   aqua - Version Manager of CLI. https://clivm.github.io/
 
 USAGE:
    aqua [global options] command [command options] [arguments...]

@@ -6,7 +6,7 @@ sidebar_position: 1600
 
 aqua >= v1.3.0
 
-[#607](https://github.com/aquaproj/aqua/issues/607)
+[#607](https://github.com/clivm/aqua/issues/607)
 
 You can override the following attributes on the specific `GOOS` and `GOARCH`.
 

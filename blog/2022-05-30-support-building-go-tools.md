@@ -5,7 +5,7 @@ authors:
 - suzuki-shunsuke
 ---
 
-In this post, I describe the feature introduced from aqua [v1.7.0](https://github.com/aquaproj/aqua/releases/tag/v1.7.0).
+In this post, I describe the feature introduced from aqua [v1.7.0](https://github.com/clivm/aqua/releases/tag/v1.7.0).
 From v1.7.0, aqua supports building tools with Go when they are installed.
 
 For example, [mitchellh/gox](https://github.com/mitchellh/gox) doesn't provide built binaries, so you have to build it yourself.
@@ -32,10 +32,10 @@ $ aqua g -i mitchellh/gox
 $ cat aqua.yaml
 ---
 # aqua - Declarative CLI Version Manager
-# https://aquaproj.github.io/
+# https://clivm.github.io/
 registries:
 - type: standard
-  ref: v2.19.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v2.19.0 # renovate: depName=clivm/aqua-registry
 packages:
 - name: mitchellh/gox@v1.0.1
 
@@ -87,7 +87,7 @@ You must specify the version strictly.
 
 ## Example tools supported by package type `go`
 
-In the [release of aqua-registry v2.19.0](https://github.com/aquaproj/aqua-registry/releases/tag/v2.19.0), aqua-registry has supported the following go type packages.
+In the [release of aqua-registry v2.19.0](https://github.com/clivm/aqua-registry/releases/tag/v2.19.0), aqua-registry has supported the following go type packages.
 
 * [golang/tools/gopls](https://github.com/golang/tools/tree/master/gopls): Go language server
 * [google/wire](https://github.com/google/wire): Compile-time Dependency Injection for Go
@@ -97,14 +97,14 @@ In the [release of aqua-registry v2.19.0](https://github.com/aquaproj/aqua-regis
 
 ## Conclusion
 
-In this post, I've described the feature introduced from aqua [v1.7.0](https://github.com/aquaproj/aqua/releases/tag/v1.7.0).
+In this post, I've described the feature introduced from aqua [v1.7.0](https://github.com/clivm/aqua/releases/tag/v1.7.0).
 From v1.7.0, aqua supports building tools with Go when they are installed.
 This feature is powerful and changes the management of Go tools that don't provide binaries.
 
 ## Reference
 
-* https://github.com/aquaproj/aqua/releases/tag/v1.7.0
-* https://github.com/aquaproj/aqua-registry/releases/tag/v2.19.0
-* https://github.com/aquaproj/aqua-registry/pull/3713
-* https://aquaproj.github.io/docs/reference/registry-config#go-package
+* https://github.com/clivm/aqua/releases/tag/v1.7.0
+* https://github.com/clivm/aqua-registry/releases/tag/v2.19.0
+* https://github.com/clivm/aqua-registry/pull/3713
+* https://clivm.github.io/docs/reference/registry-config#go-package
 * https://zenn.dev/shunsuke_suzuki/scraps/7e8ac509fe39bd (Japanese)

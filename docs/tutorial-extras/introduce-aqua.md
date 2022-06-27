@@ -8,5 +8,5 @@ sidebar_position: 25
 1. Create `aqua.yaml` by `aqua init`
 1. Search tools from the Standard Registry and add them to `aqua.yaml` by `aqua g -i`
 1. Create links by `aqua i -l`
-1. Configure Renovate with [aqua-renovate-config](https://github.com/aquaproj/aqua-renovate-config)
-1. Set up CI with [aqua-installer](https://github.com/aquaproj/aqua-installer) (GitHub Acitons, Shell Script) or [circleci-orb-aqua](https://circleci.com/developer/orbs/orb/suzuki-shunsuke/aqua)
+1. Configure Renovate with [aqua-renovate-config](https://github.com/clivm/aqua-renovate-config)
+1. Set up CI with [aqua-installer](https://github.com/clivm/aqua-installer) (GitHub Acitons, Shell Script) or [circleci-orb-aqua](https://circleci.com/developer/orbs/orb/suzuki-shunsuke/aqua)

@@ -4,7 +4,7 @@ sidebar_position: 1950
 
 # supported_envs
 
-[#882](https://github.com/aquaproj/aqua/issues/882) [#884](https://github.com/aquaproj/aqua/pull/884)
+[#882](https://github.com/clivm/aqua/issues/882) [#884](https://github.com/clivm/aqua/pull/884)
 
 aqua >= v1.12.0
 

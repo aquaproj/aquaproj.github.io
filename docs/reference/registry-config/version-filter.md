@@ -4,7 +4,7 @@ sidebar_position: 300
 
 # version_filter
 
-[v0.8.13](https://github.com/aquaproj/aqua/releases/tag/v0.8.13)
+[v0.8.13](https://github.com/clivm/aqua/releases/tag/v0.8.13)
 
 `aqua g` gets the latest version of the package.
 If `version_filter` is set, the version which matches with `version_filter` is used.

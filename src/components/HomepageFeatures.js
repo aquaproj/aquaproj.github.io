@@ -50,7 +50,7 @@ const FeatureList = [
     description: (
       <>
         You can update tools continuously by Renovate.
-        <a target="_blank" href="https://github.com/aquaproj/aqua-renovate-config">Renovate preset for aqua</a> is provided.
+        <a target="_blank" href="https://github.com/clivm/aqua-renovate-config">Renovate preset for aqua</a> is provided.
       </>
     ),
   },

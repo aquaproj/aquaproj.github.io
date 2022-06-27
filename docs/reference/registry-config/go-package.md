@@ -17,9 +17,9 @@ Basically when you add new packages, we recommend using the `go_install` package
 
 :::
 
-[#798](https://github.com/aquaproj/aqua/issues/798) [#799](https://github.com/aquaproj/aqua/issues/799)
+[#798](https://github.com/clivm/aqua/issues/798) [#799](https://github.com/clivm/aqua/issues/799)
 
-aqua >= [v1.7.0](https://github.com/aquaproj/aqua/releases/tag/v1.7.0) is required.
+aqua >= [v1.7.0](https://github.com/clivm/aqua/releases/tag/v1.7.0) is required.
 
 * `repo_owner`: The repository owner name
 * `repo_name`: The repository name
@@ -66,7 +66,7 @@ INFO[0000] download and unarchive the package            aqua_version= env=darwi
 INFO[0001] building Go tool                              aqua_version= env=darwin/arm64 exe_path=/home/foo/.local/share/clivm/pkgs/go/github.com/google/wire/v0.5.0/bin/wire file_name=wire go_build_dir=/home/foo/.local/share/clivm/pkgs/go/github.com/google/wire/v0.5.0/src/wire-0.5.0 go_src=./cmd/wire package_name=google/wire package_version=v0.5.0 program=aqua registry=standard
 ```
 
-From aqua [v1.9.0](https://github.com/aquaproj/aqua/releases/tag/v1.9.0), if there is no GitHub Repository tag or the latest tag is old, you can specify Git revision instead of tag.
+From aqua [v1.9.0](https://github.com/clivm/aqua/releases/tag/v1.9.0), if there is no GitHub Repository tag or the latest tag is old, you can specify Git revision instead of tag.
 
 e.g.
 

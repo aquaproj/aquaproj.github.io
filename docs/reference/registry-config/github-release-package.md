@@ -6,7 +6,7 @@ sidebar_position: 800
 
 The package is downloaded from GitHub Releases.
 
-e.g. [suzuki-shunsuke/tfcmt](https://github.com/aquaproj/aqua-registry/blob/main/pkgs/suzuki-shunsuke/tfcmt/registry.yaml)
+e.g. [suzuki-shunsuke/tfcmt](https://github.com/clivm/aqua-registry/blob/main/pkgs/suzuki-shunsuke/tfcmt/registry.yaml)
 
 ```yaml
 packages:

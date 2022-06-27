@@ -4,7 +4,7 @@ sidebar_position: 100
 
 # Registry Configuration
 
-e.g. [registry.yaml](https://github.com/aquaproj/aqua-registry/blob/main/registry.yaml)
+e.g. [registry.yaml](https://github.com/clivm/aqua-registry/blob/main/registry.yaml)
 
 ```yaml
 packages:
@@ -23,9 +23,9 @@ packages:
 
 ## JSON Schema
 
-* https://github.com/aquaproj/aqua/tree/main/json-schema
-* https://github.com/aquaproj/aqua/blob/main/json-schema/registry.json
-* https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/registry.json
+* https://github.com/clivm/aqua/tree/main/json-schema
+* https://github.com/clivm/aqua/blob/main/json-schema/registry.json
+* https://raw.githubusercontent.com/clivm/aqua/main/json-schema/registry.json
 
 ## Package types
 

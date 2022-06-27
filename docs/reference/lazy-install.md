@@ -7,14 +7,14 @@ sidebar_position: 700
 In this document we describe how the Lazy Install works.
 The Lazy Install is the aqua's characteristic feature, and maybe you feel it like magic.
 
-By `aqua i`, aqua installs [aqua-proxy](https://github.com/aquaproj/aqua-proxy) regardless the aqua's configuration.
+By `aqua i`, aqua installs [aqua-proxy](https://github.com/clivm/aqua-proxy) regardless the aqua's configuration.
 
 ```
 $AQUA_ROOT_DIR/
   bin/
-    aqua-proxy -> ../pkgs/github_release/github.com/aquaproj/aqua-proxy/v0.2.0/aqua-proxy_darwin_amd64.tar.gz/aqua-proxy
+    aqua-proxy -> ../pkgs/github_release/github.com/clivm/aqua-proxy/v0.2.0/aqua-proxy_darwin_amd64.tar.gz/aqua-proxy
   pkgs/
-    github_release/github.com/aquaproj/aqua-proxy/v0.2.0/aqua-proxy_darwin_amd64.tar.gz/aqua-proxy
+    github_release/github.com/clivm/aqua-proxy/v0.2.0/aqua-proxy_darwin_amd64.tar.gz/aqua-proxy
 ```
 
 And by `aqua i`, aqua reads the configuration file and creates symbolic links to aqua-proxy in `$AQUA_ROOT_DIR/bin`.

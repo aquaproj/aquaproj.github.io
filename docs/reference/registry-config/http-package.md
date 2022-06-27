@@ -6,7 +6,7 @@ sidebar_position: 900
 
 The package is donwloaded from the specified URL.
 
-e.g. [hashicorp/terraform](https://github.com/aquaproj/aqua-registry/blob/main/pkgs/hashicorp/terraform/registry.yaml)
+e.g. [hashicorp/terraform](https://github.com/clivm/aqua-registry/blob/main/pkgs/hashicorp/terraform/registry.yaml)
 
 ```yaml
 packages:
