@@ -34,7 +34,7 @@ $ curl -sSfL \
 You can install clivm with Homebrew too.
 
 ```console
-$ brew install aquparoj/clivm/clivm
+$ brew install aquaproj/aqua/aqua
 ```
 
 For example, let's install jq with clivm. Write the following `clivm.yaml`.
