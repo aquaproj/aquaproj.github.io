@@ -12,7 +12,7 @@ From aqua v0.8.6 (aqua-proxy v0.2.1), aqua prevents the infinite loop.
 
 ```console
 # Create the symbolic link accidentally
-$ ln -s ~/.local/share/aquaproj-aqua/bin/aqua-proxy ~/.local/share/aquaproj-aqua/bin/aqua
+$ ln -s ~/.local/share/clivm/bin/aqua-proxy ~/.local/share/clivm/bin/aqua
 $ aqua i
 [ERROR] the command "aqua" can't be executed via aqua-proxy to prevent the infinite loop
 ```

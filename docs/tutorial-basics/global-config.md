@@ -19,9 +19,9 @@ Create a global configuration file and add the path to the environment variable 
 You can change the global configuration file path freely.
 
 ```console
-$ mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua"
-$ vi "${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml"
-$ export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
+$ mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/clivm"
+$ vi "${XDG_CONFIG_HOME:-$HOME/.config}/clivm/aqua.yaml"
+$ export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/clivm/aqua.yaml
 ```
 
 ```yaml

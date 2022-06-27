@@ -30,7 +30,7 @@ Please download an asset from [GitHub Releases](https://github.com/aquaproj/aqua
 
 ## The install path (AQUA_ROOT_DIR)
 
-From aqua v1.12.0, the default value of `AQUA_ROOT_DIR` is `$HOME/AppData/Local/aquaproj-aqua`.
+From aqua v1.12.0, the default value of `AQUA_ROOT_DIR` is `$HOME/AppData/Local/clivm`.
 
 ## PATH
 

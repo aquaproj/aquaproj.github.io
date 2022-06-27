@@ -10,7 +10,7 @@ e.g.
 
 ```console
 $ rm /usr/local/bin/aqua
-$ rm -R ~/.local/share/aquaproj-aqua
+$ rm -R ~/.local/share/clivm
 ```
 
 Unset the environment variables you set for aqua.

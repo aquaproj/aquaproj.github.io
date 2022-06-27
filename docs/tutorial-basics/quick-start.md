@@ -42,7 +42,7 @@ $ curl -sSfL \
 Add `${AQUA_ROOT_DIR}/bin` to the environmenet variable `PATH`.
 
 ```console
-$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
 ```
 
 Confirm if aqua is installed correctly.
@@ -63,7 +63,7 @@ $ docker run --rm -ti alpine:3.15.0 sh
 # su foo
 $ mkdir ~/workspace
 $ cd ~/workspace
-$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
 ```
 
 ## Create a configuration file
@@ -111,10 +111,10 @@ Then run `aqua i`.
 ```console
 $ aqua i 
 INFO[0000] download and unarchive the package            aqua_version=1.3.0 package_name=aqua-proxy package_version=v0.2.1 program=aqua registry=
-INFO[0001] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/aqua-proxy new=../pkgs/github_release/github.com
+INFO[0001] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/clivm/bin/aqua-proxy new=../pkgs/github_release/github.com
 /aquaproj/aqua-proxy/v0.2.1/aqua-proxy_linux_amd64.tar.gz/aqua-proxy program=aqua
-INFO[0001] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/gh new=aqua-proxy program=aqua
-INFO[0001] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/fzf new=aqua-proxy program=aqua
+INFO[0001] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/clivm/bin/gh new=aqua-proxy program=aqua
+INFO[0001] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/clivm/bin/fzf new=aqua-proxy program=aqua
 INFO[0001] download and unarchive the package            aqua_version=1.3.0 package_name=cli/cli package_version=v2.2.0 program=aqua registry=standard
 INFO[0001] download and unarchive the package            aqua_version=1.3.0 package_name=junegunn/fzf package_version=0.28.0 program=aqua registry=standard
 ```
@@ -123,14 +123,14 @@ Congratulation! Tools are installed correctly.
 
 ```console
 $ command -v gh
-/home/foo/.local/share/aquaproj-aqua/bin/gh
+/home/foo/.local/share/clivm/bin/gh
 
 $ gh version
 gh version 2.2.0 (2021-10-25)
 https://github.com/cli/cli/releases/tag/v2.2.0
 
 $ command -v fzf
-/home/foo/.local/share/aquaproj-aqua/bin/fzf
+/home/foo/.local/share/clivm/bin/fzf
 
 $ fzf --version
 0.28.0 (e4c3ecc)

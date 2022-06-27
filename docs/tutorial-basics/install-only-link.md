@@ -15,7 +15,7 @@ Let's run `aqua i -l`.
 
 ```console
 $ aqua i -l
-INFO[0000] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/tfmigrator new=aqua-proxy program=aqua
+INFO[0000] create a symbolic link                        aqua_version=1.3.0 link_file=/home/foo/.local/share/clivm/bin/tfmigrator new=aqua-proxy program=aqua
 ```
 
 The command would exit immediately, because the tool isn't downloaded and installed yet.

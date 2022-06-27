@@ -17,7 +17,7 @@ Pleaase see [here](/docs/reference/windows-support#how-to-install).
 
 ```console
 $ brew install aquaproj/aqua/aqua
-$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
 ```
 
 ## Install script

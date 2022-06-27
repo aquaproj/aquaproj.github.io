@@ -39,7 +39,7 @@ $ pstree -s nvim
      \-+= 00719 shunsukesuzuki -zsh
        \-+= 09955 shunsukesuzuki nvim
          \-+- 09956 shunsukesuzuki aqua exec -- nvim
-           \--- 09957 shunsukesuzuki /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/neovim/neovim/v0.7.0/nvim-macos.tar.gz/nvim-osx64/bin/nvim
+           \--- 09957 shunsukesuzuki /Users/shunsukesuzuki/.local/share/clivm/pkgs/github_release/github.com/neovim/neovim/v0.7.0/nvim-macos.tar.gz/nvim-osx64/bin/nvim
 ```
 
 You can confirm three processes are started.

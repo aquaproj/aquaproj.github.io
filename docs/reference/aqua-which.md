@@ -14,10 +14,10 @@ e.g.
 
 ```console
 $ which golangci-lint
-/home/foo/.local/share/aquaproj-aqua/bin/golangci-lint
+/home/foo/.local/share/clivm/bin/golangci-lint
 
 $ aqua which golangci-lint
-/home/foo/.local/share/aquaproj-aqua/pkgs/github_release/github.com/golangci/golangci-lint/v1.42.1/golangci-lint-1.42.1-linux-amd64.tar.gz/golangci-lint-1.42.1-linux-amd64/golangci-lint
+/home/foo/.local/share/clivm/pkgs/github_release/github.com/golangci/golangci-lint/v1.42.1/golangci-lint-1.42.1-linux-amd64.tar.gz/golangci-lint-1.42.1-linux-amd64/golangci-lint
 ```
 
 If you want to copy the executable file to the other path, `aqua which` is useful.

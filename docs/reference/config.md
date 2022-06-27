@@ -33,8 +33,8 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * `AQUA_CONFIG`: configuration file path
 * `AQUA_GLOBAL_CONFIG`: global configuration file paths separated by semicolon `:`
 * `AQUA_ROOT_DIR`: The directory path where aqua install tools
-  * default (linux and macOS): `${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua`
-  * default (windows): `${HOME/AppData/Local}/aquaproj-aqua`
+  * default (linux and macOS): `${XDG_DATA_HOME:-$HOME/.local/share}/clivm`
+  * default (windows): `${HOME/AppData/Local}/clivm`
 * `AQUA_MAX_PARALLELISM`: (default: `5`) The maximum number of packages which are installed in parallel at the same time
 * `AQUA_GITHUB_TOKEN`, `GITHUB_TOKEN`: GitHub Access Token. This is required to install private repository's package
 * [AQUA_GOOS, AQUA_GOARCH](change-os-arch-for-test)

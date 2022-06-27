@@ -57,10 +57,10 @@ $ aqua i -l
 The option `-l` is important. By this option, the symbolic links are created in `~/.aqua/bin` but the downloading tools is skipped.
 This is the feature named `Lazy Install`.
 
-Tools are installed in `~/.local/share/aquaproj-aqua`. Let's add `~/.local/share/aquaproj-aqua/bin` to the environment variable `PATH`.
+Tools are installed in `~/.local/share/clivm`. Let's add `~/.local/share/clivm/bin` to the environment variable `PATH`.
 
 ```console
-$ export PATH=$HOME/.local/share/aquaproj-aqua/bin:$PATH
+$ export PATH=$HOME/.local/share/clivm/bin:$PATH
 ```
 
 Let's check if jq installed correctly.
@@ -122,7 +122,7 @@ By adding `aqua.yaml` in each Git repositories, you can manage tools for each re
 Developers can use the same version, which prevents the problem due to the difference of tool versions.
 aqua supports both MacOS and Linux, so even if you are working on MacOS and CI is run on Linux, you can manage tools with the same aqua.yaml.
 
-aqua installs tools in `~/.local/share/aquaproj-aqua` and shares tools across multiple `aqua.yaml`, so the same version of the same tool is installed only at once.
+aqua installs tools in `~/.local/share/clivm` and shares tools across multiple `aqua.yaml`, so the same version of the same tool is installed only at once.
 It saves time and disk usage.
 
 aqua supports the Global configuration.

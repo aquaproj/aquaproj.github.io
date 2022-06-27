@@ -11,7 +11,7 @@ If `${AQUA_ROOT_DIR}/pkgs` consumes the disk usage and you want it to be slim, y
 The simplest way is to remove `${AQUA_ROOT_DIR}`.
 
 ```console
-$ rm -R "~/.local/share/aquaproj-aqua"
+$ rm -R "~/.local/share/clivm"
 ```
 
 By keeping `${AQUA_ROOT_DIR}/bin`, you can install tools by the Lazy Install without running `aqua i`.
@@ -19,13 +19,13 @@ By keeping `${AQUA_ROOT_DIR}/bin`, you can install tools by the Lazy Install wit
 You can also remove the specific package or package version.
 
 ```console
-$ rm -R ~/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/akoi
+$ rm -R ~/.local/share/clivm/pkgs/github_release/github.com/suzuki-shunsuke/akoi
 ```
 
 ```console
-$ rm -R ~/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/akoi/v2.2.0
+$ rm -R ~/.local/share/clivm/pkgs/github_release/github.com/suzuki-shunsuke/akoi/v2.2.0
 ```
 
 ```console
-$ rm -R ~/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke
+$ rm -R ~/.local/share/clivm/pkgs/github_release/github.com/suzuki-shunsuke
 ```

@@ -40,9 +40,9 @@ packages:
 - name: mitchellh/gox@v1.0.1
 
 $ aqua i
-INFO[0000] create a symbolic link                        aqua_version=1.9.0 env=darwin/arm64 link_file=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/bin/gox new=aqua-proxy package_name=mitchellh/gox package_version=v1.0.1 program=aqua registry=standard registry_ref=v2.19.0
+INFO[0000] create a symbolic link                        aqua_version=1.9.0 env=darwin/arm64 link_file=/Users/shunsukesuzuki/.local/share/clivm/bin/gox new=aqua-proxy package_name=mitchellh/gox package_version=v1.0.1 program=aqua registry=standard registry_ref=v2.19.0
 INFO[0000] download and unarchive the package            aqua_version=1.9.0 env=darwin/arm64 package_name=mitchellh/gox package_version=v1.0.1 program=aqua registry=standard registry_ref=v2.19.0
-INFO[0000] building Go tool                              aqua_version=1.9.0 env=darwin/arm64 exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/go/github.com/mitchellh/gox/v1.0.1/bin/gox file_name=gox go_build_dir=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/go/github.com/mitchellh/gox/v1.0.1/src/gox-1.0.1 go_src=. package_name=mitchellh/gox package_version=v1.0.1 program=aqua registry=standard registry_ref=v2.19.0
+INFO[0000] building Go tool                              aqua_version=1.9.0 env=darwin/arm64 exe_path=/Users/shunsukesuzuki/.local/share/clivm/pkgs/go/github.com/mitchellh/gox/v1.0.1/bin/gox file_name=gox go_build_dir=/Users/shunsukesuzuki/.local/share/clivm/pkgs/go/github.com/mitchellh/gox/v1.0.1/src/gox-1.0.1 go_src=. package_name=mitchellh/gox package_version=v1.0.1 program=aqua registry=standard registry_ref=v2.19.0
 go: downloading github.com/hashicorp/go-version v1.0.0
 go: downloading github.com/mitchellh/iochan v1.0.0
 ```
