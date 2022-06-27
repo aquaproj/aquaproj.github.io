@@ -1,17 +1,17 @@
 ---
-title: "clivm - Declarative CLI Version Manager"
+title: "aqua - Declarative CLI Version Manager"
 date: 2021-09-08T09:32:46+09:00
 authors:
 - suzuki-shunsuke
 ---
 
 <head>
-  <link rel="canonical" href="https://dev.to/suzukishunsuke/clivm-declarative-cli-version-manager-1ibe" />
+  <link rel="canonical" href="https://dev.to/suzukishunsuke/aqua-declarative-cli-version-manager-1ibe" />
 </head>
 
-Original Post: https://dev.to/suzukishunsuke/clivm-declarative-cli-version-manager-1ibe
+Original Post: https://dev.to/suzukishunsuke/aqua-declarative-cli-version-manager-1ibe
 
-In this post, I introduce [clivm](https://clivm.github.io), which is a declarative CLI Version Manager. 
+In this post, I introduce [aqua](https://aquaproj.github.io), which is a declarative CLI Version Manager. 
 You can install CLI tools and manage their versions with YAML declaratively.
 Mainly the following use cases are assumed.
 
@@ -19,25 +19,25 @@ Mainly the following use cases are assumed.
 * Install tools for repository's local development
 * Install tools in your laptop
 
-clivm supports the `Lazy Install` and Sharable Configuration mechanism named `Registry`.
-Compared to other package manager like `Homebrew`, clivm supports switching tool versions per `clivm.yaml`.
-Of course, you can use clivm with other package managers too.
+aqua supports the `Lazy Install` and Sharable Configuration mechanism named `Registry`.
+Compared to other package manager like `Homebrew`, aqua supports switching tool versions per `aqua.yaml`.
+Of course, you can use aqua with other package managers too.
 
-You can install clivm with [clivm-installer](https://github.com/aquaproj/aqua-installer).
+You can install aqua with [aqua-installer](https://github.com/aquaproj/aqua-installer).
 
 ```console
 $ curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/clivm-installer |
-  bash -s -- -i ~/bin/clivm -v v1.9.0
+  https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/aqua-installer |
+  bash -s -- -i ~/bin/aqua -v v1.9.0
 ```
 
-You can install clivm with Homebrew too.
+You can install aqua with Homebrew too.
 
 ```console
 $ brew install aquaproj/aqua/aqua
 ```
 
-For example, let's install jq with clivm. Write the following `clivm.yaml`.
+For example, let's install jq with aqua. Write the following `aqua.yaml`.
 
 ```yaml
 registries:
@@ -48,32 +48,32 @@ packages:
   version: jq-1.5
 ```
 
-And run `clivm i -l`.
+And run `aqua i -l`.
 
 ```console
-$ clivm i -l
+$ aqua i -l
 ```
 
-The option `-l` is important. By this option, the symbolic links are created in `~/.clivm/bin` but the downloading tools is skipped.
+The option `-l` is important. By this option, the symbolic links are created in `~/.aqua/bin` but the downloading tools is skipped.
 This is the feature named `Lazy Install`.
 
-Tools are installed in `~/.local/share/clivm`. Let's add `~/.local/share/clivm/bin` to the environment variable `PATH`.
+Tools are installed in `~/.local/share/aqua`. Let's add `~/.local/share/aqua/bin` to the environment variable `PATH`.
 
 ```console
-$ export PATH=$HOME/.local/share/clivm/bin:$PATH
+$ export PATH=$HOME/.local/share/aqua/bin:$PATH
 ```
 
 Let's check if jq installed correctly.
 
 ```console
 $ jq --version
-INFO[0000] download and unarchive the package            package_name=jq package_version=jq-1.5 program=clivm registry=standard
+INFO[0000] download and unarchive the package            package_name=jq package_version=jq-1.5 program=aqua registry=standard
 jq-1.5
 ```
 
-The output `INFO[0000] download and unarchive the package            package_name=jq package_version=jq-1.5 program=clivm registry=standard` indicates that jq is installed automatically before jq is executed.
+The output `INFO[0000] download and unarchive the package            package_name=jq package_version=jq-1.5 program=aqua registry=standard` indicates that jq is installed automatically before jq is executed.
 
-clivm searches the configuration file `[.]clivm.y[a]ml` from the current directory to the root directory.
+aqua searches the configuration file `[.]aqua.y[a]ml` from the current directory to the root directory.
 
 ```console
 $ cd foo
@@ -82,7 +82,7 @@ jq-1.5
 
 $ cd ../..
 $ jq --version
-FATA[0000] clivm failed                                   error="command is not found" exe_name=jq program=clivm
+FATA[0000] aqua failed                                   error="command is not found" exe_name=jq program=aqua
 ```
 
 Let's update jq from 1.5 to 1.6.
@@ -98,7 +98,7 @@ Before jq is executed, jq is installed automatically.
 
 ```console
 $ jq --version
-INFO[0000] download and unarchive the package            package_name=jq package_version=jq-1.6 program=clivm registry=standard
+INFO[0000] download and unarchive the package            package_name=jq package_version=jq-1.6 program=aqua registry=standard
 jq-1.6
 ```
 
@@ -116,22 +116,22 @@ jq-1.5
 ```
 
 The version of tool is changed seamlessly.
-You don't have to execute `clivm`.
+You don't have to execute `aqua`.
 
-By adding `clivm.yaml` in each Git repositories, you can manage tools for each repositories.
+By adding `aqua.yaml` in each Git repositories, you can manage tools for each repositories.
 Developers can use the same version, which prevents the problem due to the difference of tool versions.
-clivm supports both MacOS and Linux, so even if you are working on MacOS and CI is run on Linux, you can manage tools with the same clivm.yaml.
+aqua supports both MacOS and Linux, so even if you are working on MacOS and CI is run on Linux, you can manage tools with the same aqua.yaml.
 
-clivm installs tools in `~/.local/share/clivm` and shares tools across multiple `clivm.yaml`, so the same version of the same tool is installed only at once.
+aqua installs tools in `~/.local/share/aqua` and shares tools across multiple `aqua.yaml`, so the same version of the same tool is installed only at once.
 It saves time and disk usage.
 
-clivm supports the Global configuration.
+aqua supports the Global configuration.
 This is useful to install tools in your laptop regardless the specific project.
 Like `dotfiles`, it is good to manage the Global Configuration with Git and share it with your multiple laptops.
 
 ## Registry
 
-clivm supports the Sharable Configuration mechanism named `Registry`.
+aqua supports the Sharable Configuration mechanism named `Registry`.
 
 You can install jq with the simple configuration.
 
@@ -146,7 +146,7 @@ packages:
 ```
 
 In the above configuration, the [Standard Registry](https://github.com/aquaproj/aqua-registry) is being used.
-The Standard Registry is the Registry maintained by clivm's maintainers.
+The Standard Registry is the Registry maintained by aqua's maintainers.
 
 Please see the configuration.
 
@@ -169,8 +169,8 @@ packages:
 This is the configuration to download jq from GitHub Releases.
 Using the Standard Registry, you can install tools very easily without complicated configuration.
 
-You can search the tool from the Registries with `clivm g` command.
-Please add the Registries to your clivm.yaml's registries, and run `clivm g`.
+You can search the tool from the Registries with `aqua g` command.
+Please add the Registries to your aqua.yaml's registries, and run `aqua g`.
 
 ```yaml
 registries:
@@ -179,10 +179,10 @@ registries:
 ```
 
 ```console
-$ clivm g
+$ aqua g
 ```
 
-`clivm g` launches the interactive UI and you can search the package by fuzzy search.
+`aqua g` launches the interactive UI and you can search the package by fuzzy search.
 
 ```console
   influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
@@ -209,11 +209,11 @@ $ clivm g
 ```
 
 If the tool you need isn't found, please create the issue or send the pull request to the [Standard Registry](https://github.com/aquaproj/aqua-registry)!
-By adding various packages to the Standard Registry, clivm becomes more useful and attractive.
+By adding various packages to the Standard Registry, aqua becomes more useful and attractive.
 Your contribution is needed!
 
 It is also easy to create your own Registries.
-Just create GitHub Repositories and add Registry Configuration like [the Standard Registry](https://github.com/aquaproj/aqua-registry/blob/main/registry.yaml) and add it to `clivm.yaml`'s registries.
+Just create GitHub Repositories and add Registry Configuration like [the Standard Registry](https://github.com/aquaproj/aqua-registry/blob/main/registry.yaml) and add it to `aqua.yaml`'s registries.
 The private repository is also supported.
 
 e.g.
@@ -222,18 +222,18 @@ e.g.
 registries:
   - name: aquaproj/aqua-registry
     type: github_content
-    repo_owner: clivm
-    repo_name: clivm-registry
+    repo_owner: aqua
+    repo_name: aqua-registry
     ref: v2.19.0
     path: registry.yaml
 ```
 
 ## Cotinuous update by Renovate
 
-clivm manages package and registry versions,
+aqua manages package and registry versions,
 so it is important to update them continuously.
-clivm doesn't provide sub commands like `clivm update` or options like `clivm install --update`.
-It is recommended to manage `clivm.yaml` with Git and update versions by [Renovate](https://docs.renovatebot.com/).
+aqua doesn't provide sub commands like `aqua update` or options like `aqua install --update`.
+It is recommended to manage `aqua.yaml` with Git and update versions by [Renovate](https://docs.renovatebot.com/).
 
 Using Renovate's [Regex Manager](https://docs.renovatebot.com/modules/manager/regex/), you can update versions.
 
@@ -242,11 +242,11 @@ For the detail, please see the [README](https://github.com/aquaproj/aqua-renovat
 
 ## Summary
 
-In this post, I introduced [clivm](https://clivm.github.io), which is a declarative CLI Version Manager. 
+In this post, I introduced [aqua](https://aquaproj.github.io), which is a declarative CLI Version Manager. 
 You can install CLI tools and manage their versions with YAML declaratively.
-clivm supports the `Lazy Install` and Sharable Configuration mechanism named `Registry`.
+aqua supports the `Lazy Install` and Sharable Configuration mechanism named `Registry`.
 
-You can search tools from Registries by `clivm g` command.
+You can search tools from Registries by `aqua g` command.
 If the tool you need isn't found, please create the issue or send the pull request to the [Standard Registry](https://github.com/aquaproj/aqua-registry)!
-By adding various packages to the Standard Registry, clivm becomes more useful and attractive.
+By adding various packages to the Standard Registry, aqua becomes more useful and attractive.
 Your contribution is needed!
