@@ -28,7 +28,7 @@ Please see [Windows Support](/docs/reference/windows-support) too.
 * aqua's install process is very simple.
 
     1. Download tool
-    1. Unarchive tool in $AQUA_ROOT_DIR
+    1. Unarchive tool in $CLIVM_ROOT_DIR
 
   aqua doesn't support running commands after unarchiving.
   So aqua doesn't support installing tools which some commands are required.

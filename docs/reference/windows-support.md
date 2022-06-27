@@ -28,16 +28,16 @@ Terminals
 
 Please download an asset from [GitHub Releases](https://github.com/clivm/aqua/releases) and deploy the binary into `PATH`.
 
-## The install path (AQUA_ROOT_DIR)
+## The install path (CLIVM_ROOT_DIR)
 
-From aqua v1.12.0, the default value of `AQUA_ROOT_DIR` is `$HOME/AppData/Local/clivm`.
+From aqua v1.12.0, the default value of `CLIVM_ROOT_DIR` is `$HOME/AppData/Local/clivm`.
 
 ## PATH
 
-* Command Prompt,PowerShell: `AQUA_ROOT_DIR/bat`
-* Git Bash: `AQUA_ROOT_DIR/bin`
+* Command Prompt,PowerShell: `CLIVM_ROOT_DIR/bat`
+* Git Bash: `CLIVM_ROOT_DIR/bin`
 
-## The separator of AQUA_GLOBAL_CONFIG
+## The separator of CLIVM_GLOBAL_CONFIG
 
 * Command Prompt, PowerShell: `;`
 * Git Bash: `:`
@@ -58,7 +58,7 @@ Please change the settings at your own risk.
 :::
 
 Security softwares may prevent aqua from installing and running tools.
-In that case, you may have to add `AQUA_ROOT_DIR` to security software's exclusion. 
+In that case, you may have to add `CLIVM_ROOT_DIR` to security software's exclusion. 
 
 ## Windows Support of installed tools
 
@@ -81,10 +81,10 @@ Please see [complete_windows_ext](/docs/reference/registry-config/complete-windo
 
 Reference (Japanese): https://zenn.dev/link/comments/725555a2b1b034
 
-aqua creates executable BAT files and shell scripts in directories `AQUA_ROOT_DIR/bin` and `AQUA_ROOT_DIR/bat` instead of symbolic links.
+aqua creates executable BAT files and shell scripts in directories `CLIVM_ROOT_DIR/bin` and `CLIVM_ROOT_DIR/bat` instead of symbolic links.
 
-If you use PowerShell or Command Prompt, please add `AQUA_ROOT_DIR/bat` to the environment variable `PATH`.
-Or if you use Git Bash, please add `AQUA_ROOT_DIR/bin` to the environment variable `PATH`.
+If you use PowerShell or Command Prompt, please add `CLIVM_ROOT_DIR/bat` to the environment variable `PATH`.
+Or if you use Git Bash, please add `CLIVM_ROOT_DIR/bin` to the environment variable `PATH`.
 
 #### Why is this change needed?
 

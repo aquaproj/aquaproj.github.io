@@ -13,14 +13,14 @@ Maybe experimental features would become enabled by default, or maybe they would
 aqua conforms semantic versioning, so when there are breaking changes we release major update.
 But experimental features are exception of semantic versioning, so maybe we abort them in the minor or patch update.
 
-## AQUA_EXPERIMENTAL_X_SYS_EXEC
+## CLIVM_EXPERIMENTAL_X_SYS_EXEC
 
 [#710](https://github.com/clivm/aqua/issues/710) [#715](https://github.com/clivm/aqua/pull/715) [#726](https://github.com/clivm/aqua/pull/726), `aqua >= v1.6.0`
 
-To enable this feature, please set `true` to the enviornment variable `AQUA_EXPERIMENTAL_X_SYS_EXEC`.
+To enable this feature, please set `true` to the enviornment variable `CLIVM_EXPERIMENTAL_X_SYS_EXEC`.
 
 ```console
-$ export AQUA_EXPERIMENTAL_X_SYS_EXEC=true
+$ export CLIVM_EXPERIMENTAL_X_SYS_EXEC=true
 ````
 
 :::caution

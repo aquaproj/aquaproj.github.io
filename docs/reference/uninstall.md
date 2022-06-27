@@ -4,7 +4,7 @@ sidebar_position: 1000
 
 # Uninstall aqua
 
-Remove `aqua` and `$AQUA_ROOT_DIR`.
+Remove `aqua` and `$CLIVM_ROOT_DIR`.
 
 e.g.
 

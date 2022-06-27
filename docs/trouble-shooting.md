@@ -1,11 +1,11 @@
 # Trouble Shooting
 
-When aqua doesn't work, the environment variable `AQUA_LOG_LEVEL` is helpful for the debug.
+When aqua doesn't work, the environment variable `CLIVM_LOG_LEVEL` is helpful for the debug.
 
 For example,
 
 ```console
-$ AQUA_LOG_LEVEL=debug kind --help
+$ CLIVM_LOG_LEVEL=debug kind --help
 DEBU[0000] CLI args                                      config= log_level=debug program=aqua
 DEBU[0000] install the package                           package_name=kubernetes-sigs/kind package_version=v0.11.1 program=aqua registry=standard
 DEBU[0000] check if the package is already installed     package_name=kubernetes-sigs/kind package_version=v0.11.1 program=aqua registry=standard

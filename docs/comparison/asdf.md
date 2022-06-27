@@ -95,7 +95,7 @@ asdf outputs the guide and exits with non zero code.
 
 ## aqua's additional features
 
-* [Share aqua configuration for teams and organizations with AQUA_GLOBAL_CONFIG](https://clivm.github.io/docs/tutorial-extras/team-config)
+* [Share aqua configuration for teams and organizations with CLIVM_GLOBAL_CONFIG](https://clivm.github.io/docs/tutorial-extras/team-config)
 * [Split the list of packages](https://clivm.github.io/docs/tutorial-extras/split-config)
 * CircleCI Orb
 

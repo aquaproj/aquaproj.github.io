@@ -21,24 +21,24 @@ packages:
 
 aqua searches the following configuration files.
 
-1. `--config (-c)` option (environment variable `AQUA_CONFIG`
+1. `--config (-c)` option (environment variable `CLIVM_CONFIG`
 1. `\.?aqua\.ya?ml` from the current directory to the root directory. If configuration files are found in the multiple directories, aqua read all of them
-1. global configuration: environment variable `AQUA_GLOBAL_CONFIG`
+1. global configuration: environment variable `CLIVM_GLOBAL_CONFIG`
 
 To install tools in global configuration files, you have to set `-a` to `aqua install` command.
 
 ## Environment variables
 
-* `AQUA_LOG_LEVEL`: (default: `info`) Log level
-* `AQUA_CONFIG`: configuration file path
-* `AQUA_GLOBAL_CONFIG`: global configuration file paths separated by semicolon `:`
-* `AQUA_ROOT_DIR`: The directory path where aqua install tools
+* `CLIVM_LOG_LEVEL`: (default: `info`) Log level
+* `CLIVM_CONFIG`: configuration file path
+* `CLIVM_GLOBAL_CONFIG`: global configuration file paths separated by semicolon `:`
+* `CLIVM_ROOT_DIR`: The directory path where aqua install tools
   * default (linux and macOS): `${XDG_DATA_HOME:-$HOME/.local/share}/clivm`
   * default (windows): `${HOME/AppData/Local}/clivm`
-* `AQUA_MAX_PARALLELISM`: (default: `5`) The maximum number of packages which are installed in parallel at the same time
-* `AQUA_GITHUB_TOKEN`, `GITHUB_TOKEN`: GitHub Access Token. This is required to install private repository's package
-* [AQUA_GOOS, AQUA_GOARCH](change-os-arch-for-test)
-* [AQUA_EXPERIMENTAL_X_SYS_EXEC](experimental-feature#aqua_experimental_x_sys_exec)
+* `CLIVM_MAX_PARALLELISM`: (default: `5`) The maximum number of packages which are installed in parallel at the same time
+* `CLIVM_GITHUB_TOKEN`, `GITHUB_TOKEN`: GitHub Access Token. This is required to install private repository's package
+* [CLIVM_GOOS, CLIVM_GOARCH](change-os-arch-for-test)
+* [CLIVM_EXPERIMENTAL_X_SYS_EXEC](experimental-feature#aqua_experimental_x_sys_exec)
 
 ## JSON Schema
 

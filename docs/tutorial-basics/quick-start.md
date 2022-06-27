@@ -39,10 +39,10 @@ $ curl -sSfL \
 # bash -s -- -i ~/bin/aqua
 ```
 
-Add `${AQUA_ROOT_DIR}/bin` to the environmenet variable `PATH`.
+Add `${CLIVM_ROOT_DIR}/bin` to the environmenet variable `PATH`.
 
 ```console
-$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
+$ export PATH="${CLIVM_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
 ```
 
 Confirm if aqua is installed correctly.
@@ -63,7 +63,7 @@ $ docker run --rm -ti alpine:3.15.0 sh
 # su foo
 $ mkdir ~/workspace
 $ cd ~/workspace
-$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
+$ export PATH="${CLIVM_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
 ```
 
 ## Create a configuration file
@@ -136,4 +136,4 @@ $ fzf --version
 0.28.0 (e4c3ecc)
 ```
 
-aqua installs tools in `${AQUA_ROOT_DIR}`.
+aqua installs tools in `${CLIVM_ROOT_DIR}`.

@@ -20,4 +20,4 @@ You find that `cli/cli@v2.1.0` is installed automatically.
 You don't have to run `aqua i` explicitly.
 We call this feature as `Lazy Install`.
 
-Note that `Lazy Install` doesn't work if the symbolic link isn't created in `${AQUA_ROOT_DIR}/bin` yet.
+Note that `Lazy Install` doesn't work if the symbolic link isn't created in `${CLIVM_ROOT_DIR}/bin` yet.

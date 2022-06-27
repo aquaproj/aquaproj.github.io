@@ -18,8 +18,8 @@ $ aqua i
 ```
 
 If you encounter the error `[ERROR] the command "aqua" can't be executed via aqua-proxy to prevent the infinite loop`,
-remove the symbolic link `$AQUA_ROOT_DIR/bin/aqua`.
+remove the symbolic link `$CLIVM_ROOT_DIR/bin/aqua`.
 
 ```console
-$ rm $AQUA_ROOT_DIR/bin/aqua
+$ rm $CLIVM_ROOT_DIR/bin/aqua
 ```

@@ -15,13 +15,13 @@ FATA[0000] aqua failed                                   aqua_version=1.3.0 erro
 
 If you want to install tools regardless the current directory,
 let's add the global configuration.
-Create a global configuration file and add the path to the environment variable `AQUA_GLOBAL_CONFIG`.
+Create a global configuration file and add the path to the environment variable `CLIVM_GLOBAL_CONFIG`.
 You can change the global configuration file path freely.
 
 ```console
 $ mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/clivm"
 $ vi "${XDG_CONFIG_HOME:-$HOME/.config}/clivm/aqua.yaml"
-$ export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/clivm/aqua.yaml
+$ export CLIVM_GLOBAL_CONFIG=${CLIVM_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/clivm/aqua.yaml
 ```
 
 ```yaml

@@ -21,7 +21,7 @@ INFO[0000] create a symbolic link                        aqua_version=1.3.0 link
 The command would exit immediately, because the tool isn't downloaded and installed yet.
 
 The command `aqua i` installs all tools at once.
-But when the option `-l` is set, `aqua i` creates only symbolic links in `${AQUA_ROOT_DIR}/bin` and skips downloading and installing tools.
+But when the option `-l` is set, `aqua i` creates only symbolic links in `${CLIVM_ROOT_DIR}/bin` and skips downloading and installing tools.
 
 Even if downloading and installing are skipped, you can execute the tool thanks for [Lazy Install](lazy-install).
 

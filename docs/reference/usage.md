@@ -30,10 +30,10 @@ COMMANDS:
    help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --config value, -c value  configuration file path [$AQUA_CONFIG]
+   --config value, -c value  configuration file path [$CLIVM_CONFIG]
    --cpu-profile value       cpu profile output file path
    --help, -h                show help (default: false)
-   --log-level value         log level [$AQUA_LOG_LEVEL]
+   --log-level value         log level [$CLIVM_LOG_LEVEL]
    --trace value             trace output file path
    --version, -v             print the version (default: false)
    

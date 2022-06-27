@@ -4,13 +4,13 @@ sidebar_position: 100
 
 # Share aqua configuration for teams and organizations
 
-aqua reads configuration from the environment variable `AQUA_GLOBAL_CONFIG`.
-`AQUA_GLOBAL_CONFIG` is configuration file paths separated with semicolons `:`.
+aqua reads configuration from the environment variable `CLIVM_GLOBAL_CONFIG`.
+`CLIVM_GLOBAL_CONFIG` is configuration file paths separated with semicolons `:`.
 
 e.g.
 
 ```sh
-export AQUA_GLOBAL_CONFIG="/home/foo/aqua-config/sre.yaml:/home/foo/aqua-config/all.yaml:${AQUA_GLOBAL_CONFIG:-}"
+export CLIVM_GLOBAL_CONFIG="/home/foo/aqua-config/sre.yaml:/home/foo/aqua-config/all.yaml:${CLIVM_GLOBAL_CONFIG:-}"
 ```
 
 About the priority of configuration, plase see [Configuration File Path](../reference/config/#configuration-file-path).
@@ -31,15 +31,15 @@ aqua-config/
   sre.yaml # aqua configuration for your SRE team
 ```
 
-Then checkout the repository and set the environment variable `AQUA_GLOBAL_CONFIG`.
+Then checkout the repository and set the environment variable `CLIVM_GLOBAL_CONFIG`.
 If you belong to SRE team,
 
 ```sh
-export AQUA_GLOBAL_CONFIG="/home/foo/aqua-config/sre.yaml:/home/foo/aqua-config/all.yaml:${AQUA_GLOBAL_CONFIG:-}"
+export CLIVM_GLOBAL_CONFIG="/home/foo/aqua-config/sre.yaml:/home/foo/aqua-config/all.yaml:${CLIVM_GLOBAL_CONFIG:-}"
 ```
 
 Otherwise
 
 ```sh
-export AQUA_GLOBAL_CONFIG="/home/foo/aqua-config/all.yaml:${AQUA_GLOBAL_CONFIG:-}"
+export CLIVM_GLOBAL_CONFIG="/home/foo/aqua-config/all.yaml:${CLIVM_GLOBAL_CONFIG:-}"
 ```

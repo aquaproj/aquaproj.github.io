@@ -5,7 +5,7 @@ sidebar_position: 500
 # Use aqua combined with other version manager such as asdf
 
 If you use aqua combined with other version manager such as asdf,
-you should add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH` after other version manager.
+you should add `${CLIVM_ROOT_DIR}/bin` to the environment variable `PATH` after other version manager.
 
 e.g.
 
@@ -14,13 +14,13 @@ e.g.
 ```bash
 . $HOME/.asdf/asdf.sh
 
-export PATH=${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH
+export PATH=${CLIVM_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH
 ```
 
 :thumbsdown:
 
 ```bash
-export PATH=${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH
+export PATH=${CLIVM_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH
 
 . $HOME/.asdf/asdf.sh
 ```
@@ -60,7 +60,7 @@ If you configure .bash_profile as the following,
 you can manage Waypoint with asdf in the project A, but you can't manage Waypoint with aqua in the project B.
 
 ```bash
-export PATH=${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH
+export PATH=${CLIVM_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH
 
 . $HOME/.asdf/asdf.sh
 ```
@@ -81,7 +81,7 @@ you can manage Waypoint with asdf in the project A, and manage Waypoint with aqu
 ```bash
 . $HOME/.asdf/asdf.sh
 
-export PATH=${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH
+export PATH=${CLIVM_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH
 ```
 
 ```console

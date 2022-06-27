@@ -7,7 +7,7 @@ sidebar_position: 100
 aqua is a single binary written in Go.
 
 1. Install the binary `aqua` in `PATH`
-1. add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH`
+1. add `${CLIVM_ROOT_DIR}/bin` to the environment variable `PATH`
 
 ## Windows
 
@@ -17,7 +17,7 @@ Pleaase see [here](/docs/reference/windows-support#how-to-install).
 
 ```console
 $ brew install clivm/aqua/aqua
-$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
+$ export PATH="${CLIVM_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/clivm}/bin:$PATH"
 ```
 
 ## Install script

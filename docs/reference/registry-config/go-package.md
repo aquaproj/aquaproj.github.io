@@ -91,7 +91,7 @@ packages:
 * src: go build's target path
 
 ```
-${AQUA_ROOT_DIR}/pkgs/go/github.com/google/wire/v0.5.0/
+${CLIVM_ROOT_DIR}/pkgs/go/github.com/google/wire/v0.5.0/
   bin/wire
   src/ # GitHub Repository Archive
     wire-0.5.0/ # `go build` is run on this directory
@@ -101,5 +101,5 @@ ${AQUA_ROOT_DIR}/pkgs/go/github.com/google/wire/v0.5.0/
 The following command is run.
 
 ```console
-$ go build -o "${AQUA_ROOT_DIR}/pkgs/go/github.com/google/wire/v0.5.0/bin/wire" "./cmd/wire"
+$ go build -o "${CLIVM_ROOT_DIR}/pkgs/go/github.com/google/wire/v0.5.0/bin/wire" "./cmd/wire"
 ```
