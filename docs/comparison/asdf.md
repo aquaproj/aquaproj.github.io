@@ -6,6 +6,12 @@ sidebar_position: 500
 
 https://asdf-vm.com/
 
+## Blogs
+
+* [2021-12-23 Why I use aqua](https://dev.to/suzukishunsuke/why-i-use-aqua-230)
+* [2021-12-09 aqua と asdf の違い](https://zenn.dev/shunsuke_suzuki/articles/compare-aqua-with-asdf)
+* [2021-12-10 新しいツールへの対応を asdf と aqua で比較](https://zenn.dev/shunsuke_suzuki/articles/create-asdf-plugin-to-compare-aqua)
+
 ## Common
 
 * Support installing tools in local and global

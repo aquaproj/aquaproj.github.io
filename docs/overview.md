@@ -71,7 +71,7 @@ https://github.com/aquaproj/aqua-registry
 ## See Also
 
 * [Why I use aqua](https://dev.to/suzukishunsuke/why-i-use-aqua-230)
-* [Comparison](/docs/comparison/common)
+* [Comparison](/docs/comparison)
 * [Quick Start](/docs/tutorial-basics/quick-start)
 * [Introduce aqua to your repository](/docs/tutorial-extras/introduce-aqua)
 * [Install tools globally](/docs/tutorial-basics/global-config)
