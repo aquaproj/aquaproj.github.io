@@ -2,13 +2,13 @@
 sidebar_position: 50
 ---
 
+# Comparison
+
 :::caution
 We are not familiar with compared tools.
 So maybe the description about them is wrong.
 Your contribution is welcome.
 :::
-
-# Comparison
 
 * [Common Pros and Cons](common)
 * [manual](manual)
