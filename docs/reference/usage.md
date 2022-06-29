@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   1.14.0 (7b763f221349366f644f76b3e9d4455fb6d389a1)
+   1.15.0 (6ac274e9745cfb5a87587d363c9ace9046674c5b)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -154,10 +154,16 @@ DESCRIPTION:
    
    echo "cli/cli" | aqua g -f -
    - name: cli/cli@v2.2.0
+   
+   You can select a version interactively with "-s" option.
+   
+   $ aqua g -s
+   
 
 OPTIONS:
-   -f value  the file path of packages list. When the value is "-", the list is passed from the standard input
-   -i        Insert packages to configuration file (default: false)
+   --select-version, -s  Select the installed version interactively (default: false)
+   -f value              the file path of packages list. When the value is "-", the list is passed from the standard input
+   -i                    Insert packages to configuration file (default: false)
    
 ```
 
