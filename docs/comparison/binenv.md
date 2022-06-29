@@ -18,10 +18,6 @@ https://github.com/devops-works/binenv
 
 ## Cons
 
-* aqua doesn't support selecting tool versions interactively
-  * Maybe aqua will support this feature
-* aqua doesn't provide the progress bar for installing tools
-  * Maybe aqua will support this feature
 * aqua doesn't support updating aqua itself
   * binenv provides `update` command
 
