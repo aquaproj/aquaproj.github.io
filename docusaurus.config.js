@@ -70,7 +70,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'comparison/common',
+            docId: 'comparison/index',
             position: 'left',
             label: 'Comparison',
           },
@@ -108,7 +108,7 @@ const config = {
               },
               {
                 label: 'Comparison',
-                to: '/docs/comparison/common',
+                to: '/docs/comparison',
               },
             ],
           },
