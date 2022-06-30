@@ -43,7 +43,7 @@ const FeatureList = [
     title: 'Interactive Search',
     description: (
       <>
-        <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/176583057-d4430e14-3d42-45e9-914f-77adedcf4975.png" />
+        <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/176598695-134f0ad4-296b-4491-a3da-e5e454afdf4b.png" />
       </>
     ),
   },
