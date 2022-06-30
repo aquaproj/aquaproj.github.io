@@ -11,9 +11,9 @@ Your contribution is welcome.
 :::
 
 * [Common Pros and Cons](common)
-* [manual](manual)
-* [shell script](shell-script)
-* [homebrew](homebrew)
+* [Manual download and installation](manual)
+* [Shell Script](shell-script)
+* [Homebrew](homebrew)
 * [asdf](asdf)
 * [binenv](binenv)
 * [apt and yum](apt-yum)
