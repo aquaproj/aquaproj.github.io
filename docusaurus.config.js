@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'aqua',
-  tagline: 'Declarative CLI Version Manager. Install tools easily and quickly',
+  tagline: 'Declarative CLI Version Manager. Install tools easily',
   url: 'https://aquaproj.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
