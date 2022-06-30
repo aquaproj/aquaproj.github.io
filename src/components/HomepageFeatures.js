@@ -25,7 +25,6 @@ const FeatureList = [
       <>
         <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/176579462-e843b334-86a0-4b16-88ab-e39b8fbfa0a9.png" />
         aqua installs a tool automatically when the tool is executed.
-        You don't have to install the tool in advance. You can avoid unneeded installation, which saves time and disk usage.
       </>
     ),
   },
