@@ -40,6 +40,7 @@ packages:
 
 * `type`: (string, required) the package type
 * `name`: (string) the package name. This is used to specify the package in `aqua.yaml`. name must be unique in the same registry
+* [search_words](search-words)
 * [aliases](aliases): Aliases of the package
 * [files](files): The list of executable files
 * `format`: The asset format (e.g. `zip`, `tar.gz`). This is used to unarchive or decompress the asset. If this isn't specified, aqua tries to specify the format from the file extenstion. If the file isn't archived and isn't compressed, please specify `raw`
