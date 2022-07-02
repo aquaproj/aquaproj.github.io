@@ -37,6 +37,8 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
   * default (windows): `${HOME/AppData/Local}/aquaproj-aqua`
 * `AQUA_MAX_PARALLELISM`: (default: `5`) The maximum number of packages which are installed in parallel at the same time
 * `AQUA_GITHUB_TOKEN`, `GITHUB_TOKEN`: GitHub Access Token. This is required to install private repository's package
+* `AQUA_LOG_COLOR`: Support setting the log coloring by the environment variable `AQUA_LOG_COLOR` (`always|auto|never`)
+* `AQUA_PROGRESS_BAR`: The progress bar is disabled by default, but you can enable it by setting the environment variable `AQUA_PROGRESS_BAR` to `true`
 * [AQUA_GOOS, AQUA_GOARCH](change-os-arch-for-test)
 * [AQUA_EXPERIMENTAL_X_SYS_EXEC](experimental-feature#aqua_experimental_x_sys_exec)
 
