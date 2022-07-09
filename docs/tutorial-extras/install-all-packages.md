@@ -11,7 +11,7 @@ But no worries.
 By Lazy Install, packages aren't installed until they are really needed.
 
 1. Check out this repository
-1. Add [aqua-all.yaml](aqua-all.yaml) to the environment variable `AQUA_GLOBAL_CONFIG`
+1. Add [aqua-all.yaml](https://github.com/aquaproj/aqua-registry/blob/main/aqua-all.yaml) to the environment variable `AQUA_GLOBAL_CONFIG`
 1. Run `aqua i -l -a`
 
 ```console
