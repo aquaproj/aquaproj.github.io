@@ -1,5 +1,5 @@
 ---
-sidebar_position: 880
+sidebar_position: 430
 ---
 
 # Windows Support
