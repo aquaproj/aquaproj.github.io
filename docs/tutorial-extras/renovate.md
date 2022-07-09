@@ -1,4 +1,18 @@
-# Renovate Integration
+---
+sidebar_position: 50
+---
+
+# Update packages by Renovate
+
+```json
+{
+  "extends": [
+    "github>aquaproj/aqua-renovate-config#1.1.0"
+  ]
+}
+```
+
+![image](https://user-images.githubusercontent.com/13323303/176582627-44f27c48-213b-44da-b18f-d4d482ef2f56.png)
 
 aqua manages package and registry versions,
 so it is important to update them continuously.

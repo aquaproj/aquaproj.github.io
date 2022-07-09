@@ -17,6 +17,11 @@ If tools aren't found, you have some options.
   * [local registry](../reference/config#local-registry)
   * [github_content registry](../reference/config#github_content-registry)
 
+## Write Registry Configuration
+
+* [Registry Style Guide](../reference/registry-style-guide)
+* [Registry Configuration](../reference/registry-config)
+
 ## Use `local` Registry
 
 Please see the Registry Configuration in the Standard Registry.
