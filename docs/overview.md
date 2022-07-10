@@ -34,7 +34,7 @@ https://github.com/aquaproj/aqua-renovate-config
 aqua provides GitHub Actions, CircleCI Orb, and shell script to install aqua easily.
 aqua provides the unified way to install tools both in local development and CI.
 
-aqua provides the Standard Registry. You can install tools which are registered at the Registry easily, and you can search the Registry interactively with `aqua g` command.
+aqua provides the Standard Registry. You can install tools which are registered at the Registry easily, and you can search packages in Registries interactively with `aqua g` command.
 
 ```console
 $ aqua g
