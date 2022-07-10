@@ -8,7 +8,7 @@ sidebar_position: 550
 # aqua.yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v3.10.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.1.0
@@ -20,7 +20,7 @@ packages:
 # bar/aqua.yaml
 registries:
 - type: standard
-  ref: v2.22.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v3.10.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.0.0
@@ -45,7 +45,7 @@ tfmigrator isn't found in `../aqua.yaml`, but is found in `../../aqua.yaml`.
 
 ```console
 $ tfmigrator -v
-INFO[0000] download and unarchive the package            aqua_version=1.3.0 package_name=tfmigrator/cli package_version=v0.2.1 program=aqua registry=standard
+INFO[0000] download and unarchive the package            aqua_version=1.17.0 package_name=tfmigrator/cli package_version=v0.2.1 program=aqua registry=standard
 tfmigrator version 0.2.1 (3993c0824016673338530f4e7e8966c35efa5706)
 ```
 
@@ -54,5 +54,5 @@ If the configuration file isn't found and the tool isn't installed outside aqua,
 ```console
 $ cd /tmp
 $ gh version
-FATA[0000] aqua failed                                   aqua_version=1.3.0 error="command is not found" exe_name=gh program=aqua
+FATA[0000] aqua failed                                   aqua_version=1.17.0 error="command is not found" exe_name=gh program=aqua
 ```
