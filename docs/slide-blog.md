@@ -12,6 +12,8 @@
 
 ## Japanese
 
+* [2022-06-23 CLI Version Manager の aqua が Windows をサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-windows-support)
+* [2022-06-08 aqua が Go 製のツールのビルドをサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-go-build-support)
 * [2022-02-26 aqua-registry の全ツールを使えるようにする](https://zenn.dev/shunsuke_suzuki/articles/introduce-aqua-registry-all)
 * [2022-01-15 標準的な Action を aqua 向けの Action に置き換える](https://zenn.dev/shunsuke_suzuki/articles/github-actions-for-aqua)
 * [2021-12-29 aqua をより導入しやすくする最近の update (2021-12-29)](https://zenn.dev/shunsuke_suzuki/articles/aqua-recent-update-2021-12-29)
