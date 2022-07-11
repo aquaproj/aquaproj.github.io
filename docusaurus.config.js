@@ -75,7 +75,8 @@ const config = {
             label: 'Comparison',
           },
           {
-            to: 'blog',
+            type: 'doc',
+            docId: 'slide-blog',
             position: 'left',
             label: 'Blog',
           },
