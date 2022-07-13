@@ -159,3 +159,39 @@ replacements:
   linux: unknown-linux-gnu
   windows: pc-windows-gnu
 ```
+
+## Use `overrides` instead of `format_overrides`
+
+:thumbsup:
+
+```yaml
+format: tar.gz
+overrides:
+  - goos: windows
+    format: zip
+```
+
+:thumbsdown:
+
+```yaml
+format: tar.gz
+format_overrides:
+  - goos: windows
+    format: zip
+```
+
+## Don't use emojis as much as possible
+
+In some environments, emojis are corrupted. e.g. https://github.com/aquaproj/aqua/pull/1004#issuecomment-1183710603
+
+:thumbsup:
+
+```yaml
+description: CLI and Go library for CODEOWNERS files
+```
+
+:thumbsdown:
+
+```yaml
+description: 🔒 CLI and Go library for CODEOWNERS files
+```
