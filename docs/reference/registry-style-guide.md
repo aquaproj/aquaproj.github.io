@@ -195,3 +195,47 @@ description: CLI and Go library for CODEOWNERS files
 ```yaml
 description: 🔒 CLI and Go library for CODEOWNERS files
 ```
+
+## Omit the setting which is equivalent to the default value
+
+When `repo_owner` and `repo_name` are set, you can omit some attributes.
+
+:thumbsup:
+
+```yaml
+repo_owner: weaveworks
+repo_name: eksctl
+```
+
+:thumbsdown:
+
+```yaml
+repo_owner: weaveworks
+repo_name: eksctl
+name: weaveworks/eksctl
+link: https://github.com/weaveworks/eksctl
+files:
+  - name: eksctl
+```
+
+## Use `aliases` only for keeping the compatibility
+
+Please see [here](/docs/reference/registry-config/aliases#use-aliases-only-for-keeping-the-compatibility)
+
+## Use `supported_envs` rather than `supported_if`
+
+Please see [the caution](/docs/reference/registry-config/supported-if).
+
+## Select `type` according to the following order
+
+1. github_release
+1. github_content
+1. github_archive
+1. http
+1. go_install
+
+For example, you can also use `http` type to install the package from GitHub Releases, but in that case you should use `github_release` rather than `http`.
+
+## Use `go_install` rather than `go`
+
+Please see [the caution](/docs/reference/registry-config/go-package).
