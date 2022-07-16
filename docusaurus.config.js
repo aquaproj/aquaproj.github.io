@@ -124,6 +124,10 @@ const config = {
                 href: 'https://github.com/aquaproj/aqua-registry',
                 label: 'Standard Registry',
               },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/aquaclivm',
+              },
             ],
           },
         ],
