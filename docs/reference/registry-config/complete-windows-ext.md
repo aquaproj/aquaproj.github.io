@@ -26,18 +26,18 @@ Using the attribute `complete_windows_ext`, you can specify if `.exe` is complet
 
 ```yaml
     format: raw
-    asset: "aws-vault-{{.OS}}-{{.Arch}}" # aws-vault-{{.OS}}-{{.Arch}}.exe
+    asset: aws-vault-{{.OS}}-{{.Arch}} # aws-vault-{{.OS}}-{{.Arch}}.exe
 ```
 
 ```yaml
-    complete_windows_exe: false # disable completion
+    complete_windows_ext: false # disable completion
     format: raw
-    asset: "aws-vault-{{.OS}}-{{.Arch}}" # aws-vault-{{.OS}}-{{.Arch}}
+    asset: aws-vault-{{.OS}}-{{.Arch}} # aws-vault-{{.OS}}-{{.Arch}}
 ```
 
 ```yaml
-    url: "https://storage.googleapis.com/container-diff/{{.Version}}/container-diff-{{.OS}}-amd64" # .exe is completed
+    url: https://storage.googleapis.com/container-diff/{{.Version}}/container-diff-{{.OS}}-amd64 # .exe is completed
     files:
       - name: container-diff
-        src: "container-diff-{{.OS}}-amd64" # container-diff-{{.OS}}-amd64.exe
+        src: container-diff-{{.OS}}-amd64 # container-diff-{{.OS}}-amd64.exe
 ```
