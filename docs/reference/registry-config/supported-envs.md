@@ -24,7 +24,7 @@ packages:
   - type: github_release
     repo_owner: gruntwork-io
     repo_name: terragrunt
-    asset: "terragrunt_{{.OS}}_{{.Arch}}"
+    asset: terragrunt_{{.OS}}_{{.Arch}}
     supported_if: not (GOOS == "windows" and GOARCH == "arm64")
 ```
 
@@ -35,7 +35,7 @@ packages:
   - type: github_release
     repo_owner: gruntwork-io
     repo_name: terragrunt
-    asset: "terragrunt_{{.OS}}_{{.Arch}}"
+    asset: terragrunt_{{.OS}}_{{.Arch}}
     supported_envs:
       - windows/amd64
       - darwin

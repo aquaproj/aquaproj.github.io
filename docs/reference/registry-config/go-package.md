@@ -41,7 +41,7 @@ packages:
     files:
       - name: wire
         src: ./cmd/wire
-        dir: "wire-{{trimV .Version}}"
+        dir: wire-{{trimV .Version}}
 ```
 
 aqua.yaml
@@ -83,7 +83,7 @@ packages:
     files:
       - name: wire
         src: ./cmd/wire
-        dir: "wire-{{trimV .Version}}"
+        dir: wire-{{trimV .Version}}
 ```
 
 * name: command name
