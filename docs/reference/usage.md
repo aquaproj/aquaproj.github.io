@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   1.15.0 (6ac274e9745cfb5a87587d363c9ace9046674c5b)
+   1.18.0 (4c4a265975fdbbd0e85f4f75d5533478e7ed367c)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -27,6 +27,7 @@ COMMANDS:
    generate-registry, gr  Generate a registry's package configuration
    completion             Output shell completion script for bash or zsh
    version                Show version
+   cp                     Copy executable files in a directory
    help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
@@ -249,6 +250,34 @@ DESCRIPTION:
          - linux
          - amd64
        rosetta2: true
+   
+```
+
+## aqua cp
+
+```console
+$ aqua help cp
+NAME:
+   aqua cp - Copy executable files in a directory
+
+USAGE:
+   aqua cp [command options] <command name> [<command name> ...]
+
+DESCRIPTION:
+   Copy executable files in a directory.
+   
+   e.g.
+   $ aqua cp gh
+   $ ls dist
+   gh
+   
+   You can specify the target directory by -o option.
+   
+   $ aqua cp -o ~/bin terraform hugo
+   
+
+OPTIONS:
+   -o value  destination directory (default: "dist")
    
 ```
 
