@@ -93,6 +93,12 @@ You can set up your laptop quickly and install same version of tools in multiple
 
 Please see [Install tools globally](/docs/tutorial-basics/global-config).
 
+## SNS
+
+We share news about aqua using a Twitter Account [@aquaclivm](https://twitter.com/aquaclivm).
+We check tweets about aqua, but it is difficult to search tweets about aqua with the keyword "aqua" because aqua is a very common word.
+So when you tweet about aqua, please mention @aquaclivm or use the hash tag [#aquaclivm](https://twitter.com/hashtag/aquaclivm).
+
 ## See Also
 
 * [Why I use aqua](https://dev.to/suzukishunsuke/why-i-use-aqua-230)
