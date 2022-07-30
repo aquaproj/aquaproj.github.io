@@ -6,6 +6,14 @@ sidebar_position: 1700
 
 Some fields are parsed with [Go's text/template](https://pkg.go.dev/text/template) and [sprig](http://masterminds.github.io/sprig/).
 
+:::caution
+The following sprig functions are removed for security reason.
+
+* [env](http://masterminds.github.io/sprig/os.html)
+* [expandenv](http://masterminds.github.io/sprig/os.html)
+* [getHostByName](http://masterminds.github.io/sprig/network.html)
+:::
+
 ## Common Template Functions
 
 * `trimV`: This is equivalent to `trimPrefix "v"`
