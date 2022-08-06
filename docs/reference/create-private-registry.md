@@ -70,7 +70,10 @@ ref. [2022-03-29 Automate handling a number of Pull Requests by Renovate in Terr
 ### Requirements
 
 - [aqua](https://aquaproj.github.io/docs/reference/install) >= [v1.14.0](https://github.com/aquaproj/aqua/releases/tag/v1.14.0)
-- [GitHub Personal Access Token](README.md#github-access-token-is-required)
+- GitHub Access Token
+
+GitHub Access Token is required to access private repositories.
+Please set your GitHub Access Token as the environment variable `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN`. The scope `repo` is required.
 
 ### Set up
 
