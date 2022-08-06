@@ -9,10 +9,11 @@ it is useful to create a private registry in your organization.
 
 aqua provides the framework to build private registries.
 
-The framework has two components.
+The framework has the following components.
 
 * [registry-tool](https://github.com/aquaproj/registry-tool): CLI
 * [template repository](https://github.com/aquaproj/template-private-aqua-registry)
+* [registry-action](https://github.com/aquaproj/registry-action): GitHub Actions
 
 ## How to use
 
@@ -27,6 +28,27 @@ To test the registry in CI, GitHub Access Token is required to access private re
 
 We recommend to create a GitHub App and install it to private repositories.
 You can also use GitHub Personal Access Token instead of GitHub App.
+
+Then please set GitHub App ID and Private Key or Personal Access Token at GitHub Secrets and fix GitHub Actions Workflow `test` using secrets.
+
+e.g.
+
+```yaml
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - uses: aquaproj/registry-action/test@v0.1.0
+        with:
+          goos: ${{ matrix.env.goos }}
+          goarch: ${{ matrix.env.goarch }}
+          go_version: "1.18.5"
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+```
 
 ## Renovate
 
