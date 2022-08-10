@@ -10,6 +10,8 @@ aqua >= v1.4.0 is required.
 
 When you develop aqua Registry such as [Standard Registry](https://github.com/aquaproj/aqua-registry), you have to consider mainly the following platforms.
 
+* windows / amd64
+* windows / arm64
 * darwin / amd64
 * darwin / arm64
 * linux / amd64
