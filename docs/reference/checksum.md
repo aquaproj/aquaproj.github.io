@@ -5,21 +5,14 @@ sidebar_position: 1100
 # Checksum Verification
 
 :::caution
-This feature is still prerelease, and isn't merged into the default branch.
-This feature is disabled by default, but in future we will release this feature and enable by default.
-:::
-
-[#427](https://github.com/aquaproj/aqua/issues/427)
-
-## Release tag, Development branch
-
-This feature is still prerelease, and isn't merged into the default branch.
+This feature is still prerelease, and is disabled in the default branch ([ref](https://github.com/aquaproj/aqua/commit/9f6d4c4c5a1da3eab5bb392b707ad7ac1f396ac7)).
 Until this feature will be released, we will publish prerelease versions.
 The prerelease version includes the word `checksum`.
 
-e.g. [v1.20.0-1-checksum](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-1-checksum)
+e.g. [v1.20.0-2-checksum](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-2-checksum)
+:::
 
-We are developing this feature in the pull request [#1070](https://github.com/aquaproj/aqua/pull/1070).
+[#427](https://github.com/aquaproj/aqua/issues/427)
 
 ## Overview
 
