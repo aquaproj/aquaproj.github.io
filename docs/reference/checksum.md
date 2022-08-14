@@ -39,11 +39,7 @@ packages:
   - name: golangci/golangci-lint@v1.46.2
 ```
 
-aqua creates a file `.aqua-checksums.json` in the same directory as aqua configuration file `aqua.yaml` and writes checksums to `.aqua-checksums.json`.
-
-:::caution
-`.aqua-checksums.json` is created and updated by `aqua` automatically, so you don't have to update this file manually.
-:::
+aqua creates or updates a file `aqua-checksums.json` in the same directory as aqua configuration file `aqua.yaml` and writes checksums.
 
 This file has pairs of asset unique id and checksum.
 
@@ -58,6 +54,12 @@ e.g.
 }
 ```
 
+:::info
+aqua finds `aqua-checksums.json` and `.aqua-checksums.json`.
+`aqua-checksums.json` takes precedence over `.aqua-checksums.json`.
+If they don't exist, `aqua-checksums.json` is created.
+:::
+
 Many tools publish checksum files, so aqua gets checksums from them.
 
 e.g.
@@ -71,18 +73,18 @@ When a tool is installed, aqua verifies the checksum as the following.
 1. Calculate the checksum from the downloaded file
 1. Get the expected checksum
 1. If the actual checksum is different from the expected checksum, make the installation failure
-1. If the checksum isn't found in `.aqua-checksums.json`, the expected checksum is added to `.aqua-checksums.json`
+1. If the checksum isn't found in `aqua-checksums.json`, the expected checksum is added to `aqua-checksums.json`
 1. Install the tool
 
 aqua gets the expected from the following sources.
 
-1. `.aqua-checksums.json`
+1. `aqua-checksums.json`
 1. checksum files that each tools publish
 1. If the tool doesn't publish checkfum files, aqua treats the checksum calculated from the downloaded asset as the expected checksum
 
 ## `aqua update-checksum` command
 
-You can create or update `.aqua-checksums.json` without installing tools by `aqua update-checksum` command.
+You can create or update `aqua-checksums.json` without installing tools by `aqua update-checksum` command.
 
 ```console
 $ aqua update-checksum
@@ -137,7 +139,7 @@ Run `aqua update-checksum`.
 $ aqua update-checksum
 INFO[0000] updating a package checksum                   aqua_version=1.20.0-1-checksum env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_registry=standard package_version=v3.4.0 program=aqua
 
-$ cat .aqua-checksums.json
+$ cat aqua-checksums.json
 {
   "checksums": {
     "github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_darwin_amd64.tar.gz": "e98e4216a0ec38d8a4c08a8ba0b3d3df97c022d79ffdf4b8083be6c39d2208d3",
@@ -166,12 +168,12 @@ $ aqua i
 INFO[0000] download and unarchive the package            aqua_version=1.20.0-1-checksum env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_version=v3.4.0 program=aqua registry=standard
 ```
 
-To confirm the checksum verification, let's edit the checksum in `.aqua-checksums.json` intentionally.
+To confirm the checksum verification, let's edit the checksum in `aqua-checksums.json` intentionally.
 
 ```console
-$ cp .aqua-checksums.json .aqua-checksums.json.orig
-$ vi .aqua-checksums.json
-$ diff .aqua-checksums.json .aqua-checksums.json.orig 
+$ cp aqua-checksums.json aqua-checksums.json.orig
+$ vi aqua-checksums.json
+$ diff aqua-checksums.json aqua-checksums.json.orig 
 4c4
 <     "github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_darwin_arm64.tar.gz": "bd223ccee50da1b853a9be5c56696d4114e8aac8c2feb3820dff41877d6e64c0",
 ---
@@ -208,13 +210,13 @@ Let's fix .aqua-chcksums.json, then you can install tfcmt v3.4.0.
 
 
 ```console
-$ cp .aqua-checksums.json.orig .aqua-checksums.json
+$ cp aqua-checksums.json.orig aqua-checksums.json
 $ tfcmt -v
 INFO[0000] download and unarchive the package            aqua_version=1.20.0-1-checksum env=darwin/arm64 exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_darwin_arm64.tar.gz/tfcmt package=suzuki-shunsuke/tfcmt package_name=suzuki-shunsuke/tfcmt package_version=v3.4.0 program=aqua registry=standard
 tfcmt version 3.4.0 (0258ad962fad8cfd6d5eb82bd48b113435d932ff)
 ```
 
-## Question: Should `.aqua-checksums.json` be managed with Git?
+## Question: Should `aqua-checksums.json` be managed with Git?
 
 Coming soon
 
