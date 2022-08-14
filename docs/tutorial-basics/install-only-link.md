@@ -15,7 +15,7 @@ Let's run `aqua i -l`.
 
 ```console
 $ aqua i -l
-INFO[0000] create a symbolic link                        aqua_version=1.17.0 link_file=/home/foo/.local/share/aquaproj-aqua/bin/tfmigrator new=aqua-proxy program=aqua
+INFO[0000] create a symbolic link                        aqua_version=1.19.2 link_file=/home/foo/.local/share/aquaproj-aqua/bin/tfmigrator new=aqua-proxy program=aqua
 ```
 
 The command would exit immediately, because the tool isn't downloaded and installed yet.
@@ -27,7 +27,7 @@ Even if downloading and installing are skipped, you can execute the tool thanks 
 
 ```console
 $ tfmigrator -v
-INFO[0000] download and unarchive the package            aqua_version=1.17.0 package_name=tfmigrator/cli package_version=v0.2.1 program=aqua registry=standard
+INFO[0000] download and unarchive the package            aqua_version=1.19.2 package_name=tfmigrator/cli package_version=v0.2.1 program=aqua registry=standard
 tfmigrator version 0.2.1 (3993c0824016673338530f4e7e8966c35efa5706)
 ```
 
