@@ -135,7 +135,7 @@ e.g.
 
 ```console
 $ gh version
-FATA[0000] aqua failed                                   aqua_version=1.17.0 error="command is not found" exe_name=gh program=aqua
+FATA[0000] aqua failed                                   aqua_version=1.19.2 error="command is not found" exe_name=gh program=aqua
 ```
 
 aqua finds the configuration files and packages according to the rule.

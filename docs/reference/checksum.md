@@ -17,7 +17,7 @@ This feature is still prerelease, and isn't merged into the default branch.
 Until this feature will be released, we will publish prerelease versions.
 The prerelease version includes the word `checksum`.
 
-e.g. [v1.20.0-0-checksum](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-0-checksum)
+e.g. [v1.20.0-1-checksum](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-1-checksum)
 
 We are developing this feature in the pull request [#1070](https://github.com/aquaproj/aqua/pull/1070).
 

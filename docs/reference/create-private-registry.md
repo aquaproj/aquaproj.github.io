@@ -114,9 +114,9 @@ Creating aqua-local.yaml
 + aqua g local,BurntSushi/ripgrep >> aqua-local.yaml
 + aqua g pkgs/BurntSushi/ripgrep/pkg.yaml >> BurntSushi/ripgrep
 + aqua i --test
-INFO[0000] create a symbolic link                        aqua_version=1.18.0 env=darwin/arm64 link_file=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/bin/ripgrep new=aqua-proxy program=aqua
-ERRO[0000] install the package                           aqua_version=1.18.0 env=darwin/arm64 error="check file_src is correct: exe_path isn't found: stat /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/BurntSushi/ripgrep/13.0.0/ripgrep-13.0.0-x86_64-apple-darwin.tar.gz/ripgrep: no such file or directory" file_name=ripgrep package_name=BurntSushi/ripgrep package_version=13.0.0 program=aqua registry=local
-FATA[0000] aqua failed                                   aqua_version=1.18.0 env=darwin/arm64 error="it failed to install some packages" program=aqua
+INFO[0000] create a symbolic link                        aqua_version=1.19.2 env=darwin/arm64 link_file=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/bin/ripgrep new=aqua-proxy program=aqua
+ERRO[0000] install the package                           aqua_version=1.19.2 env=darwin/arm64 error="check file_src is correct: exe_path isn't found: stat /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/BurntSushi/ripgrep/13.0.0/ripgrep-13.0.0-x86_64-apple-darwin.tar.gz/ripgrep: no such file or directory" file_name=ripgrep package_name=BurntSushi/ripgrep package_version=13.0.0 program=aqua registry=local
+FATA[0000] aqua failed                                   aqua_version=1.19.2 env=darwin/arm64 error="it failed to install some packages" program=aqua
 FATA[0001] aqua failed                                   aqua_version=0.1.0-1 env=darwin/arm64 error="execute a command: aqua i: exit status 1" program=aqua-registry
 ```
 
