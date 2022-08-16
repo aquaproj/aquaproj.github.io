@@ -251,6 +251,18 @@ packages:
       algorithm: sha256
 ```
 
+## Generate and patch checksum configuration automatically
+
+It is bothersome to write the checksum configuration manually, so aqua supports scaffolding the configuration.
+
+[aqua gr](scaffold-registry) scaffolds the checksum configuration too.
+
+And you can also patch the checksum configuration to the existing registries by [aqua-registry patch-checksum command](https://github.com/aquaproj/registry-tool/blob/main/USAGE.md#aqua-registry-patch-checksum).
+
+:::caution
+The scaffolding isn't perfect, so sometimes you have to fix the code manually.
+:::
+
 ### `enabled`
 
 You can enable or disable the checksum download by `enabled` attribute.
