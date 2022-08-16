@@ -9,7 +9,7 @@ This feature is still prerelease, and is disabled in the default branch ([ref](h
 Until this feature will be released, we will publish prerelease versions.
 The prerelease version includes the word `checksum`.
 
-e.g. [v1.20.0-2-checksum](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-2-checksum)
+e.g. [v1.20.0-3-checksum](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-3-checksum)
 :::
 
 [#427](https://github.com/aquaproj/aqua/issues/427)
@@ -231,8 +231,8 @@ packages:
       file_format: regexp
       algorithm: sha256
       pattern:
-        checksum: ^(.{64})
-        file: "^.{64}\\s+(\\S+)$"
+        checksum: ^(\b[A-Fa-f0-9]{64}\b)
+        file: "^\\b[A-Fa-f0-9]{64}\\b\\s+(\\S+)$"
 ```
 
 e.g. [ArgoCD CLI](https://github.com/aquaproj/aqua-registry/blob/109811850abf8ec34f8715f3384ba8218f05ec1d/pkgs/argoproj/argo-cd/registry.yaml)
@@ -303,8 +303,8 @@ The following `file_format` are supported.
 
 ```yaml
 pattern:
-  checksum: ^(.{64})
-  file: "^.{64}\\s+(\\S+)$"
+  checksum: ^(\b[A-Fa-f0-9]{64}\b)
+  file: "^\\b[A-Fa-f0-9]{64}\\b\\s+(\\S+)$"
 ```
 
 aqua extracts pairs of checkfum and asset name using regular expressions.
