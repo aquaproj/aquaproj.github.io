@@ -52,6 +52,7 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 
 * [registries](#registries): The list of registries
 * [packages](#packages): The list of installed packages
+* [checksum](checksum): configuration for checksum verification
 
 :::caution
 `inline_registry` was removed from `aqua >= v0.9.0`. Please use [local registry](#local-registry).
