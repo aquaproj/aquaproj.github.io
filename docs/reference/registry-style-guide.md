@@ -239,28 +239,3 @@ For example, you can also use `http` type to install the package from GitHub Rel
 ## Use `go_install` rather than `go`
 
 Please see [the caution](/docs/reference/registry-config/go-package).
-
-## Package name of `go_install` should be equivalent to Go's Module path
-
-To update packages by Renovate with [aqua-renovate-config](https://github.com/aquaproj/aqua-renovate-config).
-aqua-renovate-config supports updating packages with Renovate Go Datasource.
-
-:thumbsup:
-
-e.g. https://pkg.go.dev/github.com/zeromicro/go-zero/tools/goctl
-
-```yaml
-packages:
-  - name: github.com/zeromicro/go-zero/tools/goctl
-    type: go_install
-    path: github.com/zeromicro/go-zero/tools/goctl
-```
-
-:thumbsdown:
-
-```yaml
-packages:
-  - name: zeromicro/go-zero/goctl
-    type: go_install
-    path: github.com/zeromicro/go-zero/tools/goctl
-```
