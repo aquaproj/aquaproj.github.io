@@ -170,7 +170,7 @@ packages:
 * `registry`: (string, optional) registry name
   * default value is `standard`
 * `version`: (string, optional) package version
-* `import`: (string, optional) glob pattern of package files. This is relative path from the configuration file. This is parsed with [filepath.Glob](https://pkg.go.dev/path/filepath#Glob). Please see [Split the list of packages](../tutorial-extras/split-config) too
+* `import`: (string, optional) glob pattern of package files. This is relative path from the configuration file. This is parsed with [filepath.Glob](https://pkg.go.dev/path/filepath#Glob). Please see [Split the list of packages](/docs/tutorial-extras/split-config) too
 
 The following two configuration is equivalent.
 
