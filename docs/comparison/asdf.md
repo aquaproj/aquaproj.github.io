@@ -112,11 +112,6 @@ asdf outputs the guide and exits with non zero code.
 asdf supports for existing config files .nvmrc, .node-versions, .ruby-version for smooth migration.
 On the other hand, aqua doesn't support them.
 
-### List up available tool versions
-
-asdf supports listing up available tool versions.
-On the other hand, aqua doesn't support the feature for now.
-
 ### Support Optional Scripts
 
 https://asdf-vm.com/plugins/create.html#optional-scripts
