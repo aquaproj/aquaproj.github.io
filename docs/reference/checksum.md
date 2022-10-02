@@ -5,11 +5,16 @@ sidebar_position: 1100
 # Checksum Verification
 
 :::caution
-This feature is still prerelease, and is disabled in the default branch ([ref](https://github.com/aquaproj/aqua/commit/9f6d4c4c5a1da3eab5bb392b707ad7ac1f396ac7)).
-Until this feature will be released, we will publish prerelease versions.
-The prerelease version includes the word `checksum`.
+This feature is still beta.
+To use this feature, use the prerelease version including the word `checksum`.
 
 e.g. [v1.20.0-8-checksum](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-8-checksum)
+
+Or from [v1.20.0-1](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-1), you can use this feature by setting the environment variable `AQUA_EXPERIMENTAL_CHECKSUM_VERIFICATION` to `true`.
+
+```sh
+export AQUA_EXPERIMENTAL_CHECKSUM_VERIFICATION=true
+```
 :::
 
 [#427](https://github.com/aquaproj/aqua/issues/427)
@@ -34,16 +39,22 @@ packages:
 
 aqua creates or updates a file `aqua-checksums.json` in the same directory as aqua configuration file `aqua.yaml` and writes checksums.
 
-This file has pairs of asset unique id and checksum.
-
-e.g.
+e.g. `aqua-checksums.json`
 
 ```json
 {
-  "checksums": {
-    "github_archive/github.com/b3nj5m1n/xdg-ninja/v0.2.0.1": "f4f9ab4500e7cf865ff8b68c343537e27b9ff1e6068cb1387e516e608f77cec8",
-    "github_archive/github.com/bats-core/bats-core/v1.7.0": "ac70c2a153f108b1ac549c2eaa4154dea4a7c1cc421e3352f0ce6ea49435454e",
-  }
+  "checksums": [
+    {
+      "id": "github_release/github.com/golangci/golangci-lint/v1.49.0/golangci-lint-1.49.0-darwin-amd64.tar.gz",
+      "checksum": "20cd1215e0420db8cfa94a6cd3c9d325f7b39c07f2415a02d111568d8bc9e271",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/golangci/golangci-lint/v1.49.0/golangci-lint-1.49.0-darwin-arm64.tar.gz",
+      "checksum": "cabb1a4c35fe1dadbe5a81550a00871281a331e7660cd85ae16e936a7f0f6cfc",
+      "algorithm": "sha256"
+    }
+  ]
 }
 ```
 
@@ -97,7 +108,13 @@ Install the prerelease version.
 
 ```console
 $ aqua -v
-aqua version 1.20.0-1-checksum (0b058960d4ead348a27a1629770840a0ed69cbe8)
+aqua version 1.20.0-1 (3577858929cbcdd608c3cab80315b8b0ec1efda0)
+```
+
+Set the environment variable `AQUA_EXPERIMENTAL_CHECKSUM_VERIFICATION` to `true`.
+
+```console
+$ export AQUA_EXPERIMENTAL_CHECKSUM_VERIFICATION=true
 ```
 
 Scaffold `aqua.yaml` and edit to enable the checksum verification.
@@ -115,7 +132,7 @@ checksum:
   enabled: true
 registries:
 - type: standard
-  ref: v3.27.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v3.66.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 ```
 
@@ -127,42 +144,66 @@ $ aqua g -i suzuki-shunsuke/tfcmt
 
 ```yaml
 packages:
-- name: suzuki-shunsuke/tfcmt@v3.4.0
+- name: suzuki-shunsuke/tfcmt@v4.0.0
 ```
 
 Run `aqua update-checksum`.
 
 ```console
 $ aqua update-checksum
-INFO[0000] updating a package checksum                   aqua_version=1.20.0-1-checksum env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_registry=standard package_version=v3.4.0 program=aqua
+INFO[0000] updating a package checksum                   aqua_version=1.20.0-1 env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_registry=standard package_version=v4.0.0 program=aqua
 
 $ cat aqua-checksums.json
 {
-  "checksums": {
-    "github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_darwin_amd64.tar.gz": "e98e4216a0ec38d8a4c08a8ba0b3d3df97c022d79ffdf4b8083be6c39d2208d3",
-    "github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_darwin_arm64.tar.gz": "bd223ccee50da1b853a9be5c56696d4114e8aac8c2feb3820dff41877d6e64cd",
-    "github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_linux_amd64.tar.gz": "f186c3d6b9cb8ded099124a3ef3869e13a23b0272c99a0ab434b89c3ed73ee6e",
-    "github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_linux_arm64.tar.gz": "2b1dc97b5ef2d58d2480d1020a38293c0831e51d6ba6118cb4954d01c32e584f",
-    "github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_windows_amd64.tar.gz": "9748b9895bed85390c8820c5ced0b84134240113d3f15fbfa8aadd8f4476393d",
-    "github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_windows_arm64.tar.gz": "0cfa9f56f626f4ab4c0cacfed22616c984d568d70bd67721d052c39749047f84"
-  }
+  "checksums": [
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_amd64.tar.gz",
+      "checksum": "346d43e34ee990c26ebcbc80936bea6d6f524bcc446aa74d1f07c42708fc480b",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz",
+      "checksum": "372986bfaddbfeb680329341568fc4fba0d6fa651b941bf4154585b7baaa67db",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_linux_amd64.tar.gz",
+      "checksum": "e950763e64504e40a45c75c81a35d115f98f164264e159e4e4b7e2534d3d8087",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_linux_arm64.tar.gz",
+      "checksum": "8ce944ccaf7ff5a150b256d75d8fe3d04ba741d5586bb5f100b9df80294f14fa",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_windows_amd64.tar.gz",
+      "checksum": "2228e167f3ddf61e6ccfd30648cf649f7b18d98eb6b2150e6c3522183628bda9",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_windows_arm64.tar.gz",
+      "checksum": "5435b0d4cca909f752dce456fd186bef2de994f7d1c24665fa8507e9d6019e5b",
+      "algorithm": "sha256"
+    }
+  ]
 }
 ```
 
-If tfcmt v3.4.0 is already installed, please uninstall once.
+If tfcmt v4.0.0 is already installed, please uninstall once.
 
 ```console
 $ aqua which tfcmt
-/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_darwin_arm64.tar.gz/tfcmt
+/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz/tfcmt
 
-$ rm -Rf /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0
+$ rm -Rf /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0
 ```
 
 And run `aqua i`. tfcmt will be installed successfully.
 
 ```console
 $ aqua i
-INFO[0000] download and unarchive the package            aqua_version=1.20.0-1-checksum env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_version=v3.4.0 program=aqua registry=standard
+INFO[0000] download and unarchive the package            aqua_version=1.20.0-1 env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=standard
 ```
 
 To confirm the checksum verification, let's edit the checksum in `aqua-checksums.json` intentionally.
@@ -171,46 +212,46 @@ To confirm the checksum verification, let's edit the checksum in `aqua-checksums
 $ cp aqua-checksums.json aqua-checksums.json.orig
 $ vi aqua-checksums.json
 $ diff aqua-checksums.json aqua-checksums.json.orig 
-4c4
-<     "github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_darwin_arm64.tar.gz": "bd223ccee50da1b853a9be5c56696d4114e8aac8c2feb3820dff41877d6e64c0",
+10c10
+<       "checksum": "372986bfaddbfeb680329341568fc4fba0d6fa651b941bf4154585b7baaa67d0",
 ---
->     "github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_darwin_arm64.tar.gz": "bd223ccee50da1b853a9be5c56696d4114e8aac8c2feb3820dff41877d6e64cd",
+>       "checksum": "372986bfaddbfeb680329341568fc4fba0d6fa651b941bf4154585b7baaa67db",
 ```
 
 And try to reinstall tfcmt.
 
 ```console
-$ rm -Rf /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0
+$ rm -Rf /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0
 $ aqua i
-INFO[0000] download and unarchive the package            aqua_version=1.20.0-1-checksum env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_version=v3.4.0 program=aqua registry=standard
-ERRO[0000] install the package                           actual_checksum=bd223ccee50da1b853a9be5c56696d4114e8aac8c2feb3820dff41877d6e64cd aqua_version=1.20.0-1-checksum env=darwin/arm64 error="checksum is invalid" expected_checksum=bd223ccee50da1b853a9be5c56696d4114e8aac8c2feb3820dff41877d6e64c0 package_name=suzuki-shunsuke/tfcmt package_version=v3.4.0 program=aqua registry=standard
-FATA[0000] aqua failed                                   aqua_version=1.20.0-1-checksum env=darwin/arm64 error="it failed to install some packages" program=aqua
+INFO[0000] download and unarchive the package            aqua_version=1.20.0-1 env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=standard
+ERRO[0000] install the package                           actual_checksum=372986BFADDBFEB680329341568FC4FBA0D6FA651B941BF4154585B7BAAA67DB aqua_version=1.20.0-1 env=darwin/arm64 error="checksum is invalid" expected_checksum="&{github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz 372986BFADDBFEB680329341568FC4FBA0D6FA651B941BF4154585B7BAAA67D0 sha256}" package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=standard
+FATA[0000] aqua failed                                   aqua_version=1.20.0-1 env=darwin/arm64 error="it failed to install some packages" program=aqua
 ```
 
-Then it failed to install tfcmt v3.4.0 because the checksum is wrong.
-Of course, tfcmt v3.4.0 isn't installed.
+Then it failed to install tfcmt because the checksum is wrong.
+Of course, tfcmt isn't installed.
 
 ```console
-$ ls /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0
-gls: cannot access '/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0': No such file or directory
+$ ls /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0
+gls: cannot access '/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0': No such file or directory
 ```
 
 The checksum verification also works in the lazy install.
 
 ```console
 $ tfcmt -v
-INFO[0000] download and unarchive the package            aqua_version=1.20.0-1-checksum env=darwin/arm64 exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_darwin_arm64.tar.gz/tfcmt package=suzuki-shunsuke/tfcmt package_name=suzuki-shunsuke/tfcmt package_version=v3.4.0 program=aqua registry=standard
-FATA[0001] aqua failed                                   actual_checksum=bd223ccee50da1b853a9be5c56696d4114e8aac8c2feb3820dff41877d6e64cd aqua_version=1.20.0-1-checksum env=darwin/arm64 error="checksum is invalid" expected_checksum=bd223ccee50da1b853a9be5c56696d4114e8aac8c2feb3820dff41877d6e64c0 program=aqua
+INFO[0000] download and unarchive the package            aqua_version=1.20.0-1 env=darwin/arm64 exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz/tfcmt package=suzuki-shunsuke/tfcmt package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=standard
+FATA[0001] aqua failed                                   actual_checksum=372986BFADDBFEB680329341568FC4FBA0D6FA651B941BF4154585B7BAAA67DB aqua_version=1.20.0-1 env=darwin/arm64 error="checksum is invalid" expected_checksum="&{github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz 372986BFADDBFEB680329341568FC4FBA0D6FA651B941BF4154585B7BAAA67D0 sha256}" program=aqua
 ```
 
-Let's fix .aqua-chcksums.json, then you can install tfcmt v3.4.0.
+Let's fix .aqua-chcksums.json, then you can install tfcmt.
 
 
 ```console
 $ cp aqua-checksums.json.orig aqua-checksums.json
 $ tfcmt -v
-INFO[0000] download and unarchive the package            aqua_version=1.20.0-1-checksum env=darwin/arm64 exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v3.4.0/tfcmt_darwin_arm64.tar.gz/tfcmt package=suzuki-shunsuke/tfcmt package_name=suzuki-shunsuke/tfcmt package_version=v3.4.0 program=aqua registry=standard
-tfcmt version 3.4.0 (0258ad962fad8cfd6d5eb82bd48b113435d932ff)
+INFO[0000] download and unarchive the package            aqua_version=1.20.0-1 env=darwin/arm64 exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz/tfcmt package=suzuki-shunsuke/tfcmt package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=standard
+tfcmt version 4.0.0 (047e980d083da80303e6e8f4ebf6d5c9e7859716)
 ```
 
 ## Question: Should `aqua-checksums.json` be managed with Git?
