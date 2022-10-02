@@ -9,7 +9,7 @@ This feature is still prerelease, and is disabled in the default branch ([ref](h
 Until this feature will be released, we will publish prerelease versions.
 The prerelease version includes the word `checksum`.
 
-e.g. [v1.20.0-3-checksum](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-3-checksum)
+e.g. [v1.20.0-8-checksum](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-8-checksum)
 :::
 
 [#427](https://github.com/aquaproj/aqua/issues/427)
@@ -51,6 +51,10 @@ e.g.
 aqua finds `aqua-checksums.json` and `.aqua-checksums.json`.
 `aqua-checksums.json` takes precedence over `.aqua-checksums.json`.
 If they don't exist, `aqua-checksums.json` is created.
+:::
+
+:::info
+The checksum is case insensitive.
 :::
 
 Many tools publish checksum files, so aqua gets checksums from them.
