@@ -285,6 +285,7 @@ The following `algorithm` are supported.
 
 * `sha256`
 * `sha512`
+* `md5`
 
 ### checksum `type`
 
