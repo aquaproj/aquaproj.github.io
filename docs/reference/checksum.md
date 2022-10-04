@@ -98,6 +98,32 @@ You can create or update `aqua-checksums.json` without installing tools by `aqua
 $ aqua update-checksum
 ```
 
+By default, `aqua update-checksum` doesn't add checksums if the package's checksum configuration is disabled.
+
+e.g. https://github.com/aquaproj/aqua-registry/blob/66c791c3cbbeb8847d175fbe2530a921539bbd8f/registry.yaml#L4192-L4205
+
+```yaml
+  - type: github_release
+    repo_owner: cycloidio
+    repo_name: terracognita
+    asset: terracognita-{{.OS}}-{{.Arch}}.tar.gz
+    checksum:
+      enabled: false
+```
+
+If `-deep` option is set, `aqua update-checksum` downloads assets and calculate checksums.
+
+```console
+$ aqua update-checksum -deep
+INFO[0001] downloading an asset to calculate the checksum  aqua_version= asset_name=terracognita-darwin-amd64.tar.gz checksum_env=darwin/amd64 env=linux/amd64 package_name=cycloidio/terracognita package_registry=standard package_version=v0.8.1 program=aqua
+INFO[0008] downloading an asset to calculate the checksum  aqua_version= asset_name=terracognita-windows-amd64.tar.gz checksum_env=windows/amd64 env=linux/amd64 package_name=cycloidio/terracognita package_registry=standard package_version=v0.8.1 program=aqua
+INFO[0014] downloading an asset to calculate the checksum  aqua_version= asset_name=terracognita-linux-amd64.tar.gz checksum_env=linux/amd64 env=linux/amd64 package_name=cycloidio/terracognita package_registry=standard package_version=v0.8.1 program=aqua
+```
+
+### Automate updating `aqua-checksums.json` in CI
+
+https://github.com/aquaproj/example-update-checksum
+
 ## aqua-registry version
 
 From [v3.27.0](https://github.com/aquaproj/aqua-registry/releases/tag/v3.27.0), aqua-registry supports the checksum verification.
@@ -256,7 +282,25 @@ tfcmt version 4.0.0 (047e980d083da80303e6e8f4ebf6d5c9e7859716)
 
 ## Question: Should `aqua-checksums.json` be managed with Git?
 
-Coming soon
+It's up to you, but we think you should manage `aqua-checksums.json` with Git.
+
+## aqua.yaml's checksum configuration
+
+aqua.yaml
+
+```yaml
+checksum:
+  enabled: true # By default, this is false
+  require_checksum: true # By default, this is false
+registries:
+# ...
+packages:
+# ...
+```
+
+- `enabled`: If this is true, the checksum verification is enabled
+- `require_checksum`: If this is true, it fails to install a package when the checksum isn't found in `aqua-checksums.json` and the package's checksum configuration is disabled.
+  By default, `require_checksum` is false and if the checksum isn't found the package is installed
 
 ## Registry's checksum configuration
 
