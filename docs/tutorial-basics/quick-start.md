@@ -46,11 +46,11 @@ If you want to try this tutorial in the clean environment, container is useful.
 ```console
 $ docker run --rm -ti alpine:3.15.0 sh
 # apk add curl
+# adduser -D foo
+# su foo
 # curl -sSfL \
   https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/aqua-installer |
   sh
-# adduser -D foo
-# su foo
 $ mkdir ~/workspace
 $ cd ~/workspace
 $ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
