@@ -15,6 +15,9 @@ You can override the following attributes on the specific `GOOS` and `GOARCH`.
 * asset
 * url
 * files
+* checksum
+* complete_windows_ext
+* windows_ext
 
 e.g. On Linux ARM64, `Arch` becomes `aarch64`.
 
