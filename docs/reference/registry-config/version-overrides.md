@@ -40,18 +40,23 @@ The list of version override.
 
 The following attributes are supported.
 
-* `type`
-* `repo_owner`
-* `repo_name`
 * `asset`
-* `path`
-* `format`
+* `checksum`
+* `complete_windows_ext`
 * `files`
-* `url`
-* `replacements`
 * `format_overrides`
-* `supported_if`
+* `format`
+* `overrides`
+* `path`
+* `replacements`
+* `repo_name`
+* `repo_owner`
 * `rosetta2`
+* `supported_envs`
+* `supported_if`
+* `type`
+* `url`
+* `windows_ext`
 
 e.g.
 
