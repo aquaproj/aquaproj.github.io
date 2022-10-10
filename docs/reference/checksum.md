@@ -410,3 +410,4 @@ pattern:
 ```
 
 aqua extracts pairs of checkfum and asset name using regular expressions.
+If the checksum file includes only one checksum, you can omit `pattern.file`.
