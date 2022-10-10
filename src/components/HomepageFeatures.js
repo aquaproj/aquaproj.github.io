@@ -57,6 +57,16 @@ const FeatureList = [
     ),
   },
   {
+    title: 'Checksum Verification',
+    description: (
+      <>
+        <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/194790358-2ec51331-52e1-4451-86f6-cb74c2a852e7.png" />
+        Checksum Verification prevents tools from being tampered.
+        Please see <a href="/docs/reference/checksum">Checksum Verification</a>.
+      </>
+    ),
+  },
+  {
     title: 'GitHub Actions',
     description: (
       <>
