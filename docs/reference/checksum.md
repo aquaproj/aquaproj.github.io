@@ -8,6 +8,8 @@ sidebar_position: 1100
 
 [#427](https://github.com/aquaproj/aqua/issues/427)
 
+Please give your feedback! [GitHub Discussions](https://github.com/aquaproj/aqua/discussions/1297)
+
 ## Overview
 
 Checksum Verification is a feature checking if the downloaded asset is correct with checksum.
