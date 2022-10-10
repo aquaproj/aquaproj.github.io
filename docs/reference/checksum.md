@@ -4,18 +4,7 @@ sidebar_position: 1100
 
 # Checksum Verification
 
-:::caution
-This feature is still beta.
-To use this feature, use the prerelease version including the word `checksum`.
-
-e.g. [v1.20.0-8-checksum](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-8-checksum)
-
-Or from [v1.20.0-1](https://github.com/aquaproj/aqua/releases/tag/v1.20.0-1), you can use this feature by setting the environment variable `AQUA_EXPERIMENTAL_CHECKSUM_VERIFICATION` to `true`.
-
-```sh
-export AQUA_EXPERIMENTAL_CHECKSUM_VERIFICATION=true
-```
-:::
+`aqua >= v1.20.0`
 
 [#427](https://github.com/aquaproj/aqua/issues/427)
 
@@ -272,7 +261,6 @@ FATA[0001] aqua failed                                   actual_checksum=372986B
 
 Let's fix .aqua-chcksums.json, then you can install tfcmt.
 
-
 ```console
 $ cp aqua-checksums.json.orig aqua-checksums.json
 $ tfcmt -v
@@ -282,7 +270,7 @@ tfcmt version 4.0.0 (047e980d083da80303e6e8f4ebf6d5c9e7859716)
 
 ## Question: Should `aqua-checksums.json` be managed with Git?
 
-It's up to you, but we think you should manage `aqua-checksums.json` with Git.
+Yes. You should manage `aqua-checksums.json` with Git.
 
 ## aqua.yaml's checksum configuration
 
