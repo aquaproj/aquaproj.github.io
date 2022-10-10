@@ -12,6 +12,7 @@
 
 ## Japanese
 
+* [2022-10-10 aqua CLI Version Manager が checksum の検証をサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-checksum-verification)
 * [2022-06-23 CLI Version Manager の aqua が Windows をサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-windows-support)
 * [2022-06-08 aqua が Go 製のツールのビルドをサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-go-build-support)
 * [2022-02-26 aqua-registry の全ツールを使えるようにする](https://zenn.dev/shunsuke_suzuki/articles/introduce-aqua-registry-all)
