@@ -7,6 +7,7 @@ sidebar_position: 1100
 `aqua >= v1.20.0`
 
 [#427](https://github.com/aquaproj/aqua/issues/427)
+[Blog Post written in Japanese](https://zenn.dev/shunsuke_suzuki/articles/aqua-checksum-verification)
 
 Please give your feedback! [GitHub Discussions](https://github.com/aquaproj/aqua/discussions/1297)
 
