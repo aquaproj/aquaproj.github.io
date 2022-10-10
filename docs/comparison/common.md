@@ -16,6 +16,7 @@ sidebar_position: 50
 * aqua supports Lazy Install
 * aqua supports installing tools from the private repositories
 * aqua supports Windows, macOS, and Linux
+* aqua supports [Checksum Verification](/docs/reference/checksum)
 
 :::info
 From aqua v1.12.0, aqua supports Windows.
