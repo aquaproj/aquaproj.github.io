@@ -33,26 +33,6 @@ function HomepageHeader() {
   );
 }
 
-function VideoContainer() {
-  return (
-    <div className="container text--center margin-bottom--xl">
-      <div className="row">
-        <div className="col">
-          <div className="video-container">
-            <LiteYouTubeEmbed
-              id="adX_lloB3mY"
-              params="autoplay=1&autohide=1&showinfo=0&rel=0"
-              title="Introduction of aqua"
-              poster="maxresdefault"
-              webp
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -60,7 +40,6 @@ export default function Home() {
       title={`aqua Official Website`}
       description="aqua Official Website">
       <HomepageHeader />
-      <VideoContainer />
       <main>
         <HomepageFeatures />
       </main>
