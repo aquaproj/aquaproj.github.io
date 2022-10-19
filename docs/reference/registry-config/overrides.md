@@ -18,6 +18,7 @@ You can override the following attributes on the specific `GOOS` and `GOARCH`.
 * checksum
 * complete_windows_ext
 * windows_ext
+* type
 
 e.g. On Linux ARM64, `Arch` becomes `aarch64`.
 
