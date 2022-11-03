@@ -89,6 +89,11 @@ const config = {
             label: 'Blog',
           },
           {
+            href: 'https://github.com/aquaproj/aqua/releases',
+            label: 'Changelog',
+            position: 'right',
+          },
+          {
             href: 'https://asciinema.org/a/498262?autoplay=1',
             label: 'Demo',
             position: 'right',
