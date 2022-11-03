@@ -27,3 +27,46 @@ Example pull requests by Renovate.
 
 * [chore(deps): update dependency golangci/golangci-lint to v1.42.0](https://github.com/aquaproj/aqua/pull/193)
 * [chore(deps): update dependency aquaproj/aqua-registry to v0.2.2](https://github.com/aquaproj/aqua/pull/194)
+
+## :bulb: Prevent some packages from being updated by Renovate
+
+There are two ways to prevent some packages from being updated by Renovate.
+
+1. [Renovate's enabled option](https://docs.renovatebot.com/configuration-options/#enabled)
+2. Use the long syntax instead of the short syntax
+
+### 1. Renovate's enabled option
+
+e.g. renovate.json
+
+```json
+{
+  "packageRules": [
+    {
+      "matchPackageNames": ["kubernetes/kubectl"],
+      "enabled": false
+    }
+  ]
+}
+```
+
+### 2. Use the long syntax instead of the short syntax
+
+e.g. aqua.yaml
+
+:thumbsup: Renovate wouldn't update `kubernetes/kubectl`.
+
+```yaml
+packages:
+- name: kubernetes/kubectl
+  version: v1.25.0
+```
+
+:thumbsdown: Renovate would update `kubernetes/kubectl` and `suzuki-shunsuke/tfcmt`.
+
+```yaml
+packages:
+- name: kubernetes/kubectl@v1.25.0
+- name: suzuki-shunsuke/tfcmt
+  version: v2.0.0 # renovate: depName=suzuki-shunsuke/tfcmt
+```
