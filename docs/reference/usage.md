@@ -15,11 +15,12 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   1.18.0 (4c4a265975fdbbd0e85f4f75d5533478e7ed367c)
+   1.22.0 (869d7b46a0697a5938dffd02a7ea219406762bf2)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
    install, i             Install tools
+   update-aqua            Update aqua
    generate, g            Search packages in registries and output the configuration interactively
    which                  Output the absolute file path of the given command
    exec                   Execute tool
@@ -28,16 +29,16 @@ COMMANDS:
    completion             Output shell completion script for bash or zsh
    version                Show version
    cp                     Copy executable files in a directory
+   update-checksum        Create or Update .aqua-checksums.json
    help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
+   --log-level value         log level [$AQUA_LOG_LEVEL]
    --config value, -c value  configuration file path [$AQUA_CONFIG]
+   --trace value             trace output file path
    --cpu-profile value       cpu profile output file path
    --help, -h                show help (default: false)
-   --log-level value         log level [$AQUA_LOG_LEVEL]
-   --trace value             trace output file path
    --version, -v             print the version (default: false)
-   
 ```
 
 ## aqua install
@@ -52,26 +53,26 @@ USAGE:
 
 DESCRIPTION:
    Install tools according to the configuration files.
-   
+
    e.g.
    $ aqua i
-   
+
    If you want to create only symbolic links and want to skip downloading package, please set "-l" option.
-   
+
    $ aqua i -l
-   
+
    By default aqua doesn't install packages in the global configuration.
    If you want to install packages in the global configuration too,
    please set "-a" option.
-   
+
    $ aqua i -a
-   
+
 
 OPTIONS:
-   --all, -a        install all aqua configuration packages (default: false)
    --only-link, -l  create links but skip downloading packages (default: false)
    --test           test file.src after installing the package (default: false)
-   
+   --all, -a        install all aqua configuration packages (default: false)
+   --help, -h       show help (default: false)
 ```
 
 ## aqua generate
@@ -86,11 +87,11 @@ USAGE:
 
 DESCRIPTION:
    Search packages in registries and output the configuration interactively.
-   
+
    If no argument is passed, interactive fuzzy finder is launched.
-   
+
    $ aqua g
-   
+
      influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
      newrelic/newrelic-cli (standard) (newrelic)                   │  cli/cli
      pivotal-cf/pivnet-cli (standard) (pivnet)                     │
@@ -112,60 +113,73 @@ DESCRIPTION:
    > cli/cli (standard) (gh)                                       │
      48/380                                                        │
    > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
-   
+
    Please select the package you want to install, then the package configuration is outptted.
    You can select multiple packages by tab key.
    Please copy and paste the outputted configuration in the aqua configuration file.
-   
+
    $ aqua g # tfmigrator/cli is selected
    - name: tfmigrator/cli@v0.2.1
-   
+
    You can update the configuration file directly with "-i" option.
-   
+
    $ aqua g -i
-   
+
+   You can update an imported file with "-o" option.
+
+   $ aqua g -o aqua/pkgs.yaml
+
    You can pass packages with positional arguments.
-   
-   $ aqua g [<registry name>,<package name> ...]
-   
-   $ aqua g standard,cli/cli standard,junegunn/fzf
+
+   $ aqua g [<registry name>,<package name>[@<version>] ...]
+
+   $ aqua g standard,cli/cli standard,junegunn/fzf standard,suzuki-shunsuke/tfcmt@v3.0.0
    - name: cli/cli@v2.2.0
    - name: junegunn/fzf@0.28.0
-   
+   - name: suzuki-shunsuke/tfcmt@v3.0.0
+
    You can omit the registry name if it is "standard".
-   
+
    $ aqua g cli/cli
    - name: cli/cli@v2.2.0
-   
+
    With "-f" option, you can pass packages.
-   
+
    $ aqua g -f packages.txt # list of <registry name>,<package name>
    - name: cli/cli@v2.2.0
    - name: junegunn/fzf@0.28.0
    - name: tfmigrator/cli@v0.2.1
-   
+
    $ cat packages.txt | aqua g -f -
    - name: cli/cli@v2.2.0
    - name: junegunn/fzf@0.28.0
    - name: tfmigrator/cli@v0.2.1
-   
+
    $ aqua list | aqua g -f - # Generate configuration to install all packages
-   
+
    You can omit the registry name if it is "standard".
-   
+
    echo "cli/cli" | aqua g -f -
    - name: cli/cli@v2.2.0
-   
+
    You can select a version interactively with "-s" option.
-   
+
    $ aqua g -s
-   
+
+   The option "-pin" is useful to prevent the package from being updated by Renovate.
+
+   $ aqua g -pin cli/cli
+   - name: cli/cli
+     version: v2.2.0
+
 
 OPTIONS:
-   --select-version, -s  Select the installed version interactively (default: false)
    -f value              the file path of packages list. When the value is "-", the list is passed from the standard input
    -i                    Insert packages to configuration file (default: false)
-   
+   --pin                 Pin version (default: false)
+   -o value              inserted file
+   --select-version, -s  Select the installed version interactively (default: false)
+   --help, -h            show help (default: false)
 ```
 
 ## aqua init
@@ -176,13 +190,78 @@ NAME:
    aqua init - Create a configuration file if it doesn't exist
 
 USAGE:
-   aqua init [<created file path. The default value is "aqua.yaml">]
+   aqua init [command options] [<created file path. The default value is "aqua.yaml">]
 
 DESCRIPTION:
    Create a configuration file if it doesn't exist
    e.g.
    $ aqua init # create "aqua.yaml"
    $ aqua init foo.yaml # create foo.yaml
+
+OPTIONS:
+   --help, -h  show help (default: false)
+```
+
+## aqua update-aqua
+
+```console
+$ aqua help update-aqua
+NAME:
+   aqua update-aqua - Update aqua
+
+USAGE:
+   aqua update-aqua [command options] [arguments...]
+
+DESCRIPTION:
+   Update aqua.
+
+   e.g.
+   $ aqua update-aqua [version]
+
+   aqua is installed in $AQUA_ROOT_DIR/bin.
+   By default the latest version of aqua is installed, but you can specify the version with argument.
+
+   e.g.
+   $ aqua update-aqua # Install the latest version
+   $ aqua update-aqua v1.20.0 # Install v1.20.0
+
+
+OPTIONS:
+   --help, -h  show help (default: false)
+```
+
+## aqua update-checksum
+
+```console
+$ aqua help update-checksum
+NAME:
+   aqua update-checksum - Create or Update .aqua-checksums.json
+
+USAGE:
+   aqua update-checksum [command options] [arguments...]
+
+DESCRIPTION:
+   Create or Update .aqua-checksums.json.
+
+   e.g.
+   $ aqua update-checksum
+
+   By default aqua doesn't update .aqua-checksums.json of the global configuration.
+   If you want to update them too,
+   please set "-a" option.
+
+   $ aqua update-checksum -a
+
+   By default, aqua update-checksum doesn't add checksums if the package's checksum configuration is disabled.
+   If -deep option is set, aqua update-checksum downloads assets and calculate checksums.
+
+   $ aqua update-checksum -deep
+
+
+OPTIONS:
+   --all, -a   Create or Update all .aqua-checksums.json including global configuration (default: false)
+   --deep      If a package's checksum configuration is disabled, download the asset and calculate the checksum (default: false)
+   --help, -h  show help (default: false)
 ```
 
 ## aqua which
@@ -193,24 +272,27 @@ NAME:
    aqua which - Output the absolute file path of the given command
 
 USAGE:
-   aqua which <command name>
+   aqua which [command options] <command name>
 
 DESCRIPTION:
    Output the absolute file path of the given command
    e.g.
    $ aqua which gh
    /home/foo/.aqua/pkgs/github_release/github.com/cli/cli/v2.4.0/gh_2.4.0_macOS_amd64.tar.gz/gh_2.4.0_macOS_amd64/bin/gh
-   
+
    If the command isn't found in the configuration files, aqua searches the command in the environment variable PATH
-   
+
    $ aqua which ls
    /bin/ls
-   
+
    If the command isn't found, exits with non zero exit code.
-   
+
    $ aqua which foo
    FATA[0000] aqua failed                                   aqua_version=0.8.6 error="command is not found" exe_name=foo program=aqua
-   
+
+
+OPTIONS:
+   --help, -h  show help (default: false)
 ```
 
 ## aqua generate-registry
@@ -221,17 +303,17 @@ NAME:
    aqua generate-registry - Generate a registry's package configuration
 
 USAGE:
-   aqua generate-registry <package name>
+   aqua generate-registry [command options] <package name>
 
 DESCRIPTION:
    Generate a template of Registry package configuration.
-   
+
    Note that you probably fix the generate code manually.
    The generate code is not perfect and may include the wrong configuration.
    It is just a template.
-   
+
    e.g.
-   
+
    $ aqua gr cli/cli # Outputs the configuration.
    packages:
      - type: github_release
@@ -250,7 +332,10 @@ DESCRIPTION:
          - linux
          - amd64
        rosetta2: true
-   
+
+
+OPTIONS:
+   --help, -h  show help (default: false)
 ```
 
 ## aqua cp
@@ -265,20 +350,29 @@ USAGE:
 
 DESCRIPTION:
    Copy executable files in a directory.
-   
+
    e.g.
    $ aqua cp gh
    $ ls dist
    gh
-   
+
    You can specify the target directory by -o option.
-   
+
    $ aqua cp -o ~/bin terraform hugo
-   
+
+   If you don't specify commands, all commands are copied.
+
+   $ aqua cp
+
+   You can also copy global configuration files' commands with "-a" option.
+
+   $ aqua cp -a
+
 
 OPTIONS:
-   -o value  destination directory (default: "dist")
-   
+   -o value    destination directory
+   --all, -a   install all aqua configuration packages (default: false)
+   --help, -h  show help (default: false)
 ```
 
 ## aqua list
@@ -289,19 +383,22 @@ NAME:
    aqua list - List packages in Registries
 
 USAGE:
-   aqua list [arguments...]
+   aqua list [command options] [arguments...]
 
 DESCRIPTION:
    Output the list of packages in registries.
    The output format is <registry name>,<package name>
-   
+
    e.g.
    $ aqua list
    standard,99designs/aws-vault
    standard,abiosoft/colima
    standard,abs-lang/abs
    ...
-   
+
+
+OPTIONS:
+   --help, -h  show help (default: false)
 ```
 
 ## aqua completion
@@ -312,20 +409,28 @@ NAME:
    aqua completion - Output shell completion script for bash or zsh
 
 USAGE:
-   aqua completion [arguments...]
+   aqua completion command [command options] [arguments...]
 
 DESCRIPTION:
    Output shell completion script for bash or zsh
    Run these commands in .bash_profile or .zprofile
    e.g.
    .bash_profile
-   
+
    if command -v aqua &> /dev/null; then source <(aqua completion bash); fi
-   
+
    .zprofile
-   
+
    if command -v aqua &> /dev/null; then source <(aqua completion zsh); fi
-   
+
+
+COMMANDS:
+   bash     Output shell completion script for bash
+   zsh      Output shell completion script for zsh
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --help, -h  show help (default: false)
 ```
 
 ## aqua exec
@@ -336,15 +441,18 @@ NAME:
    aqua exec - Execute tool
 
 USAGE:
-   aqua exec <executed command> [<arg> ...]
+   aqua exec [command options] <executed command> [<arg> ...]
 
 DESCRIPTION:
    Basically you don't have to use this command, because this is used by aqua internally. aqua-proxy invokes this command.
    When you execute the command installed by aqua, "aqua exec" is executed internally.
-   
+
    e.g.
    $ aqua exec -- gh version
    gh version 2.4.0 (2021-12-21)
    https://github.com/cli/cli/releases/tag/v2.4.0
+
+OPTIONS:
+   --help, -h  show help (default: false)
 ```
 
