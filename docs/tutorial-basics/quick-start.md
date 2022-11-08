@@ -68,7 +68,7 @@ $ cat aqua.yaml
 # https://aquaproj.github.io/
 registries:
 - type: standard
-  ref: v3.27.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 ```
 
@@ -90,7 +90,7 @@ $ aqua g -i cli/cli junegunn/fzf
 # https://aquaproj.github.io/
 registries:
 - type: standard
-  ref: v3.27.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: cli/cli@v2.2.0
 - name: junegunn/fzf@0.28.0
