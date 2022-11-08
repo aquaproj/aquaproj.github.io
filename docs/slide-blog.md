@@ -2,6 +2,7 @@
 
 ## English
 
+* [2022-11-08 Checksum Verification by aqua](https://dev.to/suzukishunsuke/checksum-verification-by-aqua-5038)
 * [2022-05-30 aqua supports building tools with Go](https://dev.to/suzukishunsuke/support-building-tools-written-in-go-2l10)
 * [2021-12-23 Why I use aqua](https://dev.to/suzukishunsuke/why-i-use-aqua-230)
 * [2021-12-21 Demo of aqua - Declarative CLI Version Manager written in Go](https://dev.to/suzukishunsuke/demo-of-aqua-declarative-cli-version-manager-written-in-go-3mmd)
@@ -12,6 +13,7 @@
 
 ## Japanese
 
+* [2022-11-07 aqua Release Notes (v1.20.0 ~ v1.22.0)](https://zenn.dev/shunsuke_suzuki/articles/aqua-release-notes-v1200-v1220)
 * [2022-10-10 aqua CLI Version Manager が checksum の検証をサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-checksum-verification)
 * [2022-06-23 CLI Version Manager の aqua が Windows をサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-windows-support)
 * [2022-06-08 aqua が Go 製のツールのビルドをサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-go-build-support)
