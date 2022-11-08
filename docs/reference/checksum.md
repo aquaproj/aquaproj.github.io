@@ -24,7 +24,7 @@ checksum:
   enabled: true
 registries:
   - type: standard
-    ref: v3.27.0 # renovate: depName=aquaproj/aqua-registry
+    ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: golangci/golangci-lint@v1.46.2
 ```
@@ -76,7 +76,7 @@ When a tool is installed, aqua verifies the checksum as the following.
 1. If the checksum isn't found in `aqua-checksums.json`, the expected checksum is added to `aqua-checksums.json`
 1. Install the tool
 
-aqua gets the expected from the following sources.
+aqua gets the expected checksum from the following sources.
 
 1. `aqua-checksums.json`
 1. checksum files that each tools publish
@@ -118,7 +118,7 @@ https://github.com/aquaproj/example-update-checksum
 
 ## aqua-registry version
 
-From [v3.27.0](https://github.com/aquaproj/aqua-registry/releases/tag/v3.27.0), aqua-registry supports the checksum verification.
+From [v3.90.0](https://github.com/aquaproj/aqua-registry/releases/tag/v3.90.0), aqua-registry supports the checksum verification.
 
 ## Getting Started
 
