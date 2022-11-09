@@ -4,7 +4,7 @@ sidebar_position: 550
 
 # Filter packages with tags
 
-`aqua >= v1.22.0`
+`aqua >= v1.23.0`
 
 [#441](https://github.com/aquaproj/aqua/issues/441) [#1336](https://github.com/aquaproj/aqua/pull/1336)
 
