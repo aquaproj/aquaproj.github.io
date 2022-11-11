@@ -17,10 +17,6 @@ If you try to install or execute packages violating the policy, it would fail.
 
 ## Getting Started
 
-```console
-aqua -v
-```
-
 Create `aqua.yaml`.
 
 ```console
