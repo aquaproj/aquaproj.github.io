@@ -4,6 +4,12 @@ sidebar_position: 80
 
 # Policy as Code
 
+`aqua >= v1.24.0`
+
+:::caution
+(2022-11-11) This feature isn't released yet. This will be released at v1.24.0.
+:::
+
 [#1306](https://github.com/aquaproj/aqua/issues/1306)
 
 aqua supports defining the policy of package installation and execution for security.
@@ -38,10 +44,6 @@ Please set the absolute path to the policy file to the environment variable `AQU
 ```console
 export AQUA_POLICY_CONFIG=$PWD/aqua-policy.yaml
 ```
-
-:::tip
-[direnv](https://github.com/direnv/direnv) may be useful to set AQUA_POLICY_CONFIG per project.
-:::
 
 Let's create a Local Registry.
 
