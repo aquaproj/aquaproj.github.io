@@ -44,6 +44,7 @@ packages:
 This policy allows only the Standard Registry.
 
 Please set the absolute path to the policy file to the environment variable `AQUA_POLICY_CONFIG`.
+`AQUA_POLICY_CONFIG` is policy file paths separated with semicolons `:`.
 
 ```console
 export AQUA_POLICY_CONFIG=$PWD/aqua-policy.yaml
