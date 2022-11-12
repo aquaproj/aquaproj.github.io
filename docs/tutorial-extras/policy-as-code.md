@@ -225,6 +225,18 @@ registries:
     path: registry.yaml
 ```
 
+If you omit a version constraint `ref` of `github_content` registry or `standard` registry, any versions are allowed.
+
+```yaml
+registries:
+  - type: standard
+  - name: aqua-registry
+    type: github_content
+    repo_owner: aquaproj
+    repo_name: aqua-registry
+    path: registry.yaml
+```
+
 ## Benefit
 
 Policy as Code reduces the burden of the code review and improves the security.
