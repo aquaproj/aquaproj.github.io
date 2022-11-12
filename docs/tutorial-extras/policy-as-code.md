@@ -19,18 +19,26 @@ If you try to install or execute packages violating the policy, it would fail.
 
 Create `aqua.yaml`.
 
-```console
+```sh
 aqua init
 aqua g -i hashicorp/terraform
 ```
 
 Create a policy file `aqua-policy.yaml`.
 
+```sh
+aqua init-policy
+```
+
 ```yaml
+---
+# aqua Policy
+# https://aquaproj.github.io/docs/tutorial-extras/policy-as-code
 registries:
-  - type: standard
+- type: standard
+  ref: semver(">= 3.0.0")
 packages:
-  - registry: standard
+- registry: standard
 ```
 
 This policy allows only the Standard Registry.
@@ -116,13 +124,14 @@ aqua-policy.yaml
 
 ```yaml
 registries:
-  - type: standard
-  - name: local
-    type: local
-    path: registry.yaml
+- type: standard
+  ref: semver(">= 3.0.0")
+- name: local
+  type: local
+  path: registry.yaml
 packages:
-  - registry: standard
-  - registry: local
+- registry: standard
+- registry: local
 ```
 
 Then you can install and execute them.
@@ -142,14 +151,15 @@ aqua-policy.yaml
 
 ```yaml
 registries:
-  - type: standard
-  - name: local
-    type: local
-    path: registry.yaml
+- type: standard
+  ref: semver(">= 3.0.0")
+- name: local
+  type: local
+  path: registry.yaml
 packages:
-  - registry: standard
-  - name: suzuki-shunsuke/tfcmt
-    registry: local
+- registry: standard
+- name: suzuki-shunsuke/tfcmt
+  registry: local
 ```
 
 Then you can execute tfcmt but can't execute github-comment.
@@ -172,15 +182,16 @@ aqua-policy.yaml
 
 ```yaml
 registries:
-  - type: standard
-  - name: local
-    type: local
-    path: registry.yaml
+- type: standard
+  ref: semver(">= 3.0.0")
+- name: local
+  type: local
+  path: registry.yaml
 packages:
-  - registry: standard
-  - name: suzuki-shunsuke/tfcmt
-    registry: local
-    version: semver(">= 4.0.0")
+- registry: standard
+- name: suzuki-shunsuke/tfcmt
+  registry: local
+  version: semver(">= 4.0.0")
 ```
 
 You can execute tfcmt v4.0.0.
@@ -200,14 +211,6 @@ But you can't execute tfcmt v3.0.0.
 ```console
 $ tfcmt -v    
 FATA[0000] aqua failed                                   aqua_version= env=darwin/arm64 error="validate the installed package for security: this package isn't allowed" program=aqua
-```
-
-You can also restrict the registry version.
-
-```yaml
-registries:
-  - type: standard
-    ref: semver(">= 3.0.0")
 ```
 
 You can allow `github_content` Registry.
