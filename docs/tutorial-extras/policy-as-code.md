@@ -6,10 +6,6 @@ sidebar_position: 80
 
 `aqua >= v1.24.0`
 
-:::caution
-(2022-11-11) This feature isn't released yet. This will be released at v1.24.0.
-:::
-
 [#1306](https://github.com/aquaproj/aqua/issues/1306)
 
 aqua supports defining the policy of package installation and execution for security.
@@ -103,10 +99,10 @@ Let's install.
 
 ```console
 $ aqua i
-ERRO[0000] install the package                           aqua_version= env=darwin/arm64 error="this package isn't allowed" package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=local
-ERRO[0000] install the package                           aqua_version= env=darwin/arm64 error="this package isn't allowed" package_name=suzuki-shunsuke/github-comment package_version=v5.0.0 program=aqua registry=local
-INFO[0000] download and unarchive the package            aqua_version= env=darwin/arm64 package_name=hashicorp/terraform package_version=v1.3.4 program=aqua registry=standard
-FATA[0000] aqua failed                                   aqua_version= env=darwin/arm64 error="it failed to install some packages" program=aqua
+ERRO[0000] install the package                           aqua_version=1.24.0 doc="https://aquaproj.github.io/docs/reference/codes/002" env=darwin/arm64 error="this package isn't allowed" package_name=suzuki-shunsuke/github-comment package_version=v5.0.0 program=aqua registry=local
+ERRO[0000] install the package                           aqua_version=1.24.0 doc="https://aquaproj.github.io/docs/reference/codes/002" env=darwin/arm64 error="this package isn't allowed" package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=local
+INFO[0000] download and unarchive the package            aqua_version=1.24.0 env=darwin/arm64 package_name=hashicorp/terraform package_version=v1.3.4 program=aqua registry=standard
+FATA[0002] aqua failed                                   aqua_version=1.24.0 env=darwin/arm64 error="it failed to install some packages" program=aqua
 ```
 
 :tada: Violated packages can't be installed expectedly.
@@ -114,7 +110,7 @@ They can't be executed too.
 
 ```console
 $ tfcmt -v
-FATA[0000] aqua failed                                   aqua_version= env=darwin/arm64 error="validate the installed package for security: this package isn't allowed" program=aqua
+FATA[0000] aqua failed                                   aqua_version=1.24.0 doc="https://aquaproj.github.io/docs/reference/codes/002" env=darwin/arm64 error="validate the installed package for security: this package isn't allowed" exe_name=tfcmt package=suzuki-shunsuke/tfcmt package_version=v4.0.0 policy_files="[/Users/shunsukesuzuki/Documents/test/aqua/pr-1308-2/aqua-policy.yaml]" program=aqua
 ```
 
 `local` Registry and `github_content` Registry are useful, but they can also be abused. Almost users don't need them, so you can reduce the security risk by forbidding them.
@@ -138,11 +134,12 @@ packages:
 Then you can install and execute them.
 
 ```console
-$ tfcmt -v            
-INFO[0000] download and unarchive the package            aqua_version= env=darwin/arm64 exe_name=tfcmt exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz/tfcmt package=suzuki-shunsuke/tfcmt package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=local
+$ tfcmt -v
+INFO[0000] download and unarchive the package            aqua_version=1.24.0 env=darwin/arm64 exe_name=tfcmt exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz/tfcmt package=suzuki-shunsuke/tfcmt package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=local
 tfcmt version 4.0.0 (047e980d083da80303e6e8f4ebf6d5c9e7859716)
 
-$ github-comment -v   
+$ github-comment -v
+INFO[0000] download and unarchive the package            aqua_version=1.24.0 env=darwin/arm64 exe_name=github-comment exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/github-comment/v5.0.0/github-comment_5.0.0_darwin_arm64.tar.gz/github-comment package=suzuki-shunsuke/github-comment package_name=suzuki-shunsuke/github-comment package_version=v5.0.0 program=aqua registry=local
 github-comment version 5.0.0 (64d3b0b4fd3b8b05bd43e7dde9a7181577b34d70)
 ```
 
@@ -170,7 +167,7 @@ $ tfcmt -v
 tfcmt version 4.0.0 (047e980d083da80303e6e8f4ebf6d5c9e7859716)
 
 $ github-comment -v
-FATA[0000] aqua failed                                   aqua_version= env=darwin/arm64 error="validate the installed package for security: this package isn't allowed" program=aqua
+FATA[0000] aqua failed                                   aqua_version=1.24.0 doc="https://aquaproj.github.io/docs/reference/codes/002" env=darwin/arm64 error="validate the installed package for security: this package isn't allowed" exe_name=github-comment package=suzuki-shunsuke/github-comment package_version=v5.0.0 policy_files="[/Users/shunsukesuzuki/Documents/test/aqua/pr-1308-2/aqua-policy.yaml]" program=aqua
 ```
 
 You can also restrict the package version.
@@ -210,8 +207,8 @@ But you can't execute tfcmt v3.0.0.
 ```
 
 ```console
-$ tfcmt -v    
-FATA[0000] aqua failed                                   aqua_version= env=darwin/arm64 error="validate the installed package for security: this package isn't allowed" program=aqua
+$ tfcmt -v
+FATA[0000] aqua failed                                   aqua_version=1.24.0 doc="https://aquaproj.github.io/docs/reference/codes/002" env=darwin/arm64 error="validate the installed package for security: this package isn't allowed" exe_name=tfcmt package=suzuki-shunsuke/tfcmt package_version=v3.0.0 policy_files="[/Users/shunsukesuzuki/Documents/test/aqua/pr-1308-2/aqua-policy.yaml]" program=aqua
 ```
 
 You can allow `github_content` Registry.
@@ -240,6 +237,19 @@ registries:
 
 ## Benefit
 
+### Protect your laptop and CI from threat
+
+We strongly recommend setting Policy to protect your laptop and CI from threat.
+In your laptop, you should create a Policy file and set `AQUA_POLICY_CONFIG` in `.bashrc` or `.zshrc` or something.
+`local` Registry and `github_content` Registry are useful, but they can also be abused. Almost users don't need them, so you can reduce the security risk by forbidding them.
+
+:::info
+We consider to disable registries other than `standard` Registry by default.
+Please see the issue and give your feedback. [#1404](https://github.com/aquaproj/aqua/issues/1404)
+:::
+
+### Reduce the burden of code review keeping the security
+
 Policy as Code reduces the burden of the code review and improves the security.
 
 About Policy as Code, please see the document of Sentinel by Hashicorp.
@@ -267,5 +277,3 @@ This is useful to update tools per working directory gradually, but it is diffic
 So you have to leave the management of `aqua.yaml` to each teams, but you also have to keep the governance and security.
 
 Policy file is useful for it.
-
-Policy would be useful in rather large team development than individual OSS or dotfiles or small team development.
