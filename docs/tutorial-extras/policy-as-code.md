@@ -237,10 +237,10 @@ registries:
 
 ## Benefit
 
-### Protect your laptop and CI from threat
+### Protect your development environment and CI from threat
 
-We strongly recommend setting Policy to protect your laptop and CI from threat.
-In your laptop, you should create a Policy file and set `AQUA_POLICY_CONFIG` in `.bashrc` or `.zshrc` or something.
+We strongly recommend setting Policy to protect your development environment (your laptop and remote development environment) and CI from threat.
+In your development environment, you should create a Policy file and set `AQUA_POLICY_CONFIG` in `.bashrc` or `.zshrc` or something.
 `local` Registry and `github_content` Registry are useful, but they can also be abused. Almost users don't need them, so you can reduce the security risk by forbidding them.
 
 :::info
