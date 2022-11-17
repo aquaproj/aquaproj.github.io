@@ -43,14 +43,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // announcementBar: {
-      //   id: 'release_checksum_verification',
-      //   content:
-      //     '<a href="/docs/reference/checksum">aqua now supports the Checksum Verification</a>',
-      //   backgroundColor: '#7FFF00',
-      //   textColor: '#091E42',
-      //   isCloseable: true,
-      // },
+      announcementBar: {
+        id: 'release_policy_as_code',
+        content:
+          '<a href="/docs/tutorial-extras/policy-as-code">Set policy to install and execute packages (2022-11-15)</a>',
+        backgroundColor: '#7FFF00',
+        textColor: '#091E42',
+        isCloseable: true,
+      },
       navbar: {
         title: 'aqua',
         logo: {
