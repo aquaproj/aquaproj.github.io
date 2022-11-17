@@ -13,6 +13,9 @@
 
 ## Japanese
 
+[zenn #aquaclivm](https://zenn.dev/topics/aquaclivm)
+
+* [2022-11-15 aqua の Policy as Code](https://zenn.dev/shunsuke_suzuki/articles/aqua-policy-as-code)
 * [2022-11-07 aqua Release Notes (v1.20.0 ~ v1.22.0)](https://zenn.dev/shunsuke_suzuki/articles/aqua-release-notes-v1200-v1220)
 * [2022-10-10 aqua CLI Version Manager が checksum の検証をサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-checksum-verification)
 * [2022-06-23 CLI Version Manager の aqua が Windows をサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-windows-support)
