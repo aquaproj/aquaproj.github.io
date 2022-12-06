@@ -1,3 +1,7 @@
+---
+sidebar_position: 700
+---
+
 # Trouble Shooting
 
 ## Use the latest aqua and aqua-registry
