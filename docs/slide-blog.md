@@ -1,3 +1,7 @@
+---
+sidebar_position: 600
+---
+
 # Slide and Blog
 
 ## English
