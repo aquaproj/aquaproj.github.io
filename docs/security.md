@@ -30,6 +30,8 @@ https://github.com/search?q=org%3Aaquaproj+label%3Asecurity
 
 We are woring on preventing tampering by keyless signing with [Cosign](https://docs.sigstore.dev/cosign/overview).
 
+Please see [Verify signatures with Cosign](/docs/reference/cosign).
+
 * Prevent aqua.yaml from being tampered
   * [Disable Registries other than standard Registry by default (Secure by default)](https://github.com/aquaproj/aqua/issues/1404) [#1413](https://github.com/aquaproj/aqua/pull/1413)
 * Prevent aqua from being tampered

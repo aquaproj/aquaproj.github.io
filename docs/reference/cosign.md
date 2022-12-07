@@ -8,6 +8,7 @@ sidebar_position: 1150
 - `aqua-registry >= v3.103.0`
 - `aqua-installer >= v2.0.0`
 
+[List of pull requests and issues about Cosign](https://github.com/search?q=org%3Aaquaproj+label%3Acosign)
 
 aqua supports verifying signatures with [Cosign](https://docs.sigstore.dev/cosign/overview/).
 
