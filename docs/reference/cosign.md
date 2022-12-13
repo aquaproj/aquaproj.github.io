@@ -45,10 +45,11 @@ Instead of the one liner, you can install aqua-installer and aqua more safely.
 1. Download and verify aqua-installer.
 
 ```sh
-curl -sSfL -O https://github.com/aquaproj/aqua-installer/releases/download/v1.1.3-3/aqua-installer
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.3-3/aqua-installer
 COSIGN_EXPERIMENTAL=1 cosign verify-blob \
   --signature https://github.com/aquaproj/aqua-installer/releases/download/v1.1.3-3/aqua-installer.sig \
   --certificate https://github.com/aquaproj/aqua-installer/releases/download/v1.1.3-3/aqua-installer.pem \
+  --certificate-github-workflow-repository aquaproj/aqua-installer \
   aqua-installer
 ```
 
