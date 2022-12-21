@@ -23,8 +23,8 @@ https://github.com/search?q=org%3Aaquaproj+label%3Asecurity
     * This prevents malicious commands from being executed
   * Centrally managed Registry is provided
     * Compared with third party registries, it has low risk to be tampered
-* [Checksum Verification](https://aquaproj.github.io/docs/reference/checksum/)
-* [Policy as Code](https://aquaproj.github.io/docs/tutorial-extras/policy-as-code/)
+* [Checksum Verification](/docs/reference/checksum/)
+* [Policy as Code](/docs/tutorial-extras/policy-as-code/)
 
 ## Plans
 
