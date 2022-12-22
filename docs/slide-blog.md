@@ -36,3 +36,14 @@ sidebar_position: 600
 * [2021-09-05 aqua の設定ファイルをインタラクティブに生成する generate コマンド](https://techblog.szksh.cloud/aqua-generate/)
 * [2021-09-04 aqua v0.1.0 から v0.5.0 での変更点](https://techblog.szksh.cloud/aqua-v0.5/)
 * [2021-08-28 aqua - CLI ツールのバージョン管理](https://techblog.szksh.cloud/aqua/)
+
+## Non official blogs
+
+* [2022-12-14 CLI バージョンマネージャー aqua のススメ](https://engineer.retty.me/entry/2022/12/14/130000)
+* [2022-12-13 【新規ツール探し】asdf と比較しても使いやすいCLI のバージョン管理ツール「aqua」](https://blog.framinal.life/entry/aqua)
+* [2022-12-09 Snyk IaC + reviewdog + aquaではじめるDevSecOps](https://tech.gunosy.io/entry/snyk_iac_reviewdog_aqua_devsecops)
+* [2022-11-18 Retty の Terraform CI/CD 解体新書](https://engineer.retty.me/entry/2022/11/18/130000#aqua-%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AE%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%82%A2%E3%83%83%E3%83%97)
+* [2022-10-24 [kubernetes] Aqua + Tilt + Kind](https://zenn.dev/mshr_dec/articles/9038c6feef0dee)
+* [2022-06-12 Kubernetesエンジニア向け開発ツール欲張りセット2022](https://zenn.dev/zoetro/articles/9454a6231a1273#aqua)
+* [2022-01-19 Productivity Weekly (2022-01-12号)](https://zenn.dev/korosuke613/articles/productivity-weekly-20220112#ci%E3%81%A7%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8Bcli%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92aqua%E3%81%A7%E7%AE%A1%E7%90%86%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
+* [2022-01-08 CIで利用するCLIツールをaquaで管理してみよう](https://zenn.dev/zoetro/articles/eee98d772c2483)
