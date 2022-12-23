@@ -4,12 +4,8 @@ sidebar_position: 550
 
 # Security
 
-:::caution
-This page includes undecided plan.
-:::
-
 We think security is very important and are working on improving the security of aqua.
-You should be able to install and execute tools securely by aqua.
+aqua should allow you to install and execute tools securely.
 In this page, we describe aqua's security perspective and our plan.
 
 ## List of Issues and Pull Requests
@@ -28,19 +24,20 @@ https://github.com/search?q=org%3Aaquaproj+label%3Asecurity
 
 ## Plans
 
-We are woring on preventing tampering by keyless signing with [Cosign](https://docs.sigstore.dev/cosign/overview).
+:::caution
+This page includes undecided plan.
+:::
 
-Please see [Verify signatures with Cosign](/docs/reference/cosign).
+We are woring on preventing tampering by [Cosign](https://docs.sigstore.dev/cosign/overview) and [SLSA Provenance](https://slsa.dev/provenance/v0.2).
+
+Please see [Cosign and SLSA Provenance Support](/docs/reference/cosign-slsa) too.
 
 * Prevent aqua.yaml from being tampered
   * [Disable Registries other than standard Registry by default (Secure by default)](https://github.com/aquaproj/aqua/issues/1404) [#1413](https://github.com/aquaproj/aqua/pull/1413)
 * Prevent aqua from being tampered
-  * [Sign aqua with Cosign](https://github.com/aquaproj/aqua/issues/1391)
+  * [Verify aqua with slsa-verifier](https://github.com/aquaproj/aqua/pull/1454)
+  * [Verify aqua with slsa-verifier in aqua-installer](https://github.com/aquaproj/aqua-installer/pull/277)
   * Prevent aqua-installer from being tampered
-    * [Sign aqua-installer with Cosign](https://github.com/aquaproj/aqua-installer/issues/256)
-  * [Verify aqua in aqua-installer](https://github.com/aquaproj/aqua-installer/issues/276)
+    * Check the checksum of aqua-installer before running aqua-installer
 * Prevent packages from being tampered
-  * [Support verifying packages with Cosign](https://github.com/aquaproj/aqua/pull/1393)
-* Prevent Registries from being tampered
-  * [Sign aqua-registry with Cosign](https://github.com/aquaproj/aqua-registry/issues/8296)
-  * [Verify Registry with Cosign](https://github.com/aquaproj/aqua/issues/1379)
+  * [Support verifying packages with Cosign and slsa-verifier](https://github.com/aquaproj/aqua/pull/1454)

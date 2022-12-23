@@ -58,6 +58,8 @@ packages:
 * [version_source](version-source)
 * [complete_windows_ext](complete-windows-ext)
 * [checksum](/docs/reference/checksum)
+* [cosign](cosign)
+* [slsa_provenance](slsa-provenance)
 
 ## Default values if `repo_owner` and `repo_name` are set
 
