@@ -44,9 +44,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       announcementBar: {
-        id: 'release_policy_as_code',
+        id: 'cosign_and_slsa_support',
         content:
-          '<a href="/docs/tutorial-extras/policy-as-code">Set policy to install and execute packages (2022-11-15)</a>',
+          '<a href="/docs/reference/cosign-slsa">Cosign and SLSA Provenance Support (2022-12-27)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
