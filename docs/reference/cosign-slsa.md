@@ -162,3 +162,10 @@ Verified signature against tlog entry index 9476343 at URL: https://rekor.sigsto
 ERRO[0004] install the package                           aqua_version=1.26.2 env=linux/arm64 error="verify a package with slsa-verifier: run slsa-verifier's verify-artifact command: expected tag 'refs/tags/v0.1.1', got 'refs/tags/v0.1.2': tag used to generate the binary does not match provenance" package_name=aquaproj/example-go-slsa-provenance package_version=v0.1.1 program=aqua registry=standard
 FATA[0004] aqua failed                                   aqua_version=1.26.2 env=linux/arm64 error="it failed to install some packages" program=aqua
 ```
+
+## See also
+
+- [Security](/docs/security)
+- Registry Configuration
+  - [cosign](/docs/reference/registry-config/cosign)
+  - [slsa_provenance](/docs/reference/registry-config/slsa-provenance)
