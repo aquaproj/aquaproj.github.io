@@ -7,6 +7,8 @@ sidebar_position: 1150
 - `aqua >= v1.26.0`
 - `aqua-installer >= v2.0.0`
 
+Japanese: [Cosign と SLSA による aqua CLI Version Manager の Security 改善](https://zenn.dev/shunsuke_suzuki/articles/aqua-cosign-slsa)
+
 aqua supports verifying aqua and packages with [Cosign](https://docs.sigstore.dev/cosign/overview/) and [slsa-verifier](https://github.com/slsa-framework/slsa-verifier).
 
 :::caution

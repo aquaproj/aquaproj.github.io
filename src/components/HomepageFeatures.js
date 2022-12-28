@@ -57,21 +57,21 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Checksum Verification',
-    description: (
-      <>
-        <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/194790358-2ec51331-52e1-4451-86f6-cb74c2a852e7.png" />
-        Checksum Verification prevents tools from being tampered.
-        Please see <a href="/docs/reference/checksum">Checksum Verification</a>.
-      </>
-    ),
-  },
-  {
     title: 'GitHub Actions',
     description: (
       <>
         <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/176584418-c6a4adca-e4d8-45aa-98b0-6ae3b543b007.png" />
         Please see <a href="/docs/reference/install">Install</a>.
+      </>
+    ),
+  },
+  {
+    title: 'Secure',
+    description: (
+      <>
+        aqua installs tools securely.
+        aqua provides several security features such as <a href="/docs/reference/checksum/">Checksum Verification</a>, <a href="/docs/tutorial-extras/policy-as-code/">Policy as Code</a>, and <a href="/docs/reference/cosign-slsa/">Cosign and SLSA Provenance Support</a>.
+        Please see <a href="/docs/security">Security</a>.
       </>
     ),
   },
