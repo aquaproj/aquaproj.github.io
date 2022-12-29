@@ -60,6 +60,7 @@ packages:
 * [checksum](/docs/reference/checksum)
 * [cosign](cosign)
 * [slsa_provenance](slsa-provenance)
+* [private](private)
 
 ## Default values if `repo_owner` and `repo_name` are set
 
