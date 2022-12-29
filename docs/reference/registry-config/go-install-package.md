@@ -48,3 +48,16 @@ go: downloading golang.org/x/perf v0.0.0-20220411212318-84e58bfe0a7e
 $ aqua which benchstat
 /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/go_install/golang.org/x/perf/cmd/benchstat/84e58bfe0a7e5416369e236afa007d5d9c58a0fa/bin/github-compare
 ```
+
+[#1084](https://github.com/aquaproj/aqua/issues/1084) [#1487](https://github.com/aquaproj/aqua/pull/1487) From aqua [v1.27.0](https://github.com/aquaproj/aqua/releases/tag/v1.27.0), `path` is treated as a template string.
+
+e.g.
+
+```yaml
+packages:
+  - type: go_install
+    repo_owner: volatiletech
+    repo_name: sqlboiler
+    description: Generate a Go ORM tailored to your database schema
+    path: github.com/volatiletech/sqlboiler/v{{(semver .Version).Major}}
+```
