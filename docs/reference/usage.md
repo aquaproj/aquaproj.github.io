@@ -15,10 +15,11 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   1.22.0 (869d7b46a0697a5938dffd02a7ea219406762bf2)
+   1.28.0 (2e19938cbe01dd0137521f8a84a7abab8a34bab7)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
+   init-policy            Create a policy file if it doesn't exist
    install, i             Install tools
    update-aqua            Update aqua
    generate, g            Search packages in registries and output the configuration interactively
@@ -67,12 +68,20 @@ DESCRIPTION:
 
    $ aqua i -a
 
+   You can filter installed packages with package tags.
+
+   e.g.
+   $ aqua i -t foo # Install only packages having a tag "foo"
+   $ aqua i --exclude-tags foo # Install only packages not having a tag "foo"
+
 
 OPTIONS:
-   --only-link, -l  create links but skip downloading packages (default: false)
-   --test           test file.src after installing the package (default: false)
-   --all, -a        install all aqua configuration packages (default: false)
-   --help, -h       show help (default: false)
+   --only-link, -l         create links but skip downloading packages (default: false)
+   --test                  test file.src after installing the package (default: false)
+   --all, -a               install all aqua configuration packages (default: false)
+   --tags value, -t value  filter installed packages with tags
+   --exclude-tags value    exclude installed packages with tags
+   --help, -h              show help (default: false)
 ```
 
 ## aqua generate
@@ -257,10 +266,16 @@ DESCRIPTION:
 
    $ aqua update-checksum -deep
 
+   By default, aqua update-checksum doesn't remove existing checksums even if they aren't unused.
+   If -prune option is set, aqua unused checksums would be removed.
+
+   $ aqua update-checksum -prune
+
 
 OPTIONS:
    --all, -a   Create or Update all .aqua-checksums.json including global configuration (default: false)
    --deep      If a package's checksum configuration is disabled, download the asset and calculate the checksum (default: false)
+   --prune     Remove unused checksums (default: false)
    --help, -h  show help (default: false)
 ```
 
@@ -368,11 +383,19 @@ DESCRIPTION:
 
    $ aqua cp -a
 
+   You can filter copied commands with package tags.
+
+   e.g.
+   $ aqua cp -t foo # Copy only packages having a tag "foo"
+   $ aqua cp --exclude-tags foo # Copy only packages not having a tag "foo"
+
 
 OPTIONS:
-   -o value    destination directory
-   --all, -a   install all aqua configuration packages (default: false)
-   --help, -h  show help (default: false)
+   -o value                destination directory
+   --all, -a               install all aqua configuration packages (default: false)
+   --tags value, -t value  filter installed packages with tags
+   --exclude-tags value    exclude installed packages with tags
+   --help, -h              show help (default: false)
 ```
 
 ## aqua list
