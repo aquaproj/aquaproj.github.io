@@ -99,6 +99,19 @@ packages:
       algorithm: sha256
 ```
 
+## Remove unused checksums with `-prune` option
+
+aqua >= [v1.28.0](https://github.com/aquaproj/aqua/releases/tag/v1.28.0)
+
+When tools are updated, checksums for old versions are basically unneeded.
+Or when we remove some tools from `aqua.yaml`, checksums for those tools would be unneeded.
+
+You can remove unused checksums by setting `-prune` option.
+
+```
+aqua update-checksum -prune
+```
+
 ## Generate and patch checksum configuration automatically
 
 It is bothersome to write the checksum configuration manually, so aqua supports scaffolding the configuration.
