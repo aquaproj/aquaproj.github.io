@@ -21,7 +21,7 @@ Your contribution is welcome.
 * [GitHub Actions](github-actions.md)
 * [marcosnils/bin](marcosnils-bin.md)
 * [alexellis/arkade](arkade.md)
-* [Nix OS](nixos.md)
+* [Nix (NixOS)](nixos.md)
 
 ## Blogs
 
