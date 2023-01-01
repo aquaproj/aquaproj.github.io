@@ -13,7 +13,7 @@ But the guide would be useful to write good and consistent configuration.
 
 First, we recommend to scaffold configuration by `aqua gr` command.
 
-[Scaffold Registry Configuration](/docs/reference/scaffold-registry).
+[Scaffold Registry Configuration](scaffold-registry.md).
 
 ## Format with prettier
 
