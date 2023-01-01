@@ -40,8 +40,8 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * `AQUA_GITHUB_TOKEN`, `GITHUB_TOKEN`: GitHub Access Token. This is required to install private repository's package
 * `AQUA_LOG_COLOR`: Support setting the log coloring by the environment variable `AQUA_LOG_COLOR` (`always|auto|never`)
 * `AQUA_PROGRESS_BAR`: The progress bar is disabled by default, but you can enable it by setting the environment variable `AQUA_PROGRESS_BAR` to `true`
-* [AQUA_GOOS, AQUA_GOARCH](change-os-arch-for-test)
-* [AQUA_EXPERIMENTAL_X_SYS_EXEC](experimental-feature#aqua_experimental_x_sys_exec)
+* [AQUA_GOOS, AQUA_GOARCH](change-os-arch-for-test.md)
+* [AQUA_EXPERIMENTAL_X_SYS_EXEC](experimental-feature.md#aqua_experimental_x_sys_exec)
 
 ## JSON Schema
 
@@ -53,7 +53,7 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 
 * [registries](#registries): The list of registries
 * [packages](#packages): The list of installed packages
-* [checksum](checksum): configuration for checksum verification
+* [checksum](checksum.md): configuration for checksum verification
 
 :::caution
 `inline_registry` was removed from `aqua >= v0.9.0`. Please use [local registry](#local-registry).
@@ -135,7 +135,7 @@ registries:
 * `name`: Registry name
 * `path`: The file path. Either absolute path or relative path from `aqua.yaml`. If `path` starts with `$HOME` + `OS specific path separator such as '/'`, it's replaced with the home directory path
 
-Please see [Configuration (registry.yaml)](registry-config).
+Please see [Configuration (registry.yaml)](registry-config.md).
 
 ### `github_content` registry
 
@@ -174,7 +174,7 @@ packages:
 * `registry`: (string, optional) registry name
   * default value is `standard`
 * `version`: (string, optional) package version
-* `import`: (string, optional) glob pattern of package files. This is relative path from the configuration file. This is parsed with [filepath.Glob](https://pkg.go.dev/path/filepath#Glob). Please see [Split the list of packages](../tutorial-extras/split-config) too
+* `import`: (string, optional) glob pattern of package files. This is relative path from the configuration file. This is parsed with [filepath.Glob](https://pkg.go.dev/path/filepath#Glob). Please see [Split the list of packages](/docs/tutorial-extras/split-config) too.
 
 The following two configuration is equivalent.
 

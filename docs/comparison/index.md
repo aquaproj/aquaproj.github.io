@@ -10,18 +10,18 @@ So maybe the description about them is wrong.
 Your contribution is welcome.
 :::
 
-* [Common Pros and Cons](common)
-* [Manual download and installation](manual)
-* [Shell Script](shell-script)
-* [Homebrew](homebrew)
-* [asdf](asdf)
-* [binenv](binenv)
-* [apt and yum](apt-yum)
-* [pyenv, rbenv, tfenv, and etc](pyenv-rbenv-tfenv)
-* [GitHub Actions](github-actions)
-* [marcosnils/bin](marcosnils-bin)
-* [alexellis/arkade](arkade)
-* [Nix OS](nixos)
+* [Common Pros and Cons](common.md)
+* [Manual download and installation](manual.md)
+* [Shell Script](shell-script.md)
+* [Homebrew](homebrew.md)
+* [asdf](asdf.md)
+* [binenv](binenv.md)
+* [apt and yum](apt-yum.md)
+* [pyenv, rbenv, tfenv, and etc](pyenv-rbenv-tfenv.md)
+* [GitHub Actions](github-actions.md)
+* [marcosnils/bin](marcosnils-bin.md)
+* [alexellis/arkade](arkade.md)
+* [Nix OS](nixos.md)
 
 ## Blogs
 

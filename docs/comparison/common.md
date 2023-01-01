@@ -54,7 +54,7 @@ https://github.com/aquaproj/aqua-registry/issues/987#issuecomment-1104422712
 
 :::info
 aqua supports building Go tools.
-Please see [`go` Package](/docs/reference/registry-config/go-package), [`go_install` Package](http://localhost:3000/docs/reference/registry-config/go-install-package), and [blog post](/blog/2022/05/30/support-building-go-tools).
+Please see [`go` Package](/docs/reference/registry-config/go-package), [`go_install` Package](/docs/reference/registry-config/go-install-package), and [blog post](/blog/2022/05/30/support-building-go-tools).
 :::
 
 ### aqua doesn't support some language runtime such as Python, Ruby, Node.js, and so on

@@ -11,4 +11,4 @@ To install private packages, you have to write Registry Configuration by yoursel
 
 The environment variable `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN` is required.
 
-About how to write Registry Configuration, please see [Add Packages to Registry](add-registry).
+About how to write Registry Configuration, please see [Add Packages to Registry](add-registry.md).

@@ -6,10 +6,10 @@ sidebar_position: 200
 
 ## Pros
 
-* Please see [Homebrew#pros](homebrew#pros)
+* Please see [Homebrew#pros](homebrew.md#pros)
 * aqua doesn't require the root priviledge
 * aqua supports Windows, macOS, and Linux
 
 ## Cons
 
-* Please see [Homebrew#cons](homebrew#cons)
+* Please see [Homebrew#cons](homebrew.md#cons)

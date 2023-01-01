@@ -59,4 +59,3 @@ install  i  -- Install tools
 $ aqua i - # Enter <Tab> Key
 --all        --help       --only-link  --test       -a           -h           -l
 ```
-

@@ -102,8 +102,8 @@ asdf outputs the guide and exits with non zero code.
 ## aqua's additional features
 
 * [Checksum Verification](/docs/reference/checksum)
-* [Share aqua configuration for teams and organizations with AQUA_GLOBAL_CONFIG](https://aquaproj.github.io/docs/tutorial-extras/team-config)
-* [Split the list of packages](https://aquaproj.github.io/docs/tutorial-extras/split-config)
+* [Share aqua configuration for teams and organizations with AQUA_GLOBAL_CONFIG](/docs/tutorial-extras/team-config)
+* [Split the list of packages](/docs/tutorial-extras/split-config)
 * CircleCI Orb
 
 ## asdf's additional features

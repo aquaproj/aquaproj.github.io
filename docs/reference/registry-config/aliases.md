@@ -34,7 +34,7 @@ https://github.com/aquaproj/aqua-registry/pull/4538#discussion_r911871799
 > Users may be confused what's the difference of kubernetes-sigs/controller-tools/controller-gen and kubernetes-sigs/kubebuilder/controller-gen and which package they should use.
 > 
 > On the other hand, it is useful to allow to search packages with additional words.
-> To do this, I'll add a new field [search_words](search-words).
+> To do this, I'll add a new field [search_words](search-words.md).
 > 
 > e.g.
 > 

@@ -17,4 +17,4 @@ But in this context, we compare them in terms of installing CLI tools.
 
 ## Pros and Cons
 
-Please see [Common Pros and Cons](common).
+Please see [Common Pros and Cons](common.md).
