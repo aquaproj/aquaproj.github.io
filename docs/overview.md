@@ -84,7 +84,7 @@ Add `aqua.yaml` to the repository, then you can install tools by `aqua i`.
 With aqua, you can install tools for your organization and team.
 Let's create a repository and add aqua configuration files to the repository.
 
-For detail, please see [Share aqua configuration for teams and organizations](tutorial-extras/team-config).
+For detail, please see [Share aqua configuration for teams and organizations](tutorial-extras/team-config.md).
 
 ### Install tools for your laptops (like dotfiles)
 

@@ -18,7 +18,7 @@ Generated code is not perfect and may be wrong.
 It is just a template.
 :::
 
-[Usage](usage#aqua-generate-registry)
+[Usage](usage.md#aqua-generate-registry)
 
 e.g.
 
