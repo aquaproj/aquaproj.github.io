@@ -51,6 +51,9 @@ aqua.yaml
 checksum:
   enabled: true # By default, this is false
   require_checksum: true # By default, this is false
+  supported_envs: # By default, all envs are supported
+    - darwin
+    - linux
 registries:
 # ...
 packages:
@@ -60,6 +63,7 @@ packages:
 - `enabled`: If this is true, the checksum verification is enabled
 - `require_checksum`: If this is true, it fails to install a package when the checksum isn't found in `aqua-checksums.json` and the package's checksum configuration is disabled.
   By default, `require_checksum` is false and if the checksum isn't found the package is installed
+- `supported_envs`: (aqua >= [v1.29.0](https://github.com/aquaproj/aqua/releases/tag/v1.29.0)) If this is set, aqua adds checksums of only specific platforms. This feature makes `aqua-checksums.json` slim and avoids unneeded API call and download assets
 
 ## Registry's checksum configuration
 
@@ -144,6 +148,7 @@ By default, checkdum download is disabled.
 
 The following `algorithm` are supported.
 
+* `sha1` (aqua >= [v1.29.0](https://github.com/aquaproj/aqua/releases/tag/v1.29.0))
 * `sha256`
 * `sha512`
 * `md5`
