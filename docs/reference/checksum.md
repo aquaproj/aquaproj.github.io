@@ -116,6 +116,42 @@ You can remove unused checksums by setting `-prune` option.
 aqua update-checksum -prune
 ```
 
+## Verify checksums of Registries
+
+aqua >= [v1.30.0](https://github.com/aquaproj/aqua/releases/tag/v1.30.0)
+
+[#1491](https://github.com/aquaproj/aqua/issues/1491) [#1508](https://github.com/aquaproj/aqua/pull/1508)
+
+aqua verifies checksums of Registries if Checksum Verification is enabled.
+
+aqua.yaml
+
+```yaml
+checksum:
+  enabled: true
+```
+
+aqua-checksums.json
+
+```json
+{
+  "checksums": [
+    {
+      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v3.114.0/registry.yaml",
+      "checksum": "b5b922c4d64609e536daffec6e480d0fed3ee56b16320a10c38ae12df7f045e8b20a0c05ec66eb28146cee42559e5e6c4e4bc49ce89ffe48a5640999cc6248bd",
+      "algorithm": "sha512"
+    }
+  ]
+}
+```
+
+If the checksum is invalid, it would fail to install Registries.
+
+```
+ERRO[0000] install the registry                          actual_checksum=b5b922c4d64609e536daffec6e480d0fed3ee56b16320a10c38ae12df7f045e8b20a0c05ec66eb28146cee42559e5e6c4e4bc49ce89ffe48a5640999cc6248be aqua_version= env=darwin/arm64 error="check a registry's checksum: checksum is invalid" exe_name=starship expected_checksum=b5b922c4d64609e536daffec6e480d0fed3ee56b16320a10c38ae12df7f045e8b20a0c05ec66eb28146cee42559e5e6c4e4bc49ce89ffe48a5640999cc6248bd program=aqua registry_name=standard
+FATA[0000] aqua failed                                   aqua_version= env=darwin/arm64 error="it failed to install some registries" exe_name=starship program=aqua
+```
+
 ## Generate and patch checksum configuration automatically
 
 It is bothersome to write the checksum configuration manually, so aqua supports scaffolding the configuration.
