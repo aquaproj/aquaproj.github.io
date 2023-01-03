@@ -6,10 +6,6 @@ sidebar_position: 70
 
 * [Blog Post written in Japanese](https://zenn.dev/shunsuke_suzuki/articles/aqua-checksum-verification)
 
-:::info
-Please give your feedback! [GitHub Discussions](https://github.com/aquaproj/aqua/discussions/1297)
-:::
-
 Checksum Verification is a feature verifying downloaded assets with checksum.
 Checksum Verification prevents the supply chain attack and allows you to install tools securely.
 
