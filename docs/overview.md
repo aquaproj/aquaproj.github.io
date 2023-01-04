@@ -5,13 +5,9 @@ sidebar_position: 100
 # Overview
 
 aqua is a declarative CLI Version Manager written in Go.
-You can install CLI tools and manage their versions with YAML declaratively.
+You can manage tool versions with YAML.
 
-The short demo would be useful to understand aqua.
-
-[![asciicast](https://asciinema.org/a/498262.svg)](https://asciinema.org/a/498262?autoplay=1)
-
-You write a configuration file `aqua.yaml` and execute the command `aqua i`, then tools are installed.
+e.g. aqua.yaml
 
 ```yaml
 registries:
@@ -23,18 +19,18 @@ packages:
 - name: junegunn/fzf@0.28.0
 ```
 
-Unlike Package Manager such as Homebrew, aqua supports changing tool version per project, so aqua is useful to manage tools for your project.
-aqua installs a tool automatically when the tool is invoked.
-aqua solves the problem due to the difference of tool version by forcing to pin tool version.
-aqua supports continuous update with [Renovate](https://docs.renovatebot.com/).
-aqua provides [Renovate Preset Config](https://docs.renovatebot.com/config-presets/), so you can update tools very easily.
+The short demo would be useful to understand aqua.
 
-https://github.com/aquaproj/aqua-renovate-config
+[![asciicast](https://asciinema.org/a/498262.svg)](https://asciinema.org/a/498262?autoplay=1)
 
-aqua provides GitHub Actions, CircleCI Orb, and shell script to install aqua easily.
-aqua provides the unified way to install tools both in local development and CI.
+You can install tools simply by `aqua i` command.
 
-aqua provides the Standard Registry. You can install tools which are registered at the Registry easily, and you can search packages in Registries interactively with `aqua g` command.
+```console
+$ aqua i
+```
+
+aqua supports various tools officially.
+You can search tools interactively by `aqua g` command.
 
 ```console
 $ aqua g
@@ -64,34 +60,34 @@ $ aqua g
 > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 ```
 
-If you can't find the tool, you can send a pull request.
-
-https://github.com/aquaproj/aqua-registry
+To add supported tools, please see [here](tutorial-extras/add-registry.md).
 
 ## Usecase
 
-1. Install tools for the repository (CI and local development)
-1. Install tools for your organization and team
-1. Install tools for your laptops (like dotfiles)
+1. Manage tools for projects
+1. [Manage tools for your organization and team](tutorial-extras/team-config.md)
+1. [Manage tools in your dotfiles](tutorial-basics/global-config.md)
 
-### Install tools for the repository
+## Why aqua?
 
-With aqua, you can install tools for the repository.
-Add `aqua.yaml` to the repository, then you can install tools by `aqua i`.
+Please see [Comparison](comparison/index.md) too.
 
-### Install tools for your organization and team
-
-With aqua, you can install tools for your organization and team.
-Let's create a repository and add aqua configuration files to the repository.
-
-For detail, please see [Share aqua configuration for teams and organizations](tutorial-extras/team-config.md).
-
-### Install tools for your laptops (like dotfiles)
-
-With aqua, you can manage tools as code like `dotfiles`.
-You can set up your laptop quickly and install same version of tools in multiple laptops.
-
-Please see [Install tools globally](/docs/tutorial-basics/global-config).
+- Change tool versions per project
+  - Unlike Package Manager such as Homebrew, aqua supports changing tool version per project
+- Unify tool versions to prevent problems due to version difference
+  - aqua makes you specify tool versions strictly
+  - aqua supports cross platforms and provides the unified way to manage tools both in local development and CI
+- [Distribute private tools in your organization](tutorial-extras/private-package.md)
+- Easy to use
+  - This is so important for introducing a tool to a project and having developers use it
+- Painless
+  - aqua installs tools automatically when they are triggered. You don't have to run `aqua i` everytime tools are updated
+  - [Continuous update by Renovate](tutorial-extras/renovate.md)
+  - Easy to support new tools. You don't have to maintain plugins or something yourself. You only have to send a pull request to [the Standard Registry](https://github.com/aquaproj/aqua-registry), which is very easy
+  - No more shell scripts
+    - You don't have to write similar shell scripts to install tools many times. You only have to manage tools declaratively with YAML and run `aqua i`
+- [Security](security.md)
+  - aqua supports security features such as [Checksum Verification](tutorial-extras/checksum.md), [Policy as Code](tutorial-extras/policy-as-code.md), and [Cosign and SLSA Provenance Support](reference/cosign-slsa.md)
 
 ## SNS
 
@@ -101,8 +97,5 @@ So when you tweet about aqua, please mention @aquaclivm or use the hash tag [#aq
 
 ## See Also
 
-* [Why I use aqua](https://dev.to/suzukishunsuke/why-i-use-aqua-230)
 * [Comparison](/docs/comparison)
 * [Quick Start](/docs/tutorial-basics/quick-start)
-* [Introduce aqua to your repository](/docs/tutorial-extras/introduce-aqua)
-* [Install tools globally](/docs/tutorial-basics/global-config)
