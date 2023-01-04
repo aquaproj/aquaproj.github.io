@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'aqua',
-  tagline: 'Declarative CLI Version Manager. Install tools easily',
+  tagline: 'Declarative CLI Version Manager. Unify tool versions in teams, projects, and CI. Easy, painless, and secure.',
   url: 'https://aquaproj.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -87,6 +87,11 @@ const config = {
             docId: 'slide-blog',
             position: 'left',
             label: 'Blog',
+          },
+          {
+            href: 'https://twitter.com/aquaclivm',
+            label: 'Twitter',
+            position: 'right',
           },
           {
             href: 'https://github.com/aquaproj/aqua/releases',
