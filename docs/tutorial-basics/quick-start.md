@@ -16,44 +16,49 @@ Please see [Demo](https://asciinema.org/a/498262?autoplay=1).
 Homebrew
 
 ```console
-$ brew install aquaproj/aqua/aqua
+brew install aquaproj/aqua/aqua
 ```
 
-Install script ([aqua-installer](https://github.com/aquaproj/aqua-installer))
+[aqua-installer](https://github.com/aquaproj/aqua-installer)
 
 ```console
-$ curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/aqua-installer |
-  bash
-# You can change the install path.
-# bash -s -- -i ~/bin/aqua
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.0.2/aqua-installer
+echo "acbb573997d664fcb8df20a8a5140dba80a4fd21f3d9e606e478e435a8945208  aqua-installer" | sha256sum -c
+chmod +x aqua-installer
+./aqua-installer
 ```
 
 Add `${AQUA_ROOT_DIR}/bin` to the environmenet variable `PATH`.
 
 ```console
-$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
 ```
 
 Confirm if aqua is installed correctly.
 
 ```console
-$ aqua -v
+aqua -v
 ```
 
 If you want to try this tutorial in the clean environment, container is useful.
 
-```console
-$ docker run --rm -ti alpine:3.15.0 sh
-# apk add curl
-# adduser -D foo
-# su foo
-# curl -sSfL \
-  https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.0.0/aqua-installer |
-  sh
-$ mkdir ~/workspace
-$ cd ~/workspace
-$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+```sh
+docker run --rm -ti alpine:3.17.0 sh
+```
+
+```sh
+apk add curl bash sudo
+adduser -u 1000 -G wheel -D foo
+visudo # Uncomment "%wheel ALL=(ALL) NOPASSWD: ALL"
+su foo
+mkdir ~/workspace
+cd ~/workspace
+
+export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.0.2/aqua-installer
+echo "acbb573997d664fcb8df20a8a5140dba80a4fd21f3d9e606e478e435a8945208  aqua-installer" | sha256sum -c
+chmod +x aqua-installer
+./aqua-installer
 ```
 
 ## Create a configuration file

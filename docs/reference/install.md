@@ -24,9 +24,15 @@ $ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aq
 
 [aqua-installer](https://github.com/aquaproj/aqua-installer)
 
+## Go
+
+```console
+$ go install github.com/aquaproj/aqua/cmd/aqua@latest
+```
+
 ## GitHub Actions
 
-* [aqua-installer](https://github.com/aquaproj/aqua-installer)
+[aqua-installer](https://github.com/aquaproj/aqua-installer)
 
 ## CircleCI Orb
 
