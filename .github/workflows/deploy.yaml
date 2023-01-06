@@ -6,9 +6,12 @@ on:
   pull_request:
     branches:
     - main
+permissions: {}
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # For peaceiris/actions-gh-pages
     steps:
     - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
     - uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3.5.1
@@ -20,6 +23,6 @@ jobs:
     - uses: peaceiris/actions-gh-pages@de7ea6f8efb354206b205ef54722213d99067935 # tag=v3.9.0
       if: github.event_name != 'pull_request'
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ github.token }}
         publish_dir: ./build
         destination_dir: ./docs
