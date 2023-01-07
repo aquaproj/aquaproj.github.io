@@ -95,6 +95,12 @@ We share news about aqua using a Twitter Account [@aquaclivm](https://twitter.co
 We check tweets about aqua, but it is difficult to search tweets about aqua with the keyword "aqua" because aqua is a very common word.
 So when you tweet about aqua, please mention @aquaclivm or use the hash tag [#aquaclivm](https://twitter.com/hashtag/aquaclivm).
 
+## GitHub Sponsor
+
+We'll really appreciate if you become a sponsor of this project!
+
+https://github.com/sponsors/aquaproj
+
 ## See Also
 
 * [Comparison](/docs/comparison)

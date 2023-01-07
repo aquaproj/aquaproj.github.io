@@ -89,6 +89,11 @@ const config = {
             label: 'Blog',
           },
           {
+            href: 'https://github.com/sponsors/aquaproj',
+            label: 'Sponsor',
+            position: 'right',
+          },
+          {
             href: 'https://twitter.com/aquaclivm',
             label: 'Twitter',
             position: 'right',
@@ -129,6 +134,18 @@ const config = {
                 label: 'Comparison',
                 to: '/docs/comparison',
               },
+              {
+                to: '/docs/tutorial-basics/quick-start',
+                label: 'Tutorial',
+              },
+              {
+                to: '/docs/reference/install',
+                label: 'Install',
+              },
+              {
+                to: '/docs/slide-blog',
+                label: 'Blog',
+              },
             ],
           },
           {
@@ -141,6 +158,22 @@ const config = {
               {
                 href: 'https://github.com/aquaproj/aqua-registry',
                 label: 'Standard Registry',
+              },
+              {
+                href: 'https://github.com/sponsors/aquaproj',
+                label: 'Sponsor',
+              },
+              {
+                href: 'https://github.com/aquaproj/aqua/releases',
+                label: 'Changelog',
+              },
+              {
+                href: 'https://asciinema.org/a/498262?autoplay=1',
+                label: 'Demo',
+              },
+              {
+                href: 'https://github.com/aquaproj/aqua/discussions',
+                label: 'Question',
               },
               {
                 label: 'Twitter',
