@@ -30,6 +30,7 @@ The evaluation result must be a boolean.
 Currently, the following values and functions are accessible in the expression.
 
 * `Version`: (type: `string`) The package version
+* `SemVer`: (type: `string`) The package version that [version_prefix](version-prefix.md) is trimmed from `Version`. For example, if `Version` is `cli/v1.0.0` and `version_prefix` is `cli/`, then `SemVer` is `v1.0.0`
 * `semver`: (type: `func(string) bool`) Tests if the package version satisfies all the constraints. [hashicorp/go-version](https://github.com/hashicorp/go-version) is used
 * `semverWithVersion`: (type: `func(constraint, version string) bool`) Tests if the package version satisfies all the constraints. [hashicorp/go-version](https://github.com/hashicorp/go-version) is used
 * `trimPrefix`: (type `func(s, prefix string) string`) Go's [strings.TrimPrefix](https://pkg.go.dev/strings#TrimPrefix)
@@ -57,6 +58,7 @@ The following attributes are supported.
 * `type`
 * `url`
 * `windows_ext`
+* `version_prefix`
 
 e.g.
 

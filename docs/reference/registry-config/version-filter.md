@@ -6,6 +6,10 @@ sidebar_position: 300
 
 [v0.8.13](https://github.com/aquaproj/aqua/releases/tag/v0.8.13)
 
+:::caution
+In almost cases you should use [version_prefix](version-prefix.md) rather than version_filter, because `version_prefix` makes Registry configuration simple.
+:::
+
 `aqua g` gets the latest version of the package.
 If `version_filter` is set, the version which matches with `version_filter` is used.
 `version_filter` is [expr](https://github.com/antonmedv/expr)'s expression.
