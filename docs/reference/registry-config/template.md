@@ -25,5 +25,6 @@ The following sprig functions are removed for security reason.
 * `GOOS`: Go's [runtime.GOOS](https://pkg.go.dev/runtime#pkg-constants)
 * `GOARCH`: Go's [runtime.GOARCH](https://pkg.go.dev/runtime#pkg-constants)
 * `Version`: Package `version`
+* `SemVer`: Package version that [version_prefix](version-prefix.md) is trimmed from `Version`. For example, if `Version` is `cli/v1.0.0` and `version_prefix` is `cli/`, then `SemVer` is `v1.0.0`
 * `Format`: Package `format`
 * `FileName`: `files[].name`
