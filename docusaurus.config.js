@@ -109,7 +109,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/aquaproj/aqua/discussions',
+            href: 'https://github.com/orgs/aquaproj/discussions',
             label: 'Question',
             position: 'right',
           },
@@ -172,7 +172,7 @@ const config = {
                 label: 'Demo',
               },
               {
-                href: 'https://github.com/aquaproj/aqua/discussions',
+                href: 'https://github.com/orgs/aquaproj/discussions',
                 label: 'Question',
               },
               {

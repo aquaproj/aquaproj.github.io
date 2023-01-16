@@ -6,6 +6,7 @@ sidebar_position: 600
 
 ## English
 
+* [2023-01-16 Update of aqua CLI Version Manager in 2022](https://dev.to/suzukishunsuke/update-of-aqua-cli-version-manager-in-2022-3oh5)
 * [2022-11-08 Checksum Verification by aqua](https://dev.to/suzukishunsuke/checksum-verification-by-aqua-5038)
 * [2022-05-30 aqua supports building tools with Go](https://dev.to/suzukishunsuke/support-building-tools-written-in-go-2l10)
 * [2021-12-23 Why I use aqua](https://dev.to/suzukishunsuke/why-i-use-aqua-230)
