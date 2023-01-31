@@ -22,6 +22,7 @@ Your contribution is welcome.
 * [marcosnils/bin](marcosnils-bin.md)
 * [alexellis/arkade](arkade.md)
 * [Nix (NixOS)](nixos.md)
+* [Go Modules](go-modules.md)
 
 ## Blogs
 
