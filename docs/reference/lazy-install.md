@@ -4,6 +4,11 @@ sidebar_position: 700
 
 # How does Lazy Install work?
 
+:::caution
+On Windows, [aqua-proxy](https://github.com/aquaproj/aqua-proxy) and symbolic links aren't used.
+Please see [here](/docs/reference/windows-support#create-bat-files-and-shell-scripts-instead-of-symbolic-links-and-aqua-proxy)
+:::
+
 In this document we describe how the Lazy Install works.
 The Lazy Install is the aqua's characteristic feature, and maybe you feel it like magic.
 
