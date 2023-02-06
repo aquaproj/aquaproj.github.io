@@ -4,7 +4,9 @@ sidebar_position: 20
 
 # Keep configuration files in one directory
 
-aqua >= v1.33.0 [#1595](https://github.com/aquaproj/aqua/issues/1595)
+- aqua >= v1.33.0 [#1595](https://github.com/aquaproj/aqua/issues/1595)
+- [update-checksum-action](https://github.com/aquaproj/update-checksum-action) >= v0.2.0
+- [update-checksum-workflow](https://github.com/aquaproj/update-checksum-workflow) >= v0.1.1
 
 aqua has several configuration files such as `aqua.yaml`, [aqua-checksums.json](checksum.md), [policy file](policy-as-code.md), and [imported files](split-config.md).
 
@@ -38,7 +40,8 @@ This is useful to keep the working directory clean.
 ## How to migrate
 
 - Update aqua to v1.33.0 or later
-- Update [update-checksum-action](https://github.com/aquaproj/update-checksum-action) to v0.1.7 or later
+- Update [update-checksum-action](https://github.com/aquaproj/update-checksum-action) to v0.2.0 or later
+- Update [update-checksum-workflow](https://github.com/aquaproj/update-checksum-workflow) to v0.1.1 or later
 - Move files
   - aqua.yaml => aqua/aqua.yaml
   - aqua-checksums.json => aqua/aqua-checksums.json
