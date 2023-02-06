@@ -28,7 +28,7 @@ aqua searches the following configuration files.
 To install tools in global configuration files, you have to set `-a` to `aqua install` command.
 
 :::info
-[From aqua v1.33.0, aqua supports keeping aqua's configuration files in one directory `.?aqua`](https://github.com/aquaproj/aqua/issues/1595).
+[From aqua v1.33.0, aqua supports keeping aqua's configuration files in one directory `.?aqua`](/docs/tutorial-extras/keep-in-one-dir).
 :::
 
 ## Environment variables
