@@ -22,10 +22,14 @@ packages:
 aqua searches the following configuration files.
 
 1. `--config (-c)` option (environment variable `AQUA_CONFIG`
-1. `\.?aqua\.ya?ml` from the current directory to the root directory. If configuration files are found in the multiple directories, aqua read all of them
+1. `\.?aqua\.ya?ml` or `\.?aqua/aqua\.ya?ml` from the current directory to the root directory. If configuration files are found in the multiple directories, aqua read all of them
 1. global configuration: environment variable `AQUA_GLOBAL_CONFIG`
 
 To install tools in global configuration files, you have to set `-a` to `aqua install` command.
+
+:::info
+[From aqua v1.33.0, aqua supports keeping aqua's configuration files in one directory `.?aqua`](/docs/tutorial-extras/keep-in-one-dir).
+:::
 
 ## Environment variables
 
