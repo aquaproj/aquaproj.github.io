@@ -44,9 +44,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       announcementBar: {
-        id: 'cosign_and_slsa_support',
+        id: 'support_keeping_config_files_in_one_directory',
         content:
-          '<a href="/docs/reference/cosign-slsa">Cosign and SLSA Provenance Support (2022-12-27)</a>',
+          '<a href="/docs/tutorial-extras/keep-in-one-dir">Keep configuration files in one directory (2023-02-06)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
