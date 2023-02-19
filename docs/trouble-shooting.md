@@ -79,12 +79,14 @@ If aqua outputs the error `the asset isn't found`, the following are possible ca
 * The release doesn't exist
   * Please fix the version
 * GitHub Releases has no assets yet
-  * Please wait for uploading them. This isn't a problem of aqua
+  * Please wait for uploading assets. This isn't a problem of aqua
+  * Renovate's [stabilitydays](https://docs.renovatebot.com/configuration-options/#stabilitydays) may be useful to decrease this kind of issues
 * Assets for only specific pair of OS and Arch aren't uploaded
   * Maybe you can request to release assets to the tool owner
   * e.g. https://github.com/gsamokovarov/jump/issues/72
 * Asset name format was changed from the specific version
   * You have to fix the Registry
+  * In case of the Standard Registry, please create an issue or a pull request
 
 ## GitHub API Rate Limit, 403 error
 
