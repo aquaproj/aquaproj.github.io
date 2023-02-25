@@ -113,7 +113,7 @@ version_overrides:
     # ...
   - version_constraint: semver(">= 3.0.0")
     # ...
-  - version_constraint: "true" # Oldest setting
+  - version_constraint: semver("< 3.0.0") # Oldest setting
 ```
 
 ## If the `format` is `raw`, `files[].src` isn't needed
