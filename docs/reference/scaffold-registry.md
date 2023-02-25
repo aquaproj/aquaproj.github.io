@@ -59,6 +59,14 @@ By default, `aqua gr` doesn't generate [version_constraint and version_overrides
 You can generate them by `--deep` option.
 And you can also output testdata to a file by `--out-testdata` option.
 
+:::caution
+If `--deep` option is set GitHub API is called per GitHub Release, so it may cause GitHub API rate limiting if there are many GitHub Releases. You can set GitHub access token via environment variables `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN`.
+:::
+
+You can try this feature by [GitHub Actions workflow_dispatch event](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow).
+
+https://github.com/aquaproj/generate-registry-deep
+
 e.g. https://github.com/aquaproj/generate-registry-deep/actions/runs/4263618160
 
 ```console
