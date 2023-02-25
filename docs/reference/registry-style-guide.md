@@ -11,7 +11,7 @@ But the guide would be useful to write good and consistent configuration.
 
 ## Scaffold configuration by `aqua gr` command
 
-First, we recommend to scaffold configuration by `aqua gr` command.
+First, we recommend scaffolding configuration by `aqua gr` command.
 
 [Scaffold Registry Configuration](scaffold-registry.md).
 

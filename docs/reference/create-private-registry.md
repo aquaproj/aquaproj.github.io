@@ -26,7 +26,7 @@ The framework has the following components.
 
 To test the registry in CI, GitHub Access Token is required to access private repositories.
 
-We recommend to create a GitHub App and install it to private repositories.
+We recommend creating a GitHub App and install it to private repositories.
 You can also use GitHub Personal Access Token instead of GitHub App.
 
 Then please set GitHub App ID and Private Key or Personal Access Token at GitHub Secrets and fix GitHub Actions Workflow `test` using secrets.
