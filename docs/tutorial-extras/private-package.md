@@ -4,11 +4,7 @@ sidebar_position: 400
 
 # Install private packages
 
-Of course, [Standard Registry](https://github.com/aquaproj/aqua-registry) doesn't include private packages.
-`private packages` are tools hosted in private GitHub Repositories.
+Of course, [Standard Registry](https://github.com/aquaproj/aqua-registry) doesn't include private packages, which are hosted in private GitHub Repositories.
+But you can install private packages by creating your own `local` Registry or `github_content` Registry.
 
-To install private packages, you have to write Registry Configuration by yourself.
-
-The environment variable `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN` is required.
-
-About how to write Registry Configuration, please see [Add Packages to Registry](add-registry.md).
+About how to create a Registry, please see [Use local Registry](add-registry.md#use-local-registry) and [Create a GitHub Repository for Registry](add-registry.md#create-a-github-repository-for-registry).
