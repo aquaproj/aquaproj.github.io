@@ -64,7 +64,7 @@ To add supported tools, please see [here](tutorial-extras/add-registry.md).
 
 ## Usecase
 
-1. [Manage tools in your dotfiles](tutorial-basics/global-config.md)
+1. [Install tools in your laptop globally](tutorial-basics/global-config.md). You can also manage tools in your `dotfiles` repository
 1. Manage tools for projects
 1. [Manage tools for your organization and team](tutorial-extras/team-config.md)
 1. [Distribute private tools in your organization](tutorial-extras/private-package.md)
