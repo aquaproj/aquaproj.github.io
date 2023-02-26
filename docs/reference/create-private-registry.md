@@ -87,7 +87,7 @@ $ aqua i -l # Install aqua-registry CLI
 
 ### How to add packages
 
-1. Scaffold configuration: `aqua-registry scaffold <package name>`
+1. Scaffold configuration: `aqua-registry scaffold [--deep] <package name>`
 1. Fix generated files if the scaffold fails
 1. Update registry.yaml: `aqua-registry gr`
 1. Test: `aqua i` and run installed tools
@@ -101,6 +101,17 @@ Don't run `scaffold` command against the same package at multiple times.
 :::caution
 When you update `pkgs/**/registry.yaml`, you have to run `aqua-registry gr` to reflect the update to `registry.yaml` on the repository root directory.
 :::
+
+#### Generate `version_overrides` by `--deep` option
+
+- registry-tool >= v0.1.8 [registry-tool#307](https://github.com/aquaproj/registry-tool/pull/307)
+- aqua >= v1.34.0 [#1655](https://github.com/aquaproj/aqua/issues/1655) [#1662](https://github.com/aquaproj/aqua/pull/1662)
+
+By default, `aqua-registry scaffold` doesn't generate [version_constraint and version_overrides](/docs/reference/registry-config/version-overrides/).
+You can generate them by `--deep` option.
+`aqua-registry scaffold --deep` calls `aqua gr --deep` internally.
+
+Please see [here](scaffold-registry.md#generate-version_overrides-by---deep-option) too.
 
 #### Getting Started
 
