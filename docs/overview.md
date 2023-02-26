@@ -109,7 +109,7 @@ Of course, aqua supports Monorepo which uses different tool versions per service
 
 #### Installing `latest` version in CI is danger
 
-If you install a tool in CI, the tool should be version controled to avoid troubles.
+If you install a tool in CI, the tool should be version controlled to avoid troubles.
 Installing `latest` version is useful but danger because the `latest` version is changed suddenly and unexpected trouble may occur.
 Your CI would be broken suddenly though you don't change any code.
 Many GitHub Actions install `latest` version by default.
