@@ -78,12 +78,6 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'comparison/index',
-            position: 'left',
-            label: 'Comparison',
-          },
-          {
-            type: 'doc',
             docId: 'slide-blog',
             position: 'left',
             label: 'Blog',
@@ -129,10 +123,6 @@ const config = {
               {
                 label: 'Overview',
                 to: '/docs/overview',
-              },
-              {
-                label: 'Comparison',
-                to: '/docs/comparison',
               },
               {
                 to: '/docs/tutorial-basics/quick-start',

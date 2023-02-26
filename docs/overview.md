@@ -71,8 +71,6 @@ To add supported tools, please see [here](tutorial-extras/add-registry.md).
 
 ## Why aqua?
 
-Please see [Comparison](comparison/index.md) too.
-
 - Change tool versions per project
   - Unlike Package Manager such as Homebrew, aqua supports changing tool version per project
 - Unify tool versions to prevent problems due to version difference
@@ -88,7 +86,179 @@ Please see [Comparison](comparison/index.md) too.
     - You don't have to write similar shell scripts to install tools many times. You only have to manage tools declaratively with YAML and run `aqua i`
 - [Security](security.md)
   - aqua supports security features such as [Checksum Verification](tutorial-extras/checksum.md), [Policy as Code](tutorial-extras/policy-as-code.md), and [Cosign and SLSA Provenance Support](reference/cosign-slsa.md)
+- Lower overhead than container
+  - You don't have to suffer from container specific issues
 - [Support private packages](tutorial-extras/private-package.md)
+
+### Strict Version Control
+
+The difference of tool version often causes troubles.
+In the team development, if developers use different tool versions each others, you would suffer from troubles due to the version difference.
+And if the tool version in your laptop is different from the tool version in CI, you would suffer from the same trouble.
+
+![image](https://user-images.githubusercontent.com/13323303/221387356-95d9d9fd-6c19-4015-830c-63d86a4a38e0.png)
+
+And if multiple projects require the different tool versions, you have to switch the tool version per project somehow.
+
+Package managers such as Homebrew and apt don't support switching tool versions.
+
+aqua forces to pin tool versions and supports switching tool versions per project.
+You can upgrade a tool temporaroly and rollback the upgrade easily only by editing `aqua.yaml`.
+
+Of course, aqua supports Monorepo which uses different tool versions per service as well.
+
+#### Installing `latest` version in CI is danger
+
+If you install a tool in CI, the tool should be version controled to avoid troubles.
+Installing `latest` version is useful but danger because the `latest` version is changed suddenly and unexpected trouble may occur.
+Your CI would be broken suddenly though you don't change any code.
+Many GitHub Actions install `latest` version by default.
+
+aqua forces to pin tool versions and doesn't allow to install `latest` version.
+
+### Easy to install tools for your projects
+
+You can list up tools and their versions for your project in `aqua.yaml`.
+Developers can install tools easily only by running `aqua i [-l]`.
+You don't have to write the document about which tools are required and how to install them.
+
+### 👋 Good bye shell script
+
+You may install tools by shell scripts.
+
+e.g.
+
+```sh
+#!/usr/bin/env bash
+
+set -eu
+
+tempdir=$(mktemp -d)
+cd "$tempdir"
+curl -Lq -O https://github.com/suzuki-shunsuke/tfcmt/releases/download/v4.2.0/tfcmt_darwin_amd64.tar.gz
+tar xvzf tfcmt_darwin_amd64.tar.gz
+chmod a+x tfcmt
+sudo mv tfcmt /usr/local/bin
+rm -R "$tempdir"
+```
+
+Shell scripts have some issues.
+
+- You have to maintain scripts per tool
+- You have to update the tool version somehow
+  - In many cases, the tool isn't updated and the old version is used for a long time
+- The script isn't portable
+  - The above script supports only darwin/amd64
+- The script doesn't verify the checksum
+  - If you verify the checksum in shell script, you have to update the checksum along with the version. It's bothersome
+
+Using aqua, you don't have to maintain shell scripts anymore.
+aqua supports updating tools by Renovate and checksum verification. aqua works on cross platform.
+aqua supports updating not only versions but also checksums automatically.
+
+### Continuous update by Renovate
+
+If tools are version controlled, they should be updated continuously.
+Otherwise, they would become old soon, which causes several issues.
+
+aqua provides [Renovate Config Preset](https://github.com/aquaproj/aqua-renovate-config) for continous update by Renovate.
+Using this preset, you can easily update tools by Renovate.
+
+[ref. Update packages by Renovate](/docs/tutorial-extras/renovate)
+
+### 🛡️ Security
+
+You should verify the checksum of the tool before installing the tool.
+Otherwise, the tool may be tampered and the malicious code may be executed.
+
+Unfortunately, many shell scripts, asdf plugins, and GitHub Actions don't verify the checksum.
+
+On the other hand, aqua supports the checksum verification.
+
+[ref. Security](security.md)
+
+### Easy to use
+
+If you use tools by yourself, you can use any tools you like freely even if the tool is difficult and the learning cost is high.
+But when you introduce a tool to your team and organization, it is important that the tool is easy to use.
+
+Even if you have a high motivation to learn them, other members don't necessarily  have the motivation.
+They have to focus on their own tasks and don't have a time to learn new tools.
+Then you wouldn't be able to introduce the tool to your team well and even if you introduce it some of other members wouldn't use it.
+
+Compared with alternatives such as `asdf` and `tea`, aqua is much easy to use.
+Other members have to do only the following things.
+
+1. [Install aqua in their laptops once](/docs/reference/install)
+1. Run `aqua i -l`
+
+aqua provides various features, but other members can use aqua without learning them.
+
+### Easy to support new tools
+
+aqua has [a central Registry (Standard Registry)](https://github.com/aquaproj/aqua-registry) and you can add new tools to the Registry.
+You don't have to maintain plugins or something by yourself. You only have to create an issue or pull request.
+To send a pull request you have to write Registry Configuration, but aqua provides [a tool](https://github.com/aquaproj/registry-tool) to scaffold Registry Configuration and create a pull request, so you can send a pull request easily.
+Registry Configuration is a declarative YAML files, so you don't have to write shell scripts or something.
+Declarative YAML files are much easier to maintain than scripts.
+
+[Many contributors has already contributed to Standard Registry](https://github.com/aquaproj/aqua-registry/graphs/contributors).
+Your contribution is welcome!
+
+## Use aqua along with alternatives
+
+aqua is awesome, but aqua can't support some tools due to aqua's architecture.
+So we recommend using aqua mainly and use alternatives to install tools aqua can't install.
+For example, @suzuki-shunsuke (aqua's author) uses aqua mainly and uses Homebrew to install tools aqua can't install.
+
+## Comparison
+
+:::caution
+We are not necessarily familiar with compared tools.
+So maybe the description about them is wrong.
+Your contribution is welcome.
+:::
+
+### Compared with Homebrew
+
+- :thumbsup: Strict Version Control
+- :thumbsup: Windows Support
+
+You can use Homebrew to install tools aqua can't install.
+
+### Compared with asdf
+
+- :thumbsup: Easy to use
+- :thumbsup: [Lazy Install](https://aquaproj.github.io/docs/tutorial-basics/lazy-install/)
+- :thumbsup: You don't have to install plugins in advance
+- :thumbsup: Continuous update by Renovate
+- :thumbsup: [Security](security.md) ([Checksum Verification](/docs/tutorial-extras/checksum/))
+- :thumbsup: aqua doesn't force to manage a tool by aqua in a project even if aqua is used to manage the tool in the other project
+- :thumbsup: aqua Registry is much easier to maintain than asdf plugins
+- :thumbsup: Small things
+  - :thumbsup: [Share aqua configuration for teams and organizations with AQUA_GLOBAL_CONFIG](/docs/tutorial-extras/team-config)
+  * :thumbsup: [Split the list of packages](/docs/tutorial-extras/split-config)
+
+#### aqua doesn't force to manage a tool by aqua in a project even if aqua is used to manage the tool in the other project
+
+For example, you can't use both asdf and nvm to manage Node.js in the same laptop.
+If you develop a project A using asdf to manage Node.js in your laptop, you can't develop a project B using nvm in the same laptop.
+
+On the other hand, aqua can be used along with alternatives in the same laptop.
+
+Please see [Use aqua combined with other version manager such as asdf](/docs/tutorial-extras/use-aqua-with-other-tools).
+
+#### Use aqua along with asdf
+
+asdf supports language runtimes such as Node.js, Python, Ruby, and so on, though aqua can't support them.
+You can use asdf for them and can use aqua for other tools.
+
+### Compared with GitHub Actions
+
+- :thumbsup: Strict Version Control
+- :thumbsup: Unify how to install tools in both local development and CI
+- :thumbsup: Continuous update by Renovate
+- :thumbsup: [Security](security.md) ([Checksum Verification](/docs/tutorial-extras/checksum/))
 
 ## SNS
 
@@ -101,8 +271,3 @@ So when you tweet about aqua, please mention @aquaclivm or use the hash tag [#aq
 We'll really appreciate if you become a sponsor of this project!
 
 https://github.com/sponsors/aquaproj
-
-## See Also
-
-* [Comparison](/docs/comparison)
-* [Quick Start](/docs/tutorial-basics/quick-start)
