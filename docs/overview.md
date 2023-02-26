@@ -64,9 +64,10 @@ To add supported tools, please see [here](tutorial-extras/add-registry.md).
 
 ## Usecase
 
+1. [Manage tools in your dotfiles](tutorial-basics/global-config.md)
 1. Manage tools for projects
 1. [Manage tools for your organization and team](tutorial-extras/team-config.md)
-1. [Manage tools in your dotfiles](tutorial-basics/global-config.md)
+1. [Distribute private tools in your organization](tutorial-extras/private-package.md)
 
 ## Why aqua?
 
@@ -77,7 +78,6 @@ Please see [Comparison](comparison/index.md) too.
 - Unify tool versions to prevent problems due to version difference
   - aqua makes you specify tool versions strictly
   - aqua supports cross platforms and provides the unified way to manage tools both in local development and CI
-- [Distribute private tools in your organization](tutorial-extras/private-package.md)
 - Easy to use
   - This is so important for introducing a tool to a project and having developers use it
 - Painless
@@ -88,6 +88,7 @@ Please see [Comparison](comparison/index.md) too.
     - You don't have to write similar shell scripts to install tools many times. You only have to manage tools declaratively with YAML and run `aqua i`
 - [Security](security.md)
   - aqua supports security features such as [Checksum Verification](tutorial-extras/checksum.md), [Policy as Code](tutorial-extras/policy-as-code.md), and [Cosign and SLSA Provenance Support](reference/cosign-slsa.md)
+- [Support private packages](tutorial-extras/private-package.md)
 
 ## SNS
 
