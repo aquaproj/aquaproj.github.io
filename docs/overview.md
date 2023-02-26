@@ -205,12 +205,6 @@ Declarative YAML files are much easier to maintain than scripts.
 [Many contributors has already contributed to Standard Registry](https://github.com/aquaproj/aqua-registry/graphs/contributors).
 Your contribution is welcome!
 
-## Use aqua along with alternatives
-
-aqua is awesome, but aqua can't support some tools due to aqua's architecture.
-So we recommend using aqua mainly and use alternatives to install tools aqua can't install.
-For example, @suzuki-shunsuke (aqua's author) uses aqua mainly and uses Homebrew to install tools aqua can't install.
-
 ## Comparison
 
 :::caution
