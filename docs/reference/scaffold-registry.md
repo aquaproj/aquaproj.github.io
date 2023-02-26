@@ -45,15 +45,7 @@ packages:
 
 ## Generate `version_overrides` by `--deep` option
 
-aqua >= v1.34.0-1 [#1655](https://github.com/aquaproj/aqua/issues/1655) [#1662](https://github.com/aquaproj/aqua/pull/1662)
-
-:::caution
-This feature isn't released yet. Please install the prerelease version `v1.34.0-*`.
-
-```console
-$ aqua update-aqua v1.34.0-6
-```
-:::
+aqua >= v1.34.0 [#1655](https://github.com/aquaproj/aqua/issues/1655) [#1662](https://github.com/aquaproj/aqua/pull/1662)
 
 By default, `aqua gr` doesn't generate [version_constraint and version_overrides](/docs/reference/registry-config/version-overrides/).
 You can generate them by `--deep` option.
