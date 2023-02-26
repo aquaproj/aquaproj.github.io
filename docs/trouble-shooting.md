@@ -150,3 +150,46 @@ aqua finds the configuration files and packages according to the rule.
 * [Configuration file paths | Reference](/docs/reference/config#configuration-file-path)
 
 Please check configuration files and your current directory.
+
+## gopls doesn't work well
+
+This is a known issues.
+
+- https://github.com/aquaproj/aqua/issues/1597
+- https://github.com/aquaproj/aqua/issues/710
+
+If you use Linux, please set the environment variable [AQUA_EXPERIMENTAL_X_SYS_EXEC](/docs/reference/experimental-feature/#aqua_experimental_x_sys_exec).
+
+```sh
+export AQUA_EXPERIMENTAL_X_SYS_EXEC=true
+```
+
+[AQUA_EXPERIMENTAL_X_SYS_EXEC](/docs/reference/experimental-feature/#aqua_experimental_x_sys_exec) has an issue in macOS.
+
+https://github.com/aquaproj/aqua/issues/729
+
+In macOS please try one of the following alias, shell function, and shell script.
+
+1. alias
+
+```sh
+alias gopls="$(aqua which gopls)"
+```
+
+2. shell function
+
+```sh
+gopls() {
+  "$(aqua which gopls)" "$@"
+}
+```
+
+3. shell script
+
+Add the following script `gopls` to `$PATH`.
+
+```sh
+#!/usr/bin/env bash
+
+exec "$(aqua which gopls)" "$@"
+```
