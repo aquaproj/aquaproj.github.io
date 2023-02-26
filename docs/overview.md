@@ -254,6 +254,10 @@ You can use asdf for them and can use aqua for other tools.
 - :thumbsup: Continuous update by Renovate
 - :thumbsup: [Security](security.md) ([Checksum Verification](/docs/tutorial-extras/checksum/))
 
+## Restriction
+
+Please see [Restriction](/docs/reference/restriction/).
+
 ## SNS
 
 We share news about aqua using a Twitter Account [@aquaclivm](https://twitter.com/aquaclivm).
