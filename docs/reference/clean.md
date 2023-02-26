@@ -4,7 +4,7 @@ sidebar_position: 500
 
 # Uninstall Packages
 
-[#538](https://github.com/aquaproj/aqua/issues/538) [#1651](https://github.com/orgs/aquaproj/discussions/1651)
+[#538](https://github.com/aquaproj/aqua/issues/538)
 
 aqua installs packages in `$AQUA_ROOT_DIR}/pkgs` and doesn't remove them.
 Even if you change the package version, aqua doesn't remove the old package.

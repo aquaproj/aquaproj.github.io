@@ -103,11 +103,6 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/orgs/aquaproj/discussions',
-            label: 'Question',
-            position: 'right',
-          },
-          {
             href: 'https://github.com/aquaproj/aqua',
             label: 'GitHub',
             position: 'right',
@@ -160,10 +155,6 @@ const config = {
               {
                 href: 'https://asciinema.org/a/498262?autoplay=1',
                 label: 'Demo',
-              },
-              {
-                href: 'https://github.com/orgs/aquaproj/discussions',
-                label: 'Question',
               },
               {
                 label: 'Twitter',
