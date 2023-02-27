@@ -258,7 +258,12 @@ You can use asdf for them and can use aqua for other tools.
 
 Please see [Restriction](/docs/reference/restriction/).
 
-## SNS
+## Community
+
+- Twitter: [@aquaclivm](https://twitter.com/aquaclivm), [#aquaclivm](https://twitter.com/hashtag/aquaclivm)
+- Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
+
+### Twitter
 
 We share news about aqua using a Twitter Account [@aquaclivm](https://twitter.com/aquaclivm).
 We check tweets about aqua, but it is difficult to search tweets about aqua with the keyword "aqua" because aqua is a very common word.
