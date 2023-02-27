@@ -76,15 +76,15 @@ To add supported tools, please see [here](tutorial-extras/add-registry.md).
 - Unify tool versions to prevent problems due to version difference
   - aqua makes you specify tool versions strictly
   - aqua supports cross platforms and provides the unified way to manage tools both in local development and CI
-- Easy to use
+- [Easy to use](#easy-to-use)
   - This is so important for introducing a tool to a project and having developers use it
 - Painless
   - aqua installs tools automatically when they are triggered. You don't have to run `aqua i` everytime tools are updated
   - [Continuous update by Renovate](tutorial-extras/renovate.md)
   - Easy to support new tools. You don't have to maintain plugins or something yourself. You only have to send a pull request to [the Standard Registry](https://github.com/aquaproj/aqua-registry), which is very easy
-  - No more shell scripts
+  - 👋 [Good bye shell script](#-good-bye-shell-script)
     - You don't have to write similar shell scripts to install tools many times. You only have to manage tools declaratively with YAML and run `aqua i`
-- [Security](security.md)
+- 🛡️ [Security](security.md)
   - aqua supports security features such as [Checksum Verification](tutorial-extras/checksum.md), [Policy as Code](tutorial-extras/policy-as-code.md), and [Cosign and SLSA Provenance Support](reference/cosign-slsa.md)
 - Lower overhead than container
   - You don't have to suffer from container specific issues
@@ -215,19 +215,19 @@ Your contribution is welcome.
 
 ### Compared with Homebrew
 
-- :thumbsup: Strict Version Control
-- :thumbsup: Windows Support
+- :thumbsup: [Strict Version Control](#strict-version-control)
+- :thumbsup: [Windows Support](/docs/reference/windows-support/)
 
 You can use Homebrew to install tools aqua can't install.
 
 ### Compared with asdf
 
-- :thumbsup: Easy to use
+- :thumbsup: [Easy to use](#easy-to-use)
 - :thumbsup: [Lazy Install](https://aquaproj.github.io/docs/tutorial-basics/lazy-install/)
 - :thumbsup: You don't have to install plugins in advance
-- :thumbsup: Continuous update by Renovate
+- :thumbsup: [Continuous update by Renovate](#continuous-update-by-renovate)
 - :thumbsup: [Security](security.md) ([Checksum Verification](/docs/tutorial-extras/checksum/))
-- :thumbsup: aqua doesn't force to manage a tool by aqua in a project even if aqua is used to manage the tool in the other project
+- :thumbsup: [aqua doesn't force to manage a tool by aqua in a project even if aqua is used to manage the tool in the other project](#aqua-doesnt-force-to-manage-a-tool-by-aqua-in-a-project-even-if-aqua-is-used-to-manage-the-tool-in-the-other-project)
 - :thumbsup: aqua Registry is much easier to maintain than asdf plugins
 - :thumbsup: Small things
   - :thumbsup: [Share aqua configuration for teams and organizations with AQUA_GLOBAL_CONFIG](/docs/tutorial-extras/team-config)
@@ -249,9 +249,9 @@ You can use asdf for them and can use aqua for other tools.
 
 ### Compared with GitHub Actions
 
-- :thumbsup: Strict Version Control
+- :thumbsup: [Strict Version Control](#strict-version-control)
 - :thumbsup: Unify how to install tools in both local development and CI
-- :thumbsup: Continuous update by Renovate
+- :thumbsup: [Continuous update by Renovate](#continuous-update-by-renovate)
 - :thumbsup: [Security](security.md) ([Checksum Verification](/docs/tutorial-extras/checksum/))
 
 ## Restriction
