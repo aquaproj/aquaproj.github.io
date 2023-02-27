@@ -83,6 +83,11 @@ const config = {
             label: 'Blog',
           },
           {
+            href: 'https://gophers.slack.com/archives/C04RALTG29K',
+            label: 'Slack',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/sponsors/aquaproj',
             label: 'Sponsor',
             position: 'right',
@@ -95,11 +100,6 @@ const config = {
           {
             href: 'https://github.com/aquaproj/aqua/releases',
             label: 'Changelog',
-            position: 'right',
-          },
-          {
-            href: 'https://asciinema.org/a/498262?autoplay=1',
-            label: 'Demo',
             position: 'right',
           },
           {
