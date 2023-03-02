@@ -77,27 +77,6 @@ const config = {
             label: 'Install',
           },
           {
-            type: 'doc',
-            docId: 'slide-blog',
-            position: 'left',
-            label: 'Blog',
-          },
-          {
-            href: 'https://gophers.slack.com/archives/C04RALTG29K',
-            label: 'Slack',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/sponsors/aquaproj',
-            label: 'Sponsor',
-            position: 'right',
-          },
-          {
-            href: 'https://twitter.com/aquaclivm',
-            label: 'Twitter',
-            position: 'right',
-          },
-          {
             href: 'https://github.com/aquaproj/aqua/releases',
             label: 'Changelog',
             position: 'right',
@@ -128,7 +107,7 @@ const config = {
                 label: 'Install',
               },
               {
-                to: '/docs/slide-blog',
+                to: '/docs/reference/slide-blog',
                 label: 'Blog',
               },
             ],

@@ -2,7 +2,26 @@
 sidebar_position: 700
 ---
 
-# How does Lazy Install work?
+# Lazy Install
+
+`Lazy Install` is a feature that aqua installs a tool when the tool is executed if the tool version isn't installed yet.
+
+The following example shows GitHub CLI is installed when `gh version` is executed.
+
+```console
+$ gh version
+INFO[0000] download and unarchive the package            aqua_version=1.19.2 package_name=cli/cli package_version=v2.1.0 program=aqua registry=standard
+gh version 2.1.0 (2021-10-14)
+https://github.com/cli/cli/releases/tag/v2.1.0
+```
+
+## Benefit
+
+- You can install tools that really needed
+- You don't have to run `aqua i` to update packages
+- You can ensure executed tool versions
+
+## How does Lazy Install work?
 
 :::caution
 On Windows, [aqua-proxy](https://github.com/aquaproj/aqua-proxy) and symbolic links aren't used.
