@@ -21,3 +21,5 @@ You don't have to run `aqua i` explicitly.
 We call this feature as `Lazy Install`.
 
 Note that `Lazy Install` doesn't work if the symbolic link isn't created in `${AQUA_ROOT_DIR}/bin` yet.
+
+About Lazy Install, see also [Reference](/docs/reference/lazy-install).
