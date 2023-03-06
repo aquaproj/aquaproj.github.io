@@ -61,6 +61,8 @@ packages:
 * [cosign](cosign.md)
 * [slsa_provenance](slsa-provenance.md)
 * [private](private.md)
+* [no_asset](no_asset.md)
+* [error_message](error_message.md)
 
 ## Default values if `repo_owner` and `repo_name` are set
 
