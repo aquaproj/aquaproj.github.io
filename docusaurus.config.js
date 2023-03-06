@@ -46,7 +46,7 @@ const config = {
       announcementBar: {
         id: 'support_keeping_config_files_in_one_directory',
         content:
-          '<a href="/docs/tutorial-extras/keep-in-one-dir">Keep configuration files in one directory (2023-02-06)</a>',
+          '<a href="https://gophers.slack.com/archives/C04RALTG29K">Open the Slack Channel (2023-02-27)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
