@@ -26,7 +26,7 @@ Please edit `aqua.yaml` with editor.
 
 Basically, you don't have to remove links because aqua supports finding commands from `PATH` if the command isn't found in `aqua.yaml`.
 
-[How does Lazy Install work?](lazy-install.md#how-does-lazy-install-work)
+[How does Lazy Install work?](/docs/reference/lazy-install#how-does-lazy-install-work)
 
 > If the package isn't found in the configuration files,
 > aqua finds the command from the environment variable `PATH`.

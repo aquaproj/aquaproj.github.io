@@ -1,5 +1,5 @@
 ---
-sidebar_position: 70
+sidebar_position: 15
 ---
 
 # Checksum Verification
@@ -237,4 +237,4 @@ Yes. You should manage `aqua-checksums.json` with Git.
 
 ## Reference
 
-Please see [reference](/docs/reference/checksum) too.
+Please see [reference](/docs/security/checksum) too.

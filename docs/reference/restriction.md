@@ -13,7 +13,7 @@ aqua's install process is very simple.
 1. Download tool
 1. Unarchive tool in $AQUA_ROOT_DIR
 
-aqua doesn't support running external commands (except for [cosign](cosign-slsa.md) and [go](registry-config/go-install-package.md)) to install tools.
+aqua doesn't support running external commands (except for [cosign](/docs/security/cosign-slsa) and [go](/docs/registry-config/go-install-package)) to install tools.
 So aqua can't support tools requiring to run external commands.
 
 This is not necessarily a draw back.

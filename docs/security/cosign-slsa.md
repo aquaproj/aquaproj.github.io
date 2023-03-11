@@ -106,7 +106,7 @@ And standard registry has a setting of cosign for tflint.
           - https://github.com/terraform-linters/tflint/releases/download/{{.Version}}/checksums.txt.pem
 ```
 
-Let's install tflint. To verify checksum's signature, you have to enable [Checksum Verification](/docs/tutorial-extras/checksum).
+Let's install tflint. To verify checksum's signature, you have to enable [Checksum Verification](/docs/guides/checksum).
 
 ```sh
 aqua init
@@ -169,5 +169,5 @@ FATA[0004] aqua failed                                   aqua_version=1.26.2 env
 
 - [Security](/docs/security)
 - Registry Configuration
-  - [cosign](/docs/reference/registry-config/cosign)
-  - [slsa_provenance](/docs/reference/registry-config/slsa-provenance)
+  - [cosign](/docs/registry-config/cosign)
+  - [slsa_provenance](/docs/registry-config/slsa-provenance)

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1100
+sidebar_position: 50
 ---
 
 # Checksum Verification
@@ -10,7 +10,7 @@ sidebar_position: 1100
 
 ## Tutorial
 
-Please see the [tutorial](/docs/tutorial-extras/checksum).
+Please see the [tutorial](/docs/guides/checksum).
 
 ## Configuration file path
 
@@ -156,7 +156,7 @@ FATA[0000] aqua failed                                   aqua_version= env=darwi
 
 It is bothersome to write the checksum configuration manually, so aqua supports scaffolding the configuration.
 
-[aqua gr](scaffold-registry) scaffolds the checksum configuration too.
+[aqua gr](/docs/develop-registry/scaffold-registry) scaffolds the checksum configuration too.
 
 And you can also patch the checksum configuration to the existing registries by [aqua-registry patch-checksum command](https://github.com/aquaproj/registry-tool/blob/main/USAGE.md#aqua-registry-patch-checksum).
 

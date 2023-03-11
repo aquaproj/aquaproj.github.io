@@ -28,7 +28,7 @@ aqua searches the following configuration files.
 To install tools in global configuration files, you have to set `-a` to `aqua install` command.
 
 :::info
-[From aqua v1.33.0, aqua supports keeping aqua's configuration files in one directory `.?aqua`](/docs/tutorial-extras/keep-in-one-dir).
+[From aqua v1.33.0, aqua supports keeping aqua's configuration files in one directory `.?aqua`](/docs/guides/keep-in-one-dir).
 :::
 
 ## Environment variables
@@ -36,7 +36,7 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * `AQUA_LOG_LEVEL`: (default: `info`) Log level
 * `AQUA_CONFIG`: configuration file path
 * `AQUA_GLOBAL_CONFIG`: global configuration file paths separated by semicolon `:`
-* `AQUA_POLICY_CONFIG`: [policy file](/docs/tutorial-extras/policy-as-code) paths separated by semicolon `:`
+* `AQUA_POLICY_CONFIG`: [policy file](/docs/security/policy-as-code) paths separated by semicolon `:`
 * `AQUA_ROOT_DIR`: The directory path where aqua install tools
   * default (linux and macOS): `${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua`
   * default (windows): `${HOME/AppData/Local}/aquaproj-aqua`
@@ -44,7 +44,7 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * `AQUA_GITHUB_TOKEN`, `GITHUB_TOKEN`: GitHub Access Token. This is required to install private repository's package
 * `AQUA_LOG_COLOR`: Support setting the log coloring by the environment variable `AQUA_LOG_COLOR` (`always|auto|never`)
 * `AQUA_PROGRESS_BAR`: The progress bar is disabled by default, but you can enable it by setting the environment variable `AQUA_PROGRESS_BAR` to `true`
-* [AQUA_GOOS, AQUA_GOARCH](change-os-arch-for-test.md)
+* [AQUA_GOOS, AQUA_GOARCH](../develop-registry/change-os-arch-for-test.md)
 * [AQUA_EXPERIMENTAL_X_SYS_EXEC](experimental-feature.md#aqua_experimental_x_sys_exec)
 
 ## JSON Schema
@@ -57,7 +57,7 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 
 * [registries](#registries): The list of registries
 * [packages](#packages): The list of installed packages
-* [checksum](checksum.md): configuration for checksum verification
+* [checksum](../security/checksum.md): configuration for checksum verification
 
 :::caution
 `inline_registry` was removed from `aqua >= v0.9.0`. Please use [local registry](#local-registry).
@@ -139,7 +139,7 @@ registries:
 * `name`: Registry name
 * `path`: The file path. Either absolute path or relative path from `aqua.yaml`. If `path` starts with `$HOME` + `OS specific path separator such as '/'`, it's replaced with the home directory path
 
-Please see [Configuration (registry.yaml)](registry-config/index.md).
+Please see [Configuration (registry.yaml)](../registry-config/index.md).
 
 ### `github_content` registry
 
@@ -178,7 +178,7 @@ packages:
 * `registry`: (string, optional) registry name
   * default value is `standard`
 * `version`: (string, optional) package version
-* `import`: (string, optional) glob pattern of package files. This is relative path from the configuration file. This is parsed with [filepath.Glob](https://pkg.go.dev/path/filepath#Glob). Please see [Split the list of packages](/docs/tutorial-extras/split-config) too.
+* `import`: (string, optional) glob pattern of package files. This is relative path from the configuration file. This is parsed with [filepath.Glob](https://pkg.go.dev/path/filepath#Glob). Please see [Split the list of packages](/docs/guides/split-config) too.
 
 The following two configuration is equivalent.
 
