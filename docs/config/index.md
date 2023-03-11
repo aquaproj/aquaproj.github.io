@@ -35,16 +35,16 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 
 * `AQUA_LOG_LEVEL`: (default: `info`) Log level
 * `AQUA_CONFIG`: configuration file path
-* `AQUA_GLOBAL_CONFIG`: global configuration file paths separated by semicolon `:`
+* [AQUA_GLOBAL_CONFIG](/docs/tutorial/global-config): global configuration file paths separated by semicolon `:`
 * `AQUA_POLICY_CONFIG`: [policy file](/docs/security/policy-as-code) paths separated by semicolon `:`
 * `AQUA_ROOT_DIR`: The directory path where aqua install tools
   * default (linux and macOS): `${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua`
   * default (windows): `${HOME/AppData/Local}/aquaproj-aqua`
 * `AQUA_MAX_PARALLELISM`: (default: `5`) The maximum number of packages which are installed in parallel at the same time
 * `AQUA_GITHUB_TOKEN`, `GITHUB_TOKEN`: GitHub Access Token. This is required to install private repository's package
-* `AQUA_LOG_COLOR`: Support setting the log coloring by the environment variable `AQUA_LOG_COLOR` (`always|auto|never`)
-* `AQUA_PROGRESS_BAR`: The progress bar is disabled by default, but you can enable it by setting the environment variable `AQUA_PROGRESS_BAR` to `true`
-* [AQUA_GOOS, AQUA_GOARCH](../develop-registry/change-os-arch-for-test.md)
+* [AQUA_LOG_COLOR](log-color.md): Log color setting (`always|auto|never`)
+* [AQUA_PROGRESS_BAR](progress-bar.md): The progress bar is disabled by default, but you can enable it by setting the environment variable `AQUA_PROGRESS_BAR` to `true`
+* [AQUA_GOOS, AQUA_GOARCH](/docs/develop-registry/change-os-arch-for-test)
 * [AQUA_EXPERIMENTAL_X_SYS_EXEC](experimental-feature.md#aqua_experimental_x_sys_exec)
 
 ## JSON Schema
@@ -57,7 +57,7 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 
 * [registries](#registries): The list of registries
 * [packages](#packages): The list of installed packages
-* [checksum](../security/checksum.md): configuration for checksum verification
+* [checksum](/docs/security/checksum): configuration for checksum verification
 
 :::caution
 `inline_registry` was removed from `aqua >= v0.9.0`. Please use [local registry](#local-registry).
@@ -179,6 +179,7 @@ packages:
   * default value is `standard`
 * `version`: (string, optional) package version
 * `import`: (string, optional) glob pattern of package files. This is relative path from the configuration file. This is parsed with [filepath.Glob](https://pkg.go.dev/path/filepath#Glob). Please see [Split the list of packages](/docs/guides/split-config) too.
+* [tags](/docs/guides/package-tag): Filter installed packages. Please see [Filter packages with tags](/docs/guides/package-tag)
 
 The following two configuration is equivalent.
 
