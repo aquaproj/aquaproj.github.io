@@ -2,7 +2,9 @@
 sidebar_position: 100
 ---
 
-# Overview
+# Home
+
+## Introduction
 
 aqua is a declarative CLI Version Manager written in Go.
 You can manage tool versions with YAML.

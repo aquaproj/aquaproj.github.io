@@ -60,21 +60,9 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'overview',
+            docId: 'index',
             position: 'left',
-            label: 'Overview',
-          },
-          {
-            type: 'doc',
-            docId: 'tutorial/index',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {
-            type: 'doc',
-            docId: 'install',
-            position: 'left',
-            label: 'Install',
+            label: 'Docs',
           },
           {
             href: 'https://github.com/aquaproj/aqua/releases',
@@ -96,7 +84,7 @@ const config = {
             items: [
               {
                 label: 'Overview',
-                to: '/docs/overview',
+                to: '/docs/',
               },
               {
                 to: '/docs/tutorial',
