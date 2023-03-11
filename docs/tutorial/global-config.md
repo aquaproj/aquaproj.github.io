@@ -50,3 +50,8 @@ To install tools of global configuration by `aqua i`, please set the `-a` option
 $ aqua i -a
 ```
 :::
+
+## See also
+
+- [Share aqua configuration for teams and organizations](/docs/guides/team-config)
+- [Install Standard Registry's all packages very quickly](/docs/guides/install-all-packages)
