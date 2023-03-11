@@ -60,14 +60,14 @@ $ aqua g
 > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 ```
 
-To add supported tools, please see [here](tutorial-extras/add-registry.md).
+To add supported tools, please see [here](develop-registry/add-registry.md).
 
 ## Usecase
 
-1. [Install tools in your laptop globally](tutorial-basics/global-config.md). You can also manage tools in your `dotfiles` repository
+1. [Install tools in your laptop globally](tutorial/global-config.md). You can also manage tools in your `dotfiles` repository
 1. Manage tools for projects
-1. [Manage tools for your organization and team](tutorial-extras/team-config.md)
-1. [Distribute private tools in your organization](tutorial-extras/private-package.md)
+1. [Manage tools for your organization and team](guides/team-config.md)
+1. [Distribute private tools in your organization](guides/private-package.md)
 
 ## Why aqua?
 
@@ -80,15 +80,15 @@ To add supported tools, please see [here](tutorial-extras/add-registry.md).
   - This is so important for introducing a tool to a project and having developers use it
 - Painless
   - aqua installs tools automatically when they are triggered. You don't have to run `aqua i` everytime tools are updated
-  - [Continuous update by Renovate](tutorial-extras/renovate.md)
+  - [Continuous update by Renovate](guides/renovate.md)
   - Easy to support new tools. You don't have to maintain plugins or something yourself. You only have to send a pull request to [the Standard Registry](https://github.com/aquaproj/aqua-registry), which is very easy
   - 👋 [Good bye shell script](#-good-bye-shell-script)
     - You don't have to write similar shell scripts to install tools many times. You only have to manage tools declaratively with YAML and run `aqua i`
-- 🛡️ [Security](security.md)
-  - aqua supports security features such as [Checksum Verification](tutorial-extras/checksum.md), [Policy as Code](tutorial-extras/policy-as-code.md), and [Cosign and SLSA Provenance Support](reference/cosign-slsa.md)
+- 🛡️ [Security](security/index.md)
+  - aqua supports security features such as [Checksum Verification](guides/checksum.md), [Policy as Code](security/policy-as-code.md), and [Cosign and SLSA Provenance Support](security/cosign-slsa.md)
 - Lower overhead than container
   - You don't have to suffer from container specific issues
-- [Support private packages](tutorial-extras/private-package.md)
+- [Support private packages](guides/private-package.md)
 
 ### Strict Version Control
 
@@ -164,7 +164,7 @@ Otherwise, they would become old soon, which causes several issues.
 aqua provides [Renovate Config Preset](https://github.com/aquaproj/aqua-renovate-config) for continous update by Renovate.
 Using this preset, you can easily update tools by Renovate.
 
-[ref. Update packages by Renovate](/docs/tutorial-extras/renovate)
+[ref. Update packages by Renovate](/docs/guides/renovate)
 
 ### 🛡️ Security
 
@@ -175,7 +175,7 @@ Unfortunately, many shell scripts, asdf plugins, and GitHub Actions don't verify
 
 On the other hand, aqua supports the checksum verification.
 
-[ref. Security](security.md)
+[ref. Security](security/index.md)
 
 ### Easy to use
 
@@ -189,7 +189,7 @@ Then you wouldn't be able to introduce the tool to your team well and even if yo
 Compared with alternatives such as `asdf` and `tea`, aqua is much easy to use.
 Other members have to do only the following things.
 
-1. [Install aqua in their laptops once](/docs/reference/install)
+1. [Install aqua in their laptops once](/docs/install)
 1. Run `aqua i -l`
 
 aqua provides various features, but other members can use aqua without learning them.
@@ -223,15 +223,15 @@ You can use Homebrew to install tools aqua can't install.
 ### Compared with asdf
 
 - :thumbsup: [Easy to use](#easy-to-use)
-- :thumbsup: [Lazy Install](https://aquaproj.github.io/docs/tutorial-basics/lazy-install/)
+- :thumbsup: [Lazy Install](https://aquaproj.github.io/docs/tutorial/lazy-install/)
 - :thumbsup: You don't have to install plugins in advance
 - :thumbsup: [Continuous update by Renovate](#continuous-update-by-renovate)
-- :thumbsup: [Security](security.md) ([Checksum Verification](/docs/tutorial-extras/checksum/))
+- :thumbsup: [Security](security/index.md) ([Checksum Verification](/docs/guides/checksum/))
 - :thumbsup: [aqua doesn't force to manage a tool by aqua in a project even if aqua is used to manage the tool in the other project](#aqua-doesnt-force-to-manage-a-tool-by-aqua-in-a-project-even-if-aqua-is-used-to-manage-the-tool-in-the-other-project)
 - :thumbsup: aqua Registry is much easier to maintain than asdf plugins
 - :thumbsup: Small things
-  - :thumbsup: [Share aqua configuration for teams and organizations with AQUA_GLOBAL_CONFIG](/docs/tutorial-extras/team-config)
-  * :thumbsup: [Split the list of packages](/docs/tutorial-extras/split-config)
+  - :thumbsup: [Share aqua configuration for teams and organizations with AQUA_GLOBAL_CONFIG](/docs/guides/team-config)
+  * :thumbsup: [Split the list of packages](/docs/guides/split-config)
 
 #### aqua doesn't force to manage a tool by aqua in a project even if aqua is used to manage the tool in the other project
 
@@ -240,7 +240,7 @@ If you develop a project A using asdf to manage Node.js in your laptop, you can'
 
 On the other hand, aqua can be used along with alternatives in the same laptop.
 
-Please see [Use aqua combined with other version manager such as asdf](/docs/tutorial-extras/use-aqua-with-other-tools).
+Please see [Use aqua combined with other version manager such as asdf](/docs/guides/use-aqua-with-other-tools).
 
 #### Use aqua along with asdf
 
@@ -252,7 +252,7 @@ You can use asdf for them and can use aqua for other tools.
 - :thumbsup: [Strict Version Control](#strict-version-control)
 - :thumbsup: Unify how to install tools in both local development and CI
 - :thumbsup: [Continuous update by Renovate](#continuous-update-by-renovate)
-- :thumbsup: [Security](security.md) ([Checksum Verification](/docs/tutorial-extras/checksum/))
+- :thumbsup: [Security](security/index.md) ([Checksum Verification](/docs/guides/checksum/))
 
 ## Restriction
 

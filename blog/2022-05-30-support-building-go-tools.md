@@ -106,5 +106,5 @@ This feature is powerful and changes the management of Go tools that don't provi
 * https://github.com/aquaproj/aqua/releases/tag/v1.7.0
 * https://github.com/aquaproj/aqua-registry/releases/tag/v2.19.0
 * https://github.com/aquaproj/aqua-registry/pull/3713
-* https://aquaproj.github.io/docs/reference/registry-config#go-package
+* https://aquaproj.github.io/docs/registry-config#go-package
 * https://zenn.dev/shunsuke_suzuki/scraps/7e8ac509fe39bd (Japanese)

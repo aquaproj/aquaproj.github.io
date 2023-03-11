@@ -66,13 +66,13 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'tutorial-basics/quick-start',
+            docId: 'tutorial/index',
             position: 'left',
             label: 'Tutorial',
           },
           {
             type: 'doc',
-            docId: 'reference/install',
+            docId: 'install',
             position: 'left',
             label: 'Install',
           },
@@ -99,11 +99,11 @@ const config = {
                 to: '/docs/overview',
               },
               {
-                to: '/docs/tutorial-basics/quick-start',
+                to: '/docs/tutorial',
                 label: 'Tutorial',
               },
               {
-                to: '/docs/reference/install',
+                to: '/docs/install',
                 label: 'Install',
               },
               {

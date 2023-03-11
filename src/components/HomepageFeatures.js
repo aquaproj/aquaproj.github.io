@@ -70,7 +70,7 @@ const FeatureList = [
     description: (
       <>
         aqua installs tools securely.
-        aqua provides several security features such as <a href="/docs/reference/checksum/">Checksum Verification</a>, <a href="/docs/tutorial-extras/policy-as-code/">Policy as Code</a>, and <a href="/docs/reference/cosign-slsa/">Cosign and SLSA Provenance Support</a>.
+        aqua provides several security features such as <a href="/docs/security/checksum/">Checksum Verification</a>, <a href="/docs/security/policy-as-code/">Policy as Code</a>, and <a href="/docs/security/cosign-slsa/">Cosign and SLSA Provenance Support</a>.
         Please see <a href="/docs/security">Security</a>.
       </>
     ),

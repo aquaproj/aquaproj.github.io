@@ -6,7 +6,7 @@ sidebar_position: 2100
 
 - `aqua > v1.26.0`
 
-Please see [Cosign and SLSA Provenance Support](/docs/reference/cosign-slsa) too.
+Please see [Cosign and SLSA Provenance Support](/docs/security/cosign-slsa) too.
 
 ## Fields
 

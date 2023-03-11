@@ -29,7 +29,7 @@ aqua init-policy
 ```yaml
 ---
 # aqua Policy
-# https://aquaproj.github.io/docs/tutorial-extras/policy-as-code
+# https://aquaproj.github.io/docs/security/policy-as-code
 registries:
 - type: standard
   ref: semver(">= 3.0.0")
@@ -171,7 +171,7 @@ FATA[0000] aqua failed                                   aqua_version=1.24.0 doc
 ```
 
 You can also restrict the package version.
-The syntax is same as [version_overrides and version_constraint](/docs/reference/registry-config/version-overrides).
+The syntax is same as [version_overrides and version_constraint](/docs/registry-config/version-overrides).
 The expression engine [expr](https://github.com/antonmedv/expr) is used and the version constraint is evaluated with [hashicorp/go-version](https://github.com/hashicorp/go-version).
 
 Let's allow `tfcmt >= 4.0.0`.
