@@ -14,7 +14,7 @@ sidebar_position: 410
 
 ## Checksum Verification
 
-[Checksum Verification](/docs/security/checksum)
+[Checksum Verification](/docs/reference/security/checksum)
 
 ### GitHub Actions
 

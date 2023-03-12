@@ -18,7 +18,7 @@ Generated code is not perfect and may be wrong.
 It is just a template.
 :::
 
-[Usage](usage.md#aqua-generate-registry)
+[Usage](/docs/reference/usage#aqua-generate-registry)
 
 e.g.
 
@@ -47,7 +47,7 @@ packages:
 
 aqua >= v1.34.0 [#1655](https://github.com/aquaproj/aqua/issues/1655) [#1662](https://github.com/aquaproj/aqua/pull/1662)
 
-By default, `aqua gr` doesn't generate [version_constraint and version_overrides](/docs/registry-config/version-overrides/).
+By default, `aqua gr` doesn't generate [version_constraint and version_overrides](/docs/reference/registry-config/version-overrides/).
 You can generate them by `--deep` option.
 And you can also output testdata to a file by `--out-testdata` option.
 

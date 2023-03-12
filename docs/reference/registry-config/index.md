@@ -57,7 +57,7 @@ packages:
 * [version_filter](version-filter.md)
 * [version_source](version-source.md)
 * [complete_windows_ext](complete-windows-ext.md)
-* [checksum](/docs/security/checksum)
+* [checksum](/docs/reference/security/checksum)
 * [cosign](cosign.md)
 * [slsa_provenance](slsa-provenance.md)
 * [private](private.md)

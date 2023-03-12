@@ -4,7 +4,7 @@ sidebar_position: 300
 
 # Add Packages to Registry
 
-You can install tools registered in the [Standard Registry](https://github.com/aquaproj/aqua-registry) easily.
+You can install tools registered in the [Standard Registry](/docs/products/aqua-registry) easily.
 
 You can search packages from Registries by `aqua g`.
 Please see [Search Packages](/docs/tutorial/search-packages).
@@ -14,13 +14,13 @@ If tools aren't found, you have some options.
 * [Create an issue for request](https://github.com/aquaproj/aqua-registry/issues)
 * [Send a Pull Request to the Standard Registry](https://github.com/aquaproj/aqua-registry#request-for-new-packages)
 * Write Registry Configuration
-  * [local registry](/docs/config#local-registry)
-  * [github_content registry](/docs/config#github_content-registry)
+  * [local registry](/docs/reference/config#local-registry)
+  * [github_content registry](/docs/reference/config#github_content-registry)
 
 ## Write Registry Configuration
 
 * [Registry Style Guide](/docs/develop-registry/registry-style-guide)
-* [Registry Configuration](/docs/registry-config)
+* [Registry Configuration](/docs/reference/registry-config)
 
 ## Use `local` Registry
 
@@ -40,7 +40,7 @@ https://github.com/aquaproj/aqua-registry/blob/v0.10.10/registry.yaml#L1838-L184
 
 In that case, please write the following configuration.
 
-ref. [local registry](/docs/config#local-registry)
+ref. [local registry](/docs/reference/config#local-registry)
 
 ```yaml
 # registry.yaml
@@ -65,7 +65,7 @@ packages:
 
 ## Create a GitHub Repository for Registry
 
-ref. [github_content registry](/docs/config#github_content-registry)
+ref. [github_content registry](/docs/reference/config#github_content-registry)
 
 Create a repository for Registry and add Registry Configuration.
 

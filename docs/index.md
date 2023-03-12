@@ -106,8 +106,8 @@ To add supported tools, please see [here](develop-registry/add-registry.md).
   - Easy to support new tools. You don't have to maintain plugins or something yourself. You only have to send a pull request to [the Standard Registry](https://github.com/aquaproj/aqua-registry), which is very easy
   - 👋 [Good bye shell script](#-good-bye-shell-script)
     - You don't have to write similar shell scripts to install tools many times. You only have to manage tools declaratively with YAML and run `aqua i`
-- 🛡️ [Security](security/index.md)
-  - aqua supports security features such as [Checksum Verification](guides/checksum.md), [Policy as Code](security/policy-as-code.md), and [Cosign and SLSA Provenance Support](security/cosign-slsa.md)
+- 🛡️ [Security](reference/security/index.md)
+  - aqua supports security features such as [Checksum Verification](guides/checksum.md), [Policy as Code](reference/security/policy-as-code.md), and [Cosign and SLSA Provenance Support](reference/security/cosign-slsa.md)
 - Lower overhead than container
   - You don't have to suffer from container specific issues
 - [Support private packages](guides/private-package.md)
@@ -197,7 +197,7 @@ Unfortunately, many shell scripts, asdf plugins, and GitHub Actions don't verify
 
 On the other hand, aqua supports the checksum verification.
 
-[ref. Security](security/index.md)
+[ref. Security](reference/security/index.md)
 
 ### Easy to use
 
@@ -248,7 +248,7 @@ You can use Homebrew to install tools aqua can't install.
 - :thumbsup: [Lazy Install](https://aquaproj.github.io/docs/tutorial/lazy-install/)
 - :thumbsup: You don't have to install plugins in advance
 - :thumbsup: [Continuous update by Renovate](#continuous-update-by-renovate)
-- :thumbsup: [Security](security/index.md) ([Checksum Verification](/docs/guides/checksum/))
+- :thumbsup: [Security](reference/security/index.md) ([Checksum Verification](/docs/guides/checksum/))
 - :thumbsup: [aqua doesn't force to manage a tool by aqua in a project even if aqua is used to manage the tool in the other project](#aqua-doesnt-force-to-manage-a-tool-by-aqua-in-a-project-even-if-aqua-is-used-to-manage-the-tool-in-the-other-project)
 - :thumbsup: aqua Registry is much easier to maintain than asdf plugins
 - :thumbsup: Small things
@@ -274,7 +274,7 @@ You can use asdf for them and can use aqua for other tools.
 - :thumbsup: [Strict Version Control](#strict-version-control)
 - :thumbsup: Unify how to install tools in both local development and CI
 - :thumbsup: [Continuous update by Renovate](#continuous-update-by-renovate)
-- :thumbsup: [Security](security/index.md) ([Checksum Verification](/docs/guides/checksum/))
+- :thumbsup: [Security](reference/security/index.md) ([Checksum Verification](/docs/guides/checksum/))
 
 ## Restriction
 

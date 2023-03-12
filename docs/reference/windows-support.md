@@ -65,7 +65,7 @@ In that case, you may have to add `AQUA_ROOT_DIR` to security software's exclusi
 ## Windows Support of installed tools
 
 Note that some tools don't support Windows.
-aqua skips installing those tools on Windows with [supported_if](/docs/registry-config/supported-if) or [supported_envs](/docs/registry-config/supported-envs).
+aqua skips installing those tools on Windows with [supported_if](/docs/reference/registry-config/supported-if) or [supported_envs](/docs/reference/registry-config/supported-envs).
 
 ### tools written in shell scripts aren't supported
 
@@ -75,7 +75,7 @@ Currently, tools written in shell scripts aren't supported.
 
 ### Auto complesion of the file extension
 
-Please see [complete_windows_ext](/docs/registry-config/complete-windows-ext).
+Please see [complete_windows_ext](/docs/reference/registry-config/complete-windows-ext).
 
 ### Create BAT files and shell scripts instead of symbolic links and aqua-proxy
 

@@ -107,7 +107,7 @@ When you update `pkgs/**/registry.yaml`, you have to run `aqua-registry gr` to r
 - registry-tool >= v0.1.8 [registry-tool#307](https://github.com/aquaproj/registry-tool/pull/307)
 - aqua >= v1.34.0 [#1655](https://github.com/aquaproj/aqua/issues/1655) [#1662](https://github.com/aquaproj/aqua/pull/1662)
 
-By default, `aqua-registry scaffold` doesn't generate [version_constraint and version_overrides](/docs/registry-config/version-overrides/).
+By default, `aqua-registry scaffold` doesn't generate [version_constraint and version_overrides](/docs/reference/registry-config/version-overrides/).
 You can generate them by `--deep` option.
 `aqua-registry scaffold --deep` calls `aqua gr --deep` internally.
 

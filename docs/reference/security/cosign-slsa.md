@@ -167,7 +167,6 @@ FATA[0004] aqua failed                                   aqua_version=1.26.2 env
 
 ## See also
 
-- [Security](/docs/security)
 - Registry Configuration
-  - [cosign](/docs/registry-config/cosign)
-  - [slsa_provenance](/docs/registry-config/slsa-provenance)
+  - [cosign](/docs/reference/registry-config/cosign)
+  - [slsa_provenance](/docs/reference/registry-config/slsa-provenance)
