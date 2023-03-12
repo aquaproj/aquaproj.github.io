@@ -242,7 +242,7 @@ If you develop a project A using asdf to manage Node.js in your laptop, you can'
 
 On the other hand, aqua can be used along with alternatives in the same laptop.
 
-Please see [Use aqua combined with other version manager such as asdf](/docs/guides/use-aqua-with-other-tools).
+Please see [Use aqua combined with other version manager such as asdf](/docs/reference/use-aqua-with-other-tools).
 
 #### Use aqua along with asdf
 
