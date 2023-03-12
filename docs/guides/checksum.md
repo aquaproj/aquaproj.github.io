@@ -2,239 +2,194 @@
 sidebar_position: 15
 ---
 
-# Checksum Verification
+# Enable Checksum Verification
 
-* [Blog Post written in Japanese](https://zenn.dev/shunsuke_suzuki/articles/aqua-checksum-verification)
+About Checksum Verification, please see also.
 
-Checksum Verification is a feature verifying downloaded assets with checksum.
-Checksum Verification prevents the supply chain attack and allows you to install tools securely.
+- [Reference](/docs/security/checksum)
+- [Configuration](/docs/config/checksum)
+- [Registry Configuration](/docs/registry-config/checksum)
+- [Usage > aqua update-checksum](/docs/usage#aqua-update-checksum)
+
+## Create a GitHub Repository
+
+[Let's create a GitHub Repository for this tutorial](https://github.com/new).
+You can remove the repository after this tutorial.
+
+## Prepare GitHub Access Token
+
+Please create a classic personal access token and add it to Repository Secrets.
+
+- name: GH_TOKEN
+- required permissions: `contents: write`
+
+:::caution
+GitHub Actions' token `GITHUB_TOKEN` is unavailable.
+:::
+
+:::caution
+Unfortunately, fine-grained personal access token is unavailable at the moment because it doesn't support GraphQL API.
+https://github.com/cli/cli/issues/6680
+:::
+
+:::info
+In this time we use a classic personal access token, but we recommend GitHub App in terms of security.
+:::
+
+## Create aqua.yaml
+
+```sh
+aqua init
+aqua g -i suzuki-shunsuke/tfcmt
+```
+
+## Enable Checksum Verification
 
 By default, checksum verification is disabled.
-To enable it, please add the configuration to `aqua.yaml`.
-
-```yaml
-checksum:
-  enabled: true
-registries:
-  - type: standard
-    ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
-packages:
-  - name: golangci/golangci-lint@v1.46.2
-```
-
-aqua creates or updates a file `aqua-checksums.json` in the same directory as aqua configuration file `aqua.yaml` and writes checksums.
-
-e.g. `aqua-checksums.json`
-
-```json
-{
-  "checksums": [
-    {
-      "id": "github_release/github.com/golangci/golangci-lint/v1.49.0/golangci-lint-1.49.0-darwin-amd64.tar.gz",
-      "checksum": "20cd1215e0420db8cfa94a6cd3c9d325f7b39c07f2415a02d111568d8bc9e271",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/golangci/golangci-lint/v1.49.0/golangci-lint-1.49.0-darwin-arm64.tar.gz",
-      "checksum": "cabb1a4c35fe1dadbe5a81550a00871281a331e7660cd85ae16e936a7f0f6cfc",
-      "algorithm": "sha256"
-    }
-  ]
-}
-```
-
-Many tools publish checksum files, so aqua gets checksums from them.
-
-e.g.
-
-* [Terraform](https://releases.hashicorp.com/terraform/1.2.7/terraform_1.2.7_SHA256SUMS)
-* [GitHub CLI](https://github.com/cli/cli/releases/download/v2.14.4/gh_2.14.4_checksums.txt)
-
-If no checksum file for a tool is published, aqua can also get checksums by downloading assets and calculating checksums.
-
-## `aqua update-checksum` command
-
-You can create or update `aqua-checksums.json` without installing tools by `aqua update-checksum` command.
-
-```console
-$ aqua update-checksum
-```
-
-By default, `aqua update-checksum` doesn't add checksums if the package's checksum configuration is disabled.
-
-e.g. https://github.com/aquaproj/aqua-registry/blob/66c791c3cbbeb8847d175fbe2530a921539bbd8f/registry.yaml#L4192-L4205
-
-```yaml
-  - type: github_release
-    repo_owner: cycloidio
-    repo_name: terracognita
-    asset: terracognita-{{.OS}}-{{.Arch}}.tar.gz
-    checksum:
-      enabled: false
-```
-
-If `-deep` option is set, `aqua update-checksum` downloads assets and calculate checksums.
-
-```console
-$ aqua update-checksum -deep
-INFO[0001] downloading an asset to calculate the checksum  aqua_version= asset_name=terracognita-darwin-amd64.tar.gz checksum_env=darwin/amd64 env=linux/amd64 package_name=cycloidio/terracognita package_registry=standard package_version=v0.8.1 program=aqua
-INFO[0008] downloading an asset to calculate the checksum  aqua_version= asset_name=terracognita-windows-amd64.tar.gz checksum_env=windows/amd64 env=linux/amd64 package_name=cycloidio/terracognita package_registry=standard package_version=v0.8.1 program=aqua
-INFO[0014] downloading an asset to calculate the checksum  aqua_version= asset_name=terracognita-linux-amd64.tar.gz checksum_env=linux/amd64 env=linux/amd64 package_name=cycloidio/terracognita package_registry=standard package_version=v0.8.1 program=aqua
-```
-
-## Getting Started
-
-Install aqua v1.20.0 or later.
-
-```console
-$ aqua -v
-aqua version 1.22.0 (869d7b46a0697a5938dffd02a7ea219406762bf2)
-```
-
-Scaffold `aqua.yaml` and edit to enable the checksum verification.
-
-```console
-$ aqua init
-$ vi aqua.yaml
-```
+Let's edit aqua.yaml and enable Checksum Verification.
 
 ```yaml
 ---
-# aqua - Declarative CLI Version Manager
-# https://aquaproj.github.io/
 checksum:
   enabled: true
+  require_checksum: true
 registries:
 - type: standard
-  ref: v3.66.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v3.143.0 # renovate: depName=aquaproj/aqua-registry
 packages:
+- name: suzuki-shunsuke/tfcmt@v4.2.0
 ```
 
-And add `suzuki-shunsuke/tfcmt` by `aqua g` command.
+## Set up GitHub Actions Workflow
 
-```console
-$ aqua g -i suzuki-shunsuke/tfcmt
+To create and update `aqua-checksum.json` automatically, let's set up GitHub Actions.
+
+```
+mkdir -p .github/workflows
+vi .github/workflows/update-aqua-checksum.yaml
 ```
 
 ```yaml
-packages:
-- name: suzuki-shunsuke/tfcmt@v4.0.0
+name: update-aqua-checksum
+on:
+  pull_request:
+    paths:
+      - aqua.yaml
+      - aqua-checksums.json
+jobs:
+  update-aqua-checksums:
+    uses: aquaproj/update-checksum-workflow/.github/workflows/update-checksum.yaml@f637ff2417a258303aeec16a7fa7a1a7a8bda020 # v0.1.3
+    permissions:
+      contents: read
+    with:
+      aqua_version: v1.36.0
+      prune: true
+    secrets:
+      gh_token: ${{secrets.GH_TOKEN}}
+      # gh_app_id: ${{secrets.APP_ID}}
+      # gh_app_private_key: ${{secrets.APP_PRIVATE_KEY}}
 ```
 
-Run `aqua update-checksum`.
+We use [update-checksum-action](https://github.com/aquaproj/update-checksum-action).
+This action depends on [int128/ghcp](https://github.com/int128/ghcp), so let's install it by aqua.
 
-```console
-$ aqua update-checksum
-INFO[0000] updating a package checksum                   aqua_version=1.22.0 env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_registry=standard package_version=v4.0.0 program=aqua
-
-$ cat aqua-checksums.json
-{
-  "checksums": [
-    {
-      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_amd64.tar.gz",
-      "checksum": "346d43e34ee990c26ebcbc80936bea6d6f524bcc446aa74d1f07c42708fc480b",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz",
-      "checksum": "372986bfaddbfeb680329341568fc4fba0d6fa651b941bf4154585b7baaa67db",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_linux_amd64.tar.gz",
-      "checksum": "e950763e64504e40a45c75c81a35d115f98f164264e159e4e4b7e2534d3d8087",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_linux_arm64.tar.gz",
-      "checksum": "8ce944ccaf7ff5a150b256d75d8fe3d04ba741d5586bb5f100b9df80294f14fa",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_windows_amd64.tar.gz",
-      "checksum": "2228e167f3ddf61e6ccfd30648cf649f7b18d98eb6b2150e6c3522183628bda9",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_windows_arm64.tar.gz",
-      "checksum": "5435b0d4cca909f752dce456fd186bef2de994f7d1c24665fa8507e9d6019e5b",
-      "algorithm": "sha256"
-    }
-  ]
-}
+```
+aqua g -i int128/ghcp
 ```
 
-If tfcmt v4.0.0 is already installed, please uninstall once.
+## Create a pull request
 
-```console
-$ aqua which tfcmt
-/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz/tfcmt
+Commit `aqua.yaml` and `.github/workflows/update-aqua-checksum.yaml`.
 
-$ rm -Rf /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0
+```sh
+git checkout -b ci/aqua-checksum
+git add aqua.yaml .github/workflows/update-aqua-checksum.yaml
+git commit -m "ci: add aqua.yaml and set up workflow"
+git push origin ci/aqua-checksum
 ```
 
-And run `aqua i`. tfcmt will be installed successfully.
+Create a pull request. Then `aqua-checksums.json` will be created by GitHub Actions.
 
-```console
-$ aqua i
-INFO[0000] download and unarchive the package            aqua_version=1.22.0 env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=standard
+![image](https://user-images.githubusercontent.com/13323303/224527388-720ce451-bdce-4055-9eed-ba0942615eea.png)
+
+![image](https://user-images.githubusercontent.com/13323303/224527533-8fc150e2-55c1-4ca4-a9c7-f05544fdeccb.png)
+
+## Change a package version
+
+Let's change version.
+
+```sh
+sed -i "s/v4.2.0/v4.1.0/" aqua.yaml
 ```
 
-To confirm the checksum verification, let's edit the checksum in `aqua-checksums.json` intentionally.
-
-```console
-$ cp aqua-checksums.json aqua-checksums.json.orig
-$ vi aqua-checksums.json
-$ diff aqua-checksums.json aqua-checksums.json.orig 
-10c10
-<       "checksum": "372986bfaddbfeb680329341568fc4fba0d6fa651b941bf4154585b7baaa67d0",
----
->       "checksum": "372986bfaddbfeb680329341568fc4fba0d6fa651b941bf4154585b7baaa67db",
+```diff
+-- name: suzuki-shunsuke/tfcmt@v4.2.0
++- name: suzuki-shunsuke/tfcmt@v4.1.0
 ```
 
-And try to reinstall tfcmt.
+Push a commit.
 
-```console
-$ rm -Rf /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0
-$ aqua i
-INFO[0000] download and unarchive the package            aqua_version=1.22.0 env=darwin/arm64 package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=standard
-ERRO[0000] install the package                           actual_checksum=372986BFADDBFEB680329341568FC4FBA0D6FA651B941BF4154585B7BAAA67DB aqua_version=1.22.0 env=darwin/arm64 error="checksum is invalid" expected_checksum="&{github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz 372986BFADDBFEB680329341568FC4FBA0D6FA651B941BF4154585B7BAAA67D0 sha256}" package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=standard
-FATA[0000] aqua failed                                   aqua_version=1.22.0 env=darwin/arm64 error="it failed to install some packages" program=aqua
+```sh
+git pull origin ci/aqua-checksum
+git add aqua.yaml
+git commit -m "chore: change tfcmt version"
+git push origin "ci/aqua-checksum"
 ```
 
-Then it failed to install tfcmt because the checksum is wrong.
-Of course, tfcmt isn't installed.
+Then `aqua-checksums.json` is updated automatically.
 
-```console
-$ ls /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0
-gls: cannot access '/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0': No such file or directory
+![image](https://user-images.githubusercontent.com/13323303/224527976-4ddb1607-9958-4269-8882-3c0657e98a72.png)
+
+![image](https://user-images.githubusercontent.com/13323303/224528023-72aba252-7507-47fa-87b2-dc08eb7f908b.png)
+
+## See how Checksum Verification prevents tampering
+
+Let's see how Checksum Verification prevents tampering.
+It's bothersome to tamper assets actually, so in this time let's simulate the situation by tampering checksum in `aqua-checksums.json`.
+
+```sh
+git pull origin ci/aqua-checksum
+vi aqua-checksums.json
 ```
 
-The checksum verification also works in the lazy install.
-
-```console
-$ tfcmt -v
-INFO[0000] download and unarchive the package            aqua_version=1.22.0 env=darwin/arm64 exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz/tfcmt package=suzuki-shunsuke/tfcmt package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=standard
-FATA[0001] aqua failed                                   actual_checksum=372986BFADDBFEB680329341568FC4FBA0D6FA651B941BF4154585B7BAAA67DB aqua_version=1.22.0 env=darwin/arm64 error="checksum is invalid" expected_checksum="&{github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz 372986BFADDBFEB680329341568FC4FBA0D6FA651B941BF4154585B7BAAA67D0 sha256}" program=aqua
+```diff
+     {
+       "id": "github_release/github.com/suzuki-shunsuke/tfcmt/v4.1.0/tfcmt_linux_amd64.tar.gz",
+-      "checksum": "A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D91",
++      "checksum": "A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D92",
+       "algorithm": "sha256"
+     },
 ```
 
-Let's fix .aqua-chcksums.json, then you can install tfcmt.
+Add a GitHub Actions job that runs a tampered package.
 
-```console
-$ cp aqua-checksums.json.orig aqua-checksums.json
-$ tfcmt -v
-INFO[0000] download and unarchive the package            aqua_version=1.22.0 env=darwin/arm64 exe_path=/Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/suzuki-shunsuke/tfcmt/v4.0.0/tfcmt_darwin_arm64.tar.gz/tfcmt package=suzuki-shunsuke/tfcmt package_name=suzuki-shunsuke/tfcmt package_version=v4.0.0 program=aqua registry=standard
-tfcmt version 4.0.0 (047e980d083da80303e6e8f4ebf6d5c9e7859716)
+```yaml
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      AQUA_LOG_COLOR: always
+    steps:
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: aquaproj/aqua-installer@61e2563dfe7674cbf74fe6ec212e444198a3bb00 # v2.0.2
+        with:
+          aqua_version: v1.36.0
+        env:
+          GITHUB_TOKEN: ${{github.token}}
+      - run: tfcmt -v
 ```
 
-### Autoupdate `aqua-checksums.json` by GitHub Actions
+```sh
+git add aqua-checksums.json
+git commit -m "chore: tamper aqua-checksums.json"
+git push origin "ci/aqua-checksum"
+```
 
-https://github.com/aquaproj/example-update-checksum
+Then `test` job would fail because the checksum is unmatched.
 
-## Question: Should `aqua-checksums.json` be managed with Git?
+![image](https://user-images.githubusercontent.com/13323303/224528789-eeda95e7-73b9-46a3-95da-da954087e83b.png)
 
-Yes. You should manage `aqua-checksums.json` with Git.
-
-## Reference
-
-Please see [reference](/docs/security/checksum) too.
+```
+time="2023-03-12T06:36:05Z" level=fatal msg="aqua failed" actual_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D91 aqua_version=1.36.0 env=linux/amd64 error="checksum is invalid" exe_name=tfcmt expected_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D92 package=suzuki-shunsuke/tfcmt package_version=v4.1.0 program=aqua
+```

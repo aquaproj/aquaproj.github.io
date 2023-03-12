@@ -28,6 +28,27 @@ Example pull requests by Renovate.
 * [chore(deps): update dependency golangci/golangci-lint to v1.42.0](https://github.com/aquaproj/aqua/pull/193)
 * [chore(deps): update dependency aquaproj/aqua-registry to v0.2.2](https://github.com/aquaproj/aqua/pull/194)
 
+## :bulb: Schedule Standard Registry's update
+
+The release frequency of [Standard Registry](https://github.com/aquaproj/aqua-registry) is high.
+If you feel the update of Standard Registry is a bit noisy, you can schedule the update of Standard Registry.
+
+- [schedule | Renovate](https://docs.renovatebot.com/configuration-options/#schedule)
+- [Schedule Presets | Renovate](https://docs.renovatebot.com/presets-schedule/)
+
+e.g.
+
+```json
+{
+  "packageRules": [
+    {
+      "matchPackageNames": ["aquaproj/aqua-registry"],
+      "extends": ["schedule:earlyMondays"]
+    }
+  ]
+}
+```
+
 ## :bulb: Prevent some packages from being updated by Renovate
 
 There are two ways to prevent some packages from being updated by Renovate.
