@@ -2,7 +2,7 @@
 sidebar_position: 600
 ---
 
-# Global Configuration
+# Install tools globally
 
 aqua finds the configuration files from the current directory to the root directory.
 
