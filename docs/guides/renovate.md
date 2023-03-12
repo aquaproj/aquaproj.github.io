@@ -33,7 +33,7 @@ Example pull requests by Renovate.
 The release frequency of [Standard Registry](https://github.com/aquaproj/aqua-registry) is high.
 If you feel the update of Standard Registry is a bit noisy, you can schedule the update of Standard Registry.
 
-- [schedule | Renovate](https://docs.renovatebot.com/configuration-options/#schedule)
+- [schedule | Renovate](https://docs.renovatebot.com/reference/configuration-options/#schedule)
 - [Schedule Presets | Renovate](https://docs.renovatebot.com/presets-schedule/)
 
 e.g.
@@ -53,7 +53,7 @@ e.g.
 
 There are two ways to prevent some packages from being updated by Renovate.
 
-1. [Renovate's enabled option](https://docs.renovatebot.com/configuration-options/#enabled)
+1. [Renovate's enabled option](https://docs.renovatebot.com/reference/configuration-options/#enabled)
 2. Use the long syntax instead of the short syntax
 
 ### 1. Renovate's enabled option

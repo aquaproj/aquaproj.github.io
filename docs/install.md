@@ -16,7 +16,7 @@ For detail, please see [here](/docs/reference/use-aqua-with-other-tools).
 :::
 
 :::info
-[Shell Completion](/docs/config/shell-completion)
+[Shell Completion](/docs/reference/config/shell-completion)
 :::
 
 ## Windows

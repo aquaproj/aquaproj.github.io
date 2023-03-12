@@ -36,7 +36,7 @@ $ kind --help
 
 ## Tracing and CPU Profiling
 
-If you encounter any performance issue, please see [Tracing and CPU Profiling](/docs/config/trace-profile).
+If you encounter any performance issue, please see [Tracing and CPU Profiling](/docs/reference/config/trace-profile).
 
 ## check file_src is correct
 
@@ -80,7 +80,7 @@ If aqua outputs the error `the asset isn't found`, the following are possible ca
   * Please fix the version
 * GitHub Releases has no assets yet
   * Please wait for uploading assets. This isn't a problem of aqua
-  * Renovate's [stabilitydays](https://docs.renovatebot.com/configuration-options/#stabilitydays) may be useful to decrease this kind of issues
+  * Renovate's [stabilitydays](https://docs.renovatebot.com/reference/configuration-options/#stabilitydays) may be useful to decrease this kind of issues
 * Assets for only specific pair of OS and Arch aren't uploaded
   * Maybe you can request to release assets to the tool owner
   * e.g. https://github.com/gsamokovarov/jump/issues/72
@@ -131,7 +131,7 @@ If the symbolic link isn't created by `aqua i -l`, the following are possible ca
 aqua finds the configuration files and packages according to the rule.
 
 * [Configuration file path | Tutorial](/docs/tutorial/config-path)
-* [Configuration file paths | Reference](/docs/config#configuration-file-path)
+* [Configuration file paths | Reference](/docs/reference/config#configuration-file-path)
 
 Please check configuration files and your current directory.
 
@@ -147,7 +147,7 @@ FATA[0000] aqua failed                                   aqua_version=1.19.2 err
 aqua finds the configuration files and packages according to the rule.
 
 * [Configuration file path | Tutorial](/docs/tutorial/config-path)
-* [Configuration file paths | Reference](/docs/config#configuration-file-path)
+* [Configuration file paths | Reference](/docs/reference/config#configuration-file-path)
 
 Please check configuration files and your current directory.
 
@@ -158,13 +158,13 @@ This is a known issues.
 - https://github.com/aquaproj/aqua/issues/1597
 - https://github.com/aquaproj/aqua/issues/710
 
-If you use Linux, please set the environment variable [AQUA_EXPERIMENTAL_X_SYS_EXEC](/docs/config/experimental-feature/#aqua_experimental_x_sys_exec).
+If you use Linux, please set the environment variable [AQUA_EXPERIMENTAL_X_SYS_EXEC](/docs/reference/config/experimental-feature/#aqua_experimental_x_sys_exec).
 
 ```sh
 export AQUA_EXPERIMENTAL_X_SYS_EXEC=true
 ```
 
-[AQUA_EXPERIMENTAL_X_SYS_EXEC](/docs/config/experimental-feature/#aqua_experimental_x_sys_exec) has an issue in macOS.
+[AQUA_EXPERIMENTAL_X_SYS_EXEC](/docs/reference/config/experimental-feature/#aqua_experimental_x_sys_exec) has an issue in macOS.
 
 https://github.com/aquaproj/aqua/issues/729
 

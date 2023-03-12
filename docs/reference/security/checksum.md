@@ -14,7 +14,7 @@ Checksum Verification prevents the supply chain attack and allows you to install
 ## See also
 
 - [Tutorial](/docs/guides/checksum)
-- [Configuration](/docs/config/checksum)
+- [Configuration](/docs/reference/config/checksum)
 - [Registry Configuration](/docs/reference/registry-config/checksum)
 - Blogs
   - [2022-11-08 Checksum Verification by aqua](https://dev.to/suzukishunsuke/checksum-verification-by-aqua-5038)
