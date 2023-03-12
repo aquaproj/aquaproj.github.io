@@ -4,6 +4,26 @@ sidebar_position: 100
 
 # Home
 
+## How to learn aqua
+
+aqua has a lot of documents, so it's hard to read all of them.
+But don't worry. You don't have to read all of them all at once.
+
+Here is a brief overview of how to learn aqua.
+
+1. To install aqua, please read [Install](/docs/install)
+1. To learn the basic usage, please try [Tutorial](/docs/tutorial). aqua is easy to use, so you would be able to use aqua in a short time
+1. To learn the overview, please see [Demo](https://asciinema.org/a/498262?autoplay=1), [top page](/), and this page ([Introduction](#introduction), [Why aqua](#why-aqua), [Comparison](#comparison))
+1. To learn advanced usage, please read [Guides](/docs/guides)
+1. To contribute to Standard Registry (Add new packages, fix bugs), please read [this](https://github.com/aquaproj/aqua-registry/blob/main/CONTRIBUTING.md)
+1. To develop custom Registry, please read [Create Private Registries](/docs/develop-registry/create-private-registry)
+
+If you have any question, please contact us.
+
+- Twitter: [@aquaclivm](https://twitter.com/aquaclivm) (English), [@szkdash](https://twitter.com/szkdash) (English or Japanese)
+- Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
+- [GitHub Issues](https://github.com/aquaproj/aqua)
+
 ## Introduction
 
 aqua is a declarative CLI Version Manager written in Go.
@@ -259,11 +279,6 @@ You can use asdf for them and can use aqua for other tools.
 ## Restriction
 
 Please see [Restriction](/docs/reference/restriction/).
-
-## Community
-
-- Twitter: [@aquaclivm](https://twitter.com/aquaclivm), [#aquaclivm](https://twitter.com/hashtag/aquaclivm)
-- Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
 
 ### Twitter
 
