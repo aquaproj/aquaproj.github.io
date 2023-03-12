@@ -9,6 +9,12 @@ aqua is a single binary written in Go.
 1. Install the binary `aqua` in `PATH`
 1. add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH`
 
+:::info
+If you use aqua combined with other version manager such as asdf,
+please add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH` after other version manager.
+For detail, please see [here](/docs/guides/use-aqua-with-other-tools).
+:::
+
 ## Windows
 
 Pleaase see [here](/docs/reference/windows-support#how-to-install).
@@ -33,10 +39,6 @@ $ go install github.com/aquaproj/aqua/cmd/aqua@latest
 ## GitHub Actions
 
 [aqua-installer](https://github.com/aquaproj/aqua-installer)
-
-## CircleCI Orb
-
-https://circleci.com/developer/orbs/orb/aquaproj/aqua
 
 ## Download from GitHub Releases
 
