@@ -6,14 +6,14 @@ sidebar_position: 200
 
 https://github.com/aquaproj/aqua-renovate-config
 
-[Renovate Config Preset](https://docs.renovatebot.com/reference/config-presets/) to update aqua, aqua-installer, packages, and registries.
+[Renovate Config Preset](https://docs.renovatebot.com/config-presets/) to update aqua, aqua-installer, packages, and registries.
 
 [Example](https://github.com/aquaproj/test-aqua-renovate-config)
 
 ## Reference about Renovate
 
 * [Renovate documentation](https://docs.renovatebot.com/)
-* [Renovate Config Preset](https://docs.renovatebot.com/reference/config-presets/)
+* [Renovate Config Preset](https://docs.renovatebot.com/config-presets/)
   * How to use Preset
   * How to specify preset version and parameter
 * [Custom Manager Support using Regex](https://docs.renovatebot.com/modules/manager/regex/)
