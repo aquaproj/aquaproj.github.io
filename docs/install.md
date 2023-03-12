@@ -12,7 +12,7 @@ aqua is a single binary written in Go.
 :::info
 If you use aqua combined with other version manager such as asdf,
 please add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH` after other version manager.
-For detail, please see [here](/docs/guides/use-aqua-with-other-tools).
+For detail, please see [here](/docs/reference/use-aqua-with-other-tools).
 :::
 
 ## Windows

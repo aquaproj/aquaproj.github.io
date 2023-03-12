@@ -6,7 +6,7 @@ sidebar_position: 150
 
 A shell script and GitHub Actions to install aqua
 
-https://github.com/aquaproj/aqua-registry
+https://github.com/aquaproj/aqua-installer
 
 * [Shell Script](#shell-script)
 * [GitHub Actions](#github-actions)
