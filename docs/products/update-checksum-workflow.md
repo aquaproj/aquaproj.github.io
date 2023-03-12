@@ -9,7 +9,7 @@ https://github.com/aquaproj/update-checksum-workflow
 GitHub Actions Reusable Workflow to update aqua-checksums.json
 If aqua-checksums.json isn't latest, update aqua-checksums.json and push a commit
 
-About aqua's Checksum Verification, please see [the document](/docs/security/checksum) too.
+About aqua's Checksum Verification, please see [the document](/docs/reference/security/checksum) too.
 
 ## Workflow
 

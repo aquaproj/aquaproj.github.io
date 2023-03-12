@@ -19,9 +19,9 @@ https://github.com/search?q=org%3Aaquaproj+label%3Asecurity
     * This prevents malicious commands from being executed
   * Centrally managed Registry is provided
     * Compared with third party registries, it has low risk to be tampered
-* [Checksum Verification](/docs/security/checksum/)
-* [Policy as Code](/docs/security/policy-as-code/)
-* [Cosign and SLSA Provenance Support](/docs/security/cosign-slsa)
+* [Checksum Verification](checksum.md)
+* [Policy as Code](policy-as-code.md)
+* [Cosign and SLSA Provenance Support](cosign-slsa.md)
 
 ## Plans
 

@@ -6,10 +6,10 @@ sidebar_position: 15
 
 About Checksum Verification, please see also.
 
-- [Reference](/docs/security/checksum)
+- [Reference](/docs/reference/security/checksum)
 - [Configuration](/docs/config/checksum)
 - [Registry Configuration](/docs/registry-config/checksum)
-- [Usage > aqua update-checksum](/docs/usage#aqua-update-checksum)
+- [Usage > aqua update-checksum](/docs/reference/usage#aqua-update-checksum)
 
 ## Create a GitHub Repository
 

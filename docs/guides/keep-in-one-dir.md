@@ -8,7 +8,7 @@ sidebar_position: 30
 - [update-checksum-action](https://github.com/aquaproj/update-checksum-action) >= v0.2.0
 - [update-checksum-workflow](https://github.com/aquaproj/update-checksum-workflow) >= v0.1.1
 
-aqua has several configuration files such as `aqua.yaml`, [aqua-checksums.json](checksum.md), [policy file](../security/policy-as-code.md), and [imported files](split-config.md).
+aqua has several configuration files such as `aqua.yaml`, [aqua-checksums.json](checksum.md), [policy file](../reference/security/policy-as-code.md), and [imported files](split-config.md).
 
 e.g.
 
@@ -47,6 +47,6 @@ This is useful to keep the working directory clean.
   - aqua-checksums.json => aqua/aqua-checksums.json
   - aqua-policy.yaml => aqua/policy.yaml # rename freely
   - [imported files](split-config.md) => aqua/imports/*.yaml # change the filename freely
-- Fix [AQUA_POLICY_CONFIG](../security/policy-as-code.md)
+- Fix [AQUA_POLICY_CONFIG](../reference/security/policy-as-code.md)
 - Fix GitHub Actions Path filters
 - Fix [aqua-renovate-config](https://github.com/aquaproj/aqua-renovate-config)'s file preset argument

@@ -36,7 +36,7 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * `AQUA_LOG_LEVEL`: (default: `info`) Log level
 * `AQUA_CONFIG`: configuration file path
 * [AQUA_GLOBAL_CONFIG](/docs/tutorial/global-config): global configuration file paths separated by semicolon `:`
-* `AQUA_POLICY_CONFIG`: [policy file](/docs/security/policy-as-code) paths separated by semicolon `:`
+* `AQUA_POLICY_CONFIG`: [policy file](/docs/reference/security/policy-as-code) paths separated by semicolon `:`
 * `AQUA_ROOT_DIR`: The directory path where aqua install tools
   * default (linux and macOS): `${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua`
   * default (windows): `${HOME/AppData/Local}/aquaproj-aqua`

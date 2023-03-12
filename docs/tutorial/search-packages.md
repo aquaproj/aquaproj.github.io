@@ -4,7 +4,7 @@ sidebar_position: 200
 
 # Search packages
 
-You can search packages by [aqua g](/docs/usage#aqua-generate) command.
+You can search packages by [aqua g](/docs/reference/usage#aqua-generate) command.
 
 ```console
 $ aqua g
