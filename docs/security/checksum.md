@@ -8,19 +8,17 @@ sidebar_position: 50
 
 [#427](https://github.com/aquaproj/aqua/issues/427)
 
-## Tutorial
+Checksum Verification is a feature verifying downloaded assets with checksum.
+Checksum Verification prevents the supply chain attack and allows you to install tools securely.
 
-Please see the [tutorial](/docs/guides/checksum).
+## See also
 
-## Configuration file path
-
-aqua finds `aqua-checksums.json` and `.aqua-checksums.json`.
-`aqua-checksums.json` takes precedence over `.aqua-checksums.json`.
-If they don't exist, `aqua-checksums.json` is created.
-
-:::info
-The checksum is case insensitive.
-:::
+- [Tutorial](/docs/guides/checksum)
+- [Configuration](/docs/config/checksum)
+- [Registry Configuration](/docs/registry-config/checksum)
+- Blogs
+  - [2022-11-08 Checksum Verification by aqua](https://dev.to/suzukishunsuke/checksum-verification-by-aqua-5038)
+  - [2022-10-10 aqua CLI Version Manager が checksum の検証をサポート](https://zenn.dev/shunsuke_suzuki/articles/aqua-checksum-verification)
 
 ## How it works
 
@@ -39,69 +37,38 @@ aqua gets the expected checksum from the following sources.
 1. checksum files that each tools publish
 1. If the tool doesn't publish checkfum files, aqua treats the checksum calculated from the downloaded asset as the expected checksum
 
+e.g. `aqua-checksums.json`
+
+```json
+{
+  "checksums": [
+    {
+      "id": "github_release/github.com/golangci/golangci-lint/v1.49.0/golangci-lint-1.49.0-darwin-amd64.tar.gz",
+      "checksum": "20cd1215e0420db8cfa94a6cd3c9d325f7b39c07f2415a02d111568d8bc9e271",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/golangci/golangci-lint/v1.49.0/golangci-lint-1.49.0-darwin-arm64.tar.gz",
+      "checksum": "cabb1a4c35fe1dadbe5a81550a00871281a331e7660cd85ae16e936a7f0f6cfc",
+      "algorithm": "sha256"
+    }
+  ]
+}
+```
+
+Many tools publish checksum files, so aqua gets checksums from them.
+
+e.g.
+
+* [Terraform](https://releases.hashicorp.com/terraform/1.2.7/terraform_1.2.7_SHA256SUMS)
+* [GitHub CLI](https://github.com/cli/cli/releases/download/v2.14.4/gh_2.14.4_checksums.txt)
+
+If no checksum file for a tool is published, aqua can also get checksums by downloading assets and calculating checksums.
+
+
 ## aqua-registry version
 
 From [v3.90.0](https://github.com/aquaproj/aqua-registry/releases/tag/v3.90.0), aqua-registry supports the checksum verification.
-
-## aqua.yaml's checksum configuration
-
-aqua.yaml
-
-```yaml
-checksum:
-  enabled: true # By default, this is false
-  require_checksum: true # By default, this is false
-  supported_envs: # By default, all envs are supported
-    - darwin
-    - linux
-registries:
-# ...
-packages:
-# ...
-```
-
-- `enabled`: If this is true, the checksum verification is enabled
-- `require_checksum`: If this is true, it fails to install a package when the checksum isn't found in `aqua-checksums.json` and the package's checksum configuration is disabled.
-  By default, `require_checksum` is false and if the checksum isn't found the package is installed
-- `supported_envs`: (aqua >= [v1.29.0](https://github.com/aquaproj/aqua/releases/tag/v1.29.0)) If this is set, aqua adds checksums of only specific platforms. This feature makes `aqua-checksums.json` slim and avoids unneeded API call and download assets
-
-## Registry's checksum configuration
-
-Each registry's package configuration has the configuration about checksum.
-
-e.g. [GitHub CLI](https://github.com/aquaproj/aqua-registry/blob/109811850abf8ec34f8715f3384ba8218f05ec1d/pkgs/cli/cli/registry.yaml)
-
-```yaml
-packages:
-  - type: github_release
-    repo_owner: cli
-    repo_name: cli
-    # ...
-    checksum:
-      type: github_release
-      asset: gh_{{trimV .Version}}_checksums.txt
-      file_format: regexp
-      algorithm: sha256
-      pattern:
-        checksum: ^(\b[A-Fa-f0-9]{64}\b)
-        file: "^\\b[A-Fa-f0-9]{64}\\b\\s+(\\S+)$"
-```
-
-e.g. [ArgoCD CLI](https://github.com/aquaproj/aqua-registry/blob/109811850abf8ec34f8715f3384ba8218f05ec1d/pkgs/argoproj/argo-cd/registry.yaml)
-
-```yaml
-packages:
-  - type: github_release
-    repo_owner: argoproj
-    repo_name: argo-cd
-    # ...
-    asset: argocd-{{.OS}}-{{.Arch}}
-    checksum:
-      type: github_release
-      asset: "{{.Asset}}.sha256"
-      file_format: raw
-      algorithm: sha256
-```
 
 ## Remove unused checksums with `-prune` option
 
@@ -164,63 +131,6 @@ And you can also patch the checksum configuration to the existing registries by 
 The scaffolding isn't perfect, so sometimes you have to fix the code manually.
 :::
 
-### `enabled`
+## Question: Should `aqua-checksums.json` be managed with Git?
 
-You can enable or disable the checksum download by `enabled` attribute.
-
-```yaml
-packages:
-  - type: github_release
-    repo_owner: argoproj
-    repo_name: argo-cd
-    # ...
-    checksum:
-      enabled: false
-```
-
-By default, checkdum download is disabled.
-
-### checksum `algorithm`
-
-The following `algorithm` are supported.
-
-* `sha1` (aqua >= [v1.29.0](https://github.com/aquaproj/aqua/releases/tag/v1.29.0))
-* `sha256`
-* `sha512`
-* `md5`
-
-### checksum `type`
-
-The following `type` are supported.
-
-- `github_release`
-- `http`
-
-`github_release` requires the following attributes.
-
-- `asset`: GitHub Release Asset name. The format is a Go's `text/template` string
-
-`http` requires the following attributes.
-
-- `url`: Checksum file's download URL. The format is a Go's `text/template` string
-
-### checksum `file_format`
-
-The following `file_format` are supported.
-
-- `regexp`
-- `raw`
-
-`regexp` requires the following attributes.
-
-- `pattern.checksum`:
-- `pattern.file`:
-
-```yaml
-pattern:
-  checksum: ^(\b[A-Fa-f0-9]{64}\b)
-  file: "^\\b[A-Fa-f0-9]{64}\\b\\s+(\\S+)$"
-```
-
-aqua extracts pairs of checkfum and asset name using regular expressions.
-If the checksum file includes only one checksum, you can omit `pattern.file`.
+Yes. You should manage `aqua-checksums.json` with Git.
