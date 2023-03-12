@@ -1,5 +1,5 @@
 ---
-sidebar_position: 410
+sidebar_position: 100
 ---
 
 # Products
@@ -7,7 +7,7 @@ sidebar_position: 410
 [Repositories](https://github.com/orgs/aquaproj/repositories)
 
 - [aqua](https://github.com/aquaproj/aqua): Main product. CLI Version Manager
-- [aqua-registry](aqua-registry.md): aqua's Standard Registry
+- [aqua-registry](aqua-registry/index.md): aqua's Standard Registry
 - [aqua-installer](aqua-installer.md): A shell script and GitHub Actions to install aqua
 - [aqua-renovate-config](aqua-renovate-config.md): Renovate Config Preset to update aqua, aqua-installer, packages, and registries
 - [aquaproj.github.io](https://github.com/aquaproj/aquaproj.github.io): aqua's official website
