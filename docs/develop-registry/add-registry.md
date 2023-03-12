@@ -4,7 +4,7 @@ sidebar_position: 300
 
 # Add Packages to Registry
 
-You can install tools registered in the [Standard Registry](https://github.com/aquaproj/aqua-registry) easily.
+You can install tools registered in the [Standard Registry](/docs/products/aqua-registry) easily.
 
 You can search packages from Registries by `aqua g`.
 Please see [Search Packages](/docs/tutorial/search-packages).
@@ -20,7 +20,7 @@ If tools aren't found, you have some options.
 ## Write Registry Configuration
 
 * [Registry Style Guide](/docs/develop-registry/registry-style-guide)
-* [Registry Configuration](/docs/registry-config)
+* [Registry Configuration](/docs/reference/registry-config)
 
 ## Use `local` Registry
 

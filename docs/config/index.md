@@ -139,7 +139,7 @@ registries:
 * `name`: Registry name
 * `path`: The file path. Either absolute path or relative path from `aqua.yaml`. If `path` starts with `$HOME` + `OS specific path separator such as '/'`, it's replaced with the home directory path
 
-Please see [Configuration (registry.yaml)](../registry-config/index.md).
+Please see [Configuration (registry.yaml)](../reference/registry-config/index.md).
 
 ### `github_content` registry
 

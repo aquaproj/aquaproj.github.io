@@ -94,7 +94,7 @@ Please set GitHub Access Token to the environment variable `GITHUB_TOKEN` or `AQ
 
 ## Packages aren't installed
 
-Maybe your OS and Arch isn't supported by the package's [supported_envs](/docs/registry-config/supported-envs).
+Maybe your OS and Arch isn't supported by the package's [supported_envs](/docs/reference/registry-config/supported-envs).
 Please check the Registry Configuration.
 
 ## Command is not found
@@ -125,7 +125,7 @@ $ aqua g
 
 If the symbolic link isn't created by `aqua i -l`, the following are possible causes.
 
-* Your OS and Arch isn't supported by the package's [supported_envs](/docs/registry-config/supported-envs)
+* Your OS and Arch isn't supported by the package's [supported_envs](/docs/reference/registry-config/supported-envs)
 * the package isn't added in configuration files
 
 aqua finds the configuration files and packages according to the rule.

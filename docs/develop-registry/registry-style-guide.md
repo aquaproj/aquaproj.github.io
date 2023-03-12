@@ -220,11 +220,11 @@ files:
 
 ## Use `aliases` only for keeping the compatibility
 
-Please see [here](/docs/registry-config/aliases#use-aliases-only-for-keeping-the-compatibility)
+Please see [here](/docs/reference/registry-config/aliases#use-aliases-only-for-keeping-the-compatibility)
 
 ## Use `supported_envs` rather than `supported_if`
 
-Please see [the caution](/docs/registry-config/supported-if).
+Please see [the caution](/docs/reference/registry-config/supported-if).
 
 ## Select `type` according to the following order
 
@@ -238,4 +238,4 @@ For example, you can also use `http` type to install the package from GitHub Rel
 
 ## Use `go_install` rather than `go`
 
-Please see [the caution](/docs/registry-config/go-package).
+Please see [the caution](/docs/reference/registry-config/go-package).
