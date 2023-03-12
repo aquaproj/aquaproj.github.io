@@ -15,30 +15,30 @@ please add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH` after other
 For detail, please see [here](/docs/reference/use-aqua-with-other-tools).
 :::
 
+:::info
+[Shell Completion](/docs/config/shell-completion)
+:::
+
 ## Windows
 
 Pleaase see [here](/docs/reference/windows-support#how-to-install).
 
 ## Homebrew
 
-```console
-$ brew install aquaproj/aqua/aqua
-$ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+```sh
+brew install aquaproj/aqua/aqua
+export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
 ```
 
-## Install script
+## Install script, GitHub Actions
 
-[aqua-installer](https://github.com/aquaproj/aqua-installer)
+[aqua-installer](/docs/products/aqua-installer)
 
 ## Go
 
-```console
-$ go install github.com/aquaproj/aqua/cmd/aqua@latest
+```sh
+go install github.com/aquaproj/aqua/cmd/aqua@latest
 ```
-
-## GitHub Actions
-
-[aqua-installer](https://github.com/aquaproj/aqua-installer)
 
 ## Download from GitHub Releases
 
