@@ -6,6 +6,7 @@ on: pull_request
 permissions: {}
 env:
   AQUA_POLICY_CONFIG: ${{ github.workspace }}/aqua/policy.yaml
+  AQUA_LOG_COLOR: always
 
 jobs:
   path-filter:
