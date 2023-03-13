@@ -36,8 +36,8 @@ packages:
 
 And `aqua install` and `aqua cp` command have the following command line options.
 
-- `--tags (-t)` (string): When this option is set, only packages that have specifed tags are installed. You can specify multiple tags joining with `,` (e.g. `-t ci,test`)
-- `--exclude-tags` (string): When this option is set, packages that have specifed tags aren't installed. You can specify multiple tags joining with `,` (e.g. `-exclude-tags ci,test`)
+- `--tags (-t)` (string): When this option is set, only packages that have specified tags are installed. You can specify multiple tags joining with `,` (e.g. `-t ci,test`)
+- `--exclude-tags` (string): When this option is set, packages that have specified tags aren't installed. You can specify multiple tags joining with `,` (e.g. `-exclude-tags ci,test`)
 
 In case of the above `aqua.yaml`, you can filter packages as the following.
 

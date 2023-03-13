@@ -25,7 +25,7 @@ DEBU[0000] command was executed but it failed            error="fork/exec /Users
 DEBU[0000] command failed                                error="fork/exec /Users/shunsuke-suzuki/.aqua/pkgs/http/kind.sigs.k8s.io/dl/v0.11.1/kind-darwin-amd64/kind-darwin-amd64: exec format error" exit_code=-1 program=aqua
 ```
 
-In the above case, kind is already installed but the `exec format error` occured. I reinstalled kind then the problem has been solved.
+In the above case, kind is already installed but the `exec format error` occurred. I reinstalled kind then the problem has been solved.
 
 ```console
 # uninstall kind

@@ -21,7 +21,7 @@ For detail, please see [here](/docs/reference/use-aqua-with-other-tools).
 
 ## Windows
 
-Pleaase see [here](/docs/reference/windows-support#how-to-install).
+Please see [here](/docs/reference/windows-support#how-to-install).
 
 ## Homebrew
 

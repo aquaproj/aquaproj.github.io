@@ -17,7 +17,7 @@ But experimental features are exception of semantic versioning, so maybe we abor
 
 [#710](https://github.com/aquaproj/aqua/issues/710) [#715](https://github.com/aquaproj/aqua/pull/715) [#726](https://github.com/aquaproj/aqua/pull/726), `aqua >= v1.6.0`
 
-To enable this feature, please set `true` to the enviornment variable `AQUA_EXPERIMENTAL_X_SYS_EXEC`.
+To enable this feature, please set `true` to the environment variable `AQUA_EXPERIMENTAL_X_SYS_EXEC`.
 
 ```console
 $ export AQUA_EXPERIMENTAL_X_SYS_EXEC=true
