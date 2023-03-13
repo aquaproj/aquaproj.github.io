@@ -49,7 +49,7 @@ e.g.
 ```
 
 Even if multiple elements are matched, only first element is applied.
-For example, Darwin AMD64 matches with second element but the second element isn't applied beause the first element is matched.
+For example, Darwin AMD64 matches with second element but the second element isn't applied because the first element is matched.
 
 ```yaml
   - goos: darwin

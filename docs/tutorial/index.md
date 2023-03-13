@@ -28,7 +28,7 @@ chmod +x aqua-installer
 ./aqua-installer
 ```
 
-Add `${AQUA_ROOT_DIR}/bin` to the environmenet variable `PATH`.
+Add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH`.
 
 ```console
 export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"

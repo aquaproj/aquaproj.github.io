@@ -21,7 +21,7 @@ About aqua's Checksum Verification, please see [the document](/docs/reference/se
 $ aqua g -i int128/ghcp
 ```
 
-### Eample
+### Example
 
 ```yaml
 name: update-aqua-checksum

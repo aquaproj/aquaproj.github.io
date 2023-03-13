@@ -4,7 +4,7 @@ sidebar_position: 900
 
 # `http` Package
 
-The package is donwloaded from the specified URL.
+The package is downloaded from the specified URL.
 
 e.g. [hashicorp/terraform](https://github.com/aquaproj/aqua-registry/blob/main/pkgs/hashicorp/terraform/registry.yaml)
 

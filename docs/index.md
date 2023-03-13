@@ -183,7 +183,7 @@ aqua supports updating not only versions but also checksums automatically.
 If tools are version controlled, they should be updated continuously.
 Otherwise, they would become old soon, which causes several issues.
 
-aqua provides [Renovate Config Preset](https://github.com/aquaproj/aqua-renovate-config) for continous update by Renovate.
+aqua provides [Renovate Config Preset](https://github.com/aquaproj/aqua-renovate-config) for continuous update by Renovate.
 Using this preset, you can easily update tools by Renovate.
 
 [ref. Update packages by Renovate](/docs/guides/renovate)
