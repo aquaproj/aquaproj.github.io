@@ -63,6 +63,9 @@ jobs:
     needs:
       - renovate-config-validator
       - test
+      - typos
+      - ghalint
+      - update-aqua-checksums
     permissions: {}
     if: failure()
     steps:
