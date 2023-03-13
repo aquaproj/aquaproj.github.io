@@ -1,9 +1,11 @@
 name: Deploy
 on:
-  push:
-    branches:
-      - main
-  pull_request: {}
+  workflow_call:
+    inputs:
+      is_pr:
+        required: true
+        type: boolean
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,7 +26,7 @@ jobs:
       - run: yarn install
       - run: yarn build
       - uses: peaceiris/actions-gh-pages@bd8c6b06eba6b3d25d72b7a1767993c0aeee42e7 # v3.9.2
-        if: github.event_name != 'pull_request'
+        if: "! inputs.is_pr"
         with:
           github_token: ${{ github.token }}
           publish_dir: ./build
