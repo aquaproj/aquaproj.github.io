@@ -4,6 +4,8 @@ sidebar_position: 100
 
 # Contributing
 
+How to contribute to Standard Registry. https://github.com/aquaproj/aqua-registry
+
 ## See also
 
 - :star: [OSS Contribution Guide](https://github.com/suzuki-shunsuke/oss-contribution-guide)

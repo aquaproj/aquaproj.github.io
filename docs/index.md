@@ -15,7 +15,7 @@ Here is a brief overview of how to learn aqua.
 1. To learn the basic usage, please try [Tutorial](/docs/tutorial). aqua is easy to use, so you would be able to use aqua in a short time
 1. To learn the overview, please see [Demo](https://asciinema.org/a/498262?autoplay=1), [top page](/), and this page ([Introduction](#introduction), [Why aqua](#why-aqua), [Comparison](#comparison))
 1. To learn advanced usage, please read [Guides](/docs/guides)
-1. To contribute to Standard Registry (Add new packages, fix bugs), please read [this](https://github.com/aquaproj/aqua-registry/blob/main/CONTRIBUTING.md)
+1. To contribute to Standard Registry (Add new packages, fix bugs), please read [Contributing](/docs/products/aqua-registry/contributing)
 1. To develop custom Registry, please read [Create Private Registries](/docs/develop-registry/create-private-registry)
 
 If you have any question, please contact us.
