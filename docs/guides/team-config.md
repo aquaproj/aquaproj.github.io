@@ -13,7 +13,7 @@ e.g.
 export AQUA_GLOBAL_CONFIG="/home/foo/aqua-config/sre.yaml:/home/foo/aqua-config/all.yaml:${AQUA_GLOBAL_CONFIG:-}"
 ```
 
-About the priority of configuration, plase see [Configuration File Path](/docs/reference/config/#configuration-file-path).
+About the priority of configuration, please see [Configuration File Path](/docs/reference/config/#configuration-file-path).
 
 By default `aqua i` ignores Global Configuration.
 If `--all (-a)` is set, aqua installs all packages including Global Configuration.
