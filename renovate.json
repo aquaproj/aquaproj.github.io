@@ -2,6 +2,6 @@
   "extends": [
     "github>suzuki-shunsuke/renovate-config#2.0.0",
     "config:base",
-    "github>suzuki-shunsuke/renovate-config:nolimit#1.1.2"
+    "github>suzuki-shunsuke/renovate-config:nolimit#2.0.0"
   ]
 }
