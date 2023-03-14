@@ -23,7 +23,7 @@ jobs:
         with:
           filters: |
             update-aqua-checksums:
-              - aqua/*.yaml
+              - aqua/**.yaml
               - aqua/aqua-checksums.json
               - .github/workflows/test.yaml
             renovate-config-validator:
