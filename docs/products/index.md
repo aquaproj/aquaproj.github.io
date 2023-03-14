@@ -41,4 +41,7 @@ sidebar_position: 100
 ## Internal tools
 
 - [aqua-proxy](aqua-proxy.md)
+
+## Archived
+
 - [slsa-verifier](https://github.com/aquaproj/slsa-verifier): Fork of [slsa-framework/slsa-verifier](https://github.com/slsa-framework/slsa-verifier)
