@@ -1,5 +1,5 @@
 ---
-sidebar_position: 400
+sidebar_position: 50
 ---
 
 # Usage
@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   1.28.0 (2e19938cbe01dd0137521f8a84a7abab8a34bab7)
+   1.36.0 (3f31cf223d8968ee662fe2a06bc5a577958b7b10)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -348,9 +348,34 @@ DESCRIPTION:
          - amd64
        rosetta2: true
 
+   By default, aqua gets the information from the latest GitHub Releases.
+   You can specify a specific package version.
+
+   e.g.
+
+   $ aqua gr cli/cli@v2.0.0
+
+   By default, aqua gr doesn't generate version_overrides.
+   If --deep is set, aqua generates version_overrides.
+
+   e.g.
+
+   $ aqua gr --deep suzuki-shunsuke/tfcmt
+
+   Note that if --deep is set, GitHub API is called per GitHub Release.
+   This may cause GitHub API rate limiting.
+
+   If --out-testdata is set, aqua inserts testdata into the specified file.
+
+   e.g.
+
+   $ aqua gr --out-testdata testdata.yaml suzuki-shunsuke/tfcmt
+
 
 OPTIONS:
-   --help, -h  show help (default: false)
+   --out-testdata value  A file path where the testdata is outputted
+   --deep                Resolve version_overrides (default: false)
+   --help, -h            show help (default: false)
 ```
 
 ## aqua cp

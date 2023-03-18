@@ -59,7 +59,7 @@ And you don't have to run the terminal as Administrator.
 Please change the settings at your own risk.
 :::
 
-Security softwares may prevent aqua from installing and running tools.
+Security software may prevent aqua from installing and running tools.
 In that case, you may have to add `AQUA_ROOT_DIR` to security software's exclusion. 
 
 ## Windows Support of installed tools

@@ -25,7 +25,7 @@ DEBU[0000] command was executed but it failed            error="fork/exec /Users
 DEBU[0000] command failed                                error="fork/exec /Users/shunsuke-suzuki/.aqua/pkgs/http/kind.sigs.k8s.io/dl/v0.11.1/kind-darwin-amd64/kind-darwin-amd64: exec format error" exit_code=-1 program=aqua
 ```
 
-In the above case, kind is already installed but the `exec format error` occured. I reinstalled kind then the problem has been solved.
+In the above case, kind is already installed but the `exec format error` occurred. I reinstalled kind then the problem has been solved.
 
 ```console
 # uninstall kind
@@ -36,7 +36,7 @@ $ kind --help
 
 ## Tracing and CPU Profiling
 
-If you encounter any performance issue, please see [Tracing and CPU Profiling](/docs/reference/trace-profile).
+If you encounter any performance issue, please see [Tracing and CPU Profiling](/docs/reference/config/trace-profile).
 
 ## check file_src is correct
 
@@ -79,12 +79,14 @@ If aqua outputs the error `the asset isn't found`, the following are possible ca
 * The release doesn't exist
   * Please fix the version
 * GitHub Releases has no assets yet
-  * Please wait for uploading them. This isn't a problem of aqua
+  * Please wait for uploading assets. This isn't a problem of aqua
+  * Renovate's [stabilitydays](https://docs.renovatebot.com/configuration-options/#stabilitydays) may be useful to decrease this kind of issues
 * Assets for only specific pair of OS and Arch aren't uploaded
   * Maybe you can request to release assets to the tool owner
   * e.g. https://github.com/gsamokovarov/jump/issues/72
 * Asset name format was changed from the specific version
   * You have to fix the Registry
+  * In case of the Standard Registry, please create an issue or a pull request
 
 ## GitHub API Rate Limit, 403 error
 
@@ -128,7 +130,7 @@ If the symbolic link isn't created by `aqua i -l`, the following are possible ca
 
 aqua finds the configuration files and packages according to the rule.
 
-* [Configuration file path | Tutorial](/docs/tutorial-basics/config-path)
+* [Configuration file path | Tutorial](/docs/tutorial/config-path)
 * [Configuration file paths | Reference](/docs/reference/config#configuration-file-path)
 
 Please check configuration files and your current directory.
@@ -144,7 +146,50 @@ FATA[0000] aqua failed                                   aqua_version=1.19.2 err
 
 aqua finds the configuration files and packages according to the rule.
 
-* [Configuration file path | Tutorial](/docs/tutorial-basics/config-path)
+* [Configuration file path | Tutorial](/docs/tutorial/config-path)
 * [Configuration file paths | Reference](/docs/reference/config#configuration-file-path)
 
 Please check configuration files and your current directory.
+
+## gopls doesn't work well
+
+This is a known issues.
+
+- https://github.com/aquaproj/aqua/issues/1597
+- https://github.com/aquaproj/aqua/issues/710
+
+If you use Linux, please set the environment variable [AQUA_EXPERIMENTAL_X_SYS_EXEC](/docs/reference/config/experimental-feature/#aqua_experimental_x_sys_exec).
+
+```sh
+export AQUA_EXPERIMENTAL_X_SYS_EXEC=true
+```
+
+[AQUA_EXPERIMENTAL_X_SYS_EXEC](/docs/reference/config/experimental-feature/#aqua_experimental_x_sys_exec) has an issue in macOS.
+
+https://github.com/aquaproj/aqua/issues/729
+
+In macOS please try one of the following alias, shell function, and shell script.
+
+1. alias
+
+```sh
+alias gopls="$(aqua which gopls)"
+```
+
+2. shell function
+
+```sh
+gopls() {
+  "$(aqua which gopls)" "$@"
+}
+```
+
+3. shell script
+
+Add the following script `gopls` to `$PATH`.
+
+```sh
+#!/usr/bin/env bash
+
+exec "$(aqua which gopls)" "$@"
+```

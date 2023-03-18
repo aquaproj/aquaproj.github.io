@@ -44,9 +44,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       announcementBar: {
-        id: 'cosign_and_slsa_support',
+        id: 'support_keeping_config_files_in_one_directory',
         content:
-          '<a href="/docs/reference/cosign-slsa">Cosign and SLSA Provenance Support (2022-12-27)</a>',
+          '<a href="https://gophers.slack.com/archives/C04RALTG29K">Open the Slack Channel (2023-02-27)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
@@ -60,57 +60,13 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'overview',
+            docId: 'index',
             position: 'left',
-            label: 'Overview',
-          },
-          {
-            type: 'doc',
-            docId: 'tutorial-basics/quick-start',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {
-            type: 'doc',
-            docId: 'reference/install',
-            position: 'left',
-            label: 'Install',
-          },
-          {
-            type: 'doc',
-            docId: 'comparison/index',
-            position: 'left',
-            label: 'Comparison',
-          },
-          {
-            type: 'doc',
-            docId: 'slide-blog',
-            position: 'left',
-            label: 'Blog',
-          },
-          {
-            href: 'https://github.com/sponsors/aquaproj',
-            label: 'Sponsor',
-            position: 'right',
-          },
-          {
-            href: 'https://twitter.com/aquaclivm',
-            label: 'Twitter',
-            position: 'right',
+            label: 'Docs',
           },
           {
             href: 'https://github.com/aquaproj/aqua/releases',
             label: 'Changelog',
-            position: 'right',
-          },
-          {
-            href: 'https://asciinema.org/a/498262?autoplay=1',
-            label: 'Demo',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/orgs/aquaproj/discussions',
-            label: 'Question',
             position: 'right',
           },
           {
@@ -128,22 +84,18 @@ const config = {
             items: [
               {
                 label: 'Overview',
-                to: '/docs/overview',
+                to: '/docs/',
               },
               {
-                label: 'Comparison',
-                to: '/docs/comparison',
-              },
-              {
-                to: '/docs/tutorial-basics/quick-start',
+                to: '/docs/tutorial',
                 label: 'Tutorial',
               },
               {
-                to: '/docs/reference/install',
+                to: '/docs/install',
                 label: 'Install',
               },
               {
-                to: '/docs/slide-blog',
+                to: '/docs/reference/slide-blog',
                 label: 'Blog',
               },
             ],
@@ -170,10 +122,6 @@ const config = {
               {
                 href: 'https://asciinema.org/a/498262?autoplay=1',
                 label: 'Demo',
-              },
-              {
-                href: 'https://github.com/orgs/aquaproj/discussions',
-                label: 'Question',
               },
               {
                 label: 'Twitter',

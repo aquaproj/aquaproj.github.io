@@ -39,4 +39,4 @@ asdf is used for the similar purpose, but I use aqua. Why?
 * Easy to update tools with Renovate
 * aqua supports splitting configuration files, so it is easy to filter builds in CI by changed file paths
 
-About the difference between aqua and asf, please see [Comparison - asdf](/docs/comparison/asdf) too.
+About the difference between aqua and asf, please see [Compared with asdf](/docs/#compared-with-asdf) too.

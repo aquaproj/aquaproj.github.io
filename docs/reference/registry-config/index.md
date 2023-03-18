@@ -34,7 +34,7 @@ packages:
 * [github_release](github-release-package.md): The package is downloaded from GitHub Releases
 * [go](go-package.md): The package is downloaded from GitHub Archive and is built by `go build` command
 * [go_install](go-install-package.md): The package is installed by `go install` command
-* [http](http-package.md): The package is donwloaded from the specified URL
+* [http](http-package.md): The package is downloaded from the specified URL
 
 ## Common attributes
 
@@ -43,7 +43,7 @@ packages:
 * [search_words](search-words.md)
 * [aliases](aliases.md): Aliases of the package
 * [files](files.md): The list of executable files
-* `format`: The asset format (e.g. `zip`, `tar.gz`). This is used to unarchive or decompress the asset. If this isn't specified, aqua tries to specify the format from the file extenstion. If the file isn't archived and isn't compressed, please specify `raw`
+* `format`: The asset format (e.g. `zip`, `tar.gz`). This is used to unarchive or decompress the asset. If this isn't specified, aqua tries to specify the format from the file extension. If the file isn't archived and isn't compressed, please specify `raw`
 * `link`: URL about the package. This is used for `aqua g`
 * `description`: The description about the package. This is used for `aqua g`
 * [replacements](replacements.md): A map which is used to replace some Template Variables like `OS` and `Arch`
@@ -57,10 +57,12 @@ packages:
 * [version_filter](version-filter.md)
 * [version_source](version-source.md)
 * [complete_windows_ext](complete-windows-ext.md)
-* [checksum](/docs/reference/checksum)
+* [checksum](/docs/reference/security/checksum)
 * [cosign](cosign.md)
 * [slsa_provenance](slsa-provenance.md)
 * [private](private.md)
+* [no_asset](no_asset.md)
+* [error_message](error_message.md)
 
 ## Default values if `repo_owner` and `repo_name` are set
 

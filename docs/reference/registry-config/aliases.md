@@ -20,7 +20,7 @@ packages:
 You can use the alias as the package name in `aqua.yaml`, and alias can be used in `aqua g` command.
 
 `aliases` is used to keep the compatibility when the package name is changed.
-Sometimes the package name is changed because the repository is renamed or transfered.
+Sometimes the package name is changed because the repository is renamed or transferred.
 
 ## Use `aliases` only for keeping the compatibility
 

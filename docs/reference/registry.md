@@ -1,5 +1,5 @@
 ---
-sidebar_position: 150
+sidebar_position: 250
 ---
 
 # Registry
@@ -33,5 +33,5 @@ https://github.com/aquaproj/aqua-registry
 
 Please see the following document.
 
-* [Add Packages to Registry](/docs/tutorial-extras/add-registry)
-* [Install private packages](/docs/tutorial-extras/private-package)
+* [Add Packages to Registry](/docs/develop-registry/add-registry)
+* [Install private packages](/docs/guides/private-package)

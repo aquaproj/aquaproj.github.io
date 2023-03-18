@@ -1,0 +1,129 @@
+{
+  "checksums": [
+    {
+      "id": "github_release/github.com/crate-ci/typos/v1.13.26/typos-v1.13.26-x86_64-apple-darwin.tar.gz",
+      "checksum": "881F8FA36E5959D272F10C1D2628919A00506960CACF36DC5347C2DE990A69C742ECC9B8B365FE22558DB78F27D2DFB71C678B03007B528F37E90728624C931C",
+      "algorithm": "sha512"
+    },
+    {
+      "id": "github_release/github.com/crate-ci/typos/v1.13.26/typos-v1.13.26-x86_64-pc-windows-msvc.zip",
+      "checksum": "3C3076D5F0D6ED86CB81CF340796DC0DE0E25A84523B1B94D815280F9EE8EEE56205EE5FBD3733AA0BF836AA55CAF614ADF19EC273D2C41CC5209274DF50F9D4",
+      "algorithm": "sha512"
+    },
+    {
+      "id": "github_release/github.com/crate-ci/typos/v1.13.26/typos-v1.13.26-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "78DB3E077F46D54CB069086CE455EEA9AD58AF75A9E4A666766AEE221C9CABEA05C6C9F42FCAAEAA7B54C6E011A555BB484E40732A635BECDD76AE2733FA7049",
+      "algorithm": "sha512"
+    },
+    {
+      "id": "github_release/github.com/int128/ghcp/v1.13.2/ghcp_darwin_amd64.zip",
+      "checksum": "8221F411AC4F2465B7CFD31EFB6DA4568E5FD20BAD9F66AC312B23AFA4520FDD",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/int128/ghcp/v1.13.2/ghcp_linux_amd64.zip",
+      "checksum": "6B9D9C9A7B834237B6579353477DF3BB3730C11788170AD2A9E5D1230ABC6216",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/int128/ghcp/v1.13.2/ghcp_windows_amd64.zip",
+      "checksum": "2297D27978C61272184589C3C521514291E6258C3C87EBCB16FB61B32663414E",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/reviewdog/reviewdog/v0.14.1/reviewdog_0.14.1_Darwin_arm64.tar.gz",
+      "checksum": "B8E79B3AE4168914F9F7ED7253D74F239A27789BCAF4AF02246044000F18C532",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/reviewdog/reviewdog/v0.14.1/reviewdog_0.14.1_Darwin_x86_64.tar.gz",
+      "checksum": "634EF4B420916F9BB91A11ED4927BC378BD37462958998AFA6C0551EDC1B67C9",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/reviewdog/reviewdog/v0.14.1/reviewdog_0.14.1_Linux_arm64.tar.gz",
+      "checksum": "D387556EF1D291A360A3D2053A6DE5AD856DD6C362DD0AC5793415B0C2C0AEB8",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/reviewdog/reviewdog/v0.14.1/reviewdog_0.14.1_Linux_x86_64.tar.gz",
+      "checksum": "BF0ADA422E13A94AAFB26BCD8ADE3AE6D98E6A3DB4A9C1CB17686EE64E021314",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/reviewdog/reviewdog/v0.14.1/reviewdog_0.14.1_Windows_arm64.tar.gz",
+      "checksum": "2B92CCEBAA516A7A618F92E6C360855B0C661D905CBDD758EA957F3A46F9103D",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/reviewdog/reviewdog/v0.14.1/reviewdog_0.14.1_Windows_x86_64.tar.gz",
+      "checksum": "D6009ABE6A5777962118FD227A2A9E6BAFC1E15368AF76D54EAE88CF8631E1AD",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.6.23/actionlint_1.6.23_darwin_amd64.tar.gz",
+      "checksum": "54F000F84D3FE85012A8726CD731C4101202C787963C9F8B40D15086B003D48E",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.6.23/actionlint_1.6.23_darwin_arm64.tar.gz",
+      "checksum": "DDD0263968F7F024E49BD8721CD2B3D27C7A4D77081B81A4B376D5053EA25CDC",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.6.23/actionlint_1.6.23_linux_amd64.tar.gz",
+      "checksum": "B39E7CD53F4A317AECFB09EDCEBCC058DF9EBEF967866E11AA7F0DF27339AF3B",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.6.23/actionlint_1.6.23_linux_arm64.tar.gz",
+      "checksum": "A36BA721621E861E900D36457836BFD6A29D6E10D9EDEBE547544A0E3DBF4348",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.6.23/actionlint_1.6.23_windows_amd64.zip",
+      "checksum": "ED8C80EC82C6995EFD1F957CBF4C251FE208A3546E4AFD8637D4B3709DBD8CC1",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.6.23/actionlint_1.6.23_windows_arm64.zip",
+      "checksum": "4FFB7D53776E5D90412CF53ED99F944F17F5193173B14B84ADAAAA504D5731FA",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/ghalint/v0.2.2/ghalint_0.2.2_darwin_amd64.tar.gz",
+      "checksum": "2F520D13DB10EF8ABD3942DEC2CEA1792B0A7289F7466219B252169AA8124177",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/ghalint/v0.2.2/ghalint_0.2.2_darwin_arm64.tar.gz",
+      "checksum": "3BF497D0C62B70DBC4379418D7009689937D9B5499A59E2B0B8D29A4941B81A7",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/ghalint/v0.2.2/ghalint_0.2.2_linux_amd64.tar.gz",
+      "checksum": "A74B5A64A18BCA0077593D21E9DADBD01657D05EE6DB95467A285B1E4A904CA5",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/ghalint/v0.2.2/ghalint_0.2.2_linux_arm64.tar.gz",
+      "checksum": "6A68353872D10DAD8CDC7F4F9592D887F127D064511BA89FF89FAFC1DDCB7492",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/ghalint/v0.2.2/ghalint_0.2.2_windows_amd64.tar.gz",
+      "checksum": "D83BAFC44A5F218D42533140EBE924EFF483357718CE784C6E19010C553C0A0A",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/ghalint/v0.2.2/ghalint_0.2.2_windows_arm64.tar.gz",
+      "checksum": "3B733BC72D27C83E73C4F8D7691BF7781DCC5E3BF2378C441A70AA44202D83F2",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v3.145.1/registry.yaml",
+      "checksum": "E5ECF92E6CBEBC45B03269D46B4086AECA9528162CE577BFC14A5CE1E4F0ECAB32ACC5EB7BBB03044628DC3C93CB7AEE7EB3B4268EF03415F76741452FF898BB",
+      "algorithm": "sha512"
+    }
+  ]
+}

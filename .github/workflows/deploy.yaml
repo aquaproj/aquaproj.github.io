@@ -1,28 +1,33 @@
 name: Deploy
 on:
-  push:
-    branches:
-    - main
-  pull_request:
-    branches:
-    - main
-permissions: {}
+  workflow_call:
+    inputs:
+      is_pr:
+        required: true
+        type: boolean
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write # For peaceiris/actions-gh-pages
     steps:
-    - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
-    - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
-      with:
-        node-version: '18.4.0'
-        cache: 'yarn'
-    - run: yarn install
-    - run: yarn build
-    - uses: peaceiris/actions-gh-pages@64b46b4226a4a12da2239ba3ea5aa73e3163c75b # v3.9.1
-      if: github.event_name != 'pull_request'
-      with:
-        github_token: ${{ github.token }}
-        publish_dir: ./build
-        destination_dir: ./docs
+      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3.4.0
+      - name: get nested property
+        id: package_json
+        uses: notiz-dev/github-action-json-property@a5a9c668b16513c737c3e1f8956772c99c73f6e8 # v0.2.0
+        with: 
+          path: package.json
+          prop_path: volta.node
+      - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+        with:
+          node-version: ${{steps.package_json.outputs.prop}}
+          cache: 'yarn'
+      - run: yarn install
+      - run: yarn build
+      - uses: peaceiris/actions-gh-pages@bd8c6b06eba6b3d25d72b7a1767993c0aeee42e7 # v3.9.2
+        if: "! inputs.is_pr"
+        with:
+          github_token: ${{ github.token }}
+          publish_dir: ./build
+          destination_dir: ./docs
