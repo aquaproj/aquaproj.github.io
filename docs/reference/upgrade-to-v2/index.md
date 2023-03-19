@@ -18,9 +18,10 @@ Other changes are not so important as the registry restriction, but these change
 - [#1409](https://github.com/aquaproj/aqua/issues/1409) [#1516](https://github.com/aquaproj/aqua/pull/1516) [Fix the default `files[].name`](fix-default-files-name.md)
 - [#1681](https://github.com/aquaproj/aqua/issues/1681) [#1686](https://github.com/aquaproj/aqua/pull/1686) [Enable `require_checksum` by default](enable-require_checksum-by-default.md)
 - [#1572](https://github.com/aquaproj/aqua/pull/1572) [#1573](https://github.com/aquaproj/aqua/issues/1573) [Change the implementation of `semver` and `semverWithVersion`](change-semver.md)
+- [#1691](https://github.com/aquaproj/aqua/issues/1691) [#1694](https://github.com/aquaproj/aqua/pull/1694) [install: Deprecate `--test` option and change the default behaviour same as one with `--test` option](deprecate-install-test-option.md)
+- [#1769](https://github.com/aquaproj/aqua/issues/1769) [#1770](https://github.com/aquaproj/aqua/pull/1770) [Deprecate `update-checksum`'s `--deep` option and change the default behaviour same as `--deep` option](deprecate-update-checksum-deep-option.md)
 
 Removed some features.
 
 - [#1408](https://github.com/aquaproj/aqua/issues/1408) [#1516](https://github.com/aquaproj/aqua/pull/1516) [Remove the package type `go`](remove-type-go.md)
 - [#1411](https://github.com/aquaproj/aqua/issues/1411) [#1516](https://github.com/aquaproj/aqua/pull/1516) [Remove `supported_if`](remove-supported_if.md)
-- [#1691](https://github.com/aquaproj/aqua/issues/1691) [#1694](https://github.com/aquaproj/aqua/pull/1694) [install: Remove `--test` option and change the default behaviour same as one with `--test` option](remove-install-test-option.md)
