@@ -19,9 +19,7 @@ Other registries are useful but also can be abused.
 
 If you use only standard registry, you don't have to do anything.
 Otherwise you have to set policies to allow registries other than standard registry.
-About policies, please see the document.
-
-https://aquaproj.github.io/docs/tutorial-extras/policy-as-code/
+About policies, please see [here](/docs/reference/security/policy-as-code/).
 
 If non Standard Registries are used in Global Configuration, it is useful to set `AQUA_POLICY_CONFIG` in `.bashrc` or something.
 
