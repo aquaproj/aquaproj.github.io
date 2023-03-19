@@ -44,9 +44,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       announcementBar: {
-        id: 'support_keeping_config_files_in_one_directory',
+        id: 'release_aqua_v2',
         content:
-          '<a href="https://gophers.slack.com/archives/C04RALTG29K">Open the Slack Channel (2023-02-27)</a>',
+          '<a href="/docs/reference/upgrade-guide/v2">Released aqua v2! (2023-03-20)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
