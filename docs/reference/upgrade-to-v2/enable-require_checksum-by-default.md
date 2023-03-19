@@ -2,11 +2,23 @@
 sidebar_position: 400
 ---
 
-# Enable `require_checksum` by default
+# Change the meaning of `require_checksum` and Enable `require_checksum` by default
 
 [#1681](https://github.com/aquaproj/aqua/issues/1681) [#1686](https://github.com/aquaproj/aqua/pull/1686) 
 
 [require_checksum](/docs/reference/config/checksum) is enabled by default when the checksum verification is enabled.
+
+And the meaning of `require_checksum` is changed.
+
+AS IS
+
+If `require_checksum` is true, it fails to install a package when the checksum isn't found in `aqua-checksums.json` and the package's checksum configuration is disabled.
+By default, `require_checksum` is `false`.
+
+TO BE
+
+If this is true, it fails to install a package when the checksum isn't found in `aqua-checksums.json`.
+By default, `require_checksum` is `true`.
 
 ## Why this change is needed
 
