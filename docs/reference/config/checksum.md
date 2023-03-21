@@ -41,6 +41,18 @@ packages:
 The meaning of `require_checksum` was changed in aqua v2.0.0.
 :::
 
+#### Environment variable
+
+aqua >= v1.38.0
+
+You can enable `require_checksum` by the environment variable `AQUA_REQUIRE_CHECKSUM`.
+
+```sh
+export AQUA_REQUIRE_CHECKSUM=true
+```
+
+If `require_checksum` is set in a configuration file, `AQUA_REQUIRE_CHECKSUM` is ignored.
+
 #### aqua v1
 
 If `require_checksum` is true, it fails to install a package when the checksum isn't found in `aqua-checksums.json` and the package's checksum configuration is disabled.
@@ -49,7 +61,7 @@ By default, `require_checksum` is `false`.
 #### aqua v2
 
 If this is true, it fails to install a package when the checksum isn't found in `aqua-checksums.json`.
-By default, `require_checksum` is `true`.
+By default, `require_checksum` is `false`.
 We strongly recommend enabling `require_checksum` to enforce the checksum verification.
 
 To add checksums to `aqua-checksums.json` before installing packages, please run `aqua update-checksum`.
