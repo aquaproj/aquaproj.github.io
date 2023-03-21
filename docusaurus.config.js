@@ -46,7 +46,7 @@ const config = {
       announcementBar: {
         id: 'release_aqua_v2',
         content:
-          '<a href="/docs/reference/upgrade-guide/v2">Released aqua v2! (2023-03-20)</a>',
+          '<a href="/docs/reference/upgrade-guide/v2">Released aqua v2! (2023-03-21)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
