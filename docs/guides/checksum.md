@@ -52,7 +52,6 @@ Let's edit aqua.yaml and enable Checksum Verification.
 ---
 checksum:
   enabled: true
-  require_checksum: true
 registries:
 - type: standard
   ref: v3.143.0 # renovate: depName=aquaproj/aqua-registry
@@ -82,7 +81,7 @@ jobs:
     permissions:
       contents: read
     with:
-      aqua_version: v1.36.0
+      aqua_version: v1.38.0
       prune: true
     secrets:
       gh_token: ${{secrets.GH_TOKEN}}
@@ -170,11 +169,12 @@ Add a GitHub Actions job that runs a tampered package.
       contents: read
     env:
       AQUA_LOG_COLOR: always
+      AQUA_REQUIRE_CHECKSUM: "true"
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
       - uses: aquaproj/aqua-installer@61e2563dfe7674cbf74fe6ec212e444198a3bb00 # v2.0.2
         with:
-          aqua_version: v1.36.0
+          aqua_version: v1.38.0
         env:
           GITHUB_TOKEN: ${{github.token}}
       - run: tfcmt -v
@@ -191,5 +191,5 @@ Then `test` job would fail because the checksum is unmatched.
 ![image](https://user-images.githubusercontent.com/13323303/224528789-eeda95e7-73b9-46a3-95da-da954087e83b.png)
 
 ```
-time="2023-03-12T06:36:05Z" level=fatal msg="aqua failed" actual_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D91 aqua_version=1.36.0 env=linux/amd64 error="checksum is invalid" exe_name=tfcmt expected_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D92 package=suzuki-shunsuke/tfcmt package_version=v4.1.0 program=aqua
+time="2023-03-12T06:36:05Z" level=fatal msg="aqua failed" actual_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D91 aqua_version=1.38.0 env=linux/amd64 error="checksum is invalid" exe_name=tfcmt expected_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D92 package=suzuki-shunsuke/tfcmt package_version=v4.1.0 program=aqua
 ```
