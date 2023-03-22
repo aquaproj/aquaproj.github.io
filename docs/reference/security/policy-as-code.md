@@ -277,3 +277,15 @@ This is useful to update tools per working directory gradually, but it is diffic
 So you have to leave the management of `aqua.yaml` to each teams, but you also have to keep the governance and security.
 
 Policy file is useful for it.
+
+## Disable Policy
+
+aqua >= v2.1.0 [#1790](https://github.com/aquaproj/aqua/issues/1790)
+
+:::caution
+We don't recommend this feature basically because Policy is important in terms of security.
+This feature is introduced to enable users using non Standard Registries to upgrade aqua to v2 easily.
+You shouldn't use this feature in CI.
+:::
+
+If `AQUA_DISABLE_POLICY` is `true`, `AQUA_POLICY_CONFIG` is ignored and Policy is disabled, which means every Registry and Package are available.
