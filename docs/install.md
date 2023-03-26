@@ -37,7 +37,7 @@ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 ## Go
 
 ```sh
-go install github.com/aquaproj/aqua/cmd/aqua@latest
+go install github.com/aquaproj/aqua/v2/cmd/aqua@latest
 ```
 
 ## Download from GitHub Releases
