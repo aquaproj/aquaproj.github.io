@@ -20,7 +20,7 @@ https://github.com/search?q=org%3Aaquaproj+label%3Asecurity
   * Centrally managed Registry is provided
     * Compared with third party registries, it has low risk to be tampered
 * [Checksum Verification](checksum.md)
-* [Policy as Code](policy-as-code.md)
+* [Policy as Code](policy-as-code/index.md)
 * [Cosign and SLSA Provenance Support](cosign-slsa.md)
 
 ## Plans

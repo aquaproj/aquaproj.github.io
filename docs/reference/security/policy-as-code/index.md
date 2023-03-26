@@ -23,7 +23,7 @@ aqua g -i hashicorp/terraform
 Create a policy file `aqua-policy.yaml`.
 
 ```sh
-aqua init-policy
+aqua policy set
 ```
 
 ```yaml
