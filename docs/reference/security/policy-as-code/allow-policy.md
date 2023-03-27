@@ -124,7 +124,7 @@ chmod +x aqua-installer
 ```
 git init
 aqua init
-aqua policy set
+aqua policy init
 aqua gr suzuki-shunsuke/ci-info > registry.yaml
 vi aqua-policy.yaml
 vi aqua.yaml
