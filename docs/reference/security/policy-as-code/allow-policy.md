@@ -78,6 +78,7 @@ So we would like to apply a policy without `AQUA_POLICY_CONFIG`, but at the same
 Sometimes security and convenience are conflicted, so we have to be careful not to harm security for convenience.
 To keep the security, I think aqua should ask users to allow `Git Repository root's policy file` explicitly.
 This means aqua should not apply `Git Repository root's policy file` without user's approval.
+So aqua asks users to allow `Git Repository root's policy file` using `aqua policy allow` command.
 
 :::caution
 Unlike `Git Repository root's policy file`, aqua uses policy files in `AQUA_POLICY_CONFIG` without your approval.
@@ -86,8 +87,6 @@ Because
 - To keep the compatibility
 - Unlike `Git Repository root's policy file`, the environment variable `AQUA_POLICY_CONFIG` is set by you, so aqua regards `AQUA_POLICY_CONFIG` as your approval
 :::
-
-So aqua asks users to allow `Git Repository root's policy file` using `aqua policy allow` command.
 
 ## Getting Started
 
