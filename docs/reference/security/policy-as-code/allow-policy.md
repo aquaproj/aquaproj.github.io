@@ -80,7 +80,7 @@ To keep the security, I think aqua should ask users to allow `Git Repository roo
 This means aqua should not apply `Git Repository root's policy file` without user's approval.
 So aqua asks users to allow `Git Repository root's policy file` using `aqua policy allow` command.
 
-:::caution
+:::info
 Unlike `Git Repository root's policy file`, aqua uses policy files in `AQUA_POLICY_CONFIG` without your approval.
 Because
 
