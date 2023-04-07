@@ -117,6 +117,19 @@ $ aqua i
 INFO[0000] download and unarchive the package            aqua_version= env=darwin/arm64 package_name=suzuki-shunsuke/ci-info package_version=v2.1.2 program=aqua registry=local
 ```
 
+## aqua-installer's `policy_allow` input
+
+aqua >= `v2.3.0`, aqua-installer >= `v2.1.0`
+
+If the input `policy_allow` is set, aqua-installer runs `aqua policy allow` command.
+
+```yaml
+- uses: aquaproj/aqua-installer@v2.1.0
+  with:
+    aqua_version: v2.3.0
+    policy_allow: "true"
+```
+
 ## See also
 
 - [Reference](/docs/reference/security/policy-as-code)
