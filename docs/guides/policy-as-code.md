@@ -17,105 +17,216 @@ If you use non Standard Registries, you have to create a Policy file to allow th
 
 ## Getting Started
 
-Create `aqua.yaml`.
+1. Set up the environment with Docker
+1. Create `aqua.yaml` and a local Registry `registry.yaml`
+1. Try to use a local Registry and confirm the default Policy
+1. Create a Git repository and aqua-policy.yaml
+1. Confirm the warning
+1. Run `aqua policy deny`
+1. Run `aqua policy allow`
 
-```sh
+--
+
+1. Set up the environment with Docker
+
+```
+docker run --rm -ti alpine:3.17.0 sh
+```
+
+```
+apk add curl bash sudo git
+adduser -u 1000 -G wheel -D foo
+visudo # Uncomment "%wheel ALL=(ALL) NOPASSWD: ALL"
+su foo
+mkdir ~/workspace
+cd ~/workspace
+
+export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.0.2/aqua-installer
+echo "acbb573997d664fcb8df20a8a5140dba80a4fd21f3d9e606e478e435a8945208  aqua-installer" | sha256sum -c
+chmod +x aqua-installer
+./aqua-installer
+```
+
+2. Create `aqua.yaml` and a local Registry `registry.yaml`
+
+```
 aqua init
-```
-
-Create a local Registry.
-
-```sh
 aqua gr suzuki-shunsuke/ci-info > registry.yaml
-```
-
-Edit `aqua.yaml`
-
-```sh
 vi aqua.yaml
+aqua g -i cli/cli local,suzuki-shunsuke/ci-info
 ```
+
+aqua.yaml
 
 ```yaml
+---
+# aqua - Declarative CLI Version Manager
+# https://aquaproj.github.io/
+# checksum:
+#   enabled: true
+#   require_checksum: true
+#   supported_envs:
+#   - all
 registries:
 - type: standard
-  ref: v3.150.0
+  ref: v3.150.0 # renovate: depName=aquaproj/aqua-registry
 - name: local
   type: local
   path: registry.yaml
 packages:
+- name: cli/cli@v2.25.1
+- name: suzuki-shunsuke/ci-info@v2.1.2
+  registry: local
 ```
 
-```sh
-aqua g -i local,suzuki-shunsuke/ci-info
-```
-
-`aqua i` would fail because local Registry isn't allowed by default.
+3. Try to use a local Registry and confirm the default Policy
 
 ```console
-$ aqua i
-ERRO[0000] install the package                           aqua_version= doc="https://aquaproj.github.io/docs/reference/codes/002" env=darwin/arm64 error="this package isn't allowed" package_name=suzuki-shunsuke/ci-info package_version=v2.1.2 program=aqua registry=local
-FATA[0000] aqua failed                                   aqua_version= env=darwin/arm64 error="it failed to install some packages" program=aqua
+fe179d7889fd:~/workspace$ aqua i
+INFO[0000] download and unarchive the package            aqua_version= env=linux/arm64 package_name=aqua-proxy package_version=v1.1.4 program=aqua registry=
+INFO[0000] create a symbolic link                        aqua_version= command=aqua-proxy env=linux/arm64 package_name=aqua-proxy package_version=v1.1.4 program=aqua registry=
+INFO[0000] create a symbolic link                        aqua_version= command=gh env=linux/arm64 program=aqua
+INFO[0000] create a symbolic link                        aqua_version= command=ci-info env=linux/arm64 program=aqua
+ERRO[0000] install the package                           aqua_version= doc="https://aquaproj.github.io/docs/reference/codes/002" env=linux/arm64 error="this package isn't allowed" package_name=suzuki-shunsuke/ci-info package_version=v2.1.2 program=aqua registry=local
+INFO[0000] download and unarchive the package            aqua_version= env=linux/arm64 package_name=cli/cli package_version=v2.27.0 program=aqua registry=standard
+FATA[0002] aqua failed                                   aqua_version= env=linux/arm64 error="it failed to install some packages" program=aqua
 ```
 
-To use non Standard Registry, you have to do the following things.
+It fails to install `suzuki-shunsuke/ci-info` because the local Registry isn't allowed by default.
 
-1. Create a `.git` directory
-1. Create `aqua-policy.yaml`
-1. Allow the Policy file
+```
+ERRO[0000] install the package                           aqua_version= doc="https://aquaproj.github.io/docs/reference/codes/002" env=linux/arm64 error="this package isn't allowed" package_name=suzuki-shunsuke/ci-info package_version=v2.1.2 program=aqua registry=local
+```
+
+On the other hand, GitHub CLI is installed properly because Standard Registry is allowed by default.
+
+```console
+a82023e65a9e:~/workspace$ gh version
+gh version 2.27.0 (2023-04-07)
+https://github.com/cli/cli/releases/tag/v2.27.0
+```
+
+4. Create a Git repository and aqua-policy.yaml
+
+Let's create a Policy to allow the local Registry.
 
 `.git` directory is required so that aqua finds a Policy file.
 
 ```sh
 git init # Create .git
-aqua policy init # Create aqua-policy.yaml
+aqua policy init
 vi aqua-policy.yaml
 ```
 
+aqua-policy.yaml
+
 ```yaml
+---
+# aqua Policy
+# https://aquaproj.github.io/
 registries:
+# Example
   - name: local
     type: local
     path: registry.yaml
+# - name: aqua-registry
+#   type: github_content
+#   repo_owner: aquaproj
+#   repo_name: aqua-registry
+#   ref: semver(">= 3.0.0") # ref is optional
+#   path: registry.yaml
   - type: standard
     ref: semver(">= 3.0.0")
 packages:
-  - registry: local
+# Example
+  - registry: local # allow all packages in the Registry
+# - name: cli/cli # allow only a specific package. The default value of registry is "standard"
+# - name: cli/cli
+#   version: semver(">= 2.0.0") # version is optional
   - registry: standard
 ```
 
-`aqua i` outputs a warning and still fails because the Policy file isn't allowed yet. Please see the warning.
+5. Confirm the warning
+
+Run `aqua i`, then aqua outputs the warning and it fails to install `suzuki-shunsuke/ci-info`.
 
 ```console
-$ aqua i
+fe179d7889fd:~/workspace$ aqua i
 WARN[0000] The policy file is ignored unless it is allowed by "aqua policy allow" command.
 
-$ aqua policy allow "/Users/shunsukesuzuki/Documents/test/aqua/policy-git/aqua-policy.yaml"
+$ aqua policy allow "/home/foo/workspace/aqua-policy.yaml"
 
 If you want to keep ignoring the policy file without the warning, please run "aqua policy deny" command.
 
-$ aqua policy deny "/Users/shunsukesuzuki/Documents/test/aqua/policy-git/aqua-policy.yaml"
+$ aqua policy deny "/home/foo/workspace/aqua-policy.yaml"
 
-   aqua_version= env=darwin/arm64 policy_file=/Users/shunsukesuzuki/Documents/test/aqua/policy-git/aqua-policy.yaml program=aqua
-ERRO[0000] install the package                           aqua_version= doc="https://aquaproj.github.io/docs/reference/codes/002" env=darwin/arm64 error="this package isn't allowed" package_name=suzuki-shunsuke/ci-info package_version=v2.1.2 program=aqua registry=local
-FATA[0000] aqua failed                                   aqua_version= env=darwin/arm64 error="it failed to install some packages" program=aqua
+   aqua_version= doc="https://aquaproj.github.io/docs/reference/codes/003" env=linux/arm64 policy_file=/home/foo/workspace/aqua-policy.yaml program=aqua
+ERRO[0000] install the package                           aqua_version= doc="https://aquaproj.github.io/docs/reference/codes/002" env=linux/arm64 error="this package isn't allowed" package_name=suzuki-shunsuke/ci-info package_version=v2.1.2 program=aqua registry=local
+FATA[0000] aqua failed                                   aqua_version= env=linux/arm64 error="it failed to install some packages" program=aqua
 ```
 
-According to the warning, run `aqua policy allow` command.
+To resolve the warning, you have to check the Policy file and run either `aqua policy allow` or `aqua policy deny`.
+If the Policy file is reliable, please run `aqua policy allow`.
 
-:::caution
-Before running `aqua policy allow`, please check if the Policy file doesn't allow malicious Packages.
-:::
+6. Run `aqua policy deny`
 
-```sh
-aqua policy allow "/Users/shunsukesuzuki/Documents/test/aqua/policy-git/aqua-policy.yaml"
+Before running `aqua policy allow`, let's try to run `aqua policy deny`.
+
+```
+aqua policy deny "/home/foo/workspace/aqua-policy.yaml"
 ```
 
-Run `aqua i` again, then it would succeed.
+ci-info still failed but the warning is suppressed.
 
 ```console
-$ aqua i
-INFO[0000] download and unarchive the package            aqua_version= env=darwin/arm64 package_name=suzuki-shunsuke/ci-info package_version=v2.1.2 program=aqua registry=local
+2f4a758ab4ef:~/workspace$ ci-info --help
+FATA[0000] aqua failed                                   aqua_version= doc="https://aquaproj.github.io/docs/reference/codes/002" env=linux/arm64 error="this package isn't allowed" exe_name=ci-info package=suzuki-shunsuke/ci-info package_version=v2.1.2 program=aqua
 ```
+
+7. Run `aqua policy allow`.
+
+```
+aqua policy allow "/home/foo/workspace/aqua-policy.yaml"
+```
+
+Then ci-info is available.
+
+```console
+2f4a758ab4ef:~/workspace$ ci-info --version
+INFO[0000] download and unarchive the package            aqua_version= env=linux/arm64 exe_name=ci-info package=suzuki-shunsuke/ci-info package_name=suzuki-shunsuke/ci-info package_version=v2.1.2 program=aqua registry=local
+ci-info version 2.1.2 (4a047e648dd0b9d0de1be356421d5d043c38d080)
+```
+
+If you modify the Policy file, you have to allow the change again.
+
+```
+echo "" >> aqua-policy.yaml
+```
+
+```console
+2f4a758ab4ef:~/workspace$ ci-info --version
+WARN[0000] The policy file is changed. The policy file is ignored unless it is allowed by "aqua policy allow" command.
+
+$ aqua policy allow "/home/foo/workspace/aqua-policy.yaml"
+
+If you want to keep ignoring the policy file without the warning, please run "aqua policy deny" command.
+
+$ aqua policy deny "/home/foo/workspace/aqua-policy.yaml"
+
+   aqua_version= doc="https://aquaproj.github.io/docs/reference/codes/003" env=linux/arm64 exe_name=ci-info package=suzuki-shunsuke/ci-info package_version=v2.1.2 policy_file=/home/foo/workspace/aqua-policy.yaml program=aqua
+FATA[0000] aqua failed                                   aqua_version= doc="https://aquaproj.github.io/docs/reference/codes/002" env=linux/arm64 error="this package isn't allowed" exe_name=ci-info package=suzuki-shunsuke/ci-info package_version=v2.1.2 program=aqua
+```
+
+Please run `aqua policy allow` again, then ci-info is available.
+
+```console
+2f4a758ab4ef:~/workspace$ aqua policy allow "/home/foo/workspace/aqua-policy.yaml"
+2f4a758ab4ef:~/workspace$ ci-info --version
+ci-info version 2.1.2 (4a047e648dd0b9d0de1be356421d5d043c38d080)
+```
+
+Basically Policy files aren't changed so frequently, so it wouldn't be so bothersome to run `aqua policy allow`.
 
 ## aqua-installer's `policy_allow` input
 
