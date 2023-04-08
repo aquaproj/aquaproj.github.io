@@ -241,6 +241,12 @@ If the input `policy_allow` is set, aqua-installer runs `aqua policy allow` comm
     policy_allow: "true"
 ```
 
+## update-checksum-workflow's `policy_allow` input
+
+aqua >= `v2.3.0`, [update-checksum-workflow](/docs/products/update-checksum-workflow) >= `v0.1.5`
+
+If the input `policy_allow` is set, `aqua policy allow` is run.
+
 ## See also
 
 - [Reference](/docs/reference/security/policy-as-code)
