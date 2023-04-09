@@ -6,6 +6,7 @@ sidebar_position: 100
 
 - [Update packages by Renovate](/docs/guides/renovate)
 - [Enable Checksum Verification](/docs/guides/checksum)
+- [Policy as Code](/docs/guides/policy-as-code)
 - [Share aqua configuration for teams and organizations](/docs/guides/team-config)
 - [Keep configuration files in one directory](/docs/guides/keep-in-one-dir)
 - [Split the list of packages](/docs/guides/split-config)
