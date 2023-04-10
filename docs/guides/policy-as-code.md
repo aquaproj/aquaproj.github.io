@@ -247,6 +247,11 @@ aqua >= `v2.3.0`, [update-checksum-workflow](/docs/products/update-checksum-work
 
 If the input `policy_allow` is set, `aqua policy allow` is run.
 
+## :bulb: Best practice: Configure CODEOWENRS to protect Policy files
+
+Basically you don't have to change Policy files so frequently and the change of Policy files should be reviewed carefully in terms of security.
+So it is a good practice to protect Policy files by CODEOWNERS.
+
 ## See also
 
 - [Reference](/docs/reference/security/policy-as-code)
