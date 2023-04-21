@@ -6,7 +6,7 @@ sidebar_position: 550
 
 We think security is very important and are working on improving the security of aqua.
 aqua should allow you to install and execute tools securely.
-In this page, we describe aqua's security perspective and our plan.
+In this page, we describe aqua's security perspective.
 
 ## List of Issues and Pull Requests
 
@@ -21,13 +21,5 @@ https://github.com/search?q=org%3Aaquaproj+label%3Asecurity
     * Compared with third party registries, it has low risk to be tampered
 * [Checksum Verification](checksum.md)
 * [Policy as Code](policy-as-code/index.md)
+  * [Only standard registry is allowed by default (Secure by default)](/docs/reference/upgrade-guide/v2/only-standard-registry-is-allowed-by-default)
 * [Cosign and SLSA Provenance Support](cosign-slsa.md)
-
-## Plans
-
-:::caution
-The plan in undecided.
-:::
-
-* Prevent aqua.yaml from being tampered
-  * [Disable Registries other than standard Registry by default (Secure by default)](https://github.com/aquaproj/aqua/issues/1404) [#1413](https://github.com/aquaproj/aqua/pull/1413)
