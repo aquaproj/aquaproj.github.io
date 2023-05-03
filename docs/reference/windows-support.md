@@ -28,7 +28,7 @@ Terminals
 
 Please download an asset from [GitHub Releases](https://github.com/aquaproj/aqua/releases) and deploy the binary into `PATH`.
 
-You can also install aqua with Go. https://github.com/aquaproj/aqua-installer#go
+You can also [install aqua with Go](/docs/install#go). 
 
 ## The install path (AQUA_ROOT_DIR)
 
