@@ -20,9 +20,9 @@ Here is a brief overview of how to learn aqua.
 
 If you have any question, please contact us.
 
+- [GitHub Discussions](https://github.com/orgs/aquaproj/discussions)
 - Twitter: [@aquaclivm](https://twitter.com/aquaclivm) (English), [@szkdash](https://twitter.com/szkdash) (English or Japanese)
 - Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
-- [GitHub Issues](https://github.com/aquaproj/aqua)
 
 ## Introduction
 
