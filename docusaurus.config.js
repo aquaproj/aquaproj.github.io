@@ -65,8 +65,8 @@ const config = {
             label: 'Docs',
           },
           {
-            href: 'https://github.com/aquaproj/aqua/releases',
-            label: 'Changelog',
+            href: 'https://github.com/orgs/aquaproj/discussions',
+            label: 'Question',
             position: 'right',
           },
           {
@@ -103,6 +103,10 @@ const config = {
           {
             title: 'More',
             items: [
+              {
+                href: 'https://github.com/orgs/aquaproj/discussions',
+                label: 'Question',
+              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/aquaproj/aqua',
