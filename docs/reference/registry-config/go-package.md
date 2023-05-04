@@ -5,21 +5,13 @@ sidebar_position: 1200
 # `go` Package
 
 :::caution
-
-Use `go_install` package instead of `go` package
-
-For the historical reason, there are two package types building Go tools, `go` and `go_install`.
-
-* `go`: Packages are downloaded from GitHub Archive and are built by `go build` command
-* `go_install`: Packages are installed by `go install` command
-
-Basically when you add new packages, we recommend using the `go_install` package instead of the `go` package.
-
+[This package type was abandoned at aqua v2.0.0](/docs/reference/upgrade-guide/v2/remove-type-go).
+Use `go_install` package instead.
 :::
 
 [#798](https://github.com/aquaproj/aqua/issues/798) [#799](https://github.com/aquaproj/aqua/issues/799)
 
-aqua >= [v1.7.0](https://github.com/aquaproj/aqua/releases/tag/v1.7.0) is required.
+aqua >= [v1.7.0](https://github.com/aquaproj/aqua/releases/tag/v1.7.0)
 
 * `repo_owner`: The repository owner name
 * `repo_name`: The repository name
