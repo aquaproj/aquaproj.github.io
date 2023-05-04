@@ -32,7 +32,6 @@ packages:
 * [github_archive](github-archive-package.md): The package is downloaded from GitHub Archive
 * [github_content](github-content-package.md): The package is downloaded from GitHub Content
 * [github_release](github-release-package.md): The package is downloaded from GitHub Releases
-* [go](go-package.md): The package is downloaded from GitHub Archive and is built by `go build` command
 * [go_install](go-install-package.md): The package is installed by `go install` command
 * [http](http-package.md): The package is downloaded from the specified URL
 
