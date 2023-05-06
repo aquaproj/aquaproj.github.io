@@ -46,7 +46,8 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * [AQUA_LOG_COLOR](log-color.md): Log color setting (`always|auto|never`)
 * [AQUA_PROGRESS_BAR](progress-bar.md): The progress bar is disabled by default, but you can enable it by setting the environment variable `AQUA_PROGRESS_BAR` to `true`
 * [AQUA_GOOS, AQUA_GOARCH](/docs/develop-registry/change-os-arch-for-test)
-* [AQUA_EXPERIMENTAL_X_SYS_EXEC](experimental-feature.md#aqua_experimental_x_sys_exec)
+* [AQUA_X_SYS_EXEC](/docs/reference/execve-2)
+* (Deprecated) [AQUA_EXPERIMENTAL_X_SYS_EXEC](experimental-feature.md#aqua_experimental_x_sys_exec)
 
 ## JSON Schema
 
