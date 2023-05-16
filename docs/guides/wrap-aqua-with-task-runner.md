@@ -33,7 +33,7 @@ $ make tf-init
 $ make tf-init
 bash scripts/setup_aqua.sh
 aqua-installer: OK
-===> Installing aqua v2.2.3 for bootstraping...
+===> Installing aqua v2.2.3 for bootstrapping...
 ===> Downloading https://github.com/aquaproj/aqua/releases/download/v2.2.3/aqua_linux_arm64.tar.gz ...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -120,7 +120,7 @@ commands will detect it and remind you to do so if necessary.
 
 </details>
 
-Directory strcture
+Directory structure
 
 ```
 Makefile or Taskfile.yml
