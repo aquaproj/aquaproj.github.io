@@ -27,13 +27,15 @@ Please create a classic personal access token and add it to Repository Secrets.
 GitHub Actions' token `GITHUB_TOKEN` is unavailable.
 :::
 
-:::caution
-Unfortunately, fine-grained personal access token is unavailable at the moment because it doesn't support GraphQL API.
-https://github.com/cli/cli/issues/6680
+:::info
+~~Unfortunately, fine-grained personal access token is unavailable at the moment because it doesn't support GraphQL API.~~
+~~https://github.com/cli/cli/issues/6680~~
+
+2023-04-27 [fine-grained access token supports GraphQL API now.](https://github.blog/changelog/2023-04-27-graphql-improvements-for-fine-grained-pats-and-github-apps/)
 :::
 
 :::info
-In this time we use a classic personal access token, but we recommend GitHub App in terms of security.
+In this time we use a classic personal access token, but we recommend GitHub App or fine-grained access token in terms of security.
 :::
 
 ## Create aqua.yaml

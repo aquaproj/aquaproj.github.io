@@ -40,9 +40,11 @@ $ aqua g -i int128/ghcp
 
 Required permissions: `contents: write`
 
-:::caution
-Unfortunately, fine-grained personal access token is unavailable at the moment because it doesn't support GraphQL API.
-https://github.com/cli/cli/issues/6680
+:::info
+~~Unfortunately, fine-grained personal access token is unavailable at the moment because it doesn't support GraphQL API.~~
+~~https://github.com/cli/cli/issues/6680~~
+
+2023-04-27 [fine-grained access token supports GraphQL API now.](https://github.blog/changelog/2023-04-27-graphql-improvements-for-fine-grained-pats-and-github-apps/)
 :::
 
 ## Outputs
