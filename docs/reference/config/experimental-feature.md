@@ -17,37 +17,7 @@ But experimental features are exception of semantic versioning, so maybe we abor
 
 [#710](https://github.com/aquaproj/aqua/issues/710) [#715](https://github.com/aquaproj/aqua/pull/715) [#726](https://github.com/aquaproj/aqua/pull/726), `aqua >= v1.6.0`
 
-To enable this feature, please set `true` to the environment variable `AQUA_EXPERIMENTAL_X_SYS_EXEC`.
-
-```console
-$ export AQUA_EXPERIMENTAL_X_SYS_EXEC=true
-````
-
 :::caution
-Note that there is a known issue of this feature on macOS, so we don't recommend this feature for macOS users. [#729](https://github.com/aquaproj/aqua/issues/729)
+Deprecated in aqua v2.5.0.
+Please see [AQUA_X_SYS_EXEC](/docs/reference/execve-2).
 :::
-
-By default, aqua executes commands as sub commands.
-
-Let's run Neovim with aqua and check the process true.
-
-```console
-$ pstree -s nvim
-```
-
-```
-     \-+= 00719 shunsukesuzuki -zsh
-       \-+= 09955 shunsukesuzuki nvim
-         \-+- 09956 shunsukesuzuki aqua exec -- nvim
-           \--- 09957 shunsukesuzuki /Users/shunsukesuzuki/.local/share/aquaproj-aqua/pkgs/github_release/github.com/neovim/neovim/v0.7.0/nvim-macos.tar.gz/nvim-osx64/bin/nvim
-```
-
-You can confirm three processes are started.
-By enabling this feature, aqua executes commands by [execve(2)](https://pkg.go.dev/golang.org/x/sys/unix#Exec),
-
-```
-     \-+= 00719 shunsukesuzuki -zsh
-       \--= 10188 shunsukesuzuki nvim
-```
-
-You can confirm only one process is started.
