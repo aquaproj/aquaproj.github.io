@@ -23,7 +23,10 @@ Please install these tools in advance.
 
 ## Fields
 
-- `crate`: Crate name. e.g. [skim](https://crates.io/crates/skim)
+- `crate` (required): Crate name. e.g. [skim](https://crates.io/crates/skim)
+- `cargo`: `cargo install` command options
+  - `all_features` (boolean): `--all-features` option
+  - `features` ([]string): `--features` option
 
 ## Example
 
@@ -36,6 +39,13 @@ packages:
     crate: skim
     files:
       - name: sk
+  - name: crates.io/broot
+    type: cargo
+    crate: broot
+    cargo:
+      all_features: true
+      # features:
+      #   - clipboard
 ```
 
 aqua.yaml
