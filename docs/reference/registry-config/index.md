@@ -29,11 +29,12 @@ packages:
 
 ## Package types
 
-* [github_archive](github-archive-package.md): The package is downloaded from GitHub Archive
-* [github_content](github-content-package.md): The package is downloaded from GitHub Content
-* [github_release](github-release-package.md): The package is downloaded from GitHub Releases
-* [go_install](go-install-package.md): The package is installed by `go install` command
-* [http](http-package.md): The package is downloaded from the specified URL
+- [cargo](cargo-package.md): The package is installed by [cargo install](https://doc.rust-lang.org/cargo/commands/cargo-install.html) command. `aqua >= v2.8.0`
+- [github_archive](github-archive-package.md): The package is downloaded from GitHub Archive
+- [github_content](github-content-package.md): The package is downloaded from GitHub Content
+- [github_release](github-release-package.md): The package is downloaded from GitHub Releases
+- [go_install](go-install-package.md): The package is installed by `go install` command. `aqua >= v1.10.0`
+- [http](http-package.md): The package is downloaded from the specified URL
 
 ## Common attributes
 
