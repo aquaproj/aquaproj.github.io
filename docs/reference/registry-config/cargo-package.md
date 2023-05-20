@@ -25,6 +25,12 @@ Please install these tools in advance.
 
 - `crate`: Crate name. e.g. [skim](https://crates.io/crates/skim)
 
+## aqua-renovate-config
+
+[#405](https://github.com/aquaproj/aqua-renovate-config/pull/405) aqua-renovate-config >= [1.6.0](https://github.com/aquaproj/aqua-renovate-config/releases/tag/1.6.0)
+
+If the package name starts with `crates.io/`, aqua-renovate-config updates the package using [crate](https://docs.renovatebot.com/modules/datasource/crate/) datasource.
+
 ## Example
 
 registry.yaml
