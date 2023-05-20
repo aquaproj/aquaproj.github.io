@@ -74,6 +74,10 @@ warning: be sure to add `/home/foo/.local/share/aquaproj-aqua/pkgs/cargo/crates.
 ```
 :::
 
+:::caution
+If `cargo install` fails, please see [here](/docs/reference/codes/005).
+:::
+
 <details>
 <summary>$ aqua i</summary>
 
