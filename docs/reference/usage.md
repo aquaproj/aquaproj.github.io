@@ -1,5 +1,5 @@
 ---
-sidebar_position: 50
+sidebar_position: 400
 ---
 
 # Usage
@@ -15,11 +15,12 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   1.36.0 (3f31cf223d8968ee662fe2a06bc5a577958b7b10)
+   2.8.0 (7dc5d9249f00be29b5296abeb1b11939e5c8fac8)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
-   init-policy            Create a policy file if it doesn't exist
+   init-policy            [Deprecated] Create a policy file if it doesn't exist
+   policy                 Manage Policy
    install, i             Install tools
    update-aqua            Update aqua
    generate, g            Search packages in registries and output the configuration interactively
@@ -30,7 +31,8 @@ COMMANDS:
    completion             Output shell completion script for bash or zsh
    version                Show version
    cp                     Copy executable files in a directory
-   update-checksum        Create or Update .aqua-checksums.json
+   root-dir               Output the aqua root directory (AQUA_ROOT_DIR)
+   update-checksum        Create or Update aqua-checksums.json
    help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
@@ -38,8 +40,8 @@ GLOBAL OPTIONS:
    --config value, -c value  configuration file path [$AQUA_CONFIG]
    --trace value             trace output file path
    --cpu-profile value       cpu profile output file path
-   --help, -h                show help (default: false)
-   --version, -v             print the version (default: false)
+   --help, -h                show help
+   --version, -v             print the version
 ```
 
 ## aqua install
@@ -77,11 +79,11 @@ DESCRIPTION:
 
 OPTIONS:
    --only-link, -l         create links but skip downloading packages (default: false)
-   --test                  test file.src after installing the package (default: false)
+   --test                  This flag was deprecated and had no meaning from aqua v2.0.0. This flag will be removed in aqua v3.0.0. https://github.com/aquaproj/aqua/issues/1691 (default: false)
    --all, -a               install all aqua configuration packages (default: false)
    --tags value, -t value  filter installed packages with tags
    --exclude-tags value    exclude installed packages with tags
-   --help, -h              show help (default: false)
+   --help, -h              show help
 ```
 
 ## aqua generate
@@ -188,7 +190,7 @@ OPTIONS:
    --pin                 Pin version (default: false)
    -o value              inserted file
    --select-version, -s  Select the installed version interactively (default: false)
-   --help, -h            show help (default: false)
+   --help, -h            show help
 ```
 
 ## aqua init
@@ -208,7 +210,7 @@ DESCRIPTION:
    $ aqua init foo.yaml # create foo.yaml
 
 OPTIONS:
-   --help, -h  show help (default: false)
+   --help, -h  show help
 ```
 
 ## aqua update-aqua
@@ -236,7 +238,7 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --help, -h  show help (default: false)
+   --help, -h  show help
 ```
 
 ## aqua update-checksum
@@ -244,27 +246,22 @@ OPTIONS:
 ```console
 $ aqua help update-checksum
 NAME:
-   aqua update-checksum - Create or Update .aqua-checksums.json
+   aqua update-checksum - Create or Update aqua-checksums.json
 
 USAGE:
    aqua update-checksum [command options] [arguments...]
 
 DESCRIPTION:
-   Create or Update .aqua-checksums.json.
+   Create or Update aqua-checksums.json.
 
    e.g.
    $ aqua update-checksum
 
-   By default aqua doesn't update .aqua-checksums.json of the global configuration.
+   By default aqua doesn't update aqua-checksums.json of the global configuration.
    If you want to update them too,
    please set "-a" option.
 
    $ aqua update-checksum -a
-
-   By default, aqua update-checksum doesn't add checksums if the package's checksum configuration is disabled.
-   If -deep option is set, aqua update-checksum downloads assets and calculate checksums.
-
-   $ aqua update-checksum -deep
 
    By default, aqua update-checksum doesn't remove existing checksums even if they aren't unused.
    If -prune option is set, aqua unused checksums would be removed.
@@ -273,10 +270,10 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --all, -a   Create or Update all .aqua-checksums.json including global configuration (default: false)
-   --deep      If a package's checksum configuration is disabled, download the asset and calculate the checksum (default: false)
+   --all, -a   Create or Update all aqua-checksums.json including global configuration (default: false)
+   --deep      This flag was deprecated and had no meaning from aqua v2.0.0. This flag will be removed in aqua v3.0.0. https://github.com/aquaproj/aqua/issues/1769 (default: false)
    --prune     Remove unused checksums (default: false)
-   --help, -h  show help (default: false)
+   --help, -h  show help
 ```
 
 ## aqua which
@@ -307,7 +304,7 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --help, -h  show help (default: false)
+   --help, -h  show help
 ```
 
 ## aqua generate-registry
@@ -375,7 +372,7 @@ DESCRIPTION:
 OPTIONS:
    --out-testdata value  A file path where the testdata is outputted
    --deep                Resolve version_overrides (default: false)
-   --help, -h            show help (default: false)
+   --help, -h            show help
 ```
 
 ## aqua cp
@@ -420,7 +417,7 @@ OPTIONS:
    --all, -a               install all aqua configuration packages (default: false)
    --tags value, -t value  filter installed packages with tags
    --exclude-tags value    exclude installed packages with tags
-   --help, -h              show help (default: false)
+   --help, -h              show help
 ```
 
 ## aqua list
@@ -446,7 +443,7 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --help, -h  show help (default: false)
+   --help, -h  show help
 ```
 
 ## aqua completion
@@ -478,7 +475,7 @@ COMMANDS:
    help, h  Shows a list of commands or help for one command
 
 OPTIONS:
-   --help, -h  show help (default: false)
+   --help, -h  show help
 ```
 
 ## aqua exec
@@ -501,6 +498,6 @@ DESCRIPTION:
    https://github.com/cli/cli/releases/tag/v2.4.0
 
 OPTIONS:
-   --help, -h  show help (default: false)
+   --help, -h  show help
 ```
 
