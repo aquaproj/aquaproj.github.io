@@ -10,6 +10,14 @@ aqua is a single binary written in Go.
 1. add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH`
 
 :::info
+From aqua v2.8.0, `aqua root-dir` command is available.
+
+```bash
+export PATH="$(aqua root-dir)/bin:$PATH"
+```
+:::
+
+:::tip
 If you use aqua combined with other version manager such as asdf,
 please add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH` after other version manager.
 For detail, please see [here](/docs/reference/use-aqua-with-other-tools).
