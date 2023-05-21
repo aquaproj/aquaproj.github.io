@@ -28,6 +28,15 @@ Please install these tools in advance.
   - `all_features` (boolean): `--all-features` option
   - `features` ([]string): `--features` option
 
+## Try `cargo` package quickly
+
+```console
+$ aqua init
+$ aqua g -i crates.io/skim
+$ aqua i -l
+$ sk -V
+```
+
 ## Example
 
 registry.yaml
@@ -210,3 +219,12 @@ packages:
     files: # Set files manually
       - name: sk
 ```
+
+### :bulb: Package name
+
+:::tip
+If you add a crate hosted at [crates.io](https://crates.io/), we recommend the package name is `crates.io/<crate name>` such as `crates.io/skim` because
+
+1. `aqua gr` and `aqua-registry gr` command can treat the package as `cargo` package
+1. [aqua-renovate-config](/docs/products/aqua-renovate-config) can update the package
+:::

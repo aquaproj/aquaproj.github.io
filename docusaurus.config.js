@@ -44,9 +44,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       announcementBar: {
-        id: 'release_aqua_v2',
+        id: 'cargo_package',
         content:
-          '<a href="/docs/reference/upgrade-guide/v2">Released aqua v2! (2023-03-21)</a>',
+          '<a href="/docs/reference/registry-config/cargo-package">aqua v2.8.0 supports installing packages by cargo install (2023-05-21)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
