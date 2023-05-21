@@ -30,9 +30,17 @@ chmod +x aqua-installer
 
 Add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH`.
 
-```console
+```bash
 export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
 ```
+
+:::info
+From aqua v2.8.0, `aqua root-dir` command is available.
+
+```bash
+export PATH="$(aqua root-dir)/bin:$PATH"
+```
+:::
 
 Confirm if aqua is installed correctly.
 
