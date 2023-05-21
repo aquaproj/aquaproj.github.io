@@ -236,6 +236,6 @@ Please see [the caution](/docs/reference/registry-config/supported-if).
 
 For example, you can also use `http` type to install the package from GitHub Releases, but in that case you should use `github_release` rather than `http`.
 
-## Use `go_install` rather than `go`
+## `cargo` package name should be `crates.io/<crate name>`
 
-Please see [the caution](/docs/reference/registry-config/go-package).
+Please see [here](/docs/reference/registry-config/cargo-package#-package-name).
