@@ -26,6 +26,25 @@ For example, you don't have to create an Issue in the following cases.
 On the other hand, for example if you want to change the directory structure in `pkgs` or the workflow adding a package,
 you have to create an Issue and describe what is changed and why the change is needed.
 
+## aqua can't support some tools' plugin mechanism
+
+Some tools have the plugin mechanism.
+
+e.g.
+
+- [GitHub CLI Extension](https://docs.github.com/en/github-cli/github-cli/creating-github-cli-extensions)
+- [Terraform provider](https://developer.hashicorp.com/terraform/language/providers)
+- [Gauge plugin](https://docs.gauge.org/plugin.html?os=macos&language=java&ide=null)
+- etc
+
+aqua simply installs commands in PATH (`AQUA_ROOT_DIR/bin`), but some of these plugins expect to be installed in the other location.
+If aqua can't support the plugin, we will reject the pull request adding the plugin to aqua-registry.
+
+So if you send a pull request adding a plugin to aqua-registry, please check if aqua can support the plugin.
+We aren't necessarily familiar with the plugin, so please explain where the plugin expects to be installed and how the plugin works in the pull request description.
+
+If you don't know well, please create a pull request and consult us.
+
 ## Requirements
 
 - [aqua](https://aquaproj.github.io/docs/install) >= [v1.14.0](https://github.com/aquaproj/aqua/releases/tag/v1.14.0)
