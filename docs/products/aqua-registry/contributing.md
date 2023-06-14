@@ -69,6 +69,16 @@ $ aqua i -l # Install aqua-registry CLI
 1. Create a pull request: `aqua-registry create-pr-new-pkg <package name>...`
 
 :::info
+If you face GitHub API rate limiting, please set the GitHub Access token with environment variable `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN`.
+
+e.g.
+
+```sh
+export GITHUB_TOKEN=<YOUR PERSONAL ACCESS TOKEN>
+```
+:::
+
+:::info
 When you update `pkgs/**/registry.yaml`, you have to run `aqua-registry gr` to reflect the update to `registry.yaml` on the repository root directory.
 :::
 
