@@ -49,6 +49,14 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * [AQUA_GOOS, AQUA_GOARCH](/docs/develop-registry/change-os-arch-for-test)
 * [AQUA_X_SYS_EXEC](/docs/reference/execve-2)
 * (Deprecated) [AQUA_EXPERIMENTAL_X_SYS_EXEC](experimental-feature.md#aqua_experimental_x_sys_exec)
+* `AQUA_GENERATE_WITH_DETAIL`: (boolean, default: `false`) If true, aqua outputs additional information such as description and link [#2027](https://github.com/orgs/aquaproj/discussions/2027) [#2062](https://github.com/aquaproj/aqua/pull/2062) (aqua >= v2.9.0)
+
+```console
+$ env AQUA_GENERATE_WITH_DETAIL=true aqua g cli/cli
+- name: cli/cli@v2.2.0
+  description: GitHub’s official command line tool
+  link: https://github.com/cli/cli
+```
 
 ## JSON Schema
 

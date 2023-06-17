@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   2.8.0 (7dc5d9249f00be29b5296abeb1b11939e5c8fac8)
+   2.9.0 (4d66e74a59ba3063ca7ea83824b754a68b849d6e)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -183,11 +183,19 @@ DESCRIPTION:
    - name: cli/cli
      version: v2.2.0
 
+   With -detail option, aqua outputs additional information such as description and link.
+
+   $ aqua g -detail cli/cli
+   - name: cli/cli@v2.2.0
+     description: GitHub’s official command line tool
+     link: https://github.com/cli/cli
+
 
 OPTIONS:
    -f value              the file path of packages list. When the value is "-", the list is passed from the standard input
    -i                    Insert packages to configuration file (default: false)
    --pin                 Pin version (default: false)
+   --detail, -d          Output additional fields such as description and link (default: false) [$AQUA_GENERATE_WITH_DETAIL]
    -o value              inserted file
    --select-version, -s  Select the installed version interactively (default: false)
    --help, -h            show help
@@ -469,13 +477,6 @@ DESCRIPTION:
    if command -v aqua &> /dev/null; then source <(aqua completion zsh); fi
 
 
-COMMANDS:
-   bash     Output shell completion script for bash
-   zsh      Output shell completion script for zsh
-   help, h  Shows a list of commands or help for one command
-
-OPTIONS:
-   --help, -h  show help
 ```
 
 ## aqua exec
