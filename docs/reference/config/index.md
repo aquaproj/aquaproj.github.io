@@ -9,7 +9,7 @@ e.g. [aqua.yaml](https://github.com/aquaproj/aqua/blob/main/aqua.yaml)
 ```yaml
 registries:
 - type: standard
-  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.19.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: helm/helm@v3.7.0
@@ -38,6 +38,7 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * [AQUA_GLOBAL_CONFIG](/docs/tutorial/global-config): global configuration file paths separated by semicolon `:`
 * `AQUA_POLICY_CONFIG`: [policy file](/docs/reference/security/policy-as-code) paths separated by semicolon `:`
 * `AQUA_DISABLE_POLICY`: If true, [Policy](/docs/reference/security/policy-as-code) is disabled (aqua >= v2.1.0)
+* `AQUA_DISABLE_LAZY_INSTALL`: If true, [Lazy Install](/docs/reference/lazy-install/) is disabled (aqua >= v2.9.0)
 * `AQUA_ROOT_DIR`: The directory path where aqua install tools
   * default (linux and macOS): `${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua`
   * default (windows): `${HOME/AppData/Local}/aquaproj-aqua`

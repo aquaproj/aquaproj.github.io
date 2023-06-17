@@ -21,6 +21,33 @@ https://github.com/cli/cli/releases/tag/v2.1.0
 - You don't have to run `aqua i` to update packages
 - You can ensure executed tool versions
 
+## Disable Lazy Install
+
+[#2058](https://github.com/orgs/aquaproj/discussions/2058) aqua >= v2.9.0
+
+Lazy Install is enabled by default, but you can disable it with the environment variable `AQUA_DISABLE_LAZY_INSTALL`.
+
+e.g.
+
+```sh
+export AQUA_DISABLE_LAZY_INSTALL=true
+```
+
+If Lazy Install is disabled, the command would fail if the package isn't installed in advance.
+
+e.g.
+
+```console
+$ tfcmt -v
+FATA[0000] aqua failed                                   aqua_version= doc="https://aquaproj.github.io/docs/reference/codes/006" env=darwin/arm64 error="the executable file isn't installed yet. Lazy Install is disabled" exe_name=tfcmt package=suzuki-shunsuke/tfcmt package_version=v1.0.0 program=aqua
+```
+
+Disabling Lazy Install is useful to improve the security and keep the governance. You can prevent malicious commands from being installed and executed via Lazy Install. And you can also prevent aqua.yaml from being overwritten.
+
+This is especially useful for CI of Monorepo.
+
+The purpose is same with aqua's Policy, but disabling Lazy Install is simpler than Policy.
+
 ## How does Lazy Install work?
 
 :::caution
