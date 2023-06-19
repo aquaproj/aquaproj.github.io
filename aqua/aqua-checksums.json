@@ -1,18 +1,18 @@
 {
   "checksums": [
     {
-      "id": "github_release/github.com/crate-ci/typos/v1.15.0/typos-v1.15.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "25BE63B7DDD8FD0F35AE97339BD52CCAEC98B03EBA234083B72C9EE36D039BD7FB34764B05BB1C54C11D4C827BBD1FE07520FAA7CA5CB50F0AE5C31878005BA2",
+      "id": "github_release/github.com/crate-ci/typos/v1.15.1/typos-v1.15.1-x86_64-apple-darwin.tar.gz",
+      "checksum": "C3EAC4BE3E17CE8EE57BF991974FAFBDD8D57891C0E92CB9914B8A02C947640357CA491F9C0260C825BD1DE82FFA0F5E5F1D97B6482A7F783EAEC4793918A0A3",
       "algorithm": "sha512"
     },
     {
-      "id": "github_release/github.com/crate-ci/typos/v1.15.0/typos-v1.15.0-x86_64-pc-windows-msvc.zip",
-      "checksum": "0BE52B565917ED5FE635907F343CEEAA7AC7885FC4BE810DA19B513754DC0968CFB743EFFD3F5E4B5700AAC84275872C461918A5AB52670E789343AD89F93770",
+      "id": "github_release/github.com/crate-ci/typos/v1.15.1/typos-v1.15.1-x86_64-pc-windows-msvc.zip",
+      "checksum": "2EC77416081A445BB4B426299910BFD087B9A4120A9C8EF7461BB8A7C899714B829F173412D0C80FDE1D0BC522CE3F59FC0989095DB79CADF5DB3C24AC7D2B22",
       "algorithm": "sha512"
     },
     {
-      "id": "github_release/github.com/crate-ci/typos/v1.15.0/typos-v1.15.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "0B7A64F195C256F145749F1C36A70DA1F3FC3974877F4A69BC0CFDA8F850EBC7AC031750A992FF2C4F7F65149FDFBA46ACA3ECA37F87690EE13637750603C394",
+      "id": "github_release/github.com/crate-ci/typos/v1.15.1/typos-v1.15.1-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "E79D869852217E499CB5213CDF84870748F425F836BCF7C0B33C68A3CDE0AA5876817300EF4C3DDB56B3F2DAE0DB4A9615CF4DE4F25B57274C23DDDCB3888B5B",
       "algorithm": "sha512"
     },
     {
