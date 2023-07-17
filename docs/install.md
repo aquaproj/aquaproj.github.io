@@ -42,6 +42,10 @@ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 
 [aqua-installer](/docs/products/aqua-installer)
 
+## CircleCI Orb
+
+[circleci-orb-aqua](/docs/products/circleci-orb-aqua)
+
 ## Go
 
 ```sh
