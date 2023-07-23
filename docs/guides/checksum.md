@@ -63,6 +63,10 @@ packages:
 
 ## Set up GitHub Actions Workflow
 
+:::caution
+For CircleCI Users, please use [circleci-orb-aqua's update-checksum command](https://circleci.com/developer/orbs/orb/aquaproj/aqua#commands-update-checksum) instead.
+:::
+
 To create and update `aqua-checksum.json` automatically, let's set up GitHub Actions.
 
 ```
