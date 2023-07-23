@@ -15,10 +15,11 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   2.9.0 (4d66e74a59ba3063ca7ea83824b754a68b849d6e)
+   2.10.0 (b80f805489c317d83d7fe0b182f3ef5c82a06725)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
+   info                   Show information
    init-policy            [Deprecated] Create a policy file if it doesn't exist
    policy                 Manage Policy
    install, i             Install tools
@@ -426,6 +427,25 @@ OPTIONS:
    --tags value, -t value  filter installed packages with tags
    --exclude-tags value    exclude installed packages with tags
    --help, -h              show help
+```
+
+## aqua info
+
+```console
+$ aqua help info
+NAME:
+   aqua info - Show information
+
+USAGE:
+   aqua info [command options] [arguments...]
+
+DESCRIPTION:
+   Show information.
+   e.g.
+   $ aqua info
+
+OPTIONS:
+   --help, -h  show help
 ```
 
 ## aqua list
