@@ -13,7 +13,7 @@ command_console() {
 }
 
 commands() {
-  for cmd in install generate init update-aqua update-checksum which generate-registry cp list completion exec; do
+  for cmd in install generate init update-aqua update-checksum which generate-registry cp info list completion exec; do
     echo "
 ## aqua $cmd
 
