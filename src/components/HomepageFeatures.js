@@ -52,16 +52,17 @@ const FeatureList = [
       <>
         <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/176582627-44f27c48-213b-44da-b18f-d4d482ef2f56.png"/ >
         
-        aqua provides <a target="_blank" href="https://github.com/aquaproj/aqua-renovate-config">Renovate Config Preset</a>, so you can update tools by Renovate easily.
+        aqua provides <a href="/docs/products/aqua-renovate-config/">Renovate Config Preset</a>, so you can update tools by Renovate easily.
       </>
     ),
   },
   {
-    title: 'GitHub Actions',
+    title: 'GitHub Actions & CircleCI Orb',
     description: (
       <>
         <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/176584418-c6a4adca-e4d8-45aa-98b0-6ae3b543b007.png" />
-        Please see <a href="/docs/reference/install">Install</a>.
+        aqua has GitHub Actions and CircleCI Orb to install aqua and update checksum files.
+        Please see <a href="/docs/products/aqua-installer">aqua-installer</a> and <a href="/docs/products/circleci-orb-aqua">circleci-orb-aqua</a>
       </>
     ),
   },
