@@ -2,7 +2,7 @@
 sidebar_position: 1320
 ---
 
-# `pip` Package
+# `pypi` Package
 
 [#2128](https://github.com/aquaproj/aqua/issues/2128) [#2142](https://github.com/aquaproj/aqua/issues/2142) `aqua >= v2.11.0`
 
@@ -52,7 +52,7 @@ pre-commit --version
 
 ## aqua-renovate-config
 
-From 1.8.0, [aqua-renovate-config](/docs/products/aqua-renovate-config) supports `pip` packages.
+From 1.8.0, [aqua-renovate-config](/docs/products/aqua-renovate-config) supports `pypi` packages.
 
 :::caution
 Package names must be `pypi.org/<pypi package name>`.
@@ -61,7 +61,7 @@ e.g. `pypi.org/pre-commit`.
 :::
 
 
-## Add new pip packages to Standard Registry
+## Add new pypi packages to Standard Registry
 
 Please send a pull request to https://github.com/aquaproj/aqua-registry .
 Package names must be `pypi.org/<pypi package name>`.
@@ -74,7 +74,7 @@ e.g. `pypi.org/pre-commit`.
 This includes details of the internal implementation, which may be changed without notice.
 :::
 
-`pip` packages are installed in `<AQUA_ROOT_DIR>/pkgs/pip/pypi.org/<pypi package name>/<version>`,
+`pypi` packages are installed in `<AQUA_ROOT_DIR>/pkgs/pip/pypi.org/<pypi package name>/<version>`,
 and executable files are installed in `<AQUA_ROOT_DIR>/pkgs/pip/pypi.org/<pypi package name>/<version>/bin/<command>`.
 
 aqua internally runs `pip install` commands.
@@ -91,23 +91,23 @@ e.g.
 
 ```yaml
 packages:
-  - type: pip
-    pip_name: pre-commit
+  - type: pypi
+    pypi_name: pre-commit
 ```
 
-`type` must be `pip`. `pip_name` is required. Other fields are optional.
+`type` must be `pypi`. `pypi_name` is required. Other fields are optional.
 The above setting is equivalent to the following setting.
 
 ```yaml
 packages:
   - name: pypi.org/pre-commit
-    type: pip
-    pip_name: pre-commit
+    type: pypi
+    pypi_name: pre-commit
     files:
       - name: pre-commit
 ```
 
-`pip` packages don't support the following fields.
+`pypi` packages don't support the following fields.
 
 - format, format_overrides
 - checksum
