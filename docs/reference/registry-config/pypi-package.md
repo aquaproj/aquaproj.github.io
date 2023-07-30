@@ -23,7 +23,7 @@ We verified this feature with the following versions.
 
 ```console
 $ python --version
-$ pip --version
+$ python -m pip --version
 ```
 
 ## Get Started
@@ -61,7 +61,7 @@ e.g. `pypi.org/pre-commit`.
 :::
 
 
-## Add new pypi packages to Standard Registry
+## How to add new pypi packages to Standard Registry
 
 Please send a pull request to https://github.com/aquaproj/aqua-registry .
 Package names must be `pypi.org/<pypi package name>`.
@@ -72,15 +72,16 @@ e.g. `pypi.org/pre-commit`.
 
 :::caution
 This includes details of the internal implementation, which may be changed without notice.
+Please skip this section if you're not interested in the detail. You can use pypi packages even if you don't know this.
 :::
 
 `pypi` packages are installed in `<AQUA_ROOT_DIR>/pkgs/pip/pypi.org/<pypi package name>/<version>`,
 and executable files are installed in `<AQUA_ROOT_DIR>/pkgs/pip/pypi.org/<pypi package name>/<version>/bin/<command>`.
 
-aqua internally runs `pip install` commands.
+aqua internally runs `python -m pip install` commands.
 
 ```sh
-pip install --target "<AQUA_ROOT_DIR>/pkgs/pip/pypi.org/<pypi package name>/<version>" "<pypi package>"
+python -m pip install --target "<AQUA_ROOT_DIR>/pkgs/pip/pypi.org/<pypi package name>/<version>" "<pypi package>==<version>"
 ```
 
 aqua adds `<AQUA_ROOT_DIR>/pkgs/pip/pypi.org/<pypi package name>/<version>` to the environment variable [PYTHONPATH](https://docs.python.org/3/using/cmdline.html#envvar-PYTHONPATH) when pypi packages are executed.
@@ -115,7 +116,3 @@ packages:
 - checksum
 - slsa_provenance
 - cosign
-
-## Limitation
-
-Private packages aren't supported
