@@ -35,6 +35,7 @@ packages:
 - [github_release](github-release-package.md): The package is downloaded from GitHub Releases
 - [go_install](go-install-package.md): The package is installed by `go install` command. `aqua >= v1.10.0`
 - [http](http-package.md): The package is downloaded from the specified URL
+- [pip](pip-package.md): The package is installed [pip install](https://pip.pypa.io/en/stable/cli/pip_install/) command
 
 ## Common attributes
 
