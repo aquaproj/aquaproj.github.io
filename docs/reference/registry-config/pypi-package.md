@@ -83,6 +83,8 @@ aqua internally runs `pip install` commands.
 pip install --target "<AQUA_ROOT_DIR>/pkgs/pip/pypi.org/<pypi package name>/<version>" "<pypi package>"
 ```
 
+aqua adds `<AQUA_ROOT_DIR>/pkgs/pip/pypi.org/<pypi package name>/<version>` to the environment variable [PYTHONPATH](https://docs.python.org/3/using/cmdline.html#envvar-PYTHONPATH) when pypi packages are executed.
+
 `aqua g -s` gets the list of pypi package versions from the endpoint `https://pypi.org/pypi/<pypi package name>/json`.
 
 ## Registry
