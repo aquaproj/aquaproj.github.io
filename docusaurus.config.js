@@ -46,7 +46,7 @@ const config = {
       announcementBar: {
         id: 'cargo_package',
         content:
-          '<a href="/docs/reference/registry-config/cargo-package">aqua v2.8.0 supports installing packages by cargo install (2023-05-21)</a>',
+          '<a href="/docs/reference/registry-config/pypi-package">aqua v2.11.0 supports installing packages by pip install (2023-07-30)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
