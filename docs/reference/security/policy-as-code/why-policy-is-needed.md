@@ -7,7 +7,7 @@ sidebar_position: 200
 ## Protect your development environment and CI from threat
 
 The main purpose of Policy is to improve the security by preventing malicious tools from being executed.
-`local` Registry and `github_content` Registry are useful, but they can also be abused. From aqua v2, aqua forbids non Standard Registries by default because almost users don't need them.
+`local` Registry and `github_content` Registry are useful, but they can also be abused. From aqua v2, aqua forbids non Standard Registries by default because almost all users don't need them.
 
 ## Reduce the burden of code review keeping the security
 
