@@ -4,9 +4,7 @@ sidebar_position: 1250
 
 # `go_build` Package
 
-[#798](https://github.com/aquaproj/aqua/issues/798) [#799](https://github.com/aquaproj/aqua/issues/799)
-
-aqua >= [v2.11.0](https://github.com/aquaproj/aqua/releases/tag/v2.11.0)
+[#2131](https://github.com/aquaproj/aqua/issues/2131) [#2065](https://github.com/aquaproj/aqua/pull/2065)
 
 * `repo_owner`: The repository owner name
 * `repo_name`: The repository name
