@@ -235,9 +235,9 @@ aqua >= `v2.3.0`, aqua-installer >= `v2.1.0`
 If the input `policy_allow` is set, aqua-installer runs `aqua policy allow` command.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v2.1.0
+- uses: aquaproj/aqua-installer@v2.1.2
   with:
-    aqua_version: v2.3.0
+    aqua_version: v2.10.1
     policy_allow: "true"
 ```
 
