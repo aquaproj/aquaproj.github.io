@@ -59,9 +59,9 @@ packages:
 The default preset updates GitHub Actions [aquaproj/aqua-installer](https://github.com/aquaproj/aqua-installer)'s `aqua_version` in `.github` too.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v0.4.0
+- uses: aquaproj/aqua-installer@v2.1.2
   with:
-    aqua_version: v1.35.0
+    aqua_version: v2.10.1
 ```
 
 ### `file` Preset
@@ -91,7 +91,7 @@ You have to pass fileMatch as parameter.
 ```
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.0.2/aqua-installer | bash -s -- -v v1.25.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash -s -- -v v2.10.0
 ```
 
 :warning: To update aqua, please don't add newlines.
@@ -99,12 +99,12 @@ curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.0.2/aqua
 :thumbsup:
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.0.2/aqua-installer | bash -s -- -v v1.25.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash -s -- -v v2.10.0
 ```
 
 :thumbsdown:
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.0.2/aqua-installer |
-  bash -s -- -v v1.25.0 # aqua isn't updated
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer |
+  bash -s -- -v v2.10.0 # aqua isn't updated
 ```

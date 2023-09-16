@@ -37,7 +37,7 @@ jobs:
       contents: read
     with:
       aqua_policy_config: aqua-policy.yaml
-      aqua_version: v1.36.0
+      aqua_version: v2.10.1
       prune: true
     secrets:
       gh_app_id: ${{secrets.APP_ID}}

@@ -15,16 +15,16 @@ https://github.com/aquaproj/aqua-installer
 
 You can install aqua by the following one liner.
 
-```console
-$ curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer | bash
+```bash
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash
 ```
 
 But the one liner is a bit dangerous because aqua-installer may be tampered.
 We recommend verifying aqua-installer's checksum before running it.
 
-```sh
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer
-echo "c2af02bdd15da6794f9c98db40332c804224930212f553a805425441f8331665  aqua-installer" | sha256sum -c
+```bash
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer
+echo "411caf1b5fcef4f5e74aa2a9fe99182ea13ab93ecd8ed4a983a7cff9f08edab9  aqua-installer" | sha256sum -c
 chmod +x aqua-installer
 ./aqua-installer
 ```
@@ -34,7 +34,9 @@ aqua-installer installs aqua to the following path.
 * linux, macOS: `${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin/aqua`
 * windows: `${AQUA_ROOT_DIR:-$HOME/AppData/Local/aquaproj-aqua}/bin/aqua`
 
-:warning: From aqua-installer v2, aqua-installer doesn't support specifying the install path.
+:::caution
+From aqua-installer v2, aqua-installer doesn't support specifying the install path.
+:::
 
 You can pass the following parameters.
 
@@ -42,8 +44,8 @@ You can pass the following parameters.
 
 e.g.
 
-```console
-$ curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer | bash -s -- -v v1.36.0
+```bash
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash -s -- -v v2.10.0
 ```
 
 If the version isn't specified, the latest version would be installed.
@@ -53,15 +55,15 @@ If the version isn't specified, the latest version would be installed.
 e.g.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v2.1.1
+- uses: aquaproj/aqua-installer@v2.1.2
   with:
-    aqua_version: v2.3.1
+    aqua_version: v2.10.1
 ```
 
 ```yaml
-- uses: aquaproj/aqua-installer@v2.1.1
+- uses: aquaproj/aqua-installer@v2.1.2
   with:
-    aqua_version: v2.3.1
+    aqua_version: v2.10.1
     working_directory: foo
     aqua_opts: ""
   env:
@@ -111,9 +113,9 @@ e.g.
     key: v1-aqua-installer-${{runner.os}}-${{runner.arch}}-${{hashFiles('aqua.yaml')}}
     restore-keys: |
       v1-aqua-installer-${{runner.os}}-${{runner.arch}}-
-- uses: aquaproj/aqua-installer@v2.1.1
+- uses: aquaproj/aqua-installer@v2.1.2
   with:
-    aqua_version: v2.6.0
+    aqua_version: v2.10.0
 ```
 
 Please fix `actions/cache`'s parameters properly.
@@ -134,9 +136,9 @@ aqua-installer runs aqua with [-l](https://aquaproj.github.io/docs/tutorial/inst
 If you want to cache all packages, please set `aqua_opts` to unset `-l` option.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v2.1.1
+- uses: aquaproj/aqua-installer@v2.1.2
   with:
-    aqua_version: v2.6.0
+    aqua_version: v2.10.0
     aqua_opts: "" # Unset `-l` option
 ```
 
