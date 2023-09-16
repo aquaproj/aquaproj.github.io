@@ -33,6 +33,7 @@ packages:
 - [github_archive](github-archive-package.md): The package is downloaded from GitHub Archive
 - [github_content](github-content-package.md): The package is downloaded from GitHub Content
 - [github_release](github-release-package.md): The package is downloaded from GitHub Releases
+- [go_build](go-build-package.md): The package is installed by `go build` command. `aqua >= v2.11.0`
 - [go_install](go-install-package.md): The package is installed by `go install` command. `aqua >= v1.10.0`
 - [http](http-package.md): The package is downloaded from the specified URL
 

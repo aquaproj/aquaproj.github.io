@@ -6,7 +6,7 @@ sidebar_position: 1200
 
 :::caution
 [This package type was abandoned at aqua v2.0.0](/docs/reference/upgrade-guide/v2/remove-type-go).
-Use `go_install` package instead.
+Use [go_install](go-install-package.md) or [go_build](go-build-package.md) package instead.
 :::
 
 [#798](https://github.com/aquaproj/aqua/issues/798) [#799](https://github.com/aquaproj/aqua/issues/799)
