@@ -43,14 +43,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // announcementBar: {
-      //   id: 'cargo_package',
-      //   content:
-      //     '<a href="/docs/reference/registry-config/cargo-package">aqua v2.8.0 supports installing packages by cargo install (2023-05-21)</a>',
-      //   backgroundColor: '#7FFF00',
-      //   textColor: '#091E42',
-      //   isCloseable: true,
-      // },
+      announcementBar: {
+        id: 'uninstall_package',
+        content:
+          '<a href="/docs/guides/uninstall-packages/">aqua v2.11.0 supports uninstalling packages</a>',
+        backgroundColor: '#7FFF00',
+        textColor: '#091E42',
+        isCloseable: true,
+      },
       navbar: {
         title: 'aqua',
         logo: {
