@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   2.10.0 (b80f805489c317d83d7fe0b182f3ef5c82a06725)
+   2.11.0 (90937150bd6f20f209bf8d1e9858d5b0dc9f9f14)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -34,6 +34,7 @@ COMMANDS:
    cp                     Copy executable files in a directory
    root-dir               Output the aqua root directory (AQUA_ROOT_DIR)
    update-checksum        Create or Update aqua-checksums.json
+   remove, rm             Uninstall packages
    help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
@@ -316,6 +317,101 @@ OPTIONS:
    --help, -h  show help
 ```
 
+## aqua remove
+
+```console
+$ aqua help remove
+NAME:
+   aqua remove - Uninstall packages
+
+USAGE:
+   aqua remove [command options] [<registry name>,]<package name> [...]
+
+DESCRIPTION:
+   Uninstall packages.
+
+   e.g.
+   $ aqua rm --all
+   $ aqua rm cli/cli direnv/direnv
+
+   If you want to uninstall packages of non standard registry, you need to specify the registry name too.
+
+   e.g.
+   $ aqua rm foo,suzuki-shunsuke/foo
+
+   Limitation:
+   "http" and "go_install" packages can't be removed.
+
+
+OPTIONS:
+   --all, -a   uninstall all packages (default: false)
+   --help, -h  show help
+```
+
+## aqua cp
+
+```console
+$ aqua help cp
+NAME:
+   aqua cp - Copy executable files in a directory
+
+USAGE:
+   aqua cp [command options] <command name> [<command name> ...]
+
+DESCRIPTION:
+   Copy executable files in a directory.
+
+   e.g.
+   $ aqua cp gh
+   $ ls dist
+   gh
+
+   You can specify the target directory by -o option.
+
+   $ aqua cp -o ~/bin terraform hugo
+
+   If you don't specify commands, all commands are copied.
+
+   $ aqua cp
+
+   You can also copy global configuration files' commands with "-a" option.
+
+   $ aqua cp -a
+
+   You can filter copied commands with package tags.
+
+   e.g.
+   $ aqua cp -t foo # Copy only packages having a tag "foo"
+   $ aqua cp --exclude-tags foo # Copy only packages not having a tag "foo"
+
+
+OPTIONS:
+   -o value                destination directory
+   --all, -a               install all aqua configuration packages (default: false)
+   --tags value, -t value  filter installed packages with tags
+   --exclude-tags value    exclude installed packages with tags
+   --help, -h              show help
+```
+
+## aqua info
+
+```console
+$ aqua help info
+NAME:
+   aqua info - Show information
+
+USAGE:
+   aqua info [command options] [arguments...]
+
+DESCRIPTION:
+   Show information.
+   e.g.
+   $ aqua info
+
+OPTIONS:
+   --help, -h  show help
+```
+
 ## aqua generate-registry
 
 ```console
@@ -382,70 +478,6 @@ OPTIONS:
    --out-testdata value  A file path where the testdata is outputted
    --deep                Resolve version_overrides (default: false)
    --help, -h            show help
-```
-
-## aqua cp
-
-```console
-$ aqua help cp
-NAME:
-   aqua cp - Copy executable files in a directory
-
-USAGE:
-   aqua cp [command options] <command name> [<command name> ...]
-
-DESCRIPTION:
-   Copy executable files in a directory.
-
-   e.g.
-   $ aqua cp gh
-   $ ls dist
-   gh
-
-   You can specify the target directory by -o option.
-
-   $ aqua cp -o ~/bin terraform hugo
-
-   If you don't specify commands, all commands are copied.
-
-   $ aqua cp
-
-   You can also copy global configuration files' commands with "-a" option.
-
-   $ aqua cp -a
-
-   You can filter copied commands with package tags.
-
-   e.g.
-   $ aqua cp -t foo # Copy only packages having a tag "foo"
-   $ aqua cp --exclude-tags foo # Copy only packages not having a tag "foo"
-
-
-OPTIONS:
-   -o value                destination directory
-   --all, -a               install all aqua configuration packages (default: false)
-   --tags value, -t value  filter installed packages with tags
-   --exclude-tags value    exclude installed packages with tags
-   --help, -h              show help
-```
-
-## aqua info
-
-```console
-$ aqua help info
-NAME:
-   aqua info - Show information
-
-USAGE:
-   aqua info [command options] [arguments...]
-
-DESCRIPTION:
-   Show information.
-   e.g.
-   $ aqua info
-
-OPTIONS:
-   --help, -h  show help
 ```
 
 ## aqua list
