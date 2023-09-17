@@ -14,6 +14,10 @@ $ aqua rm --all [-a] # Uninstall all packages
 $ aqua rm [<registry name>,]<package name> [...] # Uninstall packages
 ```
 
+```console
+$ aqua rm -i # Select packages interactively with a fuzzy finder
+```
+
 e.g.
 
 ```console
@@ -22,7 +26,9 @@ $ aqua rm cli/cli direnv/direnv
 
 ## Limitation
 
-The following package types can't be removed without `--all` option.
+1. The following package types can't be removed without `--all` option.
 
 - `http`
 - `go_install`
+
+2. The fuzzy finder shows all packages, which include not installed packages.
