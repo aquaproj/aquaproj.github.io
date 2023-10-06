@@ -4,6 +4,12 @@ sidebar_position: 100
 
 # Home
 
+## For Japanese
+
+We published an e-book about aqua for free. Please read it!
+
+[aqua CLI Version Manager 入門 (2023-10-01)](https://zenn.dev/shunsuke_suzuki/books/aqua-handbook)
+
 ## How to learn aqua
 
 aqua has a lot of documents, so it's hard to read all of them.
