@@ -5,15 +5,9 @@ sidebar_position: 445
 # Registry Style Guide
 
 :::caution
-If you develop your custom registry, you don't have to conform this style guide.
+If you develop your custom registry, you don't have to conform to this style guide.
 But the guide would be useful to write good and consistent configuration.
 :::
-
-## Scaffold configuration by `aqua gr` command
-
-First, we recommend scaffolding configuration by `aqua gr` command.
-
-[Scaffold Registry Configuration](scaffold-registry.md).
 
 ## Format with prettier
 
@@ -233,6 +227,7 @@ Please see [the caution](/docs/reference/registry-config/supported-if).
 1. github_archive
 1. http
 1. go_install
+1. go_build
 
 For example, you can also use `http` type to install the package from GitHub Releases, but in that case you should use `github_release` rather than `http`.
 
