@@ -10,15 +10,15 @@ aqua >= v1.3.0
 
 You can override the following attributes on the specific `GOOS` and `GOARCH`.
 
-* replacements
-* format
-* asset
-* url
-* files
-* checksum
-* complete_windows_ext
-* windows_ext
-* type
+- asset
+- checksum
+- complete_windows_ext
+- files
+- format
+- replacements
+- type
+- url
+- windows_ext
 
 e.g. On Linux ARM64, `Arch` becomes `aarch64`.
 
@@ -31,7 +31,7 @@ e.g. On Linux ARM64, `Arch` becomes `aarch64`.
 
 In case of `replacements`, maps are merged.
 
-Either `goos` or `goarch` is required.
+`goos` or `goarch` or `envs` is required.
 
 e.g.
 
@@ -57,4 +57,36 @@ For example, Darwin AMD64 matches with second element but the second element isn
     asset: 'arkade-darwin'
   - goos: darwin 
     asset: 'arkade-darwin-{{.Arch}}'
+```
+
+## envs
+
+[#2318](https://github.com/aquaproj/aqua/issues/2318) [#2320](https://github.com/aquaproj/aqua/pull/2320) aqua >= [v2.13.0](https://github.com/aquaproj/aqua/releases/tag/v2.13.0)
+
+You can use `envs` instead of `goos` and `goarch`.
+The syntax of `envs` is same with [supported_envs](supported-envs.md).
+`envs` is more flexible than the combination of `goos` and `goarch`, so in some cases you can simplify the code.
+
+e.g.
+
+`goos` and `goarch`
+
+```yaml
+overrides:
+  - goos: windows
+    goarch: arm64
+    # ...
+  - goos: linux
+    goarch: arm64
+    # ...
+```
+
+`envs` can simplify the code.
+
+```yaml
+overrides:
+  - envs:
+      - windows/arm64
+      - linux/arm64
+    # ...
 ```

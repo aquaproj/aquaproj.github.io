@@ -28,3 +28,63 @@ The following sprig functions are removed for security reason.
 * `SemVer`: Package version that [version_prefix](version-prefix.md) is trimmed from `Version`. For example, if `Version` is `cli/v1.0.0` and `version_prefix` is `cli/`, then `SemVer` is `v1.0.0`
 * `Format`: Package `format`
 * `FileName`: `files[].name`
+* `AssetWithoutExt`
+
+### AssetWithoutExt
+
+[#1774](https://github.com/aquaproj/aqua/issues/1774) [#2310](https://github.com/aquaproj/aqua/pull/2310) aqua >= [v2.13.0](https://github.com/aquaproj/aqua/releases/tag/v2.13.0)
+
+`AssetWithoutExt` is a string that a file extension is removed from `Asset`.
+
+e.g.
+
+```yaml
+    asset: aks-engine-{{.Version}}-{{.OS}}-{{.Arch}}.tar.gz
+    files:
+      - name: aks-engine
+        src: "{{.AssetWithoutExt}}/aks-engine" # "{{.AssetWithoutExt}}" == "aks-engine-{{.Version}}-{{.OS}}-{{.Arch}}"
+```
+
+### Omit `Format` in `asset` and `url`
+
+[#1774](https://github.com/aquaproj/aqua/issues/1774) [#2314](https://github.com/aquaproj/aqua/pull/2314) aqua >= [v2.13.0](https://github.com/aquaproj/aqua/releases/tag/v2.13.0)
+
+The file extension is complemented if it isn't included in `asset` and `url`.
+
+e.g.
+
+```yaml
+asset: foo # This is same with `foo.tar.gz` and `foo.{{.Format}}`
+format: tar.gz
+```
+
+You can unify the setting of `raw` format and non `raw` format.
+
+Before
+
+```yaml
+asset: kalker-{{.OS}}.{{.Format}}
+format: zip
+overrides:
+  - goos: linux
+    format: raw
+    asset: kalker-{{.OS}}
+```
+
+After
+
+```yaml
+asset: kalker-{{.OS}}
+format: zip
+overrides:
+  - goos: linux
+    format: raw
+```
+
+You can disable the complementation by setting `append_ext: false`.
+
+```yaml
+append_ext: false
+```
+
+By default `append_ext` is `true`.

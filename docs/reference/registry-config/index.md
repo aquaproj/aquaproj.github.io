@@ -44,7 +44,8 @@ packages:
 * [search_words](search-words.md)
 * [aliases](aliases.md): Aliases of the package
 * [files](files.md): The list of executable files
-* `format`: The asset format (e.g. `zip`, `tar.gz`). This is used to unarchive or decompress the asset. If this isn't specified, aqua tries to specify the format from the file extension. If the file isn't archived and isn't compressed, please specify `raw`
+* [format](format.md)
+* [append_ext](format.md)
 * `link`: URL about the package. This is used for `aqua g`
 * `description`: The description about the package. This is used for `aqua g`
 * [replacements](replacements.md): A map which is used to replace some Template Variables like `OS` and `Arch`
