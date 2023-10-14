@@ -61,6 +61,12 @@ e.g.
 }
 ```
 
+## :bulb: Renovate's minimumReleaseAge
+
+Some packages have a time lag between when a GitHub Release is created and when assets are uploaded.
+In that case, Renovate may create pull requests before assets are uploaded.
+To prevent the issue as much as possible, Renovate's [minimumReleaseAge](https://docs.renovatebot.com/configuration-options/#minimumreleaseage) may be useful.
+
 ## :bulb: Prevent some packages from being updated by Renovate
 
 There are two ways to prevent some packages from being updated by Renovate.
