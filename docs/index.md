@@ -29,6 +29,7 @@ If you have any question, please contact us.
 - [GitHub Discussions](https://github.com/orgs/aquaproj/discussions)
 - Twitter: [@aquaclivm](https://twitter.com/aquaclivm) (English), [@szkdash](https://twitter.com/szkdash) (English or Japanese)
 - Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
+- [Discord](https://discord.com/channels/1141777454164365382/1162444533959757955)
 
 ## Introduction
 
