@@ -7,7 +7,7 @@ sidebar_position: 10
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config#1.1.0"
+    "github>aquaproj/aqua-renovate-config#1.11.0"
   ]
 }
 ```
@@ -27,6 +27,18 @@ Example pull requests by Renovate.
 
 * [chore(deps): update dependency golangci/golangci-lint to v1.42.0](https://github.com/aquaproj/aqua/pull/193)
 * [chore(deps): update dependency aquaproj/aqua-registry to v0.2.2](https://github.com/aquaproj/aqua/pull/194)
+
+## :bulb: Use Renovate with Dependabot
+
+If you already use Dependabot and hesitate to use Renovate, you should enable only Renovate's `regex` Manager.
+
+```json
+{
+  "enabledManagers": ["regex"]
+}
+```
+
+Then Renovate doesn't conflict with Dependabot.
 
 ## :bulb: Schedule Standard Registry's update
 
@@ -48,6 +60,12 @@ e.g.
   ]
 }
 ```
+
+## :bulb: Renovate's minimumReleaseAge
+
+Some packages have a time lag between when a GitHub Release is created and when assets are uploaded.
+In that case, Renovate may create pull requests before assets are uploaded.
+To prevent the issue as much as possible, Renovate's [minimumReleaseAge](https://docs.renovatebot.com/configuration-options/#minimumreleaseage) may be useful.
 
 ## :bulb: Prevent some packages from being updated by Renovate
 
