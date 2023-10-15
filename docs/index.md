@@ -4,12 +4,6 @@ sidebar_position: 100
 
 # Home
 
-## For Japanese
-
-We published an e-book about aqua for free. Please read it!
-
-[aqua CLI Version Manager 入門 (2023-10-01)](https://zenn.dev/shunsuke_suzuki/books/aqua-handbook)
-
 ## How to learn aqua
 
 aqua has a lot of documents, so it's hard to read all of them.
@@ -30,6 +24,12 @@ If you have any question, please contact us.
 - Twitter: [@aquaclivm](https://twitter.com/aquaclivm) (English), [@szkdash](https://twitter.com/szkdash) (English or Japanese)
 - Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
 - [Discord](https://discord.com/channels/1141777454164365382/1162444533959757955)
+
+## For Japanese
+
+We published an e-book about aqua for free. Please read it!
+
+[aqua CLI Version Manager 入門 (2023-10-01)](https://zenn.dev/shunsuke_suzuki/books/aqua-handbook)
 
 ## Introduction
 
