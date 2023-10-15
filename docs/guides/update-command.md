@@ -117,3 +117,71 @@ This command doesn't update commit hashes.
 packages:
   - name: google/pprof@d04f2422c8a17569c14e84da0fae252d9529826b # Doesn't update
 ```
+
+## Known Issues
+
+There are some known issues related to the third party library [goccy/go-yaml](https://github.com/goccy/go-yaml).
+
+### `null` is set to `packages` wrongly if registries are updated and `packages` is empty
+
+This issue is because of the third party library [goccy/go-yaml](https://github.com/goccy/go-yaml).
+
+Before
+
+```yaml
+registries:
+- ref: v4.60.0
+  type: standard
+packages:
+```
+
+Run `aqua up`.
+
+```console
+$ aqua up
+INFO[0000] updating a registry                           aqua_version= env=darwin/arm64 new_version=v4.65.0 old_version=v4.60.0 program=aqua registry_name=standard
+```
+
+After
+
+```yaml
+registries:
+- ref: v4.65.0
+  type: standard
+packages: null
+```
+
+### Newlines are removed wrongly
+
+This issue is because of the third party library [goccy/go-yaml](https://github.com/goccy/go-yaml).
+
+- https://github.com/goccy/go-yaml/issues/285
+
+Before
+
+```yaml
+registries:
+- ref: v4.60.0
+  type: standard
+
+
+packages:
+- name: suzuki-shunsuke/mkghtag@v0.1.1
+```
+
+Run `aqua up`.
+
+```console
+$ aqua up
+INFO[0000] updating a registry                           aqua_version= env=darwin/arm64 new_version=v4.65.0 old_version=v4.60.0 program=aqua registry_name=standard
+```
+
+After
+
+```yaml
+registries:
+- ref: v4.65.0
+  type: standard
+packages:
+- name: suzuki-shunsuke/mkghtag@v0.1.1
+```
