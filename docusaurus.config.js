@@ -46,7 +46,7 @@ const config = {
       announcementBar: {
         id: 'uninstall_package',
         content:
-          '<a href="/docs/guides/uninstall-packages/">aqua v2.11.0 supports uninstalling packages</a>',
+          '<a href="/docs/guides/update-command/">update command was supported (2023-10-16)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
