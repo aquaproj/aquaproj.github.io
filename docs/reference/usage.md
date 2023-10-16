@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   2.11.0 (90937150bd6f20f209bf8d1e9858d5b0dc9f9f14)
+   2.14.1 (4afbe990358dcf79950d31aa684bc26ae2e0cee6)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -35,6 +35,7 @@ COMMANDS:
    root-dir               Output the aqua root directory (AQUA_ROOT_DIR)
    update-checksum        Create or Update aqua-checksums.json
    remove, rm             Uninstall packages
+   update, up             Update registries and packages
    help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
@@ -345,6 +346,7 @@ DESCRIPTION:
 
 OPTIONS:
    --all, -a   uninstall all packages (default: false)
+   -i          Select packages with a Fuzzy Finder (default: false)
    --help, -h  show help
 ```
 
