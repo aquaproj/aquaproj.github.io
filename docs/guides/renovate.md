@@ -14,6 +14,11 @@ sidebar_position: 10
 
 ![image](https://user-images.githubusercontent.com/13323303/176582627-44f27c48-213b-44da-b18f-d4d482ef2f56.png)
 
+:::info
+As of aqua v2.14.0, you can update them by `aqua update` command too.
+Please see [Update registries and packages by update command](update-command.md) too.
+:::
+
 aqua manages package and registry versions,
 so it is important to update them continuously.
 aqua doesn't provide sub commands like `aqua update` or options like `aqua install --update`.
