@@ -9,7 +9,7 @@ You can update them by Renovate too.
 Please see [Update packages by Renovate](renovate.md) too.
 :::
 
-[#1657](https://github.com/aquaproj/aqua/issues/1657) [#2329](https://github.com/aquaproj/aqua/pull/2329) aqua >= v2.14.0
+[#1657](https://github.com/aquaproj/aqua/issues/1657) [#2329](https://github.com/aquaproj/aqua/pull/2329) aqua >= [v2.14.0](https://github.com/aquaproj/aqua/releases/tag/v2.14.0)
 
 You can update registries and packages by `aqua update (up)` command.
 

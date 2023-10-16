@@ -195,6 +195,10 @@ Using this preset, you can easily update tools by Renovate.
 
 [ref. Update packages by Renovate](/docs/guides/renovate)
 
+:::info
+[As of aqua v2.14.0, aqua also supports `update` command.](/docs/guides/update-command)
+:::
+
 ### 🛡️ Security
 
 You should verify the checksum of the tool before installing the tool.
