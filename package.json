@@ -39,7 +39,7 @@
   },
   "volta": {
     "node": "18.18.2",
-    "yarn": "3.6.4"
+    "yarn": "4.0.0"
   },
   "devDependencies": {
     "ts-node": "^10.9.1",
