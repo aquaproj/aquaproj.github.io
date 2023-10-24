@@ -59,3 +59,7 @@ install  i  -- Install tools
 $ aqua i - # Enter <Tab> Key
 --all        --help       --only-link  --test       -a           -h           -l
 ```
+
+## Fish Completion
+
+https://github.com/grimoh/fish-aqua
