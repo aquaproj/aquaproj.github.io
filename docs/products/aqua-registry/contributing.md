@@ -47,26 +47,39 @@ If you don't know well, please create a pull request and consult us.
 
 ## Requirements
 
-- [aqua](https://aquaproj.github.io/docs/install) >= [v1.14.0](https://github.com/aquaproj/aqua/releases/tag/v1.14.0)
+- [aqua](https://aquaproj.github.io/docs/install)
+- Docker
+
+Please use the latest version.
 
 ## Set up
 
-Checkout the repository and install [aqua-registry CLI](https://github.com/aquaproj/registry-tool).
-
-```console
-$ git clone https://github.com/aquaproj/aqua-registry
-$ cd aqua-registry
-$ aqua i -l # Install aqua-registry CLI
+```sh
+git clone https://github.com/aquaproj/aqua-registry
+cd aqua-registry
+aqua i -l # Install dependencies
 ```
 
-## How to add packages
+## cmdx - Task Runner
 
-1. Scaffold configuration: `aqua-registry scaffold [--deep] <package name>`
-1. Fix generated files if the scaffold fails
-1. Update registry.yaml: `aqua-registry gr`
-1. Test: `aqua i` and run installed tools
-1. Repeat the step 2 ~ 4 until packages are installed properly
-1. Create a pull request: `aqua-registry create-pr-new-pkg <package name>...`
+We use [cmdx](https://github.com/suzuki-shunsuke/cmdx) as a task runner.
+cmdx is installed by [Set up](#set-up) already.
+We also use Docker to run tests in a container.
+Please run `cmdx help` and `cmdx help <task>` to show the help.
+
+```sh
+cmdx help
+cmdx help scaffold
+```
+
+## How to add a package
+
+1. Scaffold configuration: `cmdx s <package name>`
+1. Fix generated files `pkgs/<package name>/{pkg.yaml,registry.yaml`
+1. Run test: `cmdx t <package name>`
+1. Repeat the step 2 and 3 until packages are installed properly
+1. Update registry.yaml: `cmdx gr`
+1. Create a pull request: `cmdx new <package name>`
 
 :::info
 If you face GitHub API rate limiting, please set the GitHub Access token with environment variable `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN`.
@@ -79,11 +92,7 @@ export GITHUB_TOKEN=<YOUR PERSONAL ACCESS TOKEN>
 :::
 
 :::info
-When you update `pkgs/**/registry.yaml`, you have to run `aqua-registry gr` to reflect the update to `registry.yaml` on the repository root directory.
-:::
-
-:::info
-`--deep` option requires `aqua >= v1.34.0` and `registry-tool >= v0.1.8`.
+When you update `pkgs/**/registry.yaml`, you have to run `cmdx gr` to reflect the update to `registry.yaml` on the repository root directory.
 :::
 
 ## Supported OS and CPU Architecture
@@ -122,46 +131,4 @@ packages:
 packages:
   - name: scaleway/scaleway-cli@v2.12.0
   - name: scaleway/scaleway-cli@v2.12.0
-```
-
-## Test in your laptop with Eartly
-
-Using [Earthly](https://docs.earthly.dev/), you can do a test against a specific platform in your laptop.
-You can test quickly without pushing a commit and waiting for CI.
-Compared with running `aqua i --test` in your laptop directly, you can keep your laptop clean and can test against other platform than your laptop.
-
-Please see [Earthfile](https://github.com/aquaproj/aqua-registry/blob/main/Earthfile) too.
-
-Please run `aqua i -l` in this repository, then Earthly is installed by aqua.
-
-After creating and updating a package's `pkg.yaml` and `registry.yaml`, please run `earthly +test`.
-
-```console
-$ earthly [-i] +test --pkg=<package name> [--os=linux|darwin|windows] [--arch=amd64|arm64]
-```
-
-e.g.
-
-```console
-$ earthly +test --pkg=suzuki-shunsuke/github-comment --os=windows --arch=amd64
-```
-
-There are three args.
-
-- `--pkg`: (Required): package name. e.g. `suzuki-shunsuke/tfcmt`
-- `--os`: (Default: `linux`): [AQUA_GOOS](/docs/develop-registry/change-os-arch-for-test)
-- `--arch`: (Default: `amd64`): [AQUA_GOARCH](/docs/develop-registry/change-os-arch-for-test)
-
-### Debug with earthly's `-i` option
-
-[earthly's `-i` option is useful for debug](https://docs.earthly.dev/best-practices#technique-use-earthly-i-to-debug-failures).
-
-https://docs.earthly.dev/docs/earthly-command
-
-You can install tools for debug in a container.
-
-e.g.
-
-```console
-$ apk add tree
 ```
