@@ -80,6 +80,7 @@ cmdx help scaffold
 1. Repeat the step 2 and 3 until packages are installed properly
 1. Update registry.yaml: `cmdx gr`
 1. Create a pull request: `cmdx new <package name>`
+1. (Optional) Stop the container: `cmdx stop`
 
 :::info
 If you face GitHub API rate limiting, please set the GitHub Access token with environment variable `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN`.
