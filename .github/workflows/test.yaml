@@ -83,6 +83,9 @@ jobs:
 
   test:
     uses: ./.github/workflows/deploy.yaml
+    secrets:
+      APP_ID: ${{secrets.APP_ID_AQUAPROJ_AQUA}}
+      PRIVATE_KEY: ${{secrets.APP_PRIVATE_KEY_AQUAPROJ_AQUA}}
     permissions:
       contents: write
     with:
