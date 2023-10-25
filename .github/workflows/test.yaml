@@ -72,6 +72,7 @@ jobs:
       - typos
       - ghalint
       - update-aqua-checksums
+      - update-yarn-lock
     permissions: {}
     if: failure()
     steps:
@@ -87,6 +88,9 @@ jobs:
 
   update-yarn-lock:
     uses: ./.github/workflows/update-yarn-lock.yaml
+    needs: path-filter
+    if: |
+      needs.path-filter.outputs.update-yarn-lock == 'true'
     secrets:
       APP_ID: ${{secrets.APP_ID_AQUAPROJ_AQUA}}
       PRIVATE_KEY: ${{secrets.APP_PRIVATE_KEY_AQUAPROJ_AQUA}}
