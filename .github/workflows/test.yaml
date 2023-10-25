@@ -15,6 +15,7 @@ jobs:
       update-aqua-checksums: ${{steps.changes.outputs.update-aqua-checksums}}
       renovate-config-validator: ${{steps.changes.outputs.renovate-config-validator}}
       ghalint: ${{steps.changes.outputs.ghalint}}
+      update-yarn-lock: ${{steps.changes.outputs.update-yarn-lock}}
     runs-on: ubuntu-latest
     permissions: {}
     steps:
@@ -32,6 +33,9 @@ jobs:
             ghalint:
               - .github/workflows/*.yaml
               - aqua/imports/ghalint.yaml
+            update-yarn-lock:
+              - yarn.lock
+              - package.json
 
   enable-automerge:
     # Enable automerge to merge pull requests from Renovate automatically.
@@ -80,6 +84,12 @@ jobs:
     if: needs.path-filter.outputs.renovate-config-validator == 'true'
     permissions:
       contents: read
+
+  update-yarn-lock:
+    uses: ./.github/workflows/update-yarn-lock.yaml
+    secrets:
+      APP_ID: ${{secrets.APP_ID_AQUAPROJ_AQUA}}
+      PRIVATE_KEY: ${{secrets.APP_PRIVATE_KEY_AQUAPROJ_AQUA}}
 
   test:
     uses: ./.github/workflows/deploy.yaml
