@@ -30,6 +30,13 @@ Please download an asset from [GitHub Releases](https://github.com/aquaproj/aqua
 
 You can also [install aqua with Go](/docs/install#go). 
 
+From [aqua v2.16.2](https://github.com/aquaproj/aqua/releases/tag/v2.16.2), you can also install aqua by [Scoop](https://scoop.sh/).
+
+```sh
+scoop bucket add aquaproj https://github.com/aquaproj/scoop-bucket
+scoop install aqua
+```
+
 ## The install path (AQUA_ROOT_DIR)
 
 From aqua v1.12.0, the default value of `AQUA_ROOT_DIR` is `$HOME/AppData/Local/aquaproj-aqua`.
