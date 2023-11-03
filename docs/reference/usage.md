@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   2.15.0 (3fd0124deb506011ed0681185ac3c4c0da7b5e09)
+   2.16.4 (fd3d2911afd67834ecdcf4c282fa294727cee9eb)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -494,7 +494,7 @@ DESCRIPTION:
 
 OPTIONS:
    --out-testdata value     A file path where the testdata is outputted
-   --cmd value              A list of commands joined with single quotes ','
+   --cmd value              A list of commands joined with commas ','
    --limit value, -l value  the maximum number of versions (default: 0)
    --deep                   This flag was deprecated and had no meaning from aqua v2.15.0. This flag will be removed in aqua v3.0.0. https://github.com/aquaproj/aqua/issues/2351 (default: false)
    --help, -h               show help
