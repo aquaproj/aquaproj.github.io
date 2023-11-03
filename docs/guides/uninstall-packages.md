@@ -15,6 +15,10 @@ $ aqua rm [<registry name>,]<package name> [...] # Uninstall packages
 ```
 
 ```console
+$ aqua rm <command name> [...] # Uninstall packages having given commands
+```
+
+```console
 $ aqua rm -i # Select packages interactively with a fuzzy finder
 ```
 
