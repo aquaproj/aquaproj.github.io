@@ -13,17 +13,26 @@ Please see [Demo](https://asciinema.org/a/498262?autoplay=1).
 
 ## Install aqua
 
+[Install](install.md)
+
 Homebrew
 
-```console
+```bash
 brew install aquaproj/aqua/aqua
+```
+
+[Scoop](https://scoop.sh/) (Windows)
+
+```bash
+scoop bucket add aquaproj https://github.com/aquaproj/scoop-bucket
+scoop install aqua
 ```
 
 [aqua-installer](https://github.com/aquaproj/aqua-installer)
 
-```console
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer
-echo "c2af02bdd15da6794f9c98db40332c804224930212f553a805425441f8331665  aqua-installer" | sha256sum -c
+```bash
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer
+echo "411caf1b5fcef4f5e74aa2a9fe99182ea13ab93ecd8ed4a983a7cff9f08edab9  aqua-installer" | sha256sum -c
 chmod +x aqua-installer
 ./aqua-installer
 ```
@@ -48,23 +57,23 @@ Confirm if aqua is installed correctly.
 aqua -v
 ```
 
+## Docker
+
 If you want to try this tutorial in the clean environment, container is useful.
 
-```sh
-docker run --rm -ti alpine:3.17.0 sh
+```bash
+docker run --rm -ti debian:bookworm-20231009 bash
 ```
 
-```sh
-apk add curl bash sudo
-adduser -u 1000 -G wheel -D foo
-visudo # Uncomment "%wheel ALL=(ALL) NOPASSWD: ALL"
-su foo
+```bash
+apt update
+apt install -y curl vim
+
 mkdir ~/workspace
 cd ~/workspace
-
 export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer
-echo "c2af02bdd15da6794f9c98db40332c804224930212f553a805425441f8331665  aqua-installer" | sha256sum -c
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer
+echo "411caf1b5fcef4f5e74aa2a9fe99182ea13ab93ecd8ed4a983a7cff9f08edab9  aqua-installer" | sha256sum -c
 chmod +x aqua-installer
 ./aqua-installer
 ```
@@ -73,15 +82,24 @@ chmod +x aqua-installer
 
 Create a configuration file by `aqua init` command.
 
-```console
-$ aqua init # aqua.yaml is created
-$ cat aqua.yaml
+```bash
+aqua init # aqua.yaml is created
+```
+
+aqua.yaml is created.
+
+```yaml
 ---
 # aqua - Declarative CLI Version Manager
 # https://aquaproj.github.io/
+# checksum:
+#   enabled: true
+#   require_checksum: true
+#   supported_envs:
+#   - all
 registries:
 - type: standard
-  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.79.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 ```
 
@@ -93,33 +111,22 @@ Let's install [GitHub Official CLI](https://cli.github.com/) and [fzf](https://g
 
 Add packages to `aqua.yaml`.
 
-```console
-$ aqua g -i cli/cli junegunn/fzf
+```bash
+aqua g -i cli/cli junegunn/fzf
 ```
 
+Packages are added to the field `packages`.
+
 ```yaml
----
-# aqua - Declarative CLI Version Manager
-# https://aquaproj.github.io/
-registries:
-- type: standard
-  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: cli/cli@v2.2.0
-- name: junegunn/fzf@0.28.0
+- name: cli/cli@v2.38.0
+- name: junegunn/fzf@0.43.0
 ```
 
 Then run `aqua i`.
 
-```console
-$ aqua i 
-INFO[0000] download and unarchive the package            aqua_version=1.19.2 package_name=aqua-proxy package_version=v0.2.1 program=aqua registry=
-INFO[0001] create a symbolic link                        aqua_version=1.19.2 link_file=/home/foo/.local/share/aquaproj-aqua/bin/aqua-proxy new=../pkgs/github_release/github.com
-/aquaproj/aqua-proxy/v0.2.1/aqua-proxy_linux_amd64.tar.gz/aqua-proxy program=aqua
-INFO[0001] create a symbolic link                        aqua_version=1.19.2 link_file=/home/foo/.local/share/aquaproj-aqua/bin/gh new=aqua-proxy program=aqua
-INFO[0001] create a symbolic link                        aqua_version=1.19.2 link_file=/home/foo/.local/share/aquaproj-aqua/bin/fzf new=aqua-proxy program=aqua
-INFO[0001] download and unarchive the package            aqua_version=1.19.2 package_name=cli/cli package_version=v2.2.0 program=aqua registry=standard
-INFO[0001] download and unarchive the package            aqua_version=1.19.2 package_name=junegunn/fzf package_version=0.28.0 program=aqua registry=standard
+```bash
+aqua i
 ```
 
 Congratulation! Tools are installed correctly.
@@ -129,14 +136,14 @@ $ command -v gh
 /home/foo/.local/share/aquaproj-aqua/bin/gh
 
 $ gh version
-gh version 2.2.0 (2021-10-25)
-https://github.com/cli/cli/releases/tag/v2.2.0
+gh version 2.38.0 (2023-11-01)
+https://github.com/cli/cli/releases/tag/v2.38.0
 
 $ command -v fzf
 /home/foo/.local/share/aquaproj-aqua/bin/fzf
 
 $ fzf --version
-0.28.0 (e4c3ecc)
+0.43.0 (d3311d9)
 ```
 
 aqua installs tools in `${AQUA_ROOT_DIR}`.
