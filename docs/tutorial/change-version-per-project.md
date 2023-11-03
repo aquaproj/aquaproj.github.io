@@ -6,43 +6,29 @@ sidebar_position: 500
 
 aqua supports changing the tool versions per project.
 
-```console
-$ mkdir foo bar
-$ vi foo/aqua.yaml
-$ vi bar/aqua.yaml
-```
-
-```yaml
-# foo/aqua.yaml
-registries:
+```bash
+mkdir foo bar
+echo -n 'registries:
 - type: standard
-  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.79.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.1.0
-```
-
-```yaml
-# bar/aqua.yaml
-registries:
+' > foo/aqua.yaml
+echo -n 'registries:
 - type: standard
-  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v3.79.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.0.0
+' > bar/aqua.yaml
 ```
 
-```console
-$ cd foo
-$ gh version # In foo, the version is v2.1.0.
-gh version 2.1.0 (2021-10-14)
-https://github.com/cli/cli/releases/tag/v2.1.0
-
-$ cd ../bar
-$ gh version # In foo, the version is v2.0.0.
-INFO[0000] download and unarchive the package            aqua_version=1.19.2 package_name=cli/cli package_version=v2.0.0 program=aqua registry=standard
-gh version 2.0.0 (2021-08-24)
-https://github.com/cli/cli/releases/tag/v2.0.0
+```bash
+cd foo
+gh version # In foo, the version is v2.1.0.
+cd ../bar
+gh version # In bar, the version is v2.0.0.
 ```
 
 The version of `gh` is changed seamlessly.

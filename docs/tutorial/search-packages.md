@@ -6,54 +6,55 @@ sidebar_position: 200
 
 You can search packages by [aqua g](/docs/reference/usage#aqua-generate) command.
 
-```console
-$ aqua g
+```bash
+aqua g
 ```
 
 Then an interactive fuzzy zinder is launched (Powered by [ktr0731/go-fuzzyfinder](https://github.com/ktr0731/go-fuzzyfinder)).
 
-```console
-  influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
-  newrelic/newrelic-cli (standard) (newrelic)                   │  cli/cli
-  pivotal-cf/pivnet-cli (standard) (pivnet)                     │
-  scaleway/scaleway-cli (standard) (scw)                        │  https://github.com/cli/cli
-  tfmigrator/cli (standard) (tfmigrator)                        │  GitHub’cs official command line tool
-  aws/copilot-cli (standard) (copilot)                          │
-  create-go-app/cli (standard) (cgapp)                          │
-  harness/drone-cli (standard) (drone)                          │
-  sigstore/rekor (standard) (rekor-cli)                         │
-  getsentry/sentry-cli (standard)                               │
-  grafana/loki/logcli (standard)                                │
-  knative/client (standard) (kn)                                │
-  rancher/cli (standard) (rancher)                              │
-  tektoncd/cli (standard) (tkn)                                 │
-  civo/cli (standard) (civo)                                    │
-  dapr/cli (standard) (dapr)                                    │
-  mongodb/mongocli (standard)                                   │
-  openfaas/faas-cli (standard)                                  │
-> cli/cli (standard) (gh)                                       │
-  50/433                                                        │
-> cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+```
+  okta/okta-aws-cli                     ┌──────────────────────────────────────┐
+  openfaas/faas-cli                     │ climech/grit                         │
+  yitsushi/totp-cli                     │                                      │
+  databricks/click                      │ https://github.com/climech/grit      │
+  ipinfo/cli/prips                      │ Multitree-based personal task manag..│
+  rgreinho/tfe-cli                      │                                      │
+  civo/cli [civo]                       │                                      │
+  dapr/cli [dapr]                       │                                      │
+  goark/gimei-cli                       │                                      │
+  orhun/git-cliff                       │                                      │
+  snyk/cli [snyk]                       │                                      │
+  spf13/cobra-cli                       │                                      │
+  volta-cli/volta                       │                                      │
+  barnybug/cli53                        │                                      │
+  michidk/vscli                         │                                      │
+  nuclio/nuclio                         │                                      │
+  sigi-cli/sigi                         │                                      │
+  cswank/kcli                           │                                      │
+  cli/cli [gh]                          │                                      │
+> climech/grit                          │                                      │
+  191/1303                              │                                      │
+> cli                                   └──────────────────────────────────────┘
 ```
 
 Please select `tfmigrator/cli`, then the package configuration is outputted.
 
 ```console
 $ aqua g
-- name: tfmigrator/cli@v0.2.1
+- name: tfmigrator/cli@v0.2.2
 ```
 
 You can select multiple packages by tab key.
 
 If `-i` option is set, then the package is added to `aqua.yaml`.
 
-```console
-$ aqua g -i
+```bash
+aqua g -i
 ```
 
 ```yaml
 packages:
-- name: cli/cli@v2.2.0
-- name: junegunn/fzf@0.28.0
-- name: tfmigrator/cli@v0.2.1 # Added
+- name: cli/cli@v2.38.0
+- name: junegunn/fzf@0.43.0
+- name: tfmigrator/cli@v0.2.2 # Added
 ```
