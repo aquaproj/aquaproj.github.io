@@ -16,15 +16,15 @@ https://github.com/aquaproj/aqua-installer
 You can install aqua by the following one liner.
 
 ```bash
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.2.0/aqua-installer | bash
 ```
 
 But the one liner is a bit dangerous because aqua-installer may be tampered.
 We recommend verifying aqua-installer's checksum before running it.
 
 ```bash
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer
-echo "411caf1b5fcef4f5e74aa2a9fe99182ea13ab93ecd8ed4a983a7cff9f08edab9  aqua-installer" | sha256sum -c
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.2.0/aqua-installer
+echo "d13118c3172d90ffa6be205344b93e8621de9bf47c852d80da188ffa6985c276  aqua-installer" | sha256sum -c
 chmod +x aqua-installer
 ./aqua-installer
 ```
@@ -45,7 +45,7 @@ You can pass the following parameters.
 e.g.
 
 ```bash
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash -s -- -v v2.10.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.2.0/aqua-installer | bash -s -- -v v2.16.4
 ```
 
 If the version isn't specified, the latest version would be installed.
@@ -55,15 +55,15 @@ If the version isn't specified, the latest version would be installed.
 e.g.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v2.1.2
+- uses: aquaproj/aqua-installer@v2.2.0
   with:
-    aqua_version: v2.10.1
+    aqua_version: v2.16.4
 ```
 
 ```yaml
-- uses: aquaproj/aqua-installer@v2.1.2
+- uses: aquaproj/aqua-installer@v2.2.0
   with:
-    aqua_version: v2.10.1
+    aqua_version: v2.16.4
     working_directory: foo
     aqua_opts: ""
   env:
@@ -113,9 +113,9 @@ e.g.
     key: v1-aqua-installer-${{runner.os}}-${{runner.arch}}-${{hashFiles('aqua.yaml')}}
     restore-keys: |
       v1-aqua-installer-${{runner.os}}-${{runner.arch}}-
-- uses: aquaproj/aqua-installer@v2.1.2
+- uses: aquaproj/aqua-installer@v2.2.0
   with:
-    aqua_version: v2.10.0
+    aqua_version: v2.16.4
 ```
 
 Please fix `actions/cache`'s parameters properly.
@@ -136,9 +136,9 @@ aqua-installer runs aqua with [-l](https://aquaproj.github.io/docs/tutorial/inst
 If you want to cache all packages, please set `aqua_opts` to unset `-l` option.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v2.1.2
+- uses: aquaproj/aqua-installer@v2.2.0
   with:
-    aqua_version: v2.10.0
+    aqua_version: v2.16.4
     aqua_opts: "" # Unset `-l` option
 ```
 
