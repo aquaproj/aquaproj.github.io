@@ -22,7 +22,7 @@ If you have any question, please contact us.
 
 - [GitHub Discussions](https://github.com/orgs/aquaproj/discussions)
 - Twitter:
-  - English: [@aquaclivm](https://twitter.com/aquaclivm), [@seli07_en](https://twitter.com/seli07_en)
+  - English: [@aquaclivm](https://twitter.com/aquaclivm), [@szkdash_en](https://twitter.com/szkdash_en)
   - Japanese: [@szkdash](https://twitter.com/szkdash)
 - Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
 - [Discord](https://discord.com/channels/1141777454164365382/1162444533959757955)
