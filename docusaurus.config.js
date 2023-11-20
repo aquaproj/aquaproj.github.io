@@ -46,7 +46,7 @@ const config = {
       announcementBar: {
         id: 'uninstall_package',
         content:
-          '<a href="/docs/guides/update-command/">update command was supported (2023-10-16)</a>',
+          '<a href="/docs/reference/windows-support/#how-to-install">Winget Support (2023-11-21)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
