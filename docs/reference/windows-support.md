@@ -37,7 +37,7 @@ winget install aquaproj.aqua
 ```
 
 :::caution
-Due to the mechanism of Winget, it takes a few days at most until we can install the latst version after the latest version has been released.
+Due to the mechanism of Winget, it takes a few days at most until we can install the latest version after the latest version has been released.
 Everytime a new version is released, we need to send a pull request to [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) and wait until the pull request is merged.
 [The list of pull requests](https://github.com/microsoft/winget-pkgs/pulls?q=is%3Aopen+is%3Apr+author%3Asuzuki-shunsuke+aquaproj.aqua+in%3Atitle)
 :::
