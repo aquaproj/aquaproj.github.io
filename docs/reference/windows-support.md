@@ -26,16 +26,33 @@ Terminals
 
 ## How to install
 
-Please download an asset from [GitHub Releases](https://github.com/aquaproj/aqua/releases) and deploy the binary into `PATH`.
+There are several installation ways.
 
-You can also [install aqua with Go](/docs/install#go). 
+1. [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
 
-From [aqua v2.16.2](https://github.com/aquaproj/aqua/releases/tag/v2.16.2), you can also install aqua by [Scoop](https://scoop.sh/).
+From [aqua v2.17.4](https://github.com/aquaproj/aqua/releases/tag/v2.17.4), you can install aqua by Winget.
+
+```sh
+winget install aquaproj.aqua
+```
+
+:::caution
+Due to the mechanism of Winget, it takes a few days at most until we can install the latst version after the latest version has been released.
+Everytime a new version is released, we need to send a pull request to [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) and wait until the pull request is merged.
+[The list of pull requests](https://github.com/microsoft/winget-pkgs/pulls?q=is%3Aopen+is%3Apr+author%3Asuzuki-shunsuke+aquaproj.aqua+in%3Atitle)
+:::
+
+2. [Scoop](https://scoop.sh/)
+
+From [aqua v2.16.2](https://github.com/aquaproj/aqua/releases/tag/v2.16.2), you can also install aqua by Scoop.
 
 ```sh
 scoop bucket add aquaproj https://github.com/aquaproj/scoop-bucket
 scoop install aqua
 ```
+
+3. Download an asset from [GitHub Releases](https://github.com/aquaproj/aqua/releases) and install an executable binary into `PATH`
+4. [go install](/docs/install#go)
 
 ## The install path (AQUA_ROOT_DIR)
 
