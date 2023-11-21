@@ -26,12 +26,14 @@ https://github.com/aquaproj/aqua-renovate-config
   * aqua.yaml. `fileMatch` is parameterized
 * [installer-script](https://github.com/aquaproj/aqua-renovate-config/blob/main/installer-script.json)
   * the shell script [aquaproj/aqua-installer](https://github.com/aquaproj/aqua-installer). `fileMatch` is parameterized
+* [aqua-renovate-config](https://github.com/aquaproj/aqua-renovate-config/blob/main/aqua-renovate-config.json)
+  * Update Renovate preset config `aqua-renovate-config`. `fileMatch` is parameterized
 
 ## How to use
 
 We recommend specifying the Preset version.
 
-* :thumbsup: `"github>aquaproj/aqua-renovate-config#1.5.2"`
+* :thumbsup: `"github>aquaproj/aqua-renovate-config#1.13.0"`
 * :thumbsdown: `"github>aquaproj/aqua-renovate-config"`
 
 ### `default` Preset
@@ -39,7 +41,7 @@ We recommend specifying the Preset version.
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config#1.5.2"
+    "github>aquaproj/aqua-renovate-config#1.13.0"
   ]
 }
 ```
@@ -49,7 +51,7 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v3.128.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.90.0 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: open-policy-agent/conftest@v0.28.3
@@ -61,7 +63,7 @@ The default preset updates GitHub Actions [aquaproj/aqua-installer](https://gith
 ```yaml
 - uses: aquaproj/aqua-installer@v2.1.2
   with:
-    aqua_version: v2.10.1
+    aqua_version: v2.18.0
 ```
 
 ### `file` Preset
@@ -69,10 +71,12 @@ The default preset updates GitHub Actions [aquaproj/aqua-installer](https://gith
 You can specify the file path aqua.yaml.
 This is especially useful when [you split the list of packages](/docs/guides/split-config).
 
+e.g.
+
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:file#1.5.2(aqua/.*\\.ya?ml)"
+    "github>aquaproj/aqua-renovate-config:file#1.13.0(aqua/.*\\.ya?ml)"
   ]
 }
 ```
@@ -82,16 +86,18 @@ This is especially useful when [you split the list of packages](/docs/guides/spl
 The preset `installer-script` updates the shell script aqua-installer and aqua.
 You have to pass fileMatch as parameter.
 
+e.g.
+
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:installer-script#1.5.2(scripts/.*\\.sh)"
+    "github>aquaproj/aqua-renovate-config:installer-script#1.13.0(scripts/.*\\.sh)"
   ]
 }
 ```
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash -s -- -v v2.10.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash -s -- -v v2.18.0
 ```
 
 :warning: To update aqua, please don't add newlines.
@@ -99,12 +105,26 @@ curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua
 :thumbsup:
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash -s -- -v v2.10.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash -s -- -v v2.18.0
 ```
 
 :thumbsdown:
 
 ```sh
 curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer |
-  bash -s -- -v v2.10.0 # aqua isn't updated
+  bash -s -- -v v2.18.0 # aqua isn't updated
+```
+
+### `aqua-renovate-config` Preset
+
+You can specify the file path of Renovate config preset.
+
+e.g.
+
+```json
+{
+  "extends": [
+    "github>aquaproj/aqua-renovate-config:aqua-renovate-config#1.13.0(default\\.jsonnet)"
+  ]
+}
 ```
