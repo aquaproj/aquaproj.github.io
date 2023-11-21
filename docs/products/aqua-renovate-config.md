@@ -124,7 +124,7 @@ e.g.
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:aqua-renovate-config#1.13.0(default\\.jsonnet)"
+    "github>aquaproj/aqua-renovate-config:aqua-renovate-config#1.13.0(default\\.json)"
   ]
 }
 ```
