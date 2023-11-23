@@ -17,6 +17,6 @@ https://learn.microsoft.com/en-us/windows/arm/add-arm-support#emulation-on-arm-b
 If the field `windows_arm_emulation` is true, aqua uses pre built binaries for Windows amd64 on Windows arm64.
 `windows_arm_emulation` must be boolean. By default, `windows_arm_emulation` is `false`.
 
-`windows_arm_emulation` is similar with [rosetta2](#rosetta2).
+`windows_arm_emulation` is similar with [rosetta2](rosetta2.md).
 
 If `windows_arm_emulation` is `true` and `GOOS` is `windows` and `GOARCH` is `arm64`, the template variable `Arch` is interpreted as `GOARCH=amd64`.

@@ -119,14 +119,11 @@ On Windows, there are two problems regarding symbolic links.
 1. To create symbolic links, you have to run Terminal (cmd.exe, PowerShell, Git Bash, etc) as Administrator or enable Developer Mode
 1. PowerShell has a bug about symbolic link https://github.com/PowerShell/PowerShell/issues/16171
 
+### Windows ARM Emulation
+
+Please see [windows_arm_emulation](/docs/reference/registry-config/windows_arm_emulation).
+
 ## Trouble Shooting
-
-### GitHub Action aqua-installer doesn't work on Windows Runner
-
-We are working on it.
-
-* https://github.com/aquaproj/aqua-installer/issues/116
-* https://github.com/aquaproj/aqua-installer/issues/117
 
 ### Interactive Search by `aqua g` doesn't work on Git Bash
 
