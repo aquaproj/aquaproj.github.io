@@ -56,6 +56,7 @@ packages:
 * [supported_if](supported-if.md)
 * [supported_envs](supported-envs.md)
 * [rosetta2](rosetta2.md)
+* [windows_arm_emulation](windows_arm_emulation.md)
 * [version_filter](version-filter.md)
 * [version_source](version-source.md)
 * [complete_windows_ext](complete-windows-ext.md)
