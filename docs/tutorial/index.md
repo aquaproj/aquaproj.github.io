@@ -21,6 +21,12 @@ Homebrew
 brew install aquaproj/aqua/aqua
 ```
 
+[WinGet](https://learn.microsoft.com/en-us/windows/package-manager/) (Windows)
+
+```bash
+winget install aquaproj.aqua
+```
+
 [Scoop](https://scoop.sh/) (Windows)
 
 ```bash
