@@ -11,57 +11,9 @@ sidebar_position: 430
 
 The author [@suzuki-shunsuke](https://github.com/suzuki-shunsuke) doesn't use Windows, so the help of Windows Users is welcome.
 
-## Develop environment
+## Install
 
-The author [@suzuki-shunsuke](https://github.com/suzuki-shunsuke) tests the Windows Support on the following environments.
-
-* [Amazon Workspaces](https://aws.amazon.com/workspaces/) `Standard with Windows 10 (Server 2019 based) (PCoIP)`
-* GitHub Actions' `windows-latest`
-
-Terminals
-
-* Command Prompt
-* PowerShell
-* Git Bash (mingw)
-
-## How to install
-
-There are several installation ways.
-
-1. [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
-
-From [aqua v2.17.4](https://github.com/aquaproj/aqua/releases/tag/v2.17.4), you can install aqua by Winget.
-
-```sh
-winget install aquaproj.aqua
-```
-
-:::caution
-Due to the mechanism of Winget, it takes a few days at most until we can install the latest version after the latest version has been released.
-Everytime a new version is released, we need to send a pull request to [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) and wait until the pull request is merged.
-[The list of pull requests](https://github.com/microsoft/winget-pkgs/pulls?q=is%3Aopen+is%3Apr+author%3Asuzuki-shunsuke+aquaproj.aqua+in%3Atitle)
-:::
-
-2. [Scoop](https://scoop.sh/)
-
-From [aqua v2.16.2](https://github.com/aquaproj/aqua/releases/tag/v2.16.2), you can also install aqua by Scoop.
-
-```sh
-scoop bucket add aquaproj https://github.com/aquaproj/scoop-bucket
-scoop install aqua
-```
-
-3. Download an asset from [GitHub Releases](https://github.com/aquaproj/aqua/releases) and install an executable binary into `PATH`
-4. [go install](/docs/install#go)
-
-## The install path (AQUA_ROOT_DIR)
-
-From aqua v1.12.0, the default value of `AQUA_ROOT_DIR` is `%LOCALAPPDATA%\aquaproj-aqua`.
-
-## PATH
-
-* Command Prompt,PowerShell: `%AQUA_ROOT_DIR%\bat`
-* Git Bash: `%AQUA_ROOT_DIR%\bin`
+Please see [Install](/docs/install).
 
 ## The separator of AQUA_GLOBAL_CONFIG
 
@@ -107,10 +59,7 @@ Please see [complete_windows_ext](/docs/reference/registry-config/complete-windo
 
 Reference (Japanese): https://zenn.dev/link/comments/725555a2b1b034
 
-aqua creates executable BAT files and shell scripts in directories `%AQUA_ROOT_DIR%\bin` and `%AQUA_ROOT_DIR%\bat` instead of symbolic links.
-
-If you use PowerShell or Command Prompt, please add `%AQUA_ROOT_DIR%\bat` to the environment variable `PATH`.
-Or if you use Git Bash, please add `%AQUA_ROOT_DIR%\bin` to the environment variable `PATH`.
+aqua creates executable BAT files and shell scripts instead of symbolic links.
 
 #### Why is this change needed?
 
