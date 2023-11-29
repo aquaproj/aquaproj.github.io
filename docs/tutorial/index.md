@@ -15,49 +15,7 @@ Please see [Demo](https://asciinema.org/a/498262?autoplay=1).
 
 [Install](install.md)
 
-Homebrew
-
-```bash
-brew install aquaproj/aqua/aqua
-```
-
-[WinGet](https://learn.microsoft.com/en-us/windows/package-manager/) (Windows)
-
-```bash
-winget install aquaproj.aqua
-```
-
-[Scoop](https://scoop.sh/) (Windows)
-
-```bash
-scoop bucket add aquaproj https://github.com/aquaproj/scoop-bucket
-scoop install aqua
-```
-
-[aqua-installer](https://github.com/aquaproj/aqua-installer)
-
-```bash
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.2.0/aqua-installer
-echo "d13118c3172d90ffa6be205344b93e8621de9bf47c852d80da188ffa6985c276  aqua-installer" | sha256sum -c
-chmod +x aqua-installer
-./aqua-installer
-```
-
-Add `${AQUA_ROOT_DIR}/bin` to the environment variable `PATH`.
-
-```bash
-export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
-```
-
-:::info
-From aqua v2.8.0, `aqua root-dir` command is available.
-
-```bash
-export PATH="$(aqua root-dir)/bin:$PATH"
-```
-:::
-
-Confirm if aqua is installed correctly.
+Please confirm if aqua is installed correctly.
 
 ```console
 aqua -v
