@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] [arguments...]
 
 VERSION:
-   2.16.4 (fd3d2911afd67834ecdcf4c282fa294727cee9eb)
+   2.21.0 (1b1dcdb2e717d616c781e3781d8be6df008e6661)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -33,7 +33,7 @@ COMMANDS:
    version                Show version
    cp                     Copy executable files in a directory
    root-dir               Output the aqua root directory (AQUA_ROOT_DIR)
-   update-checksum        Create or Update aqua-checksums.json
+   update-checksum, upc   Create or Update aqua-checksums.json
    remove, rm             Uninstall packages
    update, up             Update registries and packages
    help, h                Shows a list of commands or help for one command
@@ -106,7 +106,7 @@ DESCRIPTION:
 
    $ aqua g
 
-     influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
+     influxdata/influx-cli (standard) (influx)                     ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
      newrelic/newrelic-cli (standard) (newrelic)                   │  cli/cli
      pivotal-cf/pivnet-cli (standard) (pivnet)                     │
      scaleway/scaleway-cli (standard) (scw)                        │  https://cli.github.com/
@@ -126,7 +126,7 @@ DESCRIPTION:
      openfaas/faas-cli (standard)                                  │
    > cli/cli (standard) (gh)                                       │
      48/380                                                        │
-   > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
+   > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 
    Please select the package you want to install, then the package configuration is outptted.
    You can select multiple packages by tab key.
@@ -177,8 +177,15 @@ DESCRIPTION:
    - name: cli/cli@v2.2.0
 
    You can select a version interactively with "-s" option.
+   By default, aqua g -s will only display 30 versions of package.
+   Use --limit/-l to change it. Non-positive number refers to no limit.
 
+   # Display 30 versions of selected by default
    $ aqua g -s
+   # Display all versions of selected package
+   $ aqua g -s -l -1
+   # Display 5 versions of selected package
+   $ aqua g -s -l 5
 
    The option "-pin" is useful to prevent the package from being updated by Renovate.
 
@@ -195,13 +202,14 @@ DESCRIPTION:
 
 
 OPTIONS:
-   -f value              the file path of packages list. When the value is "-", the list is passed from the standard input
-   -i                    Insert packages to configuration file (default: false)
-   --pin                 Pin version (default: false)
-   --detail, -d          Output additional fields such as description and link (default: false) [$AQUA_GENERATE_WITH_DETAIL]
-   -o value              inserted file
-   --select-version, -s  Select the installed version interactively (default: false)
-   --help, -h            show help
+   -f value                 the file path of packages list. When the value is "-", the list is passed from the standard input
+   -i                       Insert packages to configuration file (default: false)
+   --pin                    Pin version (default: false)
+   --detail, -d             Output additional fields such as description and link (default: false) [$AQUA_GENERATE_WITH_DETAIL]
+   -o value                 inserted file
+   --select-version, -s     Select the installed version interactively. Default to display 30 versions, use --limit/-l to change it. (default: false)
+   --limit value, -l value  The maximum number of versions. Non-positive number refers to no limit. (default: 0)
+   --help, -h               show help
 ```
 
 ## aqua init
@@ -313,9 +321,15 @@ DESCRIPTION:
    $ aqua which foo
    FATA[0000] aqua failed                                   aqua_version=0.8.6 error="command is not found" exe_name=foo program=aqua
 
+   If you want the package version, "--version" option is useful.
+
+   $ aqua which --version gh
+   v2.4.0
+
 
 OPTIONS:
-   --help, -h  show help
+   --version, -v  Output the given package version (default: false)
+   --help, -h     show help
 ```
 
 ## aqua remove
