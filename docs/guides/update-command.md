@@ -75,6 +75,14 @@ e.g.
 aqua update gh
 ```
 
+## Specify versions
+
+You can specify versions.
+
+```sh
+aqua update gh@v2.30.0
+```
+
 ## Select packages with Fuzzy Finder
 
 If you want to update only specific packages, please use the `-i` option.
