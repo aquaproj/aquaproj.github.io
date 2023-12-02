@@ -15,7 +15,6 @@ jobs:
       update-aqua-checksums: ${{steps.changes.outputs.update-aqua-checksums}}
       renovate-config-validator: ${{steps.changes.outputs.renovate-config-validator}}
       ghalint: ${{steps.changes.outputs.ghalint}}
-      update-yarn-lock: ${{steps.changes.outputs.update-yarn-lock}}
     runs-on: ubuntu-latest
     permissions: {}
     steps:
@@ -33,34 +32,20 @@ jobs:
             ghalint:
               - .github/workflows/*.yaml
               - aqua/imports/ghalint.yaml
-            update-yarn-lock:
-              - yarn.lock
-              - package.json
 
-  enable-automerge:
-    # Enable automerge to merge pull requests from Renovate automatically.
-    runs-on: ubuntu-latest
+  enable-auto-merge:
+    uses: ./.github/workflows/wc-enable-auto-merge.yaml
+    permissions: {}
     needs:
       - status-check
-    permissions:
-      contents: write # For enable automerge
-      pull-requests: write # For enable automerge
+    secrets:
+      gh_app_id: ${{secrets.APP_ID_AQUAPROJ_AQUA}}
+      gh_app_private_key: ${{secrets.APP_PRIVATE_KEY_AQUAPROJ_AQUA}}
     # "! failure() && ! cancelled()" is required. success() returns false if dependent jobs are skipped.
     # https://github.com/community/community/discussions/45058
     # By default success() is used so we have to override success() by "! failure() && ! cancelled()"
     if: |
       ! failure() && ! cancelled() && github.event.pull_request.user.login == 'renovate[bot]' && contains(github.event.pull_request.body, ' **Automerge**: Enabled.')
-    steps:
-      - name: Generate token
-        id: generate_token
-        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
-        with:
-          app_id: ${{secrets.APP_ID_AQUAPROJ_AQUA}}
-          private_key: ${{secrets.APP_PRIVATE_KEY_AQUAPROJ_AQUA}}
-      - run: gh -R "$GITHUB_REPOSITORY" pr merge --squash --auto --delete-branch "$PR_NUMBER"
-        env:
-          GITHUB_TOKEN: ${{steps.generate_token.outputs.token}} # Use GitHub App to trigger GitHub Actions Workflow by merge commit.
-          PR_NUMBER: ${{github.event.pull_request.number}}
 
   status-check:
     # This job is used for main branch's branch protection rule's status check.
@@ -72,7 +57,6 @@ jobs:
       - typos
       - ghalint
       - update-aqua-checksums
-      - update-yarn-lock
     permissions: {}
     if: failure()
     steps:
@@ -86,15 +70,6 @@ jobs:
     permissions:
       contents: read
 
-  update-yarn-lock:
-    uses: ./.github/workflows/update-yarn-lock.yaml
-    needs: path-filter
-    if: |
-      needs.path-filter.outputs.update-yarn-lock == 'true'
-    secrets:
-      APP_ID: ${{secrets.APP_ID_AQUAPROJ_AQUA}}
-      PRIVATE_KEY: ${{secrets.APP_PRIVATE_KEY_AQUAPROJ_AQUA}}
-
   test:
     uses: ./.github/workflows/deploy.yaml
     permissions:
@@ -103,38 +78,15 @@ jobs:
       is_pr: true
 
   update-aqua-checksums:
-    # Update aqua-checksums.json and push a commit
-    runs-on: ubuntu-latest
+    uses: ./.github/workflows/wc-update-aqua-checksums.yaml
     needs: path-filter
-    permissions: {}
+    permissions:
+      contents: read
+    secrets:
+      gh_app_id: ${{secrets.APP_ID_AQUAPROJ_AQUA}}
+      gh_app_private_key: ${{secrets.APP_PRIVATE_KEY_AQUAPROJ_AQUA}}
     if: |
       needs.path-filter.outputs.update-aqua-checksums == 'true'
-    steps:
-      - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - name: Generate token
-        id: generate_token
-        if: "! github.event.pull_request.head.repo.fork"
-        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
-        with:
-          app_id: ${{secrets.APP_ID_AQUAPROJ_AQUA}}
-          private_key: ${{secrets.APP_PRIVATE_KEY_AQUAPROJ_AQUA}}
-      - uses: aquaproj/aqua-installer@928a2ee4243a9ee8312d80dc8cbaca88fb602a91 # v2.2.0
-        # Install ghcp
-        with:
-          aqua_version: v2.21.0
-        env:
-          AQUA_GITHUB_TOKEN: ${{github.token}}
-      - uses: aquaproj/update-checksum-action@0fef5fa12e81e046bb29078f76b99bb29fa4e696 # v0.2.3
-        with:
-          prune: true
-          skip_push: ${{github.event.pull_request.head.repo.fork}}
-        env:
-          # To trigger GitHub Actions Workflow by pushing a commit, GitHub App token is required.
-          # github.token doesn't trigger GitHub Actions Workflow.
-          # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow
-          # > When you use the repository's GITHUB_TOKEN to perform tasks, events triggered by the GITHUB_TOKEN, with the exception of workflow_dispatch and repository_dispatch, will not create a new workflow run.
-          GITHUB_TOKEN: ${{steps.generate_token.outputs.token}}
 
   ghalint:
     # Validate GitHub Actions Workflows by ghalint.
