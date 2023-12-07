@@ -3,7 +3,3 @@ exclude = [
   '.*\.md$',
   'https://aquaproj\.github\.io/docs/registry-config#go-package',
 ]
-
-exclude_path = [
-  'blog/.*',
-]
