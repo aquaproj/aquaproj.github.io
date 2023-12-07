@@ -20,7 +20,7 @@ sidebar_position: 1120
 
 [zenn #aquaclivm](https://zenn.dev/topics/aquaclivm)
 
-* [2013-10-01 aqua CLI Version Manager 入門](https://zenn.dev/shunsuke_suzuki/books/aqua-handbook)
+* [2023-10-01 aqua CLI Version Manager 入門](https://zenn.dev/shunsuke_suzuki/books/aqua-handbook)
 * [2022-12-27 Cosign と SLSA による aqua CLI Version Manager の Security 改善](https://zenn.dev/shunsuke_suzuki/articles/aqua-cosign-slsa)
 * [2022-11-15 aqua の Policy as Code](https://zenn.dev/shunsuke_suzuki/articles/aqua-policy-as-code)
 * [2022-11-07 aqua Release Notes (v1.20.0 ~ v1.22.0)](https://zenn.dev/shunsuke_suzuki/articles/aqua-release-notes-v1200-v1220)
@@ -42,6 +42,7 @@ sidebar_position: 1120
 
 ## Non official blogs
 
+* [2023-11-28 aqua で始める CI-Friendly なツール管理](https://speakerdeck.com/ponkio_o/engineering-productivity-meetup-1)
 * [2022-12-14 CLI バージョンマネージャー aqua のススメ](https://engineer.retty.me/entry/2022/12/14/130000)
 * [2022-12-13 【新規ツール探し】asdf と比較しても使いやすいCLI のバージョン管理ツール「aqua」](https://blog.framinal.life/entry/aqua)
 * [2022-12-09 Snyk IaC + reviewdog + aquaではじめるDevSecOps](https://tech.gunosy.io/entry/snyk_iac_reviewdog_aqua_devsecops)
