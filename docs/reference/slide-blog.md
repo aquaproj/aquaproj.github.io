@@ -42,6 +42,7 @@ sidebar_position: 1120
 
 ## Non official blogs
 
+* [2023-11-28 aqua で始める CI-Friendly なツール管理](https://speakerdeck.com/ponkio_o/engineering-productivity-meetup-1)
 * [2022-12-14 CLI バージョンマネージャー aqua のススメ](https://engineer.retty.me/entry/2022/12/14/130000)
 * [2022-12-13 【新規ツール探し】asdf と比較しても使いやすいCLI のバージョン管理ツール「aqua」](https://blog.framinal.life/entry/aqua)
 * [2022-12-09 Snyk IaC + reviewdog + aquaではじめるDevSecOps](https://tech.gunosy.io/entry/snyk_iac_reviewdog_aqua_devsecops)
