@@ -17,7 +17,7 @@ The framework has the following components.
 
 ## How to use
 
-1. [Create a repository from the template repository](https://github.com/aquaproj/template-private-aqua-registry/generate)
+1. [Create a repository from the template repository](https://github.com/new?template_name=template-private-aqua-registry&template_owner=aquaproj)
 1. Replace placeholders `<REPO_OWNER>` and `<REPO_NAME>`
 1. Prepare a GitHub App or GitHub Personal Access Token for CI
 1. (Optional) Install Renovate App in the repository
@@ -69,7 +69,7 @@ ref. [2022-03-29 Automate handling a number of Pull Requests by Renovate in Terr
 
 ### Requirements
 
-- [aqua](https://aquaproj.github.io/docs/reference/install) >= [v1.14.0](https://github.com/aquaproj/aqua/releases/tag/v1.14.0)
+- [aqua](/docs/install) >= [v1.14.0](https://github.com/aquaproj/aqua/releases/tag/v1.14.0)
 - GitHub Access Token
 
 GitHub Access Token is required to access private repositories.

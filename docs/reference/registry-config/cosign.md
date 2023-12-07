@@ -11,7 +11,7 @@ Please see [Cosign and SLSA Provenance Support](/docs/reference/security/cosign-
 ## Fields
 
 - cosign_experimental (boolean): If `true`, `cosign verify-blob` is run with the environment variable `COSIGN_EXPERIMENTAL=1`
-- opts ([]string): [cosign verify-blob](https://docs.sigstore.dev/cosign/working_with_blobs) options
+- opts ([]string): [cosign verify-blob](https://docs.sigstore.dev/signing/quickstart/#verifying-a-signed-blob) options
 - signature
   - type (string): `github_release` or `http`
   - repo_owner (string) (optional):

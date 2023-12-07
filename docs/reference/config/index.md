@@ -4,7 +4,7 @@ sidebar_position: 200
 
 # Configuration
 
-e.g. [aqua.yaml](https://github.com/aquaproj/aqua/blob/main/aqua.yaml)
+e.g.
 
 ```yaml
 registries:
