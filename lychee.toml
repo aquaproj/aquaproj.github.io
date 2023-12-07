@@ -3,5 +3,8 @@
 exclude = [
   '^https://twitter.com/.*',
   '.*\.md$',
-  'https://aquaproj\.github\.io/docs/registry-config#go-package',
+]
+
+exclude_path = [
+  'blog/2022-05-30-support-building-go-tools.md',
 ]
