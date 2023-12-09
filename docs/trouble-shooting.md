@@ -161,7 +161,7 @@ There is a workaround that you can try when you face the issue.
 The workaround is to execute the tool directly by executing `aqua which X` and getting the absolute path.
 
 For example, when we tried [LunarVim](https://www.lunarvim.org/) we faced the issue that LunarVim didn't start.
-The issue occured as we managed NeoVim with aqua.
+The issue occurred as we managed NeoVim with aqua.
 LunarVim executed NeoVim as the following.
 
 ```sh
