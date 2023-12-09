@@ -151,45 +151,29 @@ aqua finds the configuration files and packages according to the rule.
 
 Please check configuration files and your current directory.
 
-## gopls doesn't work well
+## The tool X doesn't work well
 
-This is a known issues.
+When the tool X managed by aqua is executed, X is intermediated by aqua-proxy and aqua.
+Please see [here](/docs/reference/execve-2) too.
+Due to this intermediation, there are cases that some tools don't work well.
 
-- https://github.com/aquaproj/aqua/issues/1597
-- https://github.com/aquaproj/aqua/issues/710
+There is a workaround that you can try when you face the issue.
+The workaround is to execute the tool directly by executing `aqua which X` and getting the absolute path.
 
-If you use Linux, please set the environment variable [AQUA_EXPERIMENTAL_X_SYS_EXEC](/docs/reference/config/experimental-feature/#aqua_experimental_x_sys_exec).
-
-```sh
-export AQUA_EXPERIMENTAL_X_SYS_EXEC=true
-```
-
-[AQUA_EXPERIMENTAL_X_SYS_EXEC](/docs/reference/config/experimental-feature/#aqua_experimental_x_sys_exec) has an issue in macOS.
-
-https://github.com/aquaproj/aqua/issues/729
-
-In macOS please try one of the following alias, shell function, and shell script.
-
-1. alias
+For example, when we tried [LunarVim](https://www.lunarvim.org/) we faced the issue that LunarVim didn't start.
+The issue occured as we managed NeoVim with aqua.
+LunarVim executed NeoVim as the following.
 
 ```sh
-alias gopls="$(aqua which gopls)"
+# $HOME/.local/bin/lvim
+exec -a "$NVIM_APPNAME" nvim -u "$LUNARVIM_BASE_DIR/init.lua" "$@"
 ```
 
-2. shell function
+To resolve the issue, we replaced `nvim` with `"$(aqua which nvim)"`
 
 ```sh
-gopls() {
-  "$(aqua which gopls)" "$@"
-}
+# $HOME/.local/bin/lvim
+exec -a "$NVIM_APPNAME" "$(aqua which nvim)" -u "$LUNARVIM_BASE_DIR/init.lua" "$@"
 ```
 
-3. shell script
-
-Add the following script `gopls` to `$PATH`.
-
-```sh
-#!/usr/bin/env bash
-
-exec "$(aqua which gopls)" "$@"
-```
+Then the issue was solved and we could start LunarVim!
