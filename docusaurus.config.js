@@ -43,14 +43,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      announcementBar: {
-        id: 'uninstall_package',
-        content:
-          '<a href="/docs/install#winget">Winget Support (2023-11-21)</a>',
-        backgroundColor: '#7FFF00',
-        textColor: '#091E42',
-        isCloseable: true,
-      },
+      // announcementBar: {
+      //   id: 'uninstall_package',
+      //   content:
+      //     '<a href="/docs/install#winget">Winget Support (2023-11-21)</a>',
+      //   backgroundColor: '#7FFF00',
+      //   textColor: '#091E42',
+      //   isCloseable: true,
+      // },
       navbar: {
         title: 'aqua',
         logo: {
