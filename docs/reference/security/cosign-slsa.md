@@ -38,7 +38,7 @@ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 You can install aqua by the following one liner.
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer | bash
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.3.0/aqua-installer | bash
 ```
 
 But the one liner is a bit dangerous because aqua-installer may be tampered.
@@ -46,8 +46,8 @@ But the one liner is a bit dangerous because aqua-installer may be tampered.
 You can verify aqua-installer with checksum.
 
 ```sh
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer
-echo "c2af02bdd15da6794f9c98db40332c804224930212f553a805425441f8331665  aqua-installer" | sha256sum -c
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.3.0/aqua-installer
+echo "1577b99b74751a5ddeea757198cee3b600fce3ef18990540e4d0e667edcf1b5f  aqua-installer" | sha256sum -c
 chmod +x aqua-installer
 ```
 
@@ -200,6 +200,27 @@ aqua [-disable-cosign] [-disable-slsa] i
 
 ```sh
 env AQUA_DISABLE_COSIGN=true AQUA_DISABLE_SLSA=true aqua i
+```
+
+### Disable Cosign and SLSA (aqua-installer)
+
+[aqua-installer >= v2.3.0](https://github.com/aquaproj/aqua-installer/releases/tag/v2.3.0)
+
+To disable the verification when you install aqua with aqua-installer, please use aqua-installer v2.3.0 or newer and set the environment variables `AQUA_DISABLE_COSIGN` and `AQUA_DISABLE_SLSA`.
+
+```sh
+export AQUA_DISABLE_COSIGN=true
+export AQUA_DISABLE_SLSA=true
+./aqua-installer
+```
+
+```yaml
+- uses: aquaproj/aqua-installer@v2.3.0
+  with:
+    aqua_version: v2.22.0
+  env:
+    AQUA_DISABLE_COSIGN: "true"
+    AQUA_DISABLE_SLSA: "true"
 ```
 
 ## See also
