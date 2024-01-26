@@ -165,6 +165,43 @@ ERRO[0004] install the package                           aqua_version=1.26.2 env
 FATA[0004] aqua failed                                   aqua_version=1.26.2 env=linux/arm64 error="it failed to install some packages" program=aqua
 ```
 
+## Disable the verification with Cosign and SLSA Provenance
+
+aqua >= [v2.22.0](https://github.com/aquaproj/aqua/releases/tag/v2.22.0) [#2631](https://github.com/orgs/aquaproj/discussions/2631) [#2633](https://github.com/aquaproj/aqua/pull/2633) [#2634](https://github.com/aquaproj/aqua/pull/2634)
+
+:::caution
+This feature is for users who can't use Cosign and slsa-verifier.
+Most users can use them so don't need this feature.
+aqua installs Cosign and slsa-verifier internally, so you don't need to install them yourself.
+If you can use Cosign and slsa-verifier, you should not disable them because they are important for security.
+:::
+
+You can disable the verification with Cosign and SLSA Provenance.
+
+### Why is the feature needed?
+
+Cosign and sla-verifier access some endpoints such as `oauth2.sigstore.dev` and `fulcio.sigstore.dev`.
+So to use them you need to allow the access to these endpoints.
+
+But in some use cases you can't or don't want to do that.
+For example, your company's network policy might not allow the access to these endpoints.
+
+To resolve the issue, this issue proposes to support disabling the verification with Cosign and slsa-verifier.
+
+### How to disable Cosign and SLSA
+
+You can use command line options `-disable-cosign` and `-disable-slsa` or environment variables `AQUA_DISABLE_COSIGN` and `AQUA_DISABLE_SLSA`.
+
+e.g.
+
+```sh
+aqua [-disable-cosign] [-disable-slsa] i
+```
+
+```sh
+env AQUA_DISABLE_COSIGN=true AQUA_DISABLE_SLSA=true aqua i
+```
+
 ## See also
 
 - Registry Configuration
