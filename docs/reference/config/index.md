@@ -37,6 +37,8 @@ To install tools in global configuration files, you have to set `-a` to `aqua in
 * `AQUA_CONFIG`: configuration file path
 * [AQUA_GLOBAL_CONFIG](/docs/tutorial/global-config): global configuration file paths separated by semicolon `:`
 * `AQUA_POLICY_CONFIG`: [policy file](/docs/reference/security/policy-as-code) paths separated by semicolon `:`
+* [`AQUA_DISABLE_COSIGN`: `aqua >= v2.22.0` If true, the verification with Cosign is disabled](/docs/reference/security/cosign-slsa#disable-cosign-and-slsa-aqua-installer)
+* [`AQUA_DISABLE_SLSA`: `aqua >= v2.22.0` If true, the verification with SLSA Provenance is disabled](/docs/reference/security/cosign-slsa#disable-cosign-and-slsa-aqua-installer)
 * `AQUA_DISABLE_POLICY`: If true, [Policy](/docs/reference/security/policy-as-code) is disabled (aqua >= v2.1.0)
 * `AQUA_DISABLE_LAZY_INSTALL`: If true, [Lazy Install](/docs/reference/lazy-install/) is disabled (aqua >= v2.9.0)
 * `AQUA_ROOT_DIR`: The directory path where aqua install tools
