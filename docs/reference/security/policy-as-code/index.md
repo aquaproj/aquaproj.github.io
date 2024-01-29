@@ -41,7 +41,7 @@ There are two types of Policies
 1. [AQUA_POLICY_CONFIG](#aqua_policy_config)
 
 We recommend `Git Repository root's policy file` instead of `AQUA_POLICY_CONFIG`.
-`Git Repository root's policy file` was introduced to solve the issue of `AQUA_POLICY_COFIG`.
+`Git Repository root's policy file` was introduced to solve the issue of `AQUA_POLICY_CONFIG`.
 Please see [Why is `Git Repository root's policy file` needed](git-policy.md#why-this-feature-is-needed).
 
 ## AQUA_POLICY_CONFIG
