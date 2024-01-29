@@ -12,10 +12,10 @@ NAME:
    aqua - Version Manager of CLI. https://aquaproj.github.io/
 
 USAGE:
-   aqua [global options] command [command options] [arguments...]
+   aqua [global options] command [command options] 
 
 VERSION:
-   2.21.0 (1b1dcdb2e717d616c781e3781d8be6df008e6661)
+   2.22.0 (25abbb048c34194fa412beac251371d21e22a755)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -41,6 +41,8 @@ COMMANDS:
 GLOBAL OPTIONS:
    --log-level value         log level [$AQUA_LOG_LEVEL]
    --config value, -c value  configuration file path [$AQUA_CONFIG]
+   --disable-cosign          Disable Cosign verification (default: false) [$AQUA_DISABLE_COSIGN]
+   --disable-slsa            Disable SLSA verification (default: false) [$AQUA_DISABLE_SLSA]
    --trace value             trace output file path
    --cpu-profile value       cpu profile output file path
    --help, -h                show help
@@ -208,7 +210,7 @@ OPTIONS:
    --detail, -d             Output additional fields such as description and link (default: false) [$AQUA_GENERATE_WITH_DETAIL]
    -o value                 inserted file
    --select-version, -s     Select the installed version interactively. Default to display 30 versions, use --limit/-l to change it. (default: false)
-   --limit value, -l value  The maximum number of versions. Non-positive number refers to no limit. (default: 0)
+   --limit value, -l value  The maximum number of versions. Non-positive number refers to no limit. (default: 30)
    --help, -h               show help
 ```
 
@@ -402,7 +404,7 @@ DESCRIPTION:
 
 
 OPTIONS:
-   -o value                destination directory
+   -o value                destination directory (default: "dist")
    --all, -a               install all aqua configuration packages (default: false)
    --tags value, -t value  filter installed packages with tags
    --exclude-tags value    exclude installed packages with tags
@@ -548,7 +550,7 @@ NAME:
    aqua completion - Output shell completion script for bash or zsh
 
 USAGE:
-   aqua completion command [command options] [arguments...]
+   aqua completion command [command options] 
 
 DESCRIPTION:
    Output shell completion script for bash or zsh
