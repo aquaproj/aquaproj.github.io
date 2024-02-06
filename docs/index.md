@@ -231,13 +231,13 @@ aqua provides various features, but other members can use aqua without learning 
 
 ### Easy to support new tools
 
-aqua has [a central Registry (Standard Registry)](https://github.com/aquaproj/aqua-registry) and you can add new tools to the Registry.
-You don't have to maintain plugins or something by yourself. You only have to create an issue or pull request.
-To send a pull request you have to write Registry Configuration, but aqua provides [a tool](https://github.com/aquaproj/registry-tool) to scaffold Registry Configuration and create a pull request, so you can send a pull request easily.
+aqua has [the central Registry (Standard Registry)](https://github.com/aquaproj/aqua-registry) and you can add new tools to the Registry.
+You don't have to maintain plugins or something yourself. You only have to create issues or pull requests.
+To send a pull request you have to write Registry Configuration, but aqua provides [the tool](https://github.com/aquaproj/registry-tool) to scaffold Registry Configuration and create pull requests, so you can send pull requests easily.
 Registry Configuration is a declarative YAML files, so you don't have to write shell scripts or something.
 Declarative YAML files are much easier to maintain than scripts.
 
-[Many contributors has already contributed to Standard Registry](https://github.com/aquaproj/aqua-registry/graphs/contributors).
+[Many contributors have already contributed to Standard Registry](https://github.com/aquaproj/aqua-registry/graphs/contributors).
 Your contribution is welcome!
 
 ## Comparison
@@ -263,7 +263,7 @@ You can use Homebrew to install tools aqua can't install.
 - :thumbsup: [Continuous update by Renovate](#continuous-update-by-renovate)
 - :thumbsup: [Security](reference/security/index.md) ([Checksum Verification](/docs/guides/checksum/))
 - :thumbsup: [aqua doesn't force to manage a tool by aqua in a project even if aqua is used to manage the tool in the other project](#aqua-doesnt-force-to-manage-a-tool-by-aqua-in-a-project-even-if-aqua-is-used-to-manage-the-tool-in-the-other-project)
-- :thumbsup: aqua Registry is much easier to maintain than asdf plugins
+- :thumbsup: [aqua Registry is much easier to maintain than asdf plugins](#easy-to-support-new-tools)
 - :thumbsup: Small things
   - :thumbsup: [Share aqua configuration for teams and organizations with AQUA_GLOBAL_CONFIG](/docs/guides/team-config)
   * :thumbsup: [Split the list of packages](/docs/guides/split-config)
