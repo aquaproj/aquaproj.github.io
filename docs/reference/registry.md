@@ -33,5 +33,4 @@ https://github.com/aquaproj/aqua-registry
 
 Please see the following document.
 
-* [Add Packages to Registry](/docs/develop-registry/add-registry)
-* [Install private packages](/docs/guides/private-package)
+- [Develop a Registry](/docs/develop-registry/)
