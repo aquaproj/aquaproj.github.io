@@ -16,7 +16,7 @@ Here is a brief overview of how to learn aqua.
 1. To learn the overview, please see [Demo](https://asciinema.org/a/498262?autoplay=1), [top page](/), and this page ([Introduction](#introduction), [Why aqua](#why-aqua), [Comparison](#comparison))
 1. To learn advanced usage, please read [Guides](/docs/guides)
 1. To contribute to Standard Registry (Add new packages, fix bugs), please read [Contributing](/docs/products/aqua-registry/contributing)
-1. To develop custom Registry, please read [Create Private Registries](/docs/develop-registry/create-private-registry)
+1. To develop custom Registry, please read [Develop a Registry](/docs/develop-registry/)
 
 If you have any question, please contact us.
 
@@ -91,7 +91,7 @@ $ aqua g
 > cli                                                           └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
 ```
 
-To add supported tools, please see [here](develop-registry/add-registry.md).
+To add supported tools, please see [here](/docs/products/aqua-registry/contributing).
 
 ## Usecase
 
