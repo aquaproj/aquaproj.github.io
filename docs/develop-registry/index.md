@@ -25,7 +25,7 @@ e.g.
 aqua gr suzuki-shunsuke/ghalint > registry.yaml
 ```
 
-By default, `aqua gr` generates Registry Configuration supporting all versions including old verions.
+By default, `aqua gr` generates Registry Configuration supporting all versions including old versions.
 But if you only have to support only the latest version, you can set the option `-l 1`.
 
 ```sh
