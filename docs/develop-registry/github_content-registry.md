@@ -4,16 +4,18 @@ sidebar_position: 447
 
 # Create Private Registries
 
-If your GitHub organization has in-house tools,
-it is useful to create a private registry in your organization.
-
+If your GitHub organization has in-house tools, it is useful to create a private registry in your organization.
 aqua provides the framework to build private registries.
 
 The framework has the following components.
 
-* [registry-tool](https://github.com/aquaproj/registry-tool): CLI
-* [template repository](https://github.com/aquaproj/template-private-aqua-registry)
-* [registry-action](https://github.com/aquaproj/registry-action): GitHub Actions
+- [registry-tool](https://github.com/aquaproj/registry-tool): CLI
+- [registry-action](https://github.com/aquaproj/registry-action): GitHub Actions
+
+:::caution
+We archived [template repository](https://github.com/aquaproj/template-private-aqua-registry) because it's difficult to maintain it continuously.
+Please develop your private registries referring to [Standard Registry](https://github.com/aquaproj/aqua-registry).
+:::
 
 ## How to use
 
