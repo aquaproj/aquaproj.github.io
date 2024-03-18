@@ -130,7 +130,7 @@ packages:
 
 aqua >= [v2.25.0](https://github.com/aquaproj/aqua/releases/tag/v2.25.0) [#2749](https://github.com/orgs/aquaproj/discussions/2749#discussioncomment-8808062) [#2752](https://github.com/aquaproj/aqua/pull/2752)
 
-`aqua update` updates all pacakages by default, but you may not want to update some packages.
+`aqua update` updates all packages by default, but you may not want to update some packages.
 In this case, you can exclude some packages from the target of `aqua update`.
 
 e.g. aqua.yaml
