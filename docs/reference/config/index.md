@@ -193,6 +193,8 @@ packages:
 * `version`: (string, optional) package version
 * `import`: (string, optional) glob pattern of package files. This is relative path from the configuration file. This is parsed with [filepath.Glob](https://pkg.go.dev/path/filepath#Glob). Please see [Split the list of packages](/docs/guides/split-config) too.
 * [tags](/docs/guides/package-tag): Filter installed packages. Please see [Filter packages with tags](/docs/guides/package-tag)
+* `update`: The setting for `aqua update` command
+  * `update.enabled`: If this is false, `aqua update` command ignores the package. If the package name is passed to aqua up command explicitly, enabled is ignored. By default, enabled is true.
 
 The following two configuration is equivalent.
 
