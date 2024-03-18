@@ -11,11 +11,11 @@ Images in [the top page](https://aquaproj.github.io/) were generated with [carbo
 Set up.
 
 ```console
-$ yarn
+$ npm i
 ```
 
 Start a local development server.
 
 ```console
-$ yarn start
+$ npm start
 ```
