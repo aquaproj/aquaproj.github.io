@@ -126,6 +126,33 @@ packages:
   - name: google/pprof@d04f2422c8a17569c14e84da0fae252d9529826b # Doesn't update
 ```
 
+## Exclude some packages from the target of `aqua update`
+
+aqua >= [v2.25.0](https://github.com/aquaproj/aqua/releases/tag/v2.25.0) [#2749](https://github.com/orgs/aquaproj/discussions/2749#discussioncomment-8808062) [#2752](https://github.com/aquaproj/aqua/pull/2752)
+
+`aqua update` updates all pacakages by default, but you may not want to update some packages.
+In this case, you can exclude some packages from the target of `aqua update`.
+
+e.g. aqua.yaml
+
+```yaml
+packages:
+- name: golang/vuln/govulncheck@v1.0.3
+  update:
+    # If enabled is false, aqua up command ignores the package.
+    # If the package name is passed to aqua up command explicitly, enabled is ignored.
+    # By default, enabled is true.
+    enabled: false
+```
+
+If you specify the package explicitly, the setting `enabled` is ignored.
+
+e.g.
+
+```console
+$ aqua up govuluncheck # the package is updated even if update.enabled is false
+```
+
 ## Known Issues
 
 There are some known issues related to the third party library [goccy/go-yaml](https://github.com/goccy/go-yaml).
