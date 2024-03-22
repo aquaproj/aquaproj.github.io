@@ -46,7 +46,7 @@ const config = {
       announcementBar: {
         id: 'list_installed_packages',
         content:
-          '<a href="/docs/guides/list-installed-packages">List installed packages (2024-03-10)</a>',
+          '<a href="https://github.com/orgs/aquaproj/discussions/2768">Please upgrade aqua to v2.25.1 or later (2024-03-22)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
