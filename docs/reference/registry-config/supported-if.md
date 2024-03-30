@@ -5,6 +5,11 @@ sidebar_position: 1900
 # supported_if
 
 :::caution
+From aqua v2.0.0, `supported_if` was abandoned.
+Please use [supported_envs](supported-envs.md) instead.
+:::
+
+:::caution
 From aqua v1.12.0 or later, we strongly recommend [supported_envs](supported-envs.md) instead of supported_if.
 supported_envs is simpler than supported_if, and better in terms of the performance.
 :::
