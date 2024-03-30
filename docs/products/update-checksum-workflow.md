@@ -32,12 +32,12 @@ on:
       - aqua-checksums.json
 jobs:
   update-aqua-checksums:
-    uses: aquaproj/update-checksum-workflow/.github/workflows/update-checksum.yaml@f637ff2417a258303aeec16a7fa7a1a7a8bda020 # v0.1.3
+    uses: aquaproj/update-checksum-workflow/.github/workflows/update-checksum.yaml@f367004e7f17e99d30297cd9e89afad30ee1f251 # v1.0.0
     permissions:
       contents: read
     with:
       aqua_policy_config: aqua-policy.yaml
-      aqua_version: v2.10.1
+      aqua_version: v2.25.1
       prune: true
     secrets:
       gh_app_id: ${{secrets.APP_ID}}

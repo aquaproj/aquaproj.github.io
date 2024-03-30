@@ -7,7 +7,7 @@ sidebar_position: 10
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config#1.11.0"
+    "github>aquaproj/aqua-renovate-config#2.2.1"
   ]
 }
 ```

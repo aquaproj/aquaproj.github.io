@@ -15,7 +15,7 @@ Please add the Standard Registry to your aqua.yaml's registries, and run `aqua g
 ```yaml
 registries:
   - type: standard
-    ref: v3.143.0 # renovate: depName=aquaproj/aqua-registry
+    ref: v4.155.1  # renovate: depName=aquaproj/aqua-registry
 ```
 
 `aqua g` launches the interactive UI and you can search the package by fuzzy search.

@@ -21,7 +21,7 @@ aqua.yaml
 ```yaml
 registries:
 - type: standard
-  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.155.1  # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - import: aqua/*.yaml
@@ -57,7 +57,7 @@ e.g.
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:file#1.5.0(aqua/conftest\\.yaml)"
+    "github>aquaproj/aqua-renovate-config:file#2.2.1(aqua/conftest\\.yaml)"
   ]
 }
 ```
@@ -67,7 +67,7 @@ You can also use the regular expression.
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:file#1.5.0(aqua/.*\\.ya?ml)"
+    "github>aquaproj/aqua-renovate-config:file#2.2.1(aqua/.*\\.ya?ml)"
   ]
 }
 ```
