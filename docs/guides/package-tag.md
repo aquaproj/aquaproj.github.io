@@ -21,7 +21,7 @@ e.g.
 ---
 registries:
 - type: standard
-  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.155.1  # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: suzuki-shunsuke/tfcmt@v3.2.0
   tags:

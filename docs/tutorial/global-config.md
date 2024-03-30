@@ -27,7 +27,7 @@ $ export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.co
 ```yaml
 registries:
 - type: standard
-  ref: v4.79.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.155.1 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: cli/cli@v2.2.0

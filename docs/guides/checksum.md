@@ -56,7 +56,7 @@ checksum:
   enabled: true
 registries:
 - type: standard
-  ref: v3.143.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.155.1 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: suzuki-shunsuke/tfcmt@v4.2.0
 ```
@@ -83,11 +83,11 @@ on:
       - aqua-checksums.json
 jobs:
   update-aqua-checksums:
-    uses: aquaproj/update-checksum-workflow/.github/workflows/update-checksum.yaml@f637ff2417a258303aeec16a7fa7a1a7a8bda020 # v0.1.3
+    uses: aquaproj/update-checksum-workflow/.github/workflows/update-checksum.yaml@f367004e7f17e99d30297cd9e89afad30ee1f251 # v1.0.0
     permissions:
       contents: read
     with:
-      aqua_version: v2.10.1
+      aqua_version: v2.25.1
       prune: true
     secrets:
       gh_token: ${{secrets.GH_TOKEN}}
@@ -178,9 +178,9 @@ Add a GitHub Actions job that runs a tampered package.
       AQUA_REQUIRE_CHECKSUM: "true"
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
-      - uses: aquaproj/aqua-installer@61e2563dfe7674cbf74fe6ec212e444198a3bb00 # v2.0.2
+      - uses: aquaproj/aqua-installer@4551ec64e21bf0f557c2525135ff0bd2cba40ec7 # v3.0.0
         with:
-          aqua_version: v2.10.1
+          aqua_version: v2.25.1
         env:
           GITHUB_TOKEN: ${{github.token}}
       - run: tfcmt -v
@@ -197,5 +197,5 @@ Then `test` job would fail because the checksum is unmatched.
 ![image](https://user-images.githubusercontent.com/13323303/224528789-eeda95e7-73b9-46a3-95da-da954087e83b.png)
 
 ```
-time="2023-03-12T06:36:05Z" level=fatal msg="aqua failed" actual_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D91 aqua_version=2.10.1 env=linux/amd64 error="checksum is invalid" exe_name=tfcmt expected_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D92 package=suzuki-shunsuke/tfcmt package_version=v4.1.0 program=aqua
+time="2023-03-12T06:36:05Z" level=fatal msg="aqua failed" actual_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D91 aqua_version=2.25.1 env=linux/amd64 error="checksum is invalid" exe_name=tfcmt expected_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D92 package=suzuki-shunsuke/tfcmt package_version=v4.1.0 program=aqua
 ```

@@ -17,7 +17,7 @@ If you use non Standard Registries, you have to create a Policy file to allow th
 
 ## Getting Started
 
-1. Set up the environment with Docker
+1. [Set up the environment with Docker](/docs/tutorial/#docker)
 1. Create `aqua.yaml` and a local Registry `registry.yaml`
 1. Try to use a local Registry and confirm the default Policy
 1. Create a Git repository and aqua-policy.yaml
@@ -26,27 +26,6 @@ If you use non Standard Registries, you have to create a Policy file to allow th
 1. Run `aqua policy allow`
 
 --
-
-1. Set up the environment with Docker
-
-```
-docker run --rm -ti alpine:3.17.0 sh
-```
-
-```
-apk add curl bash sudo git
-adduser -u 1000 -G wheel -D foo
-visudo # Uncomment "%wheel ALL=(ALL) NOPASSWD: ALL"
-su foo
-mkdir ~/workspace
-cd ~/workspace
-
-export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer
-echo "c2af02bdd15da6794f9c98db40332c804224930212f553a805425441f8331665  aqua-installer" | sha256sum -c
-chmod +x aqua-installer
-./aqua-installer
-```
 
 2. Create `aqua.yaml` and a local Registry `registry.yaml`
 
@@ -70,7 +49,7 @@ aqua.yaml
 #   - all
 registries:
 - type: standard
-  ref: v3.150.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.155.1 # renovate: depName=aquaproj/aqua-registry
 - name: local
   type: local
   path: registry.yaml
@@ -235,9 +214,9 @@ aqua >= `v2.3.0`, aqua-installer >= `v2.1.0`
 If the input `policy_allow` is set, aqua-installer runs `aqua policy allow` command.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v2.1.2
+- uses: aquaproj/aqua-installer@v3.0.0
   with:
-    aqua_version: v2.10.1
+    aqua_version: v2.25.1
     policy_allow: "true"
 ```
 

@@ -38,7 +38,7 @@ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 You can install aqua by the following one liner.
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.3.0/aqua-installer | bash
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | bash
 ```
 
 But the one liner is a bit dangerous because aqua-installer may be tampered.
@@ -46,8 +46,8 @@ But the one liner is a bit dangerous because aqua-installer may be tampered.
 You can verify aqua-installer with checksum.
 
 ```sh
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.3.0/aqua-installer
-echo "1577b99b74751a5ddeea757198cee3b600fce3ef18990540e4d0e667edcf1b5f  aqua-installer" | sha256sum -c
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer
+echo "8299de6c19a8ff6b2cc6ac69669cf9e12a96cece385658310aea4f4646a5496d  aqua-installer" | sha256sum -c
 chmod +x aqua-installer
 ```
 
@@ -215,9 +215,9 @@ export AQUA_DISABLE_SLSA=true
 ```
 
 ```yaml
-- uses: aquaproj/aqua-installer@v2.3.0
+- uses: aquaproj/aqua-installer@v3.0.0
   with:
-    aqua_version: v2.22.0
+    aqua_version: v2.25.1
   env:
     AQUA_DISABLE_COSIGN: "true"
     AQUA_DISABLE_SLSA: "true"

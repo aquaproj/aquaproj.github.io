@@ -41,7 +41,7 @@ We recommend specifying the Preset version.
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config#1.13.0"
+    "github>aquaproj/aqua-renovate-config#2.2.1"
   ]
 }
 ```
@@ -51,7 +51,7 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v4.90.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.155.1 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: open-policy-agent/conftest@v0.28.3
@@ -61,9 +61,9 @@ packages:
 The default preset updates GitHub Actions [aquaproj/aqua-installer](https://github.com/aquaproj/aqua-installer)'s `aqua_version` in `.github` too.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v2.1.2
+- uses: aquaproj/aqua-installer@v3.0.0
   with:
-    aqua_version: v2.18.0
+    aqua_version: v2.25.1
 ```
 
 ### `file` Preset
@@ -76,7 +76,7 @@ e.g.
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:file#1.13.0(aqua/.*\\.ya?ml)"
+    "github>aquaproj/aqua-renovate-config:file#2.2.1(aqua/.*\\.ya?ml)"
   ]
 }
 ```
@@ -91,13 +91,13 @@ e.g.
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:installer-script#1.13.0(scripts/.*\\.sh)"
+    "github>aquaproj/aqua-renovate-config:installer-script#2.2.1(scripts/.*\\.sh)"
   ]
 }
 ```
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash -s -- -v v2.18.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | bash -s -- -v v2.25.1
 ```
 
 :warning: To update aqua, please don't add newlines.
@@ -105,14 +105,14 @@ curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua
 :thumbsup:
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer | bash -s -- -v v2.18.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | bash -s -- -v v2.25.1
 ```
 
 :thumbsdown:
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.2/aqua-installer |
-  bash -s -- -v v2.18.0 # aqua isn't updated
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer |
+  bash -s -- -v v2.25.1 # aqua isn't updated
 ```
 
 ### `aqua-renovate-config` Preset
@@ -124,7 +124,7 @@ e.g.
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:aqua-renovate-config#1.13.0(default\\.json)"
+    "github>aquaproj/aqua-renovate-config:aqua-renovate-config#2.2.1(default\\.json)"
   ]
 }
 ```

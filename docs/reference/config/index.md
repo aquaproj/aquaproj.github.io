@@ -9,7 +9,7 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v4.19.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.155.1 # renovate: depName=aquaproj/aqua-registry
 
 packages:
 - name: helm/helm@v3.7.0
@@ -83,7 +83,7 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.155.1 # renovate: depName=aquaproj/aqua-registry
 ```
 
 Registry types
@@ -99,7 +99,7 @@ e.g.
 ```yaml
 registries:
 - type: standard
-  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.155.1 # renovate: depName=aquaproj/aqua-registry
 ```
 
 * `ref`: the Registry Version. Please check [Releases](https://github.com/aquaproj/aqua-registry/releases)
@@ -112,7 +112,7 @@ registries:
   type: github_content
   repo_owner: aquaproj
   repo_name: aqua-registry
-  ref: v3.90.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.155.1 # renovate: depName=aquaproj/aqua-registry
   path: registry.yaml
 ```
 

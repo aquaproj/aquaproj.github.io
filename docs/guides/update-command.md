@@ -165,7 +165,7 @@ Before
 
 ```yaml
 registries:
-- ref: v4.60.0
+- ref: v4.155.0
   type: standard
 packages:
 ```
@@ -174,14 +174,14 @@ Run `aqua up`.
 
 ```console
 $ aqua up
-INFO[0000] updating a registry                           aqua_version= env=darwin/arm64 new_version=v4.65.0 old_version=v4.60.0 program=aqua registry_name=standard
+INFO[0000] updating a registry                           aqua_version= env=darwin/arm64 new_version=v4.155.1 old_version=v4.155.0 program=aqua registry_name=standard
 ```
 
 After
 
 ```yaml
 registries:
-- ref: v4.65.0
+- ref: v4.155.1
   type: standard
 packages: null
 ```
@@ -196,7 +196,7 @@ Before
 
 ```yaml
 registries:
-- ref: v4.60.0
+- ref: v4.155.0
   type: standard
 
 
@@ -208,14 +208,14 @@ Run `aqua up`.
 
 ```console
 $ aqua up
-INFO[0000] updating a registry                           aqua_version= env=darwin/arm64 new_version=v4.65.0 old_version=v4.60.0 program=aqua registry_name=standard
+INFO[0000] updating a registry                           aqua_version= env=darwin/arm64 new_version=v4.155.1 old_version=v4.155.0 program=aqua registry_name=standard
 ```
 
 After
 
 ```yaml
 registries:
-- ref: v4.65.0
+- ref: v4.155.1
   type: standard
 packages:
 - name: suzuki-shunsuke/mkghtag@v0.1.1
