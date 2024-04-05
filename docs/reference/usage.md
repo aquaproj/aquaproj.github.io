@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] 
 
 VERSION:
-   2.22.0 (25abbb048c34194fa412beac251371d21e22a755)
+   2.25.2 (fee65b11d2fdcd4028502436093aaeeea6998581)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -537,9 +537,23 @@ DESCRIPTION:
    standard,abs-lang/abs
    ...
 
+   If the option -installed is set, the command lists only installed packages.
+
+   $ aqua list -installed
+   standard,golangci/golangci-lint,v1.56.2
+   standard,goreleaser/goreleaser,v1.24.0
+   ...
+
+   By default, the command doesn't list global configuration packages.
+   If you want to list global configuration packages too, please set the option -a.
+
+   $ aqua list -installed -a
+
 
 OPTIONS:
-   --help, -h  show help
+   --installed  List installed packages (default: false)
+   --all, -a    List global configuration packages too (default: false)
+   --help, -h   show help
 ```
 
 ## aqua completion
