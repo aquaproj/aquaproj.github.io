@@ -6,6 +6,10 @@ sidebar_position: 500
 
 aqua >= [v2.11.0](https://github.com/aquaproj/aqua/releases/tag/v2.11.0) [#538](https://github.com/aquaproj/aqua/issues/538) [#2248](https://github.com/orgs/aquaproj/discussions/2248) [#2249](https://github.com/aquaproj/aqua/pull/2249)
 
+:::caution
+`aqua rm` command removes files from `AQUA_ROOT_DIR/pkgs`, but doesn't remove packages from `aqua.yaml` and doesn't remove links from `AQUA_ROOT_DIR/bin`.
+:::
+
 ```console
 $ aqua rm --all [-a] # Uninstall all packages
 ```
