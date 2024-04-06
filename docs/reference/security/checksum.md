@@ -129,6 +129,24 @@ It is bothersome to write the checksum configuration manually, so aqua supports 
 The scaffolding isn't perfect, so sometimes you have to fix the code manually.
 :::
 
+## Enforce Checksum Verification by environment variables
+
+aqua >= v2.27.0 [#2702](https://github.com/aquaproj/aqua/issues/2702) [#2806](https://github.com/aquaproj/aqua/pull/2806)
+
+You can enforce checksum verification by environment variables `AQUA_ENFORCE_CHECKSUM` and `AQUA_ENFORCE_REQUIRE_CHECKSUM`.
+
+```sh
+export AQUA_ENFORCE_CHECKSUM=true
+export AQUA_ENFORCE_REQUIRE_CHECKSUM=true
+```
+
+This is useful for both CI and local development.
+
+Checksum verification is disabled by default, and you can disable checksum verification by setting.
+If you manage a Monorepo and want to make checksum verification mandatory in CI, you can set these environment variables in CI. Then checksum verification is enabled regardless of the setting of aqua.yaml.
+
+And if you want to enforce checksum verification on your laptop, you can set these environment variables in your shell configuration files such as .bashrc and .zshrc.
+
 ## Question: Should `aqua-checksums.json` be managed with Git?
 
 Yes. You should manage `aqua-checksums.json` with Git.
