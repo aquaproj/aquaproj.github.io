@@ -38,7 +38,7 @@
     ]
   },
   "volta": {
-    "node": "20.12.1"
+    "node": "20.12.2"
   },
   "devDependencies": {
     "ts-node": "10.9.2",
