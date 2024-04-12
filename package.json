@@ -38,10 +38,10 @@
     ]
   },
   "volta": {
-    "node": "20.12.0"
+    "node": "20.12.2"
   },
   "devDependencies": {
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.3"
+    "ts-node": "10.9.2",
+    "typescript": "5.4.5"
   }
 }

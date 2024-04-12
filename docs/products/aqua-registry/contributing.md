@@ -82,6 +82,13 @@ cmdx help scaffold
 1. Create a pull request: `cmdx new <package name>`
 1. (Optional) Stop the container: `cmdx stop`
 
+:::caution
+Sometimes the scaffold by `cmdx s <package name>` would fail, but this is expected.
+In this case, please check the error message and fix `pkgs/<package name>/{pkg.yaml,registry.yaml`.
+Please check [Troubleshooting](/docs/trouble-shooting) too.
+If you can't figure out how to fix, please open a pull request and ask us for help.
+:::
+
 :::info
 If you face GitHub API rate limiting, please set the GitHub Access token with environment variable `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN`.
 

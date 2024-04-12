@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] 
 
 VERSION:
-   2.22.0 (25abbb048c34194fa412beac251371d21e22a755)
+   2.26.0 (87cf6dc2285e406c7832c267696255c0cd961bbb)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -202,11 +202,20 @@ DESCRIPTION:
      description: GitHub’s official command line tool
      link: https://github.com/cli/cli
 
+   With -g option, aqua reads a first global configuration file.
+
+   $ aqua g -g cli/cli
+
+   You can add packages to a first global configuration file with -g and -i option.
+
+   $ aqua g -g -i cli/cli
+
 
 OPTIONS:
    -f value                 the file path of packages list. When the value is "-", the list is passed from the standard input
    -i                       Insert packages to configuration file (default: false)
    --pin                    Pin version (default: false)
+   -g                       Insert packages in a global configuration file (default: false)
    --detail, -d             Output additional fields such as description and link (default: false) [$AQUA_GENERATE_WITH_DETAIL]
    -o value                 inserted file
    --select-version, -s     Select the installed version interactively. Default to display 30 versions, use --limit/-l to change it. (default: false)
@@ -350,6 +359,8 @@ DESCRIPTION:
    e.g.
    $ aqua rm --all
    $ aqua rm cli/cli direnv/direnv
+
+   Note that this command remove files from AQUA_ROOT_DIR/pkgs, but doesn't remove packages from aqua.yaml and doesn't remove files from AQUA_ROOT_DIR/bin and AQUA_ROOT_DIR/bat.
 
    If you want to uninstall packages of non standard registry, you need to specify the registry name too.
 
@@ -537,9 +548,23 @@ DESCRIPTION:
    standard,abs-lang/abs
    ...
 
+   If the option -installed is set, the command lists only installed packages.
+
+   $ aqua list -installed
+   standard,golangci/golangci-lint,v1.56.2
+   standard,goreleaser/goreleaser,v1.24.0
+   ...
+
+   By default, the command doesn't list global configuration packages.
+   If you want to list global configuration packages too, please set the option -a.
+
+   $ aqua list -installed -a
+
 
 OPTIONS:
-   --help, -h  show help
+   --installed  List installed packages (default: false)
+   --all, -a    List global configuration packages too (default: false)
+   --help, -h   show help
 ```
 
 ## aqua completion
