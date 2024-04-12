@@ -31,11 +31,11 @@ Dockerfile
 ```dockerfile
 FROM alpine:3.16
 RUN apk add curl
-RUN curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | sh -s -- -i /usr/local/bin/aqua -v v2.25.1
+ENV AQUA_ROOT_DIR=/usr/local
+RUN curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | sh -s
 COPY aqua.yaml /aqua.yaml
 RUN aqua -c /aqua.yaml i
 ENV AQUA_GLOBAL_CONFIG=/aqua.yaml
-ENV PATH=/root/.local/share/aquaproj-aqua/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
 ## Remove aqua from Image
@@ -51,7 +51,8 @@ Dockerfile
 ```dockerfile
 FROM alpine:3.16 AS aqua
 RUN apk add curl
-RUN curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | sh -s -- -i /usr/local/bin/aqua -v v2.25.1
+ENV AQUA_ROOT_DIR=/usr/local
+RUN curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | sh -s
 COPY aqua.yaml /aqua.yaml
 RUN aqua -c /aqua.yaml cp -o /dist actionlint reviewdog
 
