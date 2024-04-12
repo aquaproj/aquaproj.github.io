@@ -29,13 +29,20 @@ packages:
 Dockerfile
 
 ```dockerfile
-FROM alpine:3.16
-RUN apk add curl
-RUN curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | sh -s -- -i /usr/local/bin/aqua -v v2.25.1
-COPY aqua.yaml /aqua.yaml
-RUN aqua -c /aqua.yaml i
-ENV AQUA_GLOBAL_CONFIG=/aqua.yaml
-ENV PATH=/root/.local/share/aquaproj-aqua/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+FROM debian:bookworm-20240408
+ENV PATH=/root/.local/share/aquaproj-aqua/bin:$PATH
+COPY aqua.yaml aqua-checksums.json /etc/aqua/
+ENV AQUA_GLOBAL_CONFIG=/etc/aqua/aqua.yaml
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer && \
+    echo "8299de6c19a8ff6b2cc6ac69669cf9e12a96cece385658310aea4f4646a5496d  aqua-installer" | sha256sum -c && \
+    chmod +x aqua-installer && \
+    ./aqua-installer -v v2.27.0 && \
+    rm aqua-installer && \
+    aqua i -a && \
+    apt-get remove -y curl && \
+    apt-get clean
 ```
 
 ## Remove aqua from Image
@@ -49,14 +56,20 @@ you can also remove aqua using the Multistage Build and `aqua cp` command.
 Dockerfile
 
 ```dockerfile
-FROM alpine:3.16 AS aqua
-RUN apk add curl
-RUN curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | sh -s -- -i /usr/local/bin/aqua -v v2.25.1
-COPY aqua.yaml /aqua.yaml
-RUN aqua -c /aqua.yaml cp -o /dist actionlint reviewdog
+FROM debian:bookworm-20240408 AS aqua
+ENV PATH=/root/.local/share/aquaproj-aqua/bin:$PATH
+COPY aqua.yaml aqua-checksums.json /etc/aqua/
+ENV AQUA_GLOBAL_CONFIG=/etc/aqua/aqua.yaml
+RUN apt-get update
+RUN apt-get install -y curl
+RUN curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer
+RUN echo "8299de6c19a8ff6b2cc6ac69669cf9e12a96cece385658310aea4f4646a5496d  aqua-installer" | sha256sum -c
+RUN chmod +x aqua-installer
+RUN ./aqua-installer -v v2.27.0
+RUN aqua i -a
+RUN aqua cp -o /dist actionlint reviewdog
 
-FROM alpine:3.16.1
-RUN apk --no-cache add ca-certificates
+FROM debian:bookworm-20240408
 COPY --from=aqua /dist/* /usr/local/bin/
 ```
 
