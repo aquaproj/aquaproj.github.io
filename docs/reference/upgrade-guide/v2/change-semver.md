@@ -30,7 +30,7 @@ We think almost expressions are compatible with new specification.
 <operator> <version>[, <operator> <version> ...]
 ```
 
-Supported oeprators
+Supported operators
 
 - `>=`
 - `<=`
