@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'
       - run: npm install
       - run: npm run build
-      - uses: peaceiris/actions-gh-pages@373f7f263a76c20808c831209c920827a82a2847 # v3.9.3
+      - uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         if: "! inputs.is_pr"
         with:
           github_token: ${{ github.token }}
