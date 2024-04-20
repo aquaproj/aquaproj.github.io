@@ -103,6 +103,22 @@ export GITHUB_TOKEN=<YOUR PERSONAL ACCESS TOKEN>
 When you update `pkgs/**/registry.yaml`, you have to run `cmdx gr` to reflect the update to `registry.yaml` on the repository root directory.
 :::
 
+### Use `cmdx s` definitely
+
+We don't accept pull requests not following this guide.
+Especially, we don't accept pull requests not using `cmdx s`.
+Standard Registry must support not only the latest version but also almost all versions and [variaous platforms](#supported-os-and-cpu-architecture).
+Many tools have so many versions that people can't check all of them manually.
+So we can't trust the code not using `cmdx s`.
+`cmdx s` checks all GitHub Releases and generates code supporting all of them (Strictly speaking, if there are too many GitHub Releases we have to restrict the number of GitHub Releases, though `cmdx s` can still check over 200 versions).
+`cmdx s` generates much better code than us.
+
+`cmdx s` isn't perfect and sometimes `cmdx s` causes errors and generates invalid code.
+Then you have to fix the code according to the error message.
+`cmdx s` supports only `github_release` type packages, so for other package types you have to fix the code.
+Even if so, you must still use `cmdx s`.
+`cmdx s` guarantees the quality of code.
+
 ## Supported OS and CPU Architecture
 
 Please consider the following OS and CPU Architecture.
