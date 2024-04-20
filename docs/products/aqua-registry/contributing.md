@@ -117,7 +117,7 @@ So we can't trust the code not using `cmdx s`.
 Then you have to fix the code according to the error message.
 `cmdx s` supports only `github_release` type packages, so for other package types you have to fix the code.
 Even if so, you must still use `cmdx s`.
-`cmdx s` gurantees the quality of code.
+`cmdx s` guarantees the quality of code.
 
 ## Supported OS and CPU Architecture
 
