@@ -9,7 +9,7 @@ How to contribute to Standard Registry. https://github.com/aquaproj/aqua-registr
 ## See also
 
 - :star: [OSS Contribution Guide](https://github.com/suzuki-shunsuke/oss-contribution-guide)
-- :star: [Registry Style Guide](https://aquaproj.github.io/docs/develop-registry/registry-style-guide)
+- :star: [Registry Style Guide](/docs/develop-registry/registry-style-guide)
 - [Registry Configuration](/docs/reference/registry-config/)
 - [Change `GOOS` and `GOARCH` for testing](/docs/develop-registry/change-os-arch-for-test)
 
@@ -44,6 +44,12 @@ So if you send a pull request adding a plugin to aqua-registry, please check if 
 We aren't necessarily familiar with the plugin, so please explain where the plugin expects to be installed and how the plugin works in the pull request description.
 
 If you don't know well, please create a pull request and consult us.
+
+## Commit Signing
+
+All commits of pull requests must be signed.
+
+https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
 
 ## Requirements
 
