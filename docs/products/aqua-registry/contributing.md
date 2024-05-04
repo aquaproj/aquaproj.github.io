@@ -48,8 +48,7 @@ If you don't know well, please create a pull request and consult us.
 ## Commit Signing
 
 All commits of pull requests must be signed.
-
-https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
+Please see [the document](https://github.com/suzuki-shunsuke/oss-contribution-guide/blob/main/docs/commit-signing.md).
 
 ## Requirements
 
