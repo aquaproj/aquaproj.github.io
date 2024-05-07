@@ -20,6 +20,7 @@ aqua is a single binary written in Go.
 - [aqua-installer (GitHub Actions)](/docs/products/aqua-installer#github-actions)
 - [CircleCI Orb](/docs/products/circleci-orb-aqua)
 - [go install](#go-install)
+- [Dev Container Feature](#dev-container-feature)
 - [Download prebuilt binaries from GitHub Releases](#download-prebuilt-binaries-from-github-releases)
 
 ### Homebrew
