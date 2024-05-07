@@ -57,6 +57,10 @@ scoop install aqua
 go install github.com/aquaproj/aqua/v2/cmd/aqua@latest
 ```
 
+### Dev Container Feature
+
+https://github.com/aquaproj/devcontainer-features/tree/main/src/aqua-installer
+
 ### Download prebuilt binaries from GitHub Releases
 
 https://github.com/aquaproj/aqua/releases
