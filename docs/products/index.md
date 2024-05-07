@@ -12,6 +12,7 @@ sidebar_position: 100
 - [circleci-orb-aqua](circleci-orb-aqua.md): CircleCI Orb to install aqua
 - [aqua-renovate-config](aqua-renovate-config.md): Renovate Config Preset to update aqua, aqua-installer, packages, and registries
 - [aquaproj.github.io](https://github.com/aquaproj/aquaproj.github.io): aqua's official website
+- [devcontainer-features](devcontainer-features.md): [Dev Container Features](https://containers.dev/implementors/features/) for aqua
 
 ## Checksum Verification
 

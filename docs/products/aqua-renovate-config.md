@@ -66,6 +66,8 @@ The default preset updates GitHub Actions [aquaproj/aqua-installer](https://gith
     aqua_version: v2.25.1
 ```
 
+From aqua-renovate-config [2.3.0](https://github.com/aquaproj/aqua-renovate-config/releases/tag/2.3.0), `aqua_version` in `.devcontainer.json` and `.devcontainer/devcontainer.json` is also updated.
+
 ### `file` Preset
 
 You can specify the file path aqua.yaml.
