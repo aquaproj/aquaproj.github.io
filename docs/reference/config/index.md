@@ -195,6 +195,7 @@ packages:
 * [tags](/docs/guides/package-tag): Filter installed packages. Please see [Filter packages with tags](/docs/guides/package-tag)
 * `update`: The setting for `aqua update` command
   * `update.enabled`: If this is false, `aqua update` command ignores the package. If the package name is passed to aqua up command explicitly, enabled is ignored. By default, enabled is true.
+* `go_vesrion_file`: (string, optional) `aqua >= v2.28.0` [#2632](https://github.com/aquaproj/aqua/pull/2632) A file path to go.mod or go.work. This field is used to get the version of go from go directive in go.mod or go.work
 
 The following two configuration is equivalent.
 
