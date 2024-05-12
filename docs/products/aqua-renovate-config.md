@@ -63,7 +63,7 @@ The default preset updates GitHub Actions [aquaproj/aqua-installer](https://gith
 ```yaml
 - uses: aquaproj/aqua-installer@v3.0.1
   with:
-    aqua_version: v2.25.1
+    aqua_version: v2.28.0
 ```
 
 From aqua-renovate-config [2.3.0](https://github.com/aquaproj/aqua-renovate-config/releases/tag/2.3.0), `aqua_version` in `.devcontainer.json` and `.devcontainer/devcontainer.json` is also updated.
@@ -99,7 +99,7 @@ e.g.
 ```
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash -s -- -v v2.25.1
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash -s -- -v v2.28.0
 ```
 
 :warning: To update aqua, please don't add newlines.
@@ -107,14 +107,14 @@ curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua
 :thumbsup:
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash -s -- -v v2.25.1
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash -s -- -v v2.28.0
 ```
 
 :thumbsdown:
 
 ```sh
 curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer |
-  bash -s -- -v v2.25.1 # aqua isn't updated
+  bash -s -- -v v2.28.0 # aqua isn't updated
 ```
 
 ### `aqua-renovate-config` Preset

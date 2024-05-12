@@ -87,7 +87,7 @@ jobs:
     permissions:
       contents: read
     with:
-      aqua_version: v2.25.1
+      aqua_version: v2.28.0
       prune: true
     secrets:
       gh_token: ${{secrets.GH_TOKEN}}
