@@ -35,10 +35,10 @@ COPY aqua.yaml aqua-checksums.json /etc/aqua/
 ENV AQUA_GLOBAL_CONFIG=/etc/aqua/aqua.yaml
 RUN apt-get update && \
     apt-get install -y curl && \
-    curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer && \
-    echo "8299de6c19a8ff6b2cc6ac69669cf9e12a96cece385658310aea4f4646a5496d  aqua-installer" | sha256sum -c && \
+    curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer && \
+    echo "fb4b3b7d026e5aba1fc478c268e8fbd653e01404c8a8c6284fdba88ae62eda6a  aqua-installer" | sha256sum -c && \
     chmod +x aqua-installer && \
-    ./aqua-installer -v v2.27.0 && \
+    ./aqua-installer -v v2.28.0 && \
     rm aqua-installer && \
     aqua i -a && \
     apt-get remove -y curl && \
@@ -62,10 +62,10 @@ COPY aqua.yaml aqua-checksums.json /etc/aqua/
 ENV AQUA_GLOBAL_CONFIG=/etc/aqua/aqua.yaml
 RUN apt-get update
 RUN apt-get install -y curl
-RUN curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer
-RUN echo "8299de6c19a8ff6b2cc6ac69669cf9e12a96cece385658310aea4f4646a5496d  aqua-installer" | sha256sum -c
+RUN curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer
+RUN echo "fb4b3b7d026e5aba1fc478c268e8fbd653e01404c8a8c6284fdba88ae62eda6a  aqua-installer" | sha256sum -c
 RUN chmod +x aqua-installer
-RUN ./aqua-installer -v v2.27.0
+RUN ./aqua-installer -v v2.28.0
 RUN aqua i -a
 RUN aqua cp -o /dist actionlint reviewdog
 

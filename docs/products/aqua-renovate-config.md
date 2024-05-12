@@ -61,7 +61,7 @@ packages:
 The default preset updates GitHub Actions [aquaproj/aqua-installer](https://github.com/aquaproj/aqua-installer)'s `aqua_version` in `.github` too.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v3.0.0
+- uses: aquaproj/aqua-installer@v3.0.1
   with:
     aqua_version: v2.25.1
 ```
@@ -99,7 +99,7 @@ e.g.
 ```
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | bash -s -- -v v2.25.1
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash -s -- -v v2.25.1
 ```
 
 :warning: To update aqua, please don't add newlines.
@@ -107,13 +107,13 @@ curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua
 :thumbsup:
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer | bash -s -- -v v2.25.1
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash -s -- -v v2.25.1
 ```
 
 :thumbsdown:
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.0/aqua-installer |
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer |
   bash -s -- -v v2.25.1 # aqua isn't updated
 ```
 
