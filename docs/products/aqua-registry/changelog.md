@@ -5,7 +5,7 @@ sidebar_position: 110
 # Changelog
 
 This is a changelog of aqua-registry's development workflow.
-We have been improving the development workflow continously.
+We have been improving the development workflow continuously.
 So sometimes the development workflow is changed.
 
 ## 2024-05-24
@@ -19,7 +19,7 @@ The behaviour of `cmdx s` and `cmdx new` were changed.
 - `cmdx s` fails if `commit.gpgSign` isn't enabled
   - All commits must be signed. Please see [the document](https://github.com/suzuki-shunsuke/oss-contribution-guide/blob/main/docs/commit-signing.md)
 - `cmdx s` fails if files in `pkgs` are changed before scaffolding files
-  - This validation prevents unrelated changes from being commited
+  - This validation prevents unrelated changes from being committed
 - `cmdx s` creates a feature branch `feat/<package name>` from the remote branch https://github.com/aquaproj/aqua-registry/tree/main before scaffolding code
   - This prevents old scripts from being executed as much as possible
 - **`cmdx s` commits scaffolded codes**

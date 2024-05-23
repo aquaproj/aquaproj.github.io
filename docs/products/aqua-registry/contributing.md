@@ -15,7 +15,7 @@ How to contribute to Standard Registry. https://github.com/aquaproj/aqua-registr
 
 ## Changelog of development workflow
 
-We have been improving the development workflow continously.
+We have been improving the development workflow continuously.
 So sometimes the development workflow is changed.
 Please check [the change log](changelog.md).
 
