@@ -12,9 +12,9 @@ So sometimes the development workflow is changed.
 
 [#23171](https://github.com/aquaproj/aqua-registry/pull/23171) [#23188](https://github.com/aquaproj/aqua-registry/pull/23188) [#23191](https://github.com/aquaproj/aqua-registry/pull/23191) [#23192](https://github.com/aquaproj/aqua-registry/pull/23192)
 
-The behaviour of `cmdx s` and `cmdx new` were changed.
+The behaviour of `cmdx s`, `cmdx t`, and `cmdx new` were changed.
 
-`cmdx s`
+### `cmdx s`
 
 - `cmdx s` fails if `commit.gpgSign` isn't enabled
   - All commits must be signed. Please see [the document](https://github.com/suzuki-shunsuke/oss-contribution-guide/blob/main/docs/commit-signing.md)
@@ -25,10 +25,15 @@ The behaviour of `cmdx s` and `cmdx new` were changed.
 - **`cmdx s` commits scaffolded codes**
   - This enables us to distinguish scaffolded code and manual changes
 - **`cmdx s` doesn't connect to a container when test fails**
+  - This is a change of `cmdx t`. `cmdx s` runs `cmdx t` internally
+
+### `cmdx t`
+
+- **`cmdx t` doesn't connect to a container when test fails**
   - If you want to connect to the container, you can do it by `cmdx con <os> <arch>` command
   - In most cases you don't have to connect to a container, so we changed the behaviour
 
-`cmdx new`
+### `cmdx new`
 
 - `cmdx new` doesn't create a branch and a commit anymore
   - **If you change code manually, you have to commit it before running `cmdx new`**
