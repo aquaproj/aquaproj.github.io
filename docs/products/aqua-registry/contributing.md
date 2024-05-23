@@ -13,6 +13,12 @@ How to contribute to Standard Registry. https://github.com/aquaproj/aqua-registr
 - [Registry Configuration](/docs/reference/registry-config/)
 - [Change `GOOS` and `GOARCH` for testing](/docs/develop-registry/change-os-arch-for-test)
 
+## Changelog of development workflow
+
+We have been improving the development workflow continuously.
+So sometimes the development workflow is changed.
+Please check [the change log](changelog.md).
+
 ## Should you create an Issue before sending a Pull Request?
 
 Basically, you don't have to create an Issue before sending a Pull Request.
