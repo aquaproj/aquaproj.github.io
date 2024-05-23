@@ -82,8 +82,9 @@ cmdx help scaffold
 1. Scaffold configuration: `cmdx s <package name>`
 1. Fix generated files `pkgs/<package name>/{pkg.yaml,registry.yaml`
 1. Run test: `cmdx t <package name>`
-1. Repeat the step 2 and 3 until packages are installed properly
 1. Update registry.yaml: `cmdx gr`
+1. Commit `registry.yaml` and `pkgs/<package name>/{pkg.yaml,registry.yaml`
+1. Repeat the step 2 ~ 5 until packages are installed properly
 1. Create a pull request: `cmdx new <package name>`
 1. (Optional) Stop the container: `cmdx stop`
 
