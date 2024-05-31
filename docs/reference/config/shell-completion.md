@@ -4,22 +4,33 @@ sidebar_position: 890
 
 # Shell Completion
 
-`aqua >= v1.11.0` [#856](https://github.com/aquaproj/aqua/issues/856) [#859](https://github.com/aquaproj/aqua/pull/859)
+- `aqua >= v1.11.0` [#856](https://github.com/aquaproj/aqua/issues/856) [#859](https://github.com/aquaproj/aqua/pull/859)
+- Fish shell: aqua >= [v2.29.0](https://github.com/aquaproj/aqua/releases/tag/v2.29.0) [#2929](https://github.com/aquaproj/aqua/pull/2929)
 
 The commands `aqua completion <SHELL>` outputs shell completion code.
-By sourcing the output of `aqua completion <SHELL>` in .bashrc or .zshrc,
+By sourcing the output of `aqua completion <SHELL>` in .bashrc, .zshrc, or ~/.config/fish/fish.zsh,
 aqua supports the shell completion.
 
 .bashrc
 
 ```sh
-if command -v aqua &> /dev/null; then source <(aqua completion bash); fi
+if command -v aqua &> /dev/null; then
+    source <(aqua completion bash)
+fi
 ```
 
 .zshrc
 
 ```sh
-if command -v aqua &> /dev/null; then source <(aqua completion zsh); fi
+if command -v aqua &> /dev/null; then
+    source <(aqua completion zsh)
+fi
+```
+
+https://fishshell.com/docs/current/completions.html#where-to-put-completions
+
+```sh
+aqua completion fish > ~/.config/fish/completions/aqua.fish
 ```
 
 ## Bash Completion
