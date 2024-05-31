@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options] 
 
 VERSION:
-   2.26.0 (87cf6dc2285e406c7832c267696255c0cd961bbb)
+   2.29.0 (9ff65378f0c6197e3130a20f6d978b8a3042b463)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -29,7 +29,7 @@ COMMANDS:
    exec                   Execute tool
    list                   List packages in Registries
    generate-registry, gr  Generate a registry's package configuration
-   completion             Output shell completion script for bash or zsh
+   completion             Output shell completion script for bash, zsh, or fish
    version                Show version
    cp                     Copy executable files in a directory
    root-dir               Output the aqua root directory (AQUA_ROOT_DIR)
@@ -57,7 +57,7 @@ NAME:
    aqua install - Install tools
 
 USAGE:
-   aqua install [command options] [arguments...]
+   aqua install [command options]
 
 DESCRIPTION:
    Install tools according to the configuration files.
@@ -99,7 +99,7 @@ NAME:
    aqua generate - Search packages in registries and output the configuration interactively
 
 USAGE:
-   aqua generate [command options] [<registry name>,<package name> ...]
+   aqua generate [command options][<registry name>,<package name> ...]
 
 DESCRIPTION:
    Search packages in registries and output the configuration interactively.
@@ -231,7 +231,7 @@ NAME:
    aqua init - Create a configuration file if it doesn't exist
 
 USAGE:
-   aqua init [command options] [<created file path. The default value is "aqua.yaml">]
+   aqua init [command options][<created file path. The default value is "aqua.yaml">]
 
 DESCRIPTION:
    Create a configuration file if it doesn't exist
@@ -251,7 +251,7 @@ NAME:
    aqua update-aqua - Update aqua
 
 USAGE:
-   aqua update-aqua [command options] [arguments...]
+   aqua update-aqua [command options]
 
 DESCRIPTION:
    Update aqua.
@@ -279,7 +279,7 @@ NAME:
    aqua update-checksum - Create or Update aqua-checksums.json
 
 USAGE:
-   aqua update-checksum [command options] [arguments...]
+   aqua update-checksum [command options]
 
 DESCRIPTION:
    Create or Update aqua-checksums.json.
@@ -314,7 +314,7 @@ NAME:
    aqua which - Output the absolute file path of the given command
 
 USAGE:
-   aqua which [command options] <command name>
+   aqua which [command options]<command name>
 
 DESCRIPTION:
    Output the absolute file path of the given command
@@ -351,7 +351,7 @@ NAME:
    aqua remove - Uninstall packages
 
 USAGE:
-   aqua remove [command options] [<registry name>,]<package name> [...]
+   aqua remove [command options][<registry name>,]<package name> [...]
 
 DESCRIPTION:
    Uninstall packages.
@@ -385,7 +385,7 @@ NAME:
    aqua cp - Copy executable files in a directory
 
 USAGE:
-   aqua cp [command options] <command name> [<command name> ...]
+   aqua cp [command options]<command name> [<command name> ...]
 
 DESCRIPTION:
    Copy executable files in a directory.
@@ -430,7 +430,7 @@ NAME:
    aqua info - Show information
 
 USAGE:
-   aqua info [command options] [arguments...]
+   aqua info [command options]
 
 DESCRIPTION:
    Show information.
@@ -449,7 +449,7 @@ NAME:
    aqua generate-registry - Generate a registry's package configuration
 
 USAGE:
-   aqua generate-registry [command options] <package name>
+   aqua generate-registry [command options]<package name>
 
 DESCRIPTION:
    Generate a template of Registry package configuration.
@@ -535,7 +535,7 @@ NAME:
    aqua list - List packages in Registries
 
 USAGE:
-   aqua list [command options] [arguments...]
+   aqua list [command options]
 
 DESCRIPTION:
    Output the list of packages in registries.
@@ -572,22 +572,32 @@ OPTIONS:
 ```console
 $ aqua help completion
 NAME:
-   aqua completion - Output shell completion script for bash or zsh
+   aqua completion - Output shell completion script for bash, zsh, or fish
 
 USAGE:
    aqua completion command [command options] 
 
 DESCRIPTION:
-   Output shell completion script for bash or zsh
-   Run these commands in .bash_profile or .zprofile
+   Output shell completion script for bash, zsh, or fish.
+   Source the output to enable completion.
+
    e.g.
+
    .bash_profile
 
-   if command -v aqua &> /dev/null; then source <(aqua completion bash); fi
+   if command -v aqua &> /dev/null; then
+     source <(aqua completion bash)
+   fi
 
    .zprofile
 
-   if command -v aqua &> /dev/null; then source <(aqua completion zsh); fi
+   if command -v aqua &> /dev/null; then
+     source <(aqua completion zsh)
+   fi
+
+   fish
+
+   aqua completion fish > ~/.config/fish/completions/aqua.fish
 
 
 ```
@@ -600,7 +610,7 @@ NAME:
    aqua exec - Execute tool
 
 USAGE:
-   aqua exec [command options] <executed command> [<arg> ...]
+   aqua exec [command options]<executed command> [<arg> ...]
 
 DESCRIPTION:
    Basically you don't have to use this command, because this is used by aqua internally. aqua-proxy invokes this command.
