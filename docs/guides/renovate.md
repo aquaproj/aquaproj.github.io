@@ -21,7 +21,6 @@ Please see [Update registries and packages by update command](update-command.md)
 
 aqua manages package and registry versions,
 so it is important to update them continuously.
-aqua doesn't provide sub commands like `aqua update` or options like `aqua install --update`.
 We recommend managing `aqua.yaml` with Git and update versions by [Renovate](https://docs.renovatebot.com/) or something.
 
 Using Renovate's [Regex Manager](https://docs.renovatebot.com/modules/manager/regex/), you can update versions.
