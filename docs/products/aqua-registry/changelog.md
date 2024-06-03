@@ -23,9 +23,15 @@ The behaviour of `cmdx s`, `cmdx t`, and `cmdx new` were changed.
 - `cmdx s` creates a feature branch `feat/<package name>` from the remote branch https://github.com/aquaproj/aqua-registry/tree/main before scaffolding code
   - This prevents old scripts from being executed as much as possible
 - **`cmdx s` commits scaffolded codes**
-  - This enables us to distinguish scaffolded code and manual changes
+  - This enables us to distinguish scaffolded code from manual changes
 - **`cmdx s` doesn't connect to a container when test fails**
   - This is a change of `cmdx t`. `cmdx s` runs `cmdx t` internally
+
+:::caution
+Please don't edit the commit by `git commit --amend`, `git rebase`, or somehow.
+`cmdx s` creates a commit to distinguish scaffolded code from manual changes.
+Please add new commits if you update code.
+:::
 
 ### `cmdx t`
 

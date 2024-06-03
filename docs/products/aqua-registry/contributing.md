@@ -86,13 +86,27 @@ cmdx help scaffold
 ## How to add a package
 
 1. Scaffold configuration: `cmdx s <package name>`
-1. Fix generated files `pkgs/<package name>/{pkg.yaml,registry.yaml`
-1. Run test: `cmdx t <package name>`
-1. Update registry.yaml: `cmdx gr`
-1. Commit `registry.yaml` and `pkgs/<package name>/{pkg.yaml,registry.yaml`
-1. Repeat the step 2 ~ 5 until packages are installed properly
-1. Create a pull request: `cmdx new <package name>`
-1. (Optional) Stop the container: `cmdx stop`
+
+:::caution
+`cmdx s` creates a commit, but please don't edit the commit by `git commit --amend`, `git rebase`, or somehow.
+`cmdx s` creates a commit to distinguish scaffolded code from manual changes.
+Please add new commits if you update code.
+:::
+
+2. Fix generated files `pkgs/<package name>/{pkg.yaml,registry.yaml` if necessary
+2. (Optional) Remove containers to clean up them if necessary: `cmdx rm`
+2. Run test: `cmdx t <package name>`
+2. Update registry.yaml: `cmdx gr`
+2. Commit `registry.yaml` and `pkgs/<package name>/{pkg.yaml,registry.yaml`
+2. Repeat the step 2 ~ 6 until packages are installed properly
+2. Create a pull request: `cmdx new <package name>`
+2. (Optional) Stop containers: `cmdx stop`
+
+:::info
+We usually reuse same containers, but sometimes you would want to run test in new containers.
+In that case, you can remove containers by `cmdx rm` command.
+Then `cmdx s` and `cmdx t` create new containers.
+:::
 
 :::caution
 Sometimes the scaffold by `cmdx s <package name>` would fail, but this is expected.
