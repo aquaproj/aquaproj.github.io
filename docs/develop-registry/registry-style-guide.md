@@ -97,17 +97,29 @@ asset: 'foo.{{if eq .GOOS "windows"}}zip{{else}}tar.gz{{end}}'
 
 ## `version_overrides` Style Guide
 
+We decided not to rely on base settings as much as possible.
+This means we don't define settings such as `asset`, `format`, `windows_arm_emulation`, and so on on the base settings.
+Merge with base settings makes code DRY, but it's difficult to update settings when settings of new versions are changed because the update of the base settings affects all version override.
+By stopping to merge settings, we can update settings by simply adding a new version override and updating the last version_constraint.
+Perhaps we would be able to automate the update in future too.
+
 e.g.
 
 ```yaml
-# Latest setting
-version_constraint: semver(">= 5.0.0")
+# Define only settings which don't depend on versions.
+# e.g. repo_owner, repo_name, description.
+version_constraint: "false"
 version_overrides:
-  - version_constraint: semver(">= 4.0.0")
+  - version_constraint: semver("<= 3.0.0")
+    # Oldest setting
     # ...
-  - version_constraint: semver(">= 3.0.0")
+  - version_constraint: semver("<= 4.0.0")
     # ...
-  - version_constraint: semver("< 3.0.0") # Oldest setting
+  - version_constraint: semver("<= 5.0.0")
+    # ...
+  - version_constraint: "true"
+    # Latest setting
+    # ...
 ```
 
 ## If the `format` is `raw`, `files[].src` isn't needed
