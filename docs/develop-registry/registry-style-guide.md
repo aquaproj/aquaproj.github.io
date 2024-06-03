@@ -97,8 +97,8 @@ asset: 'foo.{{if eq .GOOS "windows"}}zip{{else}}tar.gz{{end}}'
 
 ## `version_overrides` Style Guide
 
-we stopped relying on base settings as much as possible.
-This means we stopped defining settings such as `asset`, `format`, `windows_arm_emulation`, and so on on the base settings.
+We decided not to rely on base settings as much as possible.
+This means we don't define settings such as `asset`, `format`, `windows_arm_emulation`, and so on on the base settings.
 Merge with base settings makes code DRY, but it's difficult to update settings when settings of new versions are changed because the update of the base settings affects all version override.
 By stopping to merge settings, we can update settings by simply adding a new version override and updating the last version_constraint.
 Perhaps we would be able to automate the update in future too.
