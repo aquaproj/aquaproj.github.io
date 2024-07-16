@@ -50,12 +50,6 @@ The purpose is same with aqua's Policy, but disabling Lazy Install is simpler th
 
 ## How does Lazy Install work?
 
-:::caution
-On Windows, [aqua-proxy](https://github.com/aquaproj/aqua-proxy) and symbolic links aren't used.
-Please see [here](/docs/reference/windows-support#create-bat-files-and-shell-scripts-instead-of-symbolic-links-and-aqua-proxy)
-:::
-
-In this document we describe how the Lazy Install works.
 The Lazy Install is the aqua's characteristic feature, and maybe you feel it like magic.
 
 By `aqua i`, aqua installs [aqua-proxy](https://github.com/aquaproj/aqua-proxy) regardless the aqua's configuration.
@@ -143,3 +137,25 @@ To prevent the infinite loop, aqua ignores the symbolic to aqua-proxy.
 `$AQUA_ROOT_DIR/bin/go` is a symbolic link to aqua-proxy, so this is ignored.
 If go is installed in `/usr/local/bin/go`, `/usr/local/bin/go version` is executed.
 If `go` isn't found, aqua exits with non zero exit code.
+
+### On Windows
+
+aqua doesn't use symbolic links on Windows because symbolic links have several issues on Windows.
+
+1. [Non-administrators can't create symbolic links by default on Windows](https://github.com/git-for-windows/git/wiki/Symbolic-Links)
+2. [PowerShell doesn't use the final target of a symbolic link when starting a process or running a native command on Windows](https://github.com/PowerShell/PowerShell/issues/16171)
+
+aqua v2.29.2 or older used shell scripts and bat scripts instead of symbolic links and aqua-proxy.
+
+[#885](https://github.com/aquaproj/aqua/issues/885) [#892](https://github.com/aquaproj/aqua/pull/892) [#893](https://github.com/aquaproj/aqua/issues/893) aqua >= v1.12.0, aqua <= v2.29.2
+
+But using shell scripts and bat scripts also had several issues.
+
+1. Using both shell scripts and bat scripts is confusing
+1. tools can't be executed on Nushell https://github.com/aquaproj/aqua/issues/2918#issuecomment-2223107022
+1. bat scripts can't handle signals properly https://github.com/aquaproj/aqua/issues/2918#issuecomment-2228449541
+
+So aqua v2.30.0 or later uses hard links and aqua-proxy instead of shell scripts and bat scripts. [#2918](https://github.com/aquaproj/aqua/issues/2918)
+aqua installs `aqua-proxy` and creates hard links to `aqua-proxy` on `$(aqua root-dir)/bin` directory.
+When aqua updates `aqua-proxy`, aqua recreates hard links.
+From aqua v2.30.0, aqua doesn't use bat scripts so you can remove `$(aqua root-dir)/bat` directory and remove `$(aqua root-dir)/bat` from `PATH`.

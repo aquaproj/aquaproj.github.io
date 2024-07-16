@@ -53,20 +53,11 @@ Currently, tools written in shell scripts aren't supported.
 
 Please see [complete_windows_ext](/docs/reference/registry-config/complete-windows-ext).
 
-### Create BAT files and shell scripts instead of symbolic links and aqua-proxy
+### Create hard links instead of symbolic links
 
-[#885](https://github.com/aquaproj/aqua/issues/885) [#892](https://github.com/aquaproj/aqua/pull/892) [#893](https://github.com/aquaproj/aqua/issues/893) aqua >= v1.12.0
+[#2918](https://github.com/aquaproj/aqua/issues/2918) aqua >= v2.30.0
 
-Reference (Japanese): https://zenn.dev/link/comments/725555a2b1b034
-
-aqua creates executable BAT files and shell scripts instead of symbolic links.
-
-#### Why is this change needed?
-
-On Windows, there are two problems regarding symbolic links.
-
-1. To create symbolic links, you have to run Terminal (cmd.exe, PowerShell, Git Bash, etc) as Administrator or enable Developer Mode
-1. PowerShell has a bug about symbolic link https://github.com/PowerShell/PowerShell/issues/16171
+Please see [Reference](/docs/reference/lazy-install#on-windows).
 
 ### Windows ARM Emulation
 

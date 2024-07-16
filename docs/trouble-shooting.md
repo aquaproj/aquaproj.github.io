@@ -101,7 +101,7 @@ Please check the Registry Configuration.
 
 If `command -v <command>` exits with non zero, the following are possible causes.
 
-* `AQUA_ROOT_DIR/bin` (`AQUA_ROOT_DIR/bat` in case of PowerShell) isn't added to the environment variable `PATH`
+* `AQUA_ROOT_DIR/bin` isn't added to the environment variable `PATH`
   * e.g. `$ export PATH=$HOME/.local/share/aquaproj-aqua/bin:$PATH`
 * the symbolic link isn't created in `AQUA_ROOT_DIR/bin`
   * Please run `aqua i -l`

@@ -108,35 +108,35 @@ The order of priority is as follows:
 #### PowerShell
 
 ```sh
-Set-Item Env:Path "$Env:LOCALAPPDATA\aquaproj-aqua\bat;$Env:LOCALAPPDATA\aquaproj-aqua\bin;$Env:Path"
+Set-Item Env:Path "$Env:LOCALAPPDATA\aquaproj-aqua\bin;$Env:Path"
 ```
 
 If `LOCALAPPDATA` isn't set,
 
 ```sh
-Set-Item Env:Path "$Env:HOMEPATH\AppData\Local\aquaproj-aqua\bat;$Env:HOMEPATH\AppData\Local\aquaproj-aqua\bin;$Env:Path"
+Set-Item Env:Path "$Env:HOMEPATH\AppData\Local\aquaproj-aqua\bin;$Env:Path"
 ```
 
 You can customize the path with the environment variable `AQUA_ROOT_DIR`.
 
 ```sh
-Set-Item Env:Path "$Env:AQUA_ROOT_DIR\bat;$Env:AQUA_ROOT_DIR\bin;$ENV:Path"
+Set-Item Env:Path "$Env:AQUA_ROOT_DIR\bin;$ENV:Path"
 ```
 
 #### Command Prompt
 
 ```sh
-SET PATH=%LOCALAPPDATA%\aquaproj-aqua\bat;%LOCALAPPDATA%\aquaproj-aqua\bin;%PATH%
+SET PATH=%LOCALAPPDATA%\aquaproj-aqua\bin;%PATH%
 ```
 
 If `LOCALAPPDATA` isn't set,
 
 ```sh
-SET PATH=%HOMEPATH%\AppData\Local\aquaproj-aqua\bat;%HOMEPATH%\AppData\Local\aquaproj-aqua\bin;%PATH%
+SET PATH=%HOMEPATH%\AppData\Local\aquaproj-aqua\bin;%PATH%
 ```
 
 You can also customize the path with the environment variable `AQUA_ROOT_DIR`.
 
 ```sh
-SET PATH=%AQUA_ROOT_DIR%\bat;%AQUA_ROOT_DIR%\bin;%PATH%
+SET PATH=%AQUA_ROOT_DIR%\bin;%PATH%
 ```
