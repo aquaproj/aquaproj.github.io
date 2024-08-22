@@ -131,6 +131,10 @@ const config = {
                 label: 'Twitter',
                 href: 'https://twitter.com/aquaclivm',
               },
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/CBGesz8yBX'
+              },
             ],
           },
         ],

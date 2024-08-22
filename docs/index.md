@@ -25,7 +25,7 @@ If you have any question, please contact us.
   - English: [@aquaclivm](https://twitter.com/aquaclivm), [@szkdash_en](https://twitter.com/szkdash_en)
   - Japanese: [@szkdash](https://twitter.com/szkdash)
 - Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
-- [Discord](https://discord.com/channels/1141777454164365382/1162444533959757955)
+- [Discord](https://discord.gg/CBGesz8yBX)
 
 ## For Japanese
 
