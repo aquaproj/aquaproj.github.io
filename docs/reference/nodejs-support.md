@@ -4,9 +4,12 @@ sidebar_position: 450
 
 # Node.js Support
 
+You can manage Node.js using aqua.
+
 `aqua-registry >= v4.217.0`
 
-[#2996](https://github.com/aquaproj/aqua/issues/2996)
+- [#2996](https://github.com/aquaproj/aqua/issues/2996)
+- [aqua-registry#26002](https://github.com/aquaproj/aqua-registry/pull/26002)
 
 ## Set up
 
