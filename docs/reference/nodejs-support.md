@@ -6,7 +6,7 @@ sidebar_position: 450
 
 You can manage Node.js using aqua.
 
-`aqua-registry >= v4.217.0`
+`aqua-registry >= v4.216.0`
 
 - [#2996](https://github.com/aquaproj/aqua/issues/2996)
 - [aqua-registry#26002](https://github.com/aquaproj/aqua-registry/pull/26002)
@@ -14,7 +14,7 @@ You can manage Node.js using aqua.
 ## Set up
 
 1. Configure npm's `prefix` config and the environment variable `$PATH`
-1. Update aqua-registry to v4.217.0 or later
+1. Update aqua-registry to v4.216.0 or later
 1. Install the package `nodejs/node`
 
 ### 1. Configure npm's `prefix` config and the environment variable `$PATH`
@@ -34,7 +34,7 @@ export NPM_CONFIG_PREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/npm-global" # You
 export PATH=$NPM_CONFIG_PREFIX/bin:$PATH
 ```
 
-### 2. Update aqua-registry to v4.217.0 or later
+### 2. Update aqua-registry to v4.216.0 or later
 
 ```sh
 aqua up -r
@@ -43,7 +43,7 @@ aqua up -r
 ```yaml
 registries:
   - type: standard
-    ref: v4.217.0 # renovate: depName=aquaproj/aqua-registry
+    ref: v4.216.0 # renovate: depName=aquaproj/aqua-registry
 ```
 
 ### 3. Install the package `nodejs/node`
