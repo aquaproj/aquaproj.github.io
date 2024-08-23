@@ -44,9 +44,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       announcementBar: {
-        id: 'list_installed_packages',
+        id: 'nodejs_support',
         content:
-          '<a href="https://github.com/orgs/aquaproj/discussions/2768">Please upgrade aqua to v2.25.1 or later (2024-03-22)</a>',
+          '<a href="/docs/reference/nodejs-support">Node.js Support (2024-08-24)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
@@ -128,8 +128,8 @@ const config = {
                 label: 'Demo',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/aquaclivm',
+                label: 'X (Formerly Twitter)',
+                href: 'https://x.com/aquaclivm',
               },
               {
                 label: 'Discord',
