@@ -279,8 +279,12 @@ Please see [Use aqua combined with other version manager such as asdf](/docs/ref
 
 #### Use aqua along with asdf
 
-asdf supports language runtimes such as Node.js, Python, Ruby, and so on, though aqua can't support them.
+asdf supports language runtimes such as Python, Ruby, and so on, though aqua can't support them.
 You can use asdf for them and can use aqua for other tools.
+
+:::info
+2024-08-24 [aqua has supported Node.js :tada:](/docs/reference/nodejs-support)
+:::
 
 ### Compared with GitHub Actions
 
