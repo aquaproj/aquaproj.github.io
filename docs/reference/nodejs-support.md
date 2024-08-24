@@ -34,6 +34,12 @@ export NPM_CONFIG_PREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/npm-global" # You
 export PATH=$NPM_CONFIG_PREFIX/bin:$PATH
 ```
 
+In case of Windows, `bin` directory is missing.
+
+```sh
+export PATH=$NPM_CONFIG_PREFIX:$PATH
+```
+
 ### 2. Update aqua-registry to v4.216.0 or later
 
 ```sh
