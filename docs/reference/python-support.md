@@ -15,9 +15,9 @@ You can manage Python using aqua.
 ## Set up
 
 1. Update aqua to v2.31.0 or later
-1. Update aqua-regsitry to v4.218.0 or later
+1. Update aqua-registry to v4.218.0 or later
 1. Install the package `indygreg/python-build-standalone`
-1. Set `vars.python_vesion` parameter in aqua.yaml
+1. Set `vars.python_version` parameter in aqua.yaml
 
 ### 2. Update aqua-registry to v4.218.0 or later
 
@@ -38,7 +38,7 @@ aqua g -i indygreg/python-build-standalone
 aqua i -l
 ```
 
-### 4. Set `vars.python_vesion` parameter in aqua.yaml
+### 4. Set `vars.python_version` parameter in aqua.yaml
 
 ```yaml
 - name: indygreg/python-build-standalone@20240726
