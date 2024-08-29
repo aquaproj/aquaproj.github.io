@@ -66,6 +66,7 @@ packages:
 * [private](private.md)
 * [no_asset](no_asset.md)
 * [error_message](error_message.md)
+* [vars](vars.md)
 
 ## Default values if `repo_owner` and `repo_name` are set
 
