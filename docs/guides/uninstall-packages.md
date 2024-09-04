@@ -7,7 +7,7 @@ sidebar_position: 500
 aqua >= [v2.11.0](https://github.com/aquaproj/aqua/releases/tag/v2.11.0) [#538](https://github.com/aquaproj/aqua/issues/538) [#2248](https://github.com/orgs/aquaproj/discussions/2248) [#2249](https://github.com/aquaproj/aqua/pull/2249)
 
 :::caution
-`aqua rm` command removes files from `AQUA_ROOT_DIR/pkgs`, but doesn't remove packages from `aqua.yaml` and doesn't remove links from `AQUA_ROOT_DIR/bin`.
+`aqua rm` command doesn't remove packages from `aqua.yaml`.
 :::
 
 ```console
@@ -30,6 +30,20 @@ e.g.
 
 ```console
 $ aqua rm cli/cli direnv/direnv
+```
+
+## -mode option
+
+aqua >= v2.32.0 [#3075](https://github.com/aquaproj/aqua/pull/3075)
+
+By default, `aqua remove` command removes only packages from the `pkgs` directory and doesn't remove links from the `bin` directory.
+You can change this behaviour by specifying the `-mode` flag.
+The value of `-mode` is a string containing characters `l` and `p`.
+The order of the characters doesn't matter.
+
+```sh
+aqua rm -m l cli/cli # Remove only links
+aqua rm -m pl cli/cli # Remove links and packages
 ```
 
 ## Limitation
