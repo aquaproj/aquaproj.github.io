@@ -60,6 +60,8 @@ $ env AQUA_GENERATE_WITH_DETAIL=true aqua g cli/cli
   link: https://github.com/cli/cli
 ```
 
+* `AQUA_REMOVE_MODE`: [`aqua remove` command's `-mode` option](/docs/guides/uninstall-packages)
+
 ## JSON Schema
 
 * https://github.com/aquaproj/aqua/tree/main/json-schema
