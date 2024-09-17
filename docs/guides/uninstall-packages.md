@@ -46,6 +46,12 @@ aqua rm -m l cli/cli # Remove only links
 aqua rm -m pl cli/cli # Remove links and packages
 ```
 
+You can also configure the mode by the environment variable `AQUA_REMOVE_MODE`, so you can change the default behaviour of `aqua remove` command by setting `AQUA_REMOVE_MODE` in your shell setting such as `.bashrc`.
+
+```sh
+export AQUA_REMOVE_MODE=pl
+```
+
 ## Limitation
 
 1. The following package types can't be removed without `--all` option.
