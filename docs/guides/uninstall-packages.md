@@ -54,9 +54,8 @@ export AQUA_REMOVE_MODE=pl
 
 ## Limitation
 
-1. The following package types can't be removed without `--all` option.
+:::info
+As of [aqua v2.33.0](https://github.com/aquaproj/aqua/releases/tag/v2.33.0), you can uninstall `go_install` and `http` packages too.
+:::
 
-- `http`
-- `go_install`
-
-2. The fuzzy finder shows all packages, which include not installed packages.
+1. The fuzzy finder shows all packages, which include not installed packages.
