@@ -50,8 +50,8 @@ const FeatureList = [
     title: 'Renovate Integration',
     description: (
       <>
-        <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/176582627-44f27c48-213b-44da-b18f-d4d482ef2f56.png"/ >
-        
+        <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/176582627-44f27c48-213b-44da-b18f-d4d482ef2f56.png" />
+
         aqua provides <a href="/docs/products/aqua-renovate-config/">Renovate Config Preset</a>, so you can update tools by Renovate easily.
       </>
     ),
@@ -71,7 +71,7 @@ const FeatureList = [
     description: (
       <>
         aqua installs tools securely.
-        aqua provides several security features such as <a href="/docs/reference/security/checksum/">Checksum Verification</a>, <a href="/docs/reference/security/policy-as-code/">Policy as Code</a>, and <a href="/docs/reference/security/cosign-slsa/">Cosign and SLSA Provenance Support</a>.
+        aqua supports <a href="/docs/reference/security/checksum/">Checksum Verification</a>, <a href="/docs/reference/security/policy-as-code/">Policy as Code</a>, <a href="/docs/reference/security/cosign-slsa/">Cosign and SLSA Provenance</a>, and <a href="/docs/reference/security/minisign/">Minisign</a>.
         Please see <a href="/docs/reference/security">Security</a>.
       </>
     ),
@@ -88,7 +88,7 @@ const FeatureList = [
   },
 ];
 
-function Feature({title, description}) {
+function Feature({ title, description }) {
   return (
     <div className={clsx('col col--6')}>
       <div className="text--center padding-horiz--md">
