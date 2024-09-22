@@ -116,7 +116,7 @@ To add supported tools, please see [here](/docs/products/aqua-registry/contribut
   - 👋 [Good bye shell script](#-good-bye-shell-script)
     - You don't have to write similar shell scripts to install tools many times. You only have to manage tools declaratively with YAML and run `aqua i`
 - 🛡️ [Security](reference/security/index.md)
-  - aqua supports security features such as [Checksum Verification](guides/checksum.md), [Policy as Code](/docs/reference/security/policy-as-code), and [Cosign and SLSA Provenance Support](reference/security/cosign-slsa.md)
+  - aqua supports security features such as [Checksum Verification](guides/checksum.md), [Policy as Code](/docs/reference/security/policy-as-code), [Cosign and SLSA Provenance Support](reference/security/cosign-slsa.md), and [Minisign](reference/security/minisign.md)
 - Lower overhead than container
   - You don't have to suffer from container specific issues
 - [Support private packages](guides/private-package.md)

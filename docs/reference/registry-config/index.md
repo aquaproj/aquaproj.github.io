@@ -63,6 +63,7 @@ packages:
 * [checksum](/docs/reference/security/checksum)
 * [cosign](cosign.md)
 * [slsa_provenance](slsa-provenance.md)
+* [minisign](minisign.md)
 * [private](private.md)
 * [no_asset](no_asset.md)
 * [error_message](error_message.md)
