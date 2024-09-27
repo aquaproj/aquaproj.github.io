@@ -62,6 +62,105 @@ go install github.com/aquaproj/aqua/v2/cmd/aqua@latest
 
 https://github.com/aquaproj/aqua/releases
 
+#### Verify downloaded binaries from GitHub Releases
+
+You can verify downloaded binaries using some tools.
+
+1. [Cosign](https://github.com/sigstore/cosign)
+1. [slsa-verifier](https://github.com/slsa-framework/slsa-verifier)
+1. [GitHub CLI](https://cli.github.com/)
+
+--
+
+1. Cosign:
+
+You can install Cosign by aqua.
+
+```sh
+aqua g -i sigstore/cosign
+```
+
+```sh
+# Download assets from GitHub Releases.
+gh release download -R aquaproj/aqua v2.34.0
+# Verify a checksum file.
+cosign verify-blob \
+  --signature aqua_2.34.0_checksums.txt.sig \
+  --certificate aqua_2.34.0_checksums.txt.pem \
+  --certificate-identity-regexp 'https://github\.com/suzuki-shunsuke/go-release-workflow/\.github/workflows/release\.yaml@.*' \
+  --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+  aqua_2.34.0_checksums.txt
+```
+
+Output:
+
+```
+Verified OK
+```
+
+After verifying the checksum, verify the artifact.
+
+```sh
+cat aqua_2.34.0_checksums.txt | sha256sum -c --ignore-missing
+```
+
+2. slsa-verifier
+
+You can install slsa-verifier by aqua.
+
+```sh
+aqua g -i slsa-framework/slsa-verifier
+```
+
+```sh
+# Download assets from GitHub Releases.
+gh release download -R aquaproj/aqua v2.34.0
+# Verify an asset.
+slsa-verifier verify-artifact aqua_darwin_arm64.tar.gz \
+  --provenance-path multiple.intoto.jsonl \
+  --source-uri github.com/aquaproj/aqua \
+  --source-tag v2.34.0
+```
+
+Output:
+
+```
+Verified signature against tlog entry index 133024968 at URL: https://rekor.sigstore.dev/api/v1/log/entries/108e9186e8c5677af3bf58014b72ab1571f566855d27109b70403a96394003283d540765fc0e2c20
+Verified build using builder "https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@refs/tags/v2.0.0" at commit 2f9cc345c3c49b9a0c8fcd9d8e1c461bbd8fd533
+Verifying artifact aqua_darwin_arm64.tar.gz: PASSED
+
+PASSED: SLSA verification passed
+```
+
+3. GitHub CLI
+
+You can install GitHub CLI by aqua.
+
+```sh
+aqua g -i cli/cli
+```
+
+```sh
+# Download assets from GitHub Releases.
+gh release download -R aquaproj/aqua v2.35.0-1 -p aqua_darwin_arm64.tar.gz
+# Verify an asset.
+gh attestation verify aqua_darwin_arm64.tar.gz \
+  -R aquaproj/aqua \
+  --signer-workflow suzuki-shunsuke/go-release-workflow/.github/workflows/release.yaml
+```
+
+Output:
+
+```
+Loaded digest sha256:763c8d5e6b8585ebb9d9bab0ee1fcafd4a29c3e7f44a85ac77780bac3ca6fff1 for file://aqua_darwin_arm64.tar.gz
+Loaded 1 attestation from GitHub API
+✓ Verification succeeded!
+
+sha256:763c8d5e6b8585ebb9d9bab0ee1fcafd4a29c3e7f44a85ac77780bac3ca6fff1 was attested by:
+REPO                                 PREDICATE_TYPE                  WORKFLOW                                                               
+suzuki-shunsuke/go-release-workflow  https://slsa.dev/provenance/v1  .github/workflows/release.yaml@7f97a226912ee2978126019b1e95311d7d15c97a
+```
+
 ## 2. Set the environment variable `PATH`
 
 :::info

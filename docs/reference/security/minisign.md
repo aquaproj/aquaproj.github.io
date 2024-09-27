@@ -2,7 +2,7 @@
 sidebar_position: 1250
 ---
 
-# Minisign Support
+# Minisign
 
 - `aqua >= v2.31.0` [#2978](https://github.com/aquaproj/aqua/pull/2978) [#2994](https://github.com/aquaproj/aqua/pull/2994)
 - `aqua >= v2.34.0` [#3103](https://github.com/aquaproj/aqua/pull/3103)
