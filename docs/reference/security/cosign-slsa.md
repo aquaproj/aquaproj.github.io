@@ -2,7 +2,7 @@
 sidebar_position: 1150
 ---
 
-# Cosign and SLSA Provenance Support
+# Cosign and SLSA Provenance
 
 - `aqua >= v1.26.0`
 - `aqua-installer >= v2.0.0`

@@ -22,5 +22,6 @@ https://github.com/search?q=org%3Aaquaproj+label%3Asecurity
 * [Checksum Verification](checksum.md)
 * [Policy as Code](policy-as-code/index.md)
   * [Only standard registry is allowed by default (Secure by default)](/docs/reference/upgrade-guide/v2/only-standard-registry-is-allowed-by-default)
-* [Cosign and SLSA Provenance Support](cosign-slsa.md)
-* [Minisign Support](minisign.md)
+* [Cosign and SLSA Provenance](cosign-slsa.md)
+* [Minisign](minisign.md)
+* [GitHub Artifact Attestations](github-artifact-attestations.md)
