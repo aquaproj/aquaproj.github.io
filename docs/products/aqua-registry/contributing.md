@@ -93,7 +93,7 @@ cmdx help scaffold
 Please add new commits if you update code.
 :::
 
-2. Fix generated files `pkgs/<package name>/{pkg.yaml,registry.yaml` if necessary
+2. Fix generated files `pkgs/<package name>/{pkg.yaml,registry.yaml}` if necessary
 2. (Optional) Remove containers to clean up them if necessary: `cmdx rm`
 2. Run test: `cmdx t <package name>`
 2. Update registry.yaml: `cmdx gr`
