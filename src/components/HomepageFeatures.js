@@ -4,7 +4,7 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Manage CLI declatively',
+    title: 'Manage CLI declaratively',
     description: (
       <>
         <img width="600" alt="image" src="https://user-images.githubusercontent.com/13323303/176584746-3ec582d7-9cbe-41fe-ab1a-1b26e1436518.png" />
