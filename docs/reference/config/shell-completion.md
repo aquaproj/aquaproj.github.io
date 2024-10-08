@@ -8,7 +8,7 @@ sidebar_position: 890
 - Fish shell: aqua >= [v2.29.0](https://github.com/aquaproj/aqua/releases/tag/v2.29.0) [#2929](https://github.com/aquaproj/aqua/pull/2929)
 
 The commands `aqua completion <SHELL>` outputs shell completion code.
-By sourcing the output of `aqua completion <SHELL>` in .bashrc, .zshrc, or ~/.config/fish/fish.zsh,
+By sourcing the output of `aqua completion <SHELL>` in .bashrc, .zshrc, or ~/.config/fish/completions/aqua.fish,
 aqua supports the shell completion.
 
 .bashrc
