@@ -15,34 +15,29 @@ Please add the Standard Registry to your aqua.yaml's registries, and run `aqua g
 ```yaml
 registries:
   - type: standard
-    ref: v4.155.1  # renovate: depName=aquaproj/aqua-registry
+    ref: v4.233.0  # renovate: depName=aquaproj/aqua-registry
 ```
 
 `aqua g` launches the interactive UI and you can search the package by fuzzy search.
 
 ```console
-  koki-develop/clive                    ┌──────────────────────────────────────┐
-  tektoncd/cli [tkn]                    │ climech/grit                         │
-  ipinfo/cli/grepip                     │                                      │
-  ipinfo/cli/randip                     │ https://github.com/climech/grit      │
-  openfaas/faas-cli                     │ Multitree-based personal task m      │
-  yitsushi/totp-cli                     │ anager                               │
-  databricks/click                      │                                      │
-  ipinfo/cli/prips                      │                                      │
-  civo/cli [civo]                       │                                      │
-  dapr/cli [dapr]                       │                                      │
-  goark/gimei-cli                       │                                      │
-  orhun/git-cliff                       │                                      │
-  snyk/cli [snyk]                       │                                      │
-  spf13/cobra-cli                       │                                      │
-  volta-cli/volta                       │                                      │
-  barnybug/cli53                        │                                      │
-  cli/cli [gh]: github                  │                                      │
-  nuclio/nuclio                         │                                      │
-  cswank/kcli                           │                                      │
-> climech/grit                          │                                      │
-  140/1017                              │                                      │
-> cli
+  civo/cli [civo]                          ┌──────────────────────────────────────────┐
+  dapr/cli [dapr]                          │ climech/grit                             │
+  goark/gimei-cli                          │                                          │
+  orhun/git-cliff                          │ https://github.com/climech/grit          │
+  snyk/cli [snyk]                          │ Multitree-based personal task manager    │
+  spf13/cobra-cli                          │                                          │
+  volta-cli/volta                          │                                          │
+  barnybug/cli53                           │                                          │
+  michidk/vscli                            │                                          │
+  nuclio/nuclio                            │                                          │
+  sigi-cli/sigi                            │                                          │
+  tektoncd/cli                             │                                          │
+  cswank/kcli                              │                                          │
+  cli/cli [gh]                             │                                          │
+> climech/grit                             │                                          │
+  225/1569                                 │                                          │
+> cli                                      └──────────────────────────────────────────┘
 ```
 
 ## Request for new packages
