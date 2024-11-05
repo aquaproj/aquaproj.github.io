@@ -93,21 +93,6 @@ cmdx help scaffold
 Please add new commits if you update code.
 :::
 
-2. Fix generated files `pkgs/<package name>/{pkg.yaml,registry.yaml}` if necessary
-2. (Optional) Remove containers to clean up them if necessary: `cmdx rm`
-2. Run test: `cmdx t <package name>`
-2. Update registry.yaml: `cmdx gr`
-2. Commit `registry.yaml` and `pkgs/<package name>/{pkg.yaml,registry.yaml`
-2. Repeat the step 2 ~ 6 until packages are installed properly
-2. Create a pull request: `cmdx new <package name>`
-2. (Optional) Stop containers: `cmdx stop`
-
-:::info
-We usually reuse same containers, but sometimes you would want to run test in new containers.
-In that case, you can remove containers by `cmdx rm` command.
-Then `cmdx s` and `cmdx t` create new containers.
-:::
-
 :::caution
 Sometimes the scaffold by `cmdx s <package name>` would fail, but this is expected.
 In this case, please check the error message and fix `pkgs/<package name>/{pkg.yaml,registry.yaml`.
@@ -115,20 +100,19 @@ Please check [Troubleshooting](/docs/trouble-shooting) too.
 If you can't figure out how to fix, please open a pull request and ask us for help.
 :::
 
-:::info
-If you face GitHub API rate limiting, please set the GitHub Access token with environment variable `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN`.
-
-e.g.
-
-```sh
-export GITHUB_TOKEN=<YOUR PERSONAL ACCESS TOKEN>
-```
-:::
+2. Fix generated files `pkgs/<package name>/{pkg.yaml,registry.yaml}` if necessary
+2. (Optional) Remove containers to clean up them if necessary: `cmdx rm`
+2. Run test: `cmdx t <package name>`
+2. Update registry.yaml: `cmdx gr`
 
 :::info
-When you update `pkgs/**/registry.yaml`, you have to run `cmdx gr` to reflect the update to `registry.yaml` on the repository root directory.
+When you update `pkgs/**/registry.yaml`, you have to run `cmdx gr` to reflect the update to `registry.yaml` in the repository.
 :::
 
+6. Commit `registry.yaml` and `pkgs/<package name>/{pkg.yaml,registry.yaml`
+2. Repeat the step 2 ~ 6 until packages are installed properly
+2. Create a pull request: `cmdx new <package name>`
+2. (Optional) Stop containers: `cmdx stop`
 
 ### Use `cmdx s` definitely
 
@@ -145,6 +129,72 @@ Then you have to fix the code according to the error message.
 `cmdx s` supports only `github_release` type packages, so for other package types you have to fix the code.
 Even if so, you must still use `cmdx s`.
 `cmdx s` guarantees the quality of code.
+
+### :bulb: How to recreate containers
+
+We usually reuse same containers, but sometimes you would want to run test in new containers.
+In that case, you can remove containers by `cmdx rm` command.
+Then `cmdx s` and `cmdx t` create new containers.
+
+### :bulb: Set a GitHub Access token to avoid GitHub API rate limiting
+
+If you face GitHub API rate limiting, please set the GitHub Access token with environment variable `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN`.
+
+e.g.
+
+```sh
+export GITHUB_TOKEN=<YOUR PERSONAL ACCESS TOKEN>
+```
+
+### How to execute a package in your machine during development
+
+There are several ways
+
+1. Execute a package in linux containers via `cmdx con`
+1. Import `pkgs/<package>/pkg.yaml` in [aqua.yaml](https://github.com/aquaproj/aqua-registry/blob/main/aqua.yaml)
+1. Add [aqua-all.yaml](https://github.com/aquaproj/aqua-registry/blob/main/aqua-all.yaml) in `$AQUA_GLOBAL_CONFIG`
+
+#### 1. Execute a package in linux containers via `cmdx con`
+
+```console
+$ cmdx con
++ bash scripts/connect.sh
+[INFO] Connecting to the container aqua-registry (linux/arm64)
+```
+
+Then you can execute a package in the container.
+
+#### 2. Import `pkgs/<package>/pkg.yaml` in aqua.yaml
+
+```yaml
+packages:
+  # ...
+  - import: pkgs/<package>/pkg.yaml
+```
+
+Please don't commit this change.
+
+You need to run `aqua policy allow` to use the local registry.
+
+```sh
+aqua policy allow
+```
+
+Then you can execute the package.
+
+#### 3. Add aqua-all.yaml in `$AQUA_GLOBAL_CONFIG`
+
+```sh
+export AQUA_GLOBAL_CONFIG=$PWD/aqua-all.yaml:$AQUA_GLOBAL_CONFIG
+```
+
+You need to run `aqua policy allow` to use the local registry.
+
+```sh
+aqua policy allow
+```
+
+Then you can execute all packages.
 
 ## Supported OS and CPU Architecture
 
