@@ -17,9 +17,11 @@ About aqua's Checksum Verification, please see [the document](/docs/reference/se
 
 ## Requirements
 
-```console
-$ aqua g -i int128/ghcp
-```
+Nothing.
+
+:::info
+As of update-checksum-workflow v1.0.3, [ghcp](https://github.com/int128/ghcp) isn't necessary.
+:::
 
 ### Example
 

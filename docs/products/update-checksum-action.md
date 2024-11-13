@@ -16,13 +16,11 @@ Please see [update-checksum-workflow](https://github.com/aquaproj/update-checksu
 
 ## Requirements
 
-- [aqua](https://aquaproj.github.io/)
-- [int128/ghcp](https://github.com/int128/ghcp): You can install ghcp with aqua (`aqua g -i int128/ghcp`)
+[aqua](https://aquaproj.github.io/)
 
-```console
-$ aqua init
-$ aqua g -i int128/ghcp
-```
+:::info
+As of update-checksum-action v0.2.5, [ghcp](https://github.com/int128/ghcp) isn't necessary.
+:::
 
 ## Example
 
