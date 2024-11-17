@@ -87,7 +87,7 @@ aqua_version | Installed aqua version
 
 name | default | description
 --- | --- | ---
-enable_aqua_install | `"true"` | if this is `"false"`, executing `aqua i` and updating `GITHUB_PATH` are skipped
+enable_aqua_install | `"true"` | if this is `"false"`, `aqua i` is skipped
 aqua_opts | `-l` | `aqua i`'s option. If you want to specify global options, please use environment variables
 working_directory | `""` | working directory
 policy_allow | `""` | aqua >= `v2.3.0`. If this is `"true"`, `aqua policy allow` command is run. If a Policy file path is set, `aqua policy allow "${{inputs.policy_allow}}"` is run
