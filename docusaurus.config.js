@@ -44,9 +44,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       announcementBar: {
-        id: 'nodejs_support',
+        id: 'command_aliases',
         content:
-          '<a href="/docs/reference/nodejs-support">Node.js Support (2024-08-24)</a>',
+          '<a href="/docs/guides/command-alias">You can now define command aliases (2024-11-02)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,

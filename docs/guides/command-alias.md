@@ -1,10 +1,10 @@
 ---
-sidebar_position: 895
+sidebar_position: 310
 ---
 
 # Command Aliases
 
-[v2.37.0](https://github.com/aquaproj/aqua/releases/tag/v2.31.0) [3224](https://github.com/aquaproj/aqua/pull/3224)
+[v2.37.0](https://github.com/aquaproj/aqua/releases/tag/v2.37.0) [3224](https://github.com/aquaproj/aqua/pull/3224)
 
 You can define command aliases in aqua.yaml.
 
