@@ -39,36 +39,37 @@ packages:
 
 ## Common attributes
 
-* `type`: (string, required) the package type
-* `name`: (string) the package name. This is used to specify the package in `aqua.yaml`. name must be unique in the same registry
-* [search_words](search-words.md)
-* [aliases](aliases.md): Aliases of the package
-* [files](files.md): The list of executable files
-* [format](format.md)
-* [append_ext](format.md)
-* `link`: URL about the package. This is used for `aqua g`
-* `description`: The description about the package. This is used for `aqua g`
-* [replacements](replacements.md): A map which is used to replace some Template Variables like `OS` and `Arch`
-* [format_overrides](format-overrides.md): A list of the pair OS and the asset format
-* [overrides](overrides.md)
-* [version_constraint](version-overrides.md): [expr](https://github.com/antonmedv/expr)'s expression. The evaluation result must be a boolean
-* [version_overrides](version-overrides.md)
-* [supported_if](supported-if.md)
-* [supported_envs](supported-envs.md)
-* [rosetta2](rosetta2.md)
-* [windows_arm_emulation](windows_arm_emulation.md)
-* [version_filter](version-filter.md)
-* [version_source](version-source.md)
-* [complete_windows_ext](complete-windows-ext.md)
-* [checksum](/docs/reference/security/checksum)
-* [cosign](cosign.md)
-* [slsa_provenance](slsa-provenance.md)
-* [minisign](minisign.md)
-* [github_artifact_attestations](github-artifact-attestations.md)
-* [private](private.md)
-* [no_asset](no_asset.md)
-* [error_message](error_message.md)
-* [vars](vars.md)
+- `type`: (string, required) the package type
+- `name`: (string) the package name. This is used to specify the package in `aqua.yaml`. name must be unique in the same registry
+- [search_words](search-words.md)
+- [aliases](aliases.md): Aliases of the package
+- [files](files.md): The list of executable files
+- [format](format.md)
+- [append_ext](format.md)
+- `link`: URL about the package. This is used for `aqua g`
+- `description`: The description about the package. This is used for `aqua g`
+- [replacements](replacements.md): A map which is used to replace some Template Variables like `OS` and `Arch`
+- [format_overrides](format-overrides.md): A list of the pair OS and the asset format
+- [overrides](overrides.md)
+- [version_constraint](version-overrides.md): [expr](https://github.com/antonmedv/expr)'s expression. The evaluation result must be a boolean
+- [version_overrides](version-overrides.md)
+- [supported_if](supported-if.md)
+- [supported_envs](supported-envs.md)
+- [rosetta2](rosetta2.md)
+- [windows_arm_emulation](windows_arm_emulation.md)
+- [version_filter](version-filter.md)
+- [version_source](version-source.md)
+- [go_version_path](go-version-path.md)
+- [complete_windows_ext](complete-windows-ext.md)
+- [checksum](/docs/reference/security/checksum)
+- [cosign](cosign.md)
+- [slsa_provenance](slsa-provenance.md)
+- [minisign](minisign.md)
+- [github_artifact_attestations](github-artifact-attestations.md)
+- [private](private.md)
+- [no_asset](no_asset.md)
+- [error_message](error_message.md)
+- [vars](vars.md)
 
 ## Default values if `repo_owner` and `repo_name` are set
 
