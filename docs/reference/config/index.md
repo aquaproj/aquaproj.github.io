@@ -200,7 +200,7 @@ packages:
   * `update.enabled`: If this is false, `aqua update` command ignores the package. If the package name is passed to aqua up command explicitly, enabled is ignored. By default, enabled is true.
 * `go_version_file`: (string, optional) `aqua >= v2.28.0` [#2632](https://github.com/aquaproj/aqua/pull/2632) A file path to go.mod or go.work. This field is used to get the version of go from go directive in go.mod or go.work
 * `vars`: (map of string) [v2.31.0](https://github.com/aquaproj/aqua/releases/tag/v2.31.0) [#3052](https://github.com/aquaproj/aqua/pull/3052). Please see [here](/docs/reference/registry-config/vars)
-* `command_aliases`: (array of objects, optional) [v2.37.0](https://github.com/aquaproj/aqua/releases/tag/v2.31.0) [#3224](https://github.com/aquaproj/aqua/pull/3224): Aliases of commands. Please see [here](./command-alias.md)
+* `command_aliases`: (array of objects, optional) [v2.37.0](https://github.com/aquaproj/aqua/releases/tag/v2.37.0) [#3224](https://github.com/aquaproj/aqua/pull/3224): Aliases of commands. Please see [here](/docs/guides/command-alias)
 
 The following two configuration is equivalent.
 
