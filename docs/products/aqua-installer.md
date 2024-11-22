@@ -31,8 +31,8 @@ chmod +x aqua-installer
 
 aqua-installer installs aqua to the following path.
 
-* linux, macOS: `${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin/aqua`
-* windows: `${AQUA_ROOT_DIR:-$HOME/AppData/Local/aquaproj-aqua}/bin/aqua`
+- linux, macOS: `${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin/aqua`
+- windows: `${AQUA_ROOT_DIR:-$HOME/AppData/Local/aquaproj-aqua}/bin/aqua`
 
 :::caution
 From aqua-installer v2, aqua-installer doesn't support specifying the install path.
@@ -40,7 +40,7 @@ From aqua-installer v2, aqua-installer doesn't support specifying the install pa
 
 You can pass the following parameters.
 
-* `-v [aqua version]`: aqua version
+- `-v [aqua version]`: aqua version
 
 e.g.
 
@@ -87,6 +87,7 @@ aqua_version | Installed aqua version
 
 name | default | description
 --- | --- | ---
+skip_install_aqua | `"false"` | If this true and aqua is already installed, installing aqua is skipped. aqua-installer >= [v3.1.0](https://github.com/aquaproj/aqua-installer/releases/tag/v3.1.0)
 enable_aqua_install | `"true"` | if this is `"false"`, `aqua i` is skipped
 aqua_opts | `-l` | `aqua i`'s option. If you want to specify global options, please use environment variables
 working_directory | `""` | working directory
