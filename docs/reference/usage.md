@@ -583,19 +583,19 @@ DESCRIPTION:
 
    e.g.
 
-   .bash_profile
+   # .bashrc
 
    if command -v aqua &> /dev/null; then
-     source <(aqua completion bash)
+     eval "$(aqua completion bash)"
    fi
 
-   .zprofile
+   # .zshrc
 
    if command -v aqua &> /dev/null; then
      source <(aqua completion zsh)
    fi
 
-   fish
+   # fish
 
    aqua completion fish > ~/.config/fish/completions/aqua.fish
 
