@@ -12,16 +12,16 @@ NAME:
    aqua - Version Manager of CLI. https://aquaproj.github.io/
 
 USAGE:
-   aqua [global options] command [command options] 
+   aqua [global options] command [command options]
 
 VERSION:
-   2.29.0 (9ff65378f0c6197e3130a20f6d978b8a3042b463)
+   2.38.1 (46013b82ec1106b06355f7cecbf6385d3d20b99c)
 
 COMMANDS:
-   init                   Create a configuration file if it doesn't exist
    info                   Show information
-   init-policy            [Deprecated] Create a policy file if it doesn't exist
+   init                   Create a configuration file if it doesn't exist
    policy                 Manage Policy
+   init-policy            [Deprecated] Create a policy file if it doesn't exist
    install, i             Install tools
    update-aqua, upa       Update aqua
    generate, g            Search packages in registries and output the configuration interactively
@@ -39,14 +39,15 @@ COMMANDS:
    help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --log-level value         log level [$AQUA_LOG_LEVEL]
-   --config value, -c value  configuration file path [$AQUA_CONFIG]
-   --disable-cosign          Disable Cosign verification (default: false) [$AQUA_DISABLE_COSIGN]
-   --disable-slsa            Disable SLSA verification (default: false) [$AQUA_DISABLE_SLSA]
-   --trace value             trace output file path
-   --cpu-profile value       cpu profile output file path
-   --help, -h                show help
-   --version, -v             print the version
+   --log-level value                      log level [$AQUA_LOG_LEVEL]
+   --config value, -c value               configuration file path [$AQUA_CONFIG]
+   --disable-cosign                       Disable Cosign verification (default: false) [$AQUA_DISABLE_COSIGN]
+   --disable-slsa                         Disable SLSA verification (default: false) [$AQUA_DISABLE_SLSA]
+   --disable-github-artifact-attestation  Disable GitHub Artifact Attestations verification (default: false) [$AQUA_DISABLE_GITHUB_ARTIFACT_ATTESTATION]
+   --trace value                          trace output file path
+   --cpu-profile value                    cpu profile output file path
+   --help, -h                             show help
+   --version, -v                          print the version
 ```
 
 ## aqua install
@@ -99,7 +100,7 @@ NAME:
    aqua generate - Search packages in registries and output the configuration interactively
 
 USAGE:
-   aqua generate [command options][<registry name>,<package name> ...]
+   aqua generate [command options] [<registry name>,<package name> ...]
 
 DESCRIPTION:
    Search packages in registries and output the configuration interactively.
@@ -231,7 +232,7 @@ NAME:
    aqua init - Create a configuration file if it doesn't exist
 
 USAGE:
-   aqua init [command options][<created file path. The default value is "aqua.yaml">]
+   aqua init [command options] [<created file path. The default value is "aqua.yaml">]
 
 DESCRIPTION:
    Create a configuration file if it doesn't exist
@@ -314,7 +315,7 @@ NAME:
    aqua which - Output the absolute file path of the given command
 
 USAGE:
-   aqua which [command options]<command name>
+   aqua which [command options] <command name>
 
 DESCRIPTION:
    Output the absolute file path of the given command
@@ -351,30 +352,39 @@ NAME:
    aqua remove - Uninstall packages
 
 USAGE:
-   aqua remove [command options][<registry name>,]<package name> [...]
+   aqua remove [command options] [<registry name>,]<package name> [...]
 
 DESCRIPTION:
    Uninstall packages.
 
    e.g.
    $ aqua rm --all
-   $ aqua rm cli/cli direnv/direnv
+   $ aqua rm cli/cli direnv/direnv tfcmt # Package names and command names
 
-   Note that this command remove files from AQUA_ROOT_DIR/pkgs, but doesn't remove packages from aqua.yaml and doesn't remove files from AQUA_ROOT_DIR/bin.
+   Note that this command remove files from AQUA_ROOT_DIR/pkgs, but doesn't remove packages from aqua.yaml and doesn't remove files from AQUA_ROOT_DIR/bin and AQUA_ROOT_DIR/bat.
 
    If you want to uninstall packages of non standard registry, you need to specify the registry name too.
 
    e.g.
    $ aqua rm foo,suzuki-shunsuke/foo
 
+   By default, this command removes only packages from the pkgs directory and doesn't remove links from the bin directory.
+   You can change this behaviour by specifying the -mode flag.
+   The value of -mode is a string containing characters "l" and "p".
+   The order of the characters doesn't matter.
+
+   $ aqua rm -m l cli/cli # Remove only links
+   $ aqua rm -m pl cli/cli # Remove links and packages
+
    Limitation:
    "http" and "go_install" packages can't be removed.
 
 
 OPTIONS:
-   --all, -a   uninstall all packages (default: false)
-   -i          Select packages with a Fuzzy Finder (default: false)
-   --help, -h  show help
+   --all, -a               uninstall all packages (default: false)
+   --mode value, -m value  Removed target modes. l: link, p: package [$AQUA_REMOVE_MODE]
+   -i                      Select packages with a Fuzzy Finder (default: false)
+   --help, -h              show help
 ```
 
 ## aqua cp
@@ -385,7 +395,7 @@ NAME:
    aqua cp - Copy executable files in a directory
 
 USAGE:
-   aqua cp [command options]<command name> [<command name> ...]
+   aqua cp [command options] <command name> [<command name> ...]
 
 DESCRIPTION:
    Copy executable files in a directory.
@@ -449,7 +459,7 @@ NAME:
    aqua generate-registry - Generate a registry's package configuration
 
 USAGE:
-   aqua generate-registry [command options]<package name>
+   aqua generate-registry [command options] <package name>
 
 DESCRIPTION:
    Generate a template of Registry package configuration.
@@ -562,9 +572,9 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --installed  List installed packages (default: false)
-   --all, -a    List global configuration packages too (default: false)
-   --help, -h   show help
+   --installed, -i  List installed packages (default: false)
+   --all, -a        List global configuration packages too (default: false)
+   --help, -h       show help
 ```
 
 ## aqua completion
@@ -575,7 +585,7 @@ NAME:
    aqua completion - Output shell completion script for bash, zsh, or fish
 
 USAGE:
-   aqua completion command [command options] 
+   aqua completion command [command options]
 
 DESCRIPTION:
    Output shell completion script for bash, zsh, or fish.
@@ -610,7 +620,7 @@ NAME:
    aqua exec - Execute tool
 
 USAGE:
-   aqua exec [command options]<executed command> [<arg> ...]
+   aqua exec [command options] <executed command> [<arg> ...]
 
 DESCRIPTION:
    Basically you don't have to use this command, because this is used by aqua internally. aqua-proxy invokes this command.
