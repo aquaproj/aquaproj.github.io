@@ -6,6 +6,9 @@ tasks:
     short: l
     description: Check if links are broken
     usage: Check if links are broken
+    require:
+      exec:
+        - lychee
     script: |
       set -euo pipefail
       git ls-files | grep -E "\.md$" | xargs -n 10 lychee
