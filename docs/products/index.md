@@ -8,7 +8,7 @@ sidebar_position: 100
 
 - [aqua](https://github.com/aquaproj/aqua): Main product. CLI Version Manager
 - [aqua-registry](aqua-registry/index.md): aqua's Standard Registry
-- [aqua-installer](aqua-installer.md): A shell script and GitHub Actions to install aqua
+- [aqua-installer](aqua-installer/index.md): A shell script and GitHub Actions to install aqua
 - [circleci-orb-aqua](circleci-orb-aqua.md): CircleCI Orb to install aqua
 - [aqua-renovate-config](aqua-renovate-config.md): Renovate Config Preset to update aqua, aqua-installer, packages, and registries
 - [aquaproj.github.io](https://github.com/aquaproj/aquaproj.github.io): aqua's official website
