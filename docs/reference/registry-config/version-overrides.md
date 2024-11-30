@@ -31,34 +31,53 @@ Currently, the following values and functions are accessible in the expression.
 
 * `Version`: (type: `string`) The package version
 * `SemVer`: (type: `string`) The package version that [version_prefix](version-prefix.md) is trimmed from `Version`. For example, if `Version` is `cli/v1.0.0` and `version_prefix` is `cli/`, then `SemVer` is `v1.0.0`
-* `semver`: (type: `func(string) bool`) Tests if the package version satisfies all the constraints. [hashicorp/go-version](https://github.com/hashicorp/go-version) is used
-* `semverWithVersion`: (type: `func(constraint, version string) bool`) Tests if the package version satisfies all the constraints. [hashicorp/go-version](https://github.com/hashicorp/go-version) is used
+* `semver`: (type: `func(string) bool`) Tests if the package version satisfies all the constraints
+* `semverWithVersion`: (type: `func(constraint, version string) bool`) Tests if the package version satisfies all the constraints
 * `trimPrefix`: (type `func(s, prefix string) string`) Go's [strings.TrimPrefix](https://pkg.go.dev/strings#TrimPrefix)
+
+### semver, semverWithVersion
+
+[See also `Change the implementation of semver and semverWithVersion`](/docs/reference/upgrade-guide/v2/change-semver).
+
+e.g.
+
+```
+semver("> 4.14.1")
+```
+
+```
+semver("> 3.0.0, <= 4.0.0")
+```
+
+`semverWithVersion` is used when we need to format `Version`:
+
+```
+semverWithVersion(">= 0.11.1", trimPrefix(Version, "cli-"))
+```
+
+Syntax:
+
+```
+<operator> <version>[, <operator> <version> ...]
+```
+
+Supported operators:
+
+- `>=`
+- `<=`
+- `!=`
+- `>`
+- `<`
+- `=`
+
+Support multiple constraints separated with comma `,`.
+Multiple constraints are evaluated as `AND` comparison.
+Spaces are trimmed.
+Constraints are evaluated using [hashicorp/go-version](https://github.com/hashicorp/go-version).
 
 ## version_overrides
 
 The list of version override.
-
-The following attributes are supported.
-
-* `asset`
-* `checksum`
-* `complete_windows_ext`
-* `files`
-* `format_overrides`
-* `format`
-* `overrides`
-* `path`
-* `replacements`
-* `repo_name`
-* `repo_owner`
-* `rosetta2`
-* `supported_envs`
-* `supported_if`
-* `type`
-* `url`
-* `windows_ext`
-* `version_prefix`
 
 e.g.
 

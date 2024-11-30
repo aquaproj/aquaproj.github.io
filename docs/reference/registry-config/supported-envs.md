@@ -15,6 +15,11 @@ You can specify the list of supported environments (GOOS and GOARCH) in `support
 1. Complicated. There are multiple ways to express the same environments. The expression is too flexible 
 1. Performance. aqua has to compile and evaluate the expression per tool. It may affect the performance although we should do the performance test
 
+## rosetta2 and windows_arm_emulation
+
+If [rosetta2](rosetta2.md) is `true`, `darwin/amd64` and `darwin/arm64` are supported.
+If [windows_arm_emulation](windows_arm_emulation.md) is `true`, `windows/amd64` and `windows/arm64` are supported.
+
 ## Example Code
 
 AS IS
