@@ -1,0 +1,21 @@
+name: Support Request to join our community
+description: |
+  Please use this template when you have any trouble to join our community such as Slack and Discord.
+labels:
+  - community-join-issue
+body:
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: |
+        Please explain your problem and request in details.
+    validations:
+      required: true
+  - type: textarea
+    id: note
+    attributes:
+      label: Note
+      description: Please write any additional information
+    validations:
+      required: false
