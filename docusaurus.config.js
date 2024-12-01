@@ -65,8 +65,8 @@ const config = {
             label: 'Docs',
           },
           {
-            href: 'https://github.com/orgs/aquaproj/discussions',
-            label: 'Question',
+            href: '/docs/#contact-us',
+            label: 'Contact',
             position: 'right',
           },
           {

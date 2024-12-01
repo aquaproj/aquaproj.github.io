@@ -18,12 +18,14 @@ Here is a brief overview of how to learn aqua.
 1. To contribute to Standard Registry (Add new packages, fix bugs), please read [Contributing](/docs/products/aqua-registry/contributing)
 1. To develop custom Registry, please read [Develop a Registry](/docs/develop-registry/)
 
+## Contact us
+
 If you have any question, please contact us.
 
-- [GitHub Discussions](https://github.com/orgs/aquaproj/discussions)
-- Twitter:
-  - English: [@aquaclivm](https://twitter.com/aquaclivm), [@szkdash_en](https://twitter.com/szkdash_en)
-  - Japanese: [@szkdash](https://twitter.com/szkdash)
+- [GitHub Issues](https://github.com/aquaproj/aqua/issues/new/choose)
+- X (Formerly X):
+  - English: [@aquaclivm](https://x.com/aquaclivm), [@szkdash_en](https://x.com/szkdash_en)
+  - Japanese: [@szkdash](https://x.com/szkdash)
 - Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
 - [Discord](https://discord.gg/CBGesz8yBX)
 
