@@ -29,6 +29,8 @@ If you have any question, please contact us.
 - Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
 - [Discord](https://discord.gg/CBGesz8yBX)
 
+[If you have any trouble in joining our Slack or Discord, please create an issue.](https://github.com/aquaproj/aquaproj.github.io/issues/new?assignees=&labels=community-join-issue&projects=&template=community-join-problem.yml)
+
 ## For Japanese
 
 We published an e-book about aqua for free. Please read it!
