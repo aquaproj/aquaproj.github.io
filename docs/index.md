@@ -26,7 +26,9 @@ If you have any question, please contact us.
 - X (Formerly X):
   - English: [@aquaclivm](https://x.com/aquaclivm), [@szkdash_en](https://x.com/szkdash_en)
   - Japanese: [@szkdash](https://x.com/szkdash)
-- Slack: [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
+- Slack
+  - [English](https://gophers.slack.com/archives/C04RALTG29K), [Japanese](https://gophers.slack.com/archives/C04RDHZQ9K5)
+  - [Please request to join Gophers Workspace here.](https://github.com/aquaproj/aquaproj.github.io/issues/1245)
 - [Discord](https://discord.gg/CBGesz8yBX)
 
 [If you have any trouble in joining our Slack or Discord, please create an issue.](https://github.com/aquaproj/aquaproj.github.io/issues/new?assignees=&labels=community-join-issue&projects=&template=community-join-problem.yml)
