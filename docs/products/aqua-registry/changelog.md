@@ -30,7 +30,7 @@ This is useful, but some users faced troubles in `cmdx new` because this tightly
 `cmdx new` runs `git push` and `gh pr create` commands internally, but these commands might fail due to several reasons.
 `cmdx new` wraps the detail, making it hard to resolve the trouble.
 Users don't know the detail of `cmdx new`, so it's hard for them to resolve the trouble.
-It's hard for mantainers to support all user trouble.
+It's hard for maintainers to support all user trouble.
 
 What `cmdx new` does is very simple.
 `cmdx new` just creates a pull request with good pull request title and description.
