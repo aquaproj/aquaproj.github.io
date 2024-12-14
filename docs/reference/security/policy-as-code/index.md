@@ -21,6 +21,11 @@ See also.
 - v2.0.0: aqua allows only Standard Registry by default
 - v1.24.0: Introduce Policy
 
+## JSON Schema
+
+- https://github.com/aquaproj/aqua/blob/main/json-schema/policy.json
+- https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/policy.json
+
 ## Disable Policy
 
 aqua >= v2.1.0 [#1790](https://github.com/aquaproj/aqua/issues/1790)
