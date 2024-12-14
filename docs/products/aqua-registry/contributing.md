@@ -51,11 +51,6 @@ We aren't necessarily familiar with the plugin, so please explain where the plug
 
 If you don't know well, please create a pull request and consult us.
 
-## Commit Signing
-
-All commits of pull requests must be signed.
-Please see [the document](https://github.com/suzuki-shunsuke/oss-contribution-guide/blob/main/docs/commit-signing.md).
-
 ## Requirements
 
 - [aqua](https://aquaproj.github.io/docs/install)
@@ -63,12 +58,19 @@ Please see [the document](https://github.com/suzuki-shunsuke/oss-contribution-gu
 
 Please use the latest version.
 
+### Commit Signing
+
+All commits of pull requests must be signed.
+Please see [the document](https://github.com/suzuki-shunsuke/oss-contribution-guide/blob/main/docs/commit-signing.md).
+
 ## Set up
 
+1. [Please fork aquaproj/aqua-registry](https://github.com/aquaproj/aqua-registry/fork).
+1. Checkout the repository
+2. Run `aqua i -l` in the repository root directory to install tools which are required for contribution.
+
 ```sh
-git clone https://github.com/aquaproj/aqua-registry
-cd aqua-registry
-aqua i -l # Install dependencies
+aqua i -l
 ```
 
 ## cmdx - Task Runner
@@ -83,7 +85,48 @@ cmdx help
 cmdx help scaffold
 ```
 
+### cmdx s - Scaffold configuration and test it in containers
+
+`cmdx s <package name>` generates a configuration file `pkgs/<package name>/registry.yaml` and a test data file `pkgs/<package name>/pkg.yaml`, and tests them in containers.
+It gets data from GitHub Releases by GitHub API.
+By default, it gets all releases, so it takes a bit long time if the repository has a lot of releases.
+[`cmdx s` isn't perfect, but you must use it when you add new packages.](#use-cmdx-s-definitely)
+
+### cmdx t - Test a package in containers
+
+`cmdx t [<package name>]` tests a package in containers.
+If the branch name is `feat/<package name>`, you can omit the argument `<package name>`.
+`cmdx t` copies files `pkgs/<package name>/{pkg.yaml,registry.yaml}` in containers and test them.
+If the test succeeds, `registry.yaml` is updated.
+
+### cmdx rm - Remove containers
+
+`cmdx rm` removes containers.
+`cmdx s` and `cmdx t` reuse containers, but if you want to test packages in clean environment, you can do it by removing containers.
+
+### cmdx rmp - Remove an installed package from containers
+
+`cmdx rmp [<package name>]` removes an installed package from containers.
+If the branch name is `feat/<package name>`, you can omit the argument `<package name>`.
+It runs `aqua rm <package name>` and removes `aqua-checksums.json` in containers.
+This task is useful when you want to test packages in clean environment.
+
+### cmdx gr - Update `registry.yaml`
+
+`cmdx gr` merges `pkgs/**/registry.yaml` and updates [registry.yaml](https://github.com/aquaproj/aqua-registry/blob/main/registry.yaml).
+Please don't edit [registry.yaml](https://github.com/aquaproj/aqua-registry/blob/main/registry.yaml) directly.
+When you edit `pkgs/**/registry.yaml`, please run `cmdx gr` to reflect the update to `registry.yaml` in the repository.
+
+### cmdx con - Connect to a container
+
+`cmdx con [<os>] [<arch>]` connect to a given container.
+`cmdx s` and `cmdx t` tests packages in containers.
+`cmdx con` is useful to look into the trouble in containers.
+By default, `<os>` is `linux` and `<arch>` is CPU architecture of your machine.
+
 ## How to add a package
+
+[Requirements](#requirements), [Set up](#set-up)
 
 1. Scaffold configuration: `cmdx s <package name>`
 
@@ -94,25 +137,25 @@ Please add new commits if you update code.
 :::
 
 :::caution
-Sometimes the scaffold by `cmdx s <package name>` would fail, but this is expected.
-In this case, please check the error message and fix `pkgs/<package name>/{pkg.yaml,registry.yaml`.
+Sometimes `cmdx s <package name>` would fail, but this is expected.
+In this case, please check the error message and fix `pkgs/<package name>/{pkg.yaml,registry.yaml}`.
 Please check [Troubleshooting](/docs/trouble-shooting) too.
 If you can't figure out how to fix, please open a pull request and ask us for help.
 :::
 
 2. Fix generated files `pkgs/<package name>/{pkg.yaml,registry.yaml}` if necessary
-2. (Optional) Remove containers to clean up them if necessary: `cmdx rm`
-2. Run test: `cmdx t <package name>`
+2. Run test: `cmdx t [<package name>]`
 2. Update registry.yaml: `cmdx gr`
+2. Commit `registry.yaml` and `pkgs/<package name>/{pkg.yaml,registry.yaml`
+2. Repeat the step 2 ~ 5 until packages are installed properly
+2. Create a pull request
+2. (Optional) Stop containers: `cmdx stop`
 
 :::info
-When you update `pkgs/**/registry.yaml`, you have to run `cmdx gr` to reflect the update to `registry.yaml` in the repository.
+We removed `cmdx new` from the guide.
+You can still use `cmdx new`, but if you have any trouble with `cmdx new`, you can create a pull request without `cmdx new`.
+[Please see the changelog for details.](changelog.md#why-did-we-remove-cmdx-new-from-the-guide)
 :::
-
-6. Commit `registry.yaml` and `pkgs/<package name>/{pkg.yaml,registry.yaml`
-2. Repeat the step 2 ~ 6 until packages are installed properly
-2. Create a pull request: `cmdx new <package name>`
-2. (Optional) Stop containers: `cmdx stop`
 
 ### Use `cmdx s` definitely
 
@@ -129,12 +172,6 @@ Then you have to fix the code according to the error message.
 `cmdx s` supports only `github_release` type packages, so for other package types you have to fix the code.
 Even if so, you must still use `cmdx s`.
 `cmdx s` guarantees the quality of code.
-
-### :bulb: How to recreate containers
-
-We usually reuse same containers, but sometimes you would want to run test in new containers.
-In that case, you can remove containers by `cmdx rm` command.
-Then `cmdx s` and `cmdx t` create new containers.
 
 ### :bulb: Set a GitHub Access token to avoid GitHub API rate limiting
 
@@ -234,9 +271,23 @@ packages:
   - name: scaleway/scaleway-cli@v2.12.0
 ```
 
+## What's pkgs/**/pkg.yaml for?
+
+`pkgs/**/pkg.yaml` are test data.
+`pkgs/**/pkg.yaml` are used to test if packages can be installed properly.
+
+Note that `pkgs/**/pkg.yaml` aren't lists of available versions.
+You can install any versions not listed in `pkgs/**/pkg.yaml`.
+
 ## Trouble shooting
 
 ### `cmdx new` fails to push a commit to the origin
+
+:::info
+We removed `cmdx new` from the guide.
+You can still use `cmdx new`, but if you have any trouble with `cmdx new`, you can create a pull request without `cmdx new`.
+[Please see the changelog for details.](changelog.md#why-did-we-remove-cmdx-new-from-the-guide)
+:::
 
 If `cmdx new` can't push a commit to a remote branch, please confirm if `origin` is not the upstream `aquaproj/aqua-registry` but your fork.
 If `origin` is not your fork, please change it to your fork.
