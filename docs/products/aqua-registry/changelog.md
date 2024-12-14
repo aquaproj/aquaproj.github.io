@@ -8,6 +8,35 @@ This is a changelog of aqua-registry's development workflow.
 We have been improving the development workflow continuously.
 So sometimes the development workflow is changed.
 
+## 2024-12-14
+
+We removed `cmdx new` from the guide.
+You can still use `cmdx new`, but if you have any trouble with `cmdx new`, you can create a pull request without `cmdx new`.
+
+### Why did we remove `cmdx new` from the guide?
+
+`cmdx new` is a task to create a pull request for a new package.
+This is useful, but some users faced troubles in `cmdx new` because this tightly depends on users environment.
+
+[#26113](https://github.com/aquaproj/aqua-registry/issues/26113) [#27461](https://github.com/aquaproj/aqua-registry/issues/27461) [#29759](https://github.com/aquaproj/aqua-registry/pull/29759#issuecomment-2533504858) [#29797](https://github.com/aquaproj/aqua-registry/issues/29797)
+
+- Whether users fork aquaproj/aqua-registry
+- The value of `git remote get-url origin`
+- Git authentication
+- The status of `gh auth login`
+  - User may not login
+  - Users may use multiple GitHub accounts and they may have to switch GitHub accounts
+
+`cmdx new` runs `git push` and `gh pr create` commands internally, but these commands might fail due to several reasons.
+`cmdx new` wraps the detail, making it hard to resolve the trouble.
+Users don't know the detail of `cmdx new`, so it's hard for them to resolve the trouble.
+It's hard for mantainers to support all user trouble.
+
+What `cmdx new` does is very simple.
+`cmdx new` just creates a pull request with good pull request title and description.
+Users can create a pull request easily without `cmdx new`.
+And we can give up good pull request title and description, though it's undesirable.
+
 ## 2024-05-24
 
 [#23171](https://github.com/aquaproj/aqua-registry/pull/23171) [#23188](https://github.com/aquaproj/aqua-registry/pull/23188) [#23191](https://github.com/aquaproj/aqua-registry/pull/23191) [#23192](https://github.com/aquaproj/aqua-registry/pull/23192)
