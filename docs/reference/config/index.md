@@ -194,11 +194,13 @@ packages:
 * `registry`: (string, optional) registry name
   * default value is `standard`
 * `version`: (string, optional) package version
+* `go_version_file`: (string, optional) `aqua >= v2.28.0` [#2632](https://github.com/aquaproj/aqua/pull/2632) A file path to go.mod or go.work. This field is used to get the version of go from go directive in go.mod or go.work
+* `version_expr`: (string, optional) `aqua >= v2.40.0` [Please see here for details](version-expr.md)
+* `version_expr_prefix`: (string, optional) `aqua >= v2.40.0` [Please see here for details](version-expr.md)
 * `import`: (string, optional) glob pattern of package files. This is relative path from the configuration file. This is parsed with [filepath.Glob](https://pkg.go.dev/path/filepath#Glob). Please see [Split the list of packages](/docs/guides/split-config) too.
 * [tags](/docs/guides/package-tag): Filter installed packages. Please see [Filter packages with tags](/docs/guides/package-tag)
 * `update`: The setting for `aqua update` command
   * `update.enabled`: If this is false, `aqua update` command ignores the package. If the package name is passed to aqua up command explicitly, enabled is ignored. By default, enabled is true.
-* `go_version_file`: (string, optional) `aqua >= v2.28.0` [#2632](https://github.com/aquaproj/aqua/pull/2632) A file path to go.mod or go.work. This field is used to get the version of go from go directive in go.mod or go.work
 * `vars`: (map of string) [v2.31.0](https://github.com/aquaproj/aqua/releases/tag/v2.31.0) [#3052](https://github.com/aquaproj/aqua/pull/3052). Please see [here](/docs/reference/registry-config/vars)
 * `command_aliases`: (array of objects, optional) [v2.37.0](https://github.com/aquaproj/aqua/releases/tag/v2.37.0) [#3224](https://github.com/aquaproj/aqua/pull/3224): Aliases of commands. Please see [here](/docs/guides/command-alias)
 
