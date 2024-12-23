@@ -47,6 +47,15 @@ Everytime a new version is released, we need to send a pull request to [microsof
 
 From [aqua v2.16.2](https://github.com/aquaproj/aqua/releases/tag/v2.16.2), you can also install aqua by [Scoop](https://scoop.sh/).
 
+[Main bucket](https://github.com/ScoopInstaller/Main):
+
+```sh
+scoop bucket add main
+scoop install main/aqua
+```
+
+[Our bucket](https://github.com/aquaproj/scoop-bucket):
+
 ```sh
 scoop bucket add aquaproj https://github.com/aquaproj/scoop-bucket
 scoop install aqua
