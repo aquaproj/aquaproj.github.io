@@ -14,10 +14,12 @@ jobs:
       contents: write # For peaceiris/actions-gh-pages
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
       - name: get nested property
         id: package_json
         uses: notiz-dev/github-action-json-property@a5a9c668b16513c737c3e1f8956772c99c73f6e8 # v0.2.0
-        with: 
+        with:
           path: package.json
           prop_path: volta.node
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
