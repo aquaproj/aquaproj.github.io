@@ -69,6 +69,34 @@ $ env AQUA_GENERATE_WITH_DETAIL=true aqua g cli/cli
 * https://github.com/aquaproj/aqua/blob/main/json-schema/aqua-yaml.json
 * https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/aqua-yaml.json
 
+### Input Complementation by YAML Language Server
+
+Add a code comment to aqua.yaml:
+
+```yaml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/aqua-yaml.json
+```
+
+If you specify a branch like `main` as version, editors can't reflect the update of JSON Schema well as they cache JSON Schema.
+You would need to do something like reopening the file.
+So it's good to specify semver and update it periodically.
+
+```yaml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/v2.40.0/json-schema/aqua-yaml.json
+```
+
+Using Renovate and [our Renovate Config Preset](https://github.com/suzuki-shunsuke/renovate-config/blob/main/yaml-language-server.json), you can automate the update:
+
+```json
+{
+  "extends": [
+    "github>suzuki-shunsuke/renovate-config:yaml-language-server#3.0.0"
+  ]
+}
+```
+
+e.g. https://github.com/aquaproj/aqua-installer/pull/735
+
 ## Configuration attributes
 
 * [registries](#registries): The list of registries
