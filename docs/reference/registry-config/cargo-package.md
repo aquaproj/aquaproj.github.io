@@ -27,6 +27,7 @@ Please install these tools in advance.
 - `cargo`: `cargo install` command options
   - `all_features` (boolean): `--all-features` option
   - `features` ([]string): `--features` option
+  - `locked` (aqua >= v2.41.0): `--locked` option
 
 ## Try `cargo` package quickly
 
@@ -52,6 +53,7 @@ packages:
     type: cargo
     crate: broot
     cargo:
+      locked: true
       all_features: true
       # features:
       #   - clipboard
