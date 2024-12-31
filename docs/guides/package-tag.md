@@ -8,7 +8,7 @@ sidebar_position: 550
 
 [#441](https://github.com/aquaproj/aqua/issues/441) [#1336](https://github.com/aquaproj/aqua/pull/1336)
 
-`aqua cp` and `aqua install` commands support filtering packages with tags.
+`aqua cp`, `aqua install`, and `aqua update` commands support filtering packages with tags.
 
 ## Specification
 
@@ -34,7 +34,7 @@ packages:
     - foo
 ```
 
-And `aqua install` and `aqua cp` command have the following command line options.
+`cp`, `install`, and `update` commands have the following command line options.
 
 - `--tags (-t)` (string): When this option is set, only packages that have specified tags are installed. You can specify multiple tags joining with `,` (e.g. `-t ci,test`)
 - `--exclude-tags` (string): When this option is set, packages that have specified tags aren't installed. You can specify multiple tags joining with `,` (e.g. `-exclude-tags ci,test`)
