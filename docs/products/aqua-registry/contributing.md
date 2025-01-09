@@ -13,11 +13,13 @@ How to contribute to Standard Registry. https://github.com/aquaproj/aqua-registr
 - [Registry Configuration](/docs/reference/registry-config/)
 - [Change `GOOS` and `GOARCH` for testing](/docs/develop-registry/change-os-arch-for-test)
 
-## Changelog of development workflow
+## Changelog of document and development workflow
 
-We have been improving the development workflow continuously.
-So sometimes the development workflow is changed.
-Please check [the change log](changelog.md).
+[change log](changelog.md).
+
+- [2025-01-19 Add `Note of Programing Language Support`](#note-of-programing-language-support)
+- [2024-12-14 Remove `cmdx new` from the guide](changelog.md#2024-12-14)
+- [2024-05-24 The behaviour of `cmdx s`, `cmdx t`, and `cmdx new` were changed.](changelog.md#2024-05-24)
 
 ## Should you create an Issue before sending a Pull Request?
 
@@ -50,6 +52,18 @@ So if you send a pull request adding a plugin to aqua-registry, please check if 
 We aren't necessarily familiar with the plugin, so please explain where the plugin expects to be installed and how the plugin works in the pull request description.
 
 If you don't know well, please create a pull request and consult us.
+
+## Note of Programing Language Support
+
+aqua supports several programing languages such as Go and Node.js, but when we support a programing language, we need to be careful about where the programing language installs libraries and commands.
+
+For instance, if the programing language installs commands in the same directory with the programing language itself, aqua can't add them to $PATH, meaning we can't execute them.
+aqua doesn't support changing $PATH dynamically (We have no plan to support it as it makes aqua more complicated).
+Node.js's `npm i -g` installs the same directory with node by default, so we gave up the support of Node.js before (Now aqua supports Node.js again because we can change the install path by `NPM_CONFIG_REFIX`).
+If the language installs libraries in the same directory with it, the language can't refer installed libraries when we change the version of the language.
+
+So before supporting a programing language, we should consider carefully if it really works well.
+Many programing languages have dedicated version managers, so maybe they are more appropriate.
 
 ## Requirements
 
