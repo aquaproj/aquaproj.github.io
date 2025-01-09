@@ -59,7 +59,7 @@ aqua supports several programing languages such as Go and Node.js, but when we s
 
 For instance, if the programing language installs commands in the same directory with the programing language itself, aqua can't add them to $PATH, meaning we can't execute them.
 aqua doesn't support changing $PATH dynamically (We have no plan to support it as it makes aqua more complicated).
-Node.js's `npm i -g` installs the same directory with node by default, so we gave up the support of Node.js before (Now aqua supports Node.js again because we can change the install path by `NPM_CONFIG_REFIX`).
+Node.js's `npm i -g` installs the same directory with node by default, so we gave up the support of Node.js before (Now aqua supports Node.js again because we can change the install path by `NPM_CONFIG_PREFIX`).
 If the language installs libraries in the same directory with it, the language can't refer installed libraries when we change the version of the language.
 
 So before supporting a programing language, we should consider carefully if it really works well.
