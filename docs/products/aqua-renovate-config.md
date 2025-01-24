@@ -99,7 +99,7 @@ e.g.
 ```
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash -s -- -v v2.28.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.1/aqua-installer | bash -s -- -v v2.28.0
 ```
 
 :warning: To update aqua, please don't add newlines.
@@ -107,13 +107,13 @@ curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua
 :thumbsup:
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash -s -- -v v2.28.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.1/aqua-installer | bash -s -- -v v2.28.0
 ```
 
 :thumbsdown:
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer |
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.1/aqua-installer |
   bash -s -- -v v2.28.0 # aqua isn't updated
 ```
 
