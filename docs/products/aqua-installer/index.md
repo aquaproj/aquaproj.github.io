@@ -55,13 +55,13 @@ If the version isn't specified, the latest version would be installed.
 e.g.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v3.0.1
+- uses: aquaproj/aqua-installer@v3.1.1
   with:
     aqua_version: v2.28.0
 ```
 
 ```yaml
-- uses: aquaproj/aqua-installer@v3.0.1
+- uses: aquaproj/aqua-installer@v3.1.1
   with:
     aqua_version: v2.28.0
     working_directory: foo
@@ -114,7 +114,7 @@ e.g.
     key: v1-aqua-installer-${{runner.os}}-${{runner.arch}}-${{hashFiles('aqua.yaml')}}
     restore-keys: |
       v1-aqua-installer-${{runner.os}}-${{runner.arch}}-
-- uses: aquaproj/aqua-installer@v3.0.1
+- uses: aquaproj/aqua-installer@v3.1.1
   with:
     aqua_version: v2.28.0
 ```
@@ -137,7 +137,7 @@ aqua-installer runs aqua with [-l](https://aquaproj.github.io/docs/tutorial/inst
 If you want to cache all packages, please set `aqua_opts` to unset `-l` option.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v3.0.1
+- uses: aquaproj/aqua-installer@v3.1.1
   with:
     aqua_version: v2.28.0
     aqua_opts: "" # Unset `-l` option
