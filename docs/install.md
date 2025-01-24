@@ -110,7 +110,7 @@ Verified OK
 After verifying the checksum, verify the artifact.
 
 ```sh
-cat aqua_2.34.0_checksums.txt | sha256sum -c --ignore-missing
+cat aqua_2.34.0_checksums.txt | sha256sum -c --ignore-missing -
 ```
 
 2. slsa-verifier
