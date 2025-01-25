@@ -29,6 +29,10 @@ export AQUA_VACUUM_DAYS=90
 aqua vacuum -d 30
 ```
 
+:::info
+aqua vacuum command doesn't remove links from the bin directory and doesn't remove packages from aqua.yaml
+:::
+
 As of aqua v2.43.0, aqua records packages' last used date times.
 Date times are updated when packages are installed or executed.
 Packages installed by aqua v2.42.2 or older don't have records of last used date times, so aqua can't remove them.
