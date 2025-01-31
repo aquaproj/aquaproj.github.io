@@ -46,7 +46,7 @@ const config = {
       announcementBar: {
         id: 'command_aliases',
         content:
-          '<a href="/docs/guides/command-alias">You can now define command aliases (2024-11-02)</a>',
+          '<a href="/docs/guides/vacuum">Remove unused packages (Vacuum) (2025-01-25)</a>',
         backgroundColor: '#7FFF00',
         textColor: '#091E42',
         isCloseable: true,
