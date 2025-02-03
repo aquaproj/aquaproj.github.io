@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options]
 
 VERSION:
-   2.41.0 (888e5a4decf559baa6a3f4328e01752b350cae15)
+   2.43.0 (39f6589063f2667f7ce56a0b67f883f4420d0821)
 
 COMMANDS:
    info                   Show information
@@ -36,6 +36,7 @@ COMMANDS:
    update-checksum, upc   Create or Update aqua-checksums.json
    remove, rm             Uninstall packages
    update, up             Update registries and packages
+   vacuum                 Remove unused installed packages
    help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:

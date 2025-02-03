@@ -10,9 +10,8 @@ env:
 jobs:
   path-filter:
     # Get changed files to filter jobs
-    timeout-minutes: 30
+    timeout-minutes: 10
     outputs:
-      update-aqua-checksums: ${{steps.changes.outputs.update-aqua-checksums}}
       renovate-config-validator: ${{steps.changes.outputs.renovate-config-validator}}
       ghalint: ${{steps.changes.outputs.ghalint}}
     runs-on: ubuntu-latest
@@ -22,42 +21,22 @@ jobs:
         id: changes
         with:
           filters: |
-            update-aqua-checksums:
-              - aqua/aqua.yaml
-              - aqua/imports/*.yaml
-              - aqua/aqua-checksums.json
-              - .github/workflows/test.yaml
             renovate-config-validator:
               - renovate.json
             ghalint:
               - .github/workflows/*.yaml
               - aqua/imports/ghalint.yaml
 
-  enable-auto-merge:
-    uses: ./.github/workflows/wc-enable-auto-merge.yaml
-    permissions: {}
-    needs:
-      - status-check
-    secrets:
-      gh_app_id: ${{secrets.APP_ID_AQUAPROJ_AQUA}}
-      gh_app_private_key: ${{secrets.APP_PRIVATE_KEY_AQUAPROJ_AQUA}}
-    # "! failure() && ! cancelled()" is required. success() returns false if dependent jobs are skipped.
-    # https://github.com/community/community/discussions/45058
-    # By default success() is used so we have to override success() by "! failure() && ! cancelled()"
-    if: |
-      ! failure() && ! cancelled() && github.event.pull_request.user.login == 'renovate[bot]' && contains(github.event.pull_request.body, ' **Automerge**: Enabled.')
-
   status-check:
     # This job is used for main branch's branch protection rule's status check.
     # If all dependent jobs succeed or are skipped this job succeeds.
-    timeout-minutes: 30
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     needs:
       - renovate-config-validator
       - test
       - typos
       - ghalint
-      - update-aqua-checksums
     permissions: {}
     if: failure()
     steps:
@@ -78,20 +57,9 @@ jobs:
     with:
       is_pr: true
 
-  update-aqua-checksums:
-    uses: ./.github/workflows/wc-update-aqua-checksums.yaml
-    needs: path-filter
-    permissions:
-      contents: read
-    secrets:
-      gh_app_id: ${{secrets.APP_ID_AQUAPROJ_AQUA}}
-      gh_app_private_key: ${{secrets.APP_PRIVATE_KEY_AQUAPROJ_AQUA}}
-    if: |
-      needs.path-filter.outputs.update-aqua-checksums == 'true'
-
   ghalint:
     # Validate GitHub Actions Workflows by ghalint.
-    timeout-minutes: 30
+    timeout-minutes: 15
     needs: path-filter
     if: needs.path-filter.outputs.ghalint == 'true'
     runs-on: ubuntu-latest
@@ -110,7 +78,7 @@ jobs:
           GHALINT_LOG_COLOR: always
 
   typos:
-    timeout-minutes: 30
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     permissions: {}
     steps:
