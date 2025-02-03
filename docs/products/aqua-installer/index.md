@@ -45,7 +45,7 @@ You can pass the following parameters.
 e.g.
 
 ```bash
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.1/aqua-installer | bash -s -- -v v2.28.0
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.1/aqua-installer | bash -s -- -v v2.43.1
 ```
 
 If the version isn't specified, the latest version would be installed.
@@ -57,13 +57,13 @@ e.g.
 ```yaml
 - uses: aquaproj/aqua-installer@v3.1.1
   with:
-    aqua_version: v2.28.0
+    aqua_version: v2.43.1
 ```
 
 ```yaml
 - uses: aquaproj/aqua-installer@v3.1.1
   with:
-    aqua_version: v2.28.0
+    aqua_version: v2.43.1
     working_directory: foo
     aqua_opts: ""
   env:
@@ -111,12 +111,12 @@ e.g.
 - uses: actions/cache@v3.3.1
   with:
     path: ~/.local/share/aquaproj-aqua
-    key: v1-aqua-installer-${{runner.os}}-${{runner.arch}}-${{hashFiles('aqua.yaml')}}
+    key: v2-aqua-installer-${{runner.os}}-${{runner.arch}}-${{hashFiles('aqua.yaml')}}
     restore-keys: |
-      v1-aqua-installer-${{runner.os}}-${{runner.arch}}-
+      v2-aqua-installer-${{runner.os}}-${{runner.arch}}-
 - uses: aquaproj/aqua-installer@v3.1.1
   with:
-    aqua_version: v2.28.0
+    aqua_version: v2.43.1
 ```
 
 Please fix `actions/cache`'s parameters properly.
@@ -128,9 +128,9 @@ e.g.
 - uses: actions/cache@v3.3.1
   with:
     path: ~/.local/share/aquaproj-aqua
-    key: v1-aqua-installer-${{runner.os}}-${{runner.arch}}-${{hashFiles('.aqua/*.yaml')}} # Change key
+    key: v2-aqua-installer-${{runner.os}}-${{runner.arch}}-${{hashFiles('.aqua/*.yaml')}} # Change key
     restore-keys: |
-      v1-aqua-installer-${{runner.os}}-${{runner.arch}}-
+      v2-aqua-installer-${{runner.os}}-${{runner.arch}}-
 ```
 
 aqua-installer runs aqua with [-l](https://aquaproj.github.io/docs/tutorial/install-only-link) option by default, so packages that aren't run in the workflow aren't cached.
@@ -139,7 +139,7 @@ If you want to cache all packages, please set `aqua_opts` to unset `-l` option.
 ```yaml
 - uses: aquaproj/aqua-installer@v3.1.1
   with:
-    aqua_version: v2.28.0
+    aqua_version: v2.43.1
     aqua_opts: "" # Unset `-l` option
 ```
 
