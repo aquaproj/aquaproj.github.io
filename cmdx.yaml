@@ -20,5 +20,4 @@ tasks:
     shell:
       - bash
       - -c
-    script: |
-      bash scripts/generate-usage.sh > docs/reference/usage.md
+    script: bash scripts/generate-usage.sh
