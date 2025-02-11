@@ -10,14 +10,16 @@ https://github.com/aquaproj/aqua-renovate-config
 
 [Example](https://github.com/aquaproj/test-aqua-renovate-config)
 
-## Reference about Renovate
+## See also
 
-* [Renovate documentation](https://docs.renovatebot.com/)
-* [Renovate Config Preset](https://docs.renovatebot.com/config-presets/)
-  * How to use Preset
-  * How to specify preset version and parameter
-* [Custom Manager Support using Regex](https://docs.renovatebot.com/modules/manager/regex/)
-  * This Preset updates tools with custom regular expression by Renovate Regex Manager
+* [Guide](/docs/guides/renovate)
+* Renovate
+  * [Renovate documentation](https://docs.renovatebot.com/)
+  * [Renovate Config Preset](https://docs.renovatebot.com/config-presets/)
+    * How to use Preset
+    * How to specify preset version and parameter
+  * [Custom Manager Support using Regex](https://docs.renovatebot.com/modules/manager/regex/)
+    * This Preset updates tools with custom regular expression by Renovate Regex Manager
 
 ## List of Presets
 
