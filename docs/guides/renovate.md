@@ -25,7 +25,7 @@ We recommend managing `aqua.yaml` with Git and update versions by [Renovate](htt
 
 Using Renovate's [Regex Manager](https://docs.renovatebot.com/modules/manager/regex/), you can update versions.
 
-We provide the Renovate Preset Configuration [aqua-renovate-config](https://github.com/aquaproj/aqua-renovate-config). For the detail, please see the [README](https://github.com/aquaproj/aqua-renovate-config).
+We provide the Renovate Preset Configuration [aqua-renovate-config](https://github.com/aquaproj/aqua-renovate-config). [For details, please see the document](/docs/products/aqua-renovate-config).
 
 Example pull requests by Renovate.
 
