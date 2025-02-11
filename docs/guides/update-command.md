@@ -185,38 +185,3 @@ registries:
   type: standard
 packages: null
 ```
-
-### Newlines are removed wrongly
-
-This issue is because of the third party library [goccy/go-yaml](https://github.com/goccy/go-yaml).
-
-- https://github.com/goccy/go-yaml/issues/285
-
-Before
-
-```yaml
-registries:
-- ref: v4.155.0
-  type: standard
-
-
-packages:
-- name: suzuki-shunsuke/mkghtag@v0.1.1
-```
-
-Run `aqua up`.
-
-```console
-$ aqua up
-INFO[0000] updating a registry                           aqua_version= env=darwin/arm64 new_version=v4.155.1 old_version=v4.155.0 program=aqua registry_name=standard
-```
-
-After
-
-```yaml
-registries:
-- ref: v4.155.1
-  type: standard
-packages:
-- name: suzuki-shunsuke/mkghtag@v0.1.1
-```

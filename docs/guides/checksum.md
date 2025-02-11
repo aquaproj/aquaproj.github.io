@@ -69,7 +69,7 @@ For CircleCI Users, please use [circleci-orb-aqua's update-checksum command](htt
 
 To create and update `aqua-checksum.json` automatically, let's set up GitHub Actions.
 
-```
+```sh
 mkdir -p .github/workflows
 vi .github/workflows/update-aqua-checksum.yaml
 ```
@@ -96,11 +96,6 @@ jobs:
 ```
 
 We use [update-checksum-action](https://github.com/aquaproj/update-checksum-action).
-This action depends on [int128/ghcp](https://github.com/int128/ghcp), so let's install it by aqua.
-
-```
-aqua g -i int128/ghcp
-```
 
 ## Create a pull request
 
@@ -241,4 +236,37 @@ jobs:
         run: aqua upc -prune
       - name: Run autofix.ci
         uses: autofix-ci/action@2891949f3779a1cafafae1523058501de3d4e944 # v1.3.1
+```
+
+## :bulb: Update aqua-checksums.json using commit-action
+
+You can also use [suzuki-shunsuke/commit-action](https://github.com/suzuki-shunsuke/commit-action).
+
+e.g.
+
+```yaml
+name: Update aqua-checksums.json
+on: pull_request
+permissions: {}
+jobs:
+  update-aqua-checksums:
+    runs-on: ubuntu-24.04
+    permissions: {}
+    timeout-minutes: 15
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Install aqua
+        uses: aquaproj/aqua-installer@e2d0136abcf70b7a2f6f505720640750557c4b33 # v3.1.1
+        with:
+          aqua_version: v2.43.0
+      - name: Fix aqua-checksums.json
+        run: aqua upc -prune
+      - name: Commit and push
+        uses: suzuki-shunsuke/commit-action@v0.0.4
+        with:
+          app_id: ${{secrets.APP_ID}}
+          app_private_key: ${{secrets.APP_PRIVATE_KEY}}
 ```
