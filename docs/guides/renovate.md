@@ -71,6 +71,16 @@ Some packages have a time lag between when a GitHub Release is created and when 
 In that case, Renovate may create pull requests before assets are uploaded.
 To prevent the issue as much as possible, Renovate's [minimumReleaseAge](https://docs.renovatebot.com/configuration-options/#minimumreleaseage) may be useful.
 
+## :bulb: Update aqua-checksums.json
+
+aqua-renovate-config can't update aqua-checksums.json.
+There are several ways to update aqua-checksums.json:
+
+1. [Set up CI. Please see the guide.](./checksum.md)
+1. Run `aqua upc` command via [postUpgradeTasks](https://docs.renovatebot.com/configuration-options/#postupgradetasks)
+
+For details of postUpgradeTasks, please see the document of Renovate.
+
 ## :bulb: Prevent some packages from being updated by Renovate
 
 There are two ways to prevent some packages from being updated by Renovate.
