@@ -102,6 +102,7 @@ e.g. https://github.com/aquaproj/aqua-installer/pull/735
 * [registries](#registries): The list of registries
 * [packages](#packages): The list of installed packages
 * [checksum](checksum.md): configuration for checksum verification
+* [import_dir](/docs/guides/split-config#import_dir): A directory path where files are imported. `aqua >= v2.44.0`
 
 :::caution
 `inline_registry` was removed from `aqua >= v0.9.0`. Please use [local registry](#local-registry).

@@ -71,3 +71,50 @@ You can also use the regular expression.
   ]
 }
 ```
+
+## `import_dir`
+
+[#3528](https://github.com/aquaproj/aqua/pull/3528) aqua >= v2.44.0
+
+You can also use the `import_dir` field.
+
+e.g. aqua.yaml
+
+```yaml
+registries:
+- type: standard
+  ref: v4.311.0
+import_dir: imports
+```
+
+```sh
+aqua init -u # Create aqua.yaml with `import_dir: imports`
+aqua init -i pkgs # Create aqua.yaml with `import_dir: pkgs`
+```
+
+You can use `import_dir` and `packages` at the same time.
+In addition to `packages`, aqua searches packages from the directory specified with `import_dir`.
+
+`import_dir: imports` is equivalent to the following settings.
+
+```yaml
+packages:
+- import: imports/*.yml
+- import: imports/*.yaml
+```
+
+And if `import_dir` is set, `aqua g -i` command creates a directory `<import_dir>` and adds packages to the file `<import_dir>/<command name>.yaml`.
+For instance, if `import_dir` is `imports`, `aqua g -i cli/cli` creates a directory `imports` and adds cli/cli to `imports/gh.yaml`.
+
+If the package has multiple commands, `<command name>` is the first command name in the `files` setting.
+For instance, in case of `FiloSottile/age`, `<command name>` is `age`.
+
+https://github.com/aquaproj/aqua-registry/blob/d39d4b5d0fb0635f6be7a70f3cb8b994f075a639/pkgs/FiloSottile/age/registry.yaml#L13-L17
+
+```yaml
+    files:
+      - name: age
+        src: age/age
+      - name: age-keygen
+        src: age/age-keygen
+```

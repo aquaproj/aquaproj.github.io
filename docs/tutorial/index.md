@@ -70,6 +70,16 @@ packages:
 
 `packages` is still empty, so let's add packages to install them.
 
+:::info
+See also [Split config](/docs/guides/split-config)
+
+```sh
+# -d: Create aqua/aqua.yaml
+# -u: Import packages from imports/.*\.ya?ml
+aqua init [-d] [-u]
+```
+:::
+
 ## Install tools with aqua
 
 Let's install [GitHub Official CLI](https://cli.github.com/) and [fzf](https://github.com/junegunn/fzf) with aqua.
