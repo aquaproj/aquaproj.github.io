@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options]
 
 VERSION:
-   2.43.3 (428f0a228e29e424fa2ff9c735f39268f17c3fba)
+   2.44.0 (3b28de5a7dbccfd800c5970457dbb2738dca5fed)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -66,9 +66,16 @@ DESCRIPTION:
    e.g.
    $ aqua init # create "aqua.yaml"
    $ aqua init foo.yaml # create foo.yaml
+   $ aqua init -u # Replace "packages:" with "import_dir: imports"
+   $ aqua init -i <directory path> # Replace "packages:" with "import_dir: <directory path>"
+   $ aqua init -d # Create a directory "aqua" and create "aqua/aqua.yaml"
+
 
 OPTIONS:
-   --help, -h  show help
+   --use-import-dir, -u          Use import_dir (default: false)
+   --import-dir value, -i value  import_dir
+   --create-dir, -d              Create a directory named aqua and create aqua.yaml in it (default: false)
+   --help, -h                    show help
 ```
 
 ## aqua install
