@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options]
 
 VERSION:
-   2.44.0 (3b28de5a7dbccfd800c5970457dbb2738dca5fed)
+   2.44.1 (003f26d72ca2ed0d680e46a7fa35179164acd7d9)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
