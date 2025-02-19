@@ -17,7 +17,7 @@ In this post, I describe why I use aqua.
 
 * Align tool versions in team and CI
   * Solve the problem due to the difference of tool versions
-* Manage tools and their versions for projects as code declaratively, and provide an unified way to install tools
+* Manage tools and their versions for projects as code declaratively, and provide a unified way to install tools
   * aqua supports changing tool versions per project
 * Stop developing shell scripts and GitHub Actions to install tools per tool and per project
 * Update tools with Renovate easily

@@ -4,7 +4,7 @@ sidebar_position: 250
 
 # Registry
 
-`Registry` is a `aqua`'s core concept.
+`Registry` is a core concept of `aqua`.
 `Registry` defines the package list and how to install them.
 
 In `aqua.yaml`, you specify Registries in `registries`.
