@@ -12,7 +12,7 @@ Japanese: [Cosign と SLSA による aqua CLI Version Manager の Security 改�
 aqua supports verifying aqua and packages with [Cosign](https://docs.sigstore.dev/cosign/overview/) and [slsa-verifier](https://github.com/slsa-framework/slsa-verifier).
 
 :::caution
-You don't have to install Cosign and slsa-verifier, because aqua installs Cosign automatically and slsa-verifier is embedded to aqua as Go library.
+You don't have to install Cosign or slsa-verifier, because aqua installs both automatically.
 :::
 
 ## Getting Started
