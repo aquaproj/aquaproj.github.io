@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options]
 
 VERSION:
-   2.44.1 (003f26d72ca2ed0d680e46a7fa35179164acd7d9)
+   2.45.0 (d23cfca21ad875aa0b0c29f924e3581427a09a00)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -340,7 +340,7 @@ DESCRIPTION:
    This command doesn't update commit hashes.
    This command doesn't install packages.
    This command updates only a nearest aqua.yaml from the current directory.
-   If this command finds a aqua.yaml, it ignores other aqua.yaml including global configuration files ($AQUA_GLOBAL_CONFIG).
+   If this command finds an aqua.yaml, it ignores other aqua.yaml including global configuration files ($AQUA_GLOBAL_CONFIG).
 
    So if you want to update other files, please change the current directory or specify the configuration file path with the option '-c'.
 
@@ -919,11 +919,13 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --out-testdata value     A file path where the testdata is outputted
-   --cmd value              A list of commands joined with commas ','
-   --limit value, -l value  the maximum number of versions (default: 0)
-   --deep                   This flag was deprecated and had no meaning from aqua v2.15.0. This flag will be removed in aqua v3.0.0. https://github.com/aquaproj/aqua/issues/2351 (default: false)
-   --help, -h               show help
+   --out-testdata value               A file path where the testdata is outputted
+   --cmd value                        A list of commands joined with commas ','
+   --generate-config value, -c value  A configuration file path
+   --limit value, -l value            the maximum number of versions (default: 0)
+   --deep                             This flag was deprecated and had no meaning from aqua v2.15.0. This flag will be removed in aqua v3.0.0. https://github.com/aquaproj/aqua/issues/2351 (default: false)
+   --init                             Generate a configuration file (default: false)
+   --help, -h                         show help
 ```
 
 ## aqua version
