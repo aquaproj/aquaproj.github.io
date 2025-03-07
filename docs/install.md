@@ -25,6 +25,16 @@ aqua is a single binary written in Go.
 
 ### Homebrew
 
+You can install aqua using [Homebrew](https://brew.sh/).
+
+[Homebrew Core Formula: aqua](https://formulae.brew.sh/formula/aqua)
+
+```sh
+brew install aqua
+```
+
+Or
+
 ```sh
 brew install aquaproj/aqua/aqua
 ```
