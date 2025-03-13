@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] command [command options]
 
 VERSION:
-   2.45.0 (d23cfca21ad875aa0b0c29f924e3581427a09a00)
+   2.45.1 (d11aa12df4beb27c3370ce4ae999b1416aea312f)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -424,7 +424,7 @@ NAME:
    aqua completion - Output shell completion script for bash, zsh, or fish
 
 USAGE:
-   aqua completion command [command options]
+   aqua completion [command options]
 
 DESCRIPTION:
    Output shell completion script for bash, zsh, or fish.
@@ -690,7 +690,7 @@ NAME:
    aqua policy - Manage Policy
 
 USAGE:
-   aqua policy command [command options]
+   aqua policy [command options]
 
 ```
 
