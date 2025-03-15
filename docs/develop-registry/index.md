@@ -44,7 +44,7 @@ aqua gr -cmd gh cli/cli
 
 You can use generated configuration as a local Registry or a github_content Registry.
 
-## Allow private Registires by Policy
+## Allow private Registries by Policy
 
 By default, aqua allows us to use only [Standard Registry](https://github.com/aquaproj/aqua-registry) for security.
 To use private Registries, you have to allow them by [Policy](/docs/guides/policy-as-code).
