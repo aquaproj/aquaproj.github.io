@@ -10,6 +10,10 @@ GitHub Actions to update aqua-checksums.json. If aqua-checksums.json isn't lates
 
 About aqua's Checksum Verification, please see [the document](/docs/reference/security/checksum) too.
 
+## :warning: Please consider autofix.ci or Securefix Action
+
+[We recommend autofix.ci or Securefix Action rather than this action.](/docs/guides/checksum#recommend-autofixci-or-securefix-action-instead-of-update-checksum-action-and-update-checksum-workflow)
+
 ## Reusable Workflow
 
 Please see [update-checksum-workflow](https://github.com/aquaproj/update-checksum-workflow).

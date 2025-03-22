@@ -195,9 +195,14 @@ Then `test` job would fail because the checksum is unmatched.
 time="2023-03-12T06:36:05Z" level=fatal msg="aqua failed" actual_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D91 aqua_version=2.28.0 env=linux/amd64 error="checksum is invalid" exe_name=tfcmt expected_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D92 package=suzuki-shunsuke/tfcmt package_version=v4.1.0 program=aqua
 ```
 
-## :bulb: Update aqua-checksums.json using autofix.ci
+## Please consider autofix.ci or Securefix Action instead of update-checksum-action and update-checksum-workflow
 
-Instead of [update-checksum-action](https://github.com/aquaproj/update-checksum-action) and [update-checksum-workflow](https://github.com/aquaproj/update-checksum-workflow), you can use `aqua upc` command and [autofix.ci](https://autofix.ci/).
+Instead of [update-checksum-action](https://github.com/aquaproj/update-checksum-action) and [update-checksum-workflow](https://github.com/aquaproj/update-checksum-workflow), we recommend [autofix.ci](https://autofix.ci/) or [Securefix Action](https://github.com/securefix-action/action) for security.
+
+- autofix.ci: For OSS
+- Securefix Action: For private repositories
+
+### autofix.ci
 
 About autofix.ci, please see the website. https://autofix.ci/
 autofix.ci is free for OSS.
@@ -238,9 +243,45 @@ jobs:
         uses: autofix-ci/action@2891949f3779a1cafafae1523058501de3d4e944 # v1.3.1
 ```
 
-## :bulb: Update aqua-checksums.json using commit-action
+### Securefix Action
+
+[About Securefix Action, please see the document.](https://github.com/securefix-action/action)
+You can update aqua-checksums.json using Securefix Action and `aqua upc` command:
+
+e.g.
+
+```yaml
+name: Update aqua-checksums.json
+on: pull_request
+permissions: {}
+jobs:
+  securefix:
+    runs-on: ubuntu-24.04
+    permissions: {}
+    timeout-minutes: 15
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Install aqua
+        uses: aquaproj/aqua-installer@e2d0136abcf70b7a2f6f505720640750557c4b33 # v3.1.1
+        with:
+          aqua_version: v2.43.0
+      - name: Fix aqua-checksums.json
+        run: aqua upc -prune
+      - name: Commit and push
+        uses: securefix-action/action@v0.1.0
+        with:
+          app_id: ${{secrets.APP_ID}}
+          app_private_key: ${{secrets.APP_PRIVATE_KEY}}
+          server_repository: demo-client
+```
+
+### commit-action
 
 You can also use [suzuki-shunsuke/commit-action](https://github.com/suzuki-shunsuke/commit-action).
+But we recommend Securefix Action for security.
 
 e.g.
 

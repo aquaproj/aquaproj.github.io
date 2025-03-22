@@ -11,6 +11,10 @@ If aqua-checksums.json isn't latest, update aqua-checksums.json and push a commi
 
 About aqua's Checksum Verification, please see [the document](/docs/reference/security/checksum) too.
 
+## :warning: Please consider autofix.ci or Securefix Action
+
+[We recommend autofix.ci or Securefix Action rather than this workflow.](/docs/guides/checksum#recommend-autofixci-or-securefix-action-instead-of-update-checksum-action-and-update-checksum-workflow)
+
 ## Workflow
 
 [Workflow](https://github.com/aquaproj/update-checksum-workflow/blob/main/.github/workflows/update-checksum.yaml)
