@@ -195,7 +195,7 @@ Then `test` job would fail because the checksum is unmatched.
 time="2023-03-12T06:36:05Z" level=fatal msg="aqua failed" actual_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D91 aqua_version=2.28.0 env=linux/amd64 error="checksum is invalid" exe_name=tfcmt expected_checksum=A8E55BEA1A5F94F9515FD9C5C3296D1874461BA1DBD158B3FC0ED6A0DB3B7D92 package=suzuki-shunsuke/tfcmt package_version=v4.1.0 program=aqua
 ```
 
-## Recommend autofix.ci or Securefix Action instead of update-checksum-action and update-checksum-workflow
+## Please consider autofix.ci or Securefix Action instead of update-checksum-action and update-checksum-workflow
 
 Instead of [update-checksum-action](https://github.com/aquaproj/update-checksum-action) and [update-checksum-workflow](https://github.com/aquaproj/update-checksum-workflow), we recommend [autofix.ci](https://autofix.ci/) or [Securefix Action](https://github.com/securefix-action/action) for security.
 
