@@ -29,6 +29,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - uses: suzuki-shunsuke/gh-pages-action@6229a3f8d89389da5c234aab3b37ba51a7fee3f6 # v0.0.1
+        if: "! inputs.is_pr"
         with:
           publish_dir: build
           destination_dir: docs
