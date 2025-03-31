@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    timeout-minutes: 30
+    timeout-minutes: 20
     runs-on: ubuntu-latest
     permissions:
       contents: write # For peaceiris/actions-gh-pages
@@ -28,9 +28,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
-      - uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
-        if: "! inputs.is_pr"
+      - uses: suzuki-shunsuke/gh-pages-action@6229a3f8d89389da5c234aab3b37ba51a7fee3f6 # v0.0.1
         with:
-          github_token: ${{ github.token }}
-          publish_dir: ./build
-          destination_dir: ./docs
+          publish_dir: build
+          destination_dir: docs
