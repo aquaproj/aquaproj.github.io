@@ -21,6 +21,8 @@ Please see [Cosign and SLSA Provenance Support](/docs/reference/security/cosign-
   - same as `signature`
 - certificate
   - same as `signature`
+- bundle (`aqua >= v2.47.0`)
+  - same as `signature`
 
 e.g.
 
