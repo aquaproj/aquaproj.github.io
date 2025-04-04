@@ -12,10 +12,10 @@ NAME:
    aqua - Version Manager of CLI. https://aquaproj.github.io/
 
 USAGE:
-   aqua [global options] command [command options]
+   aqua [global options] [command [command options]]
 
 VERSION:
-   2.46.0 (3e32082fae4f04e092860a00e11b1b13636c2829)
+   2.47.0 (8208c993ed4b08d1a05820c560d936aa4c4d0845)
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -40,13 +40,13 @@ COMMANDS:
    help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --log-level value                      log level [$AQUA_LOG_LEVEL]
-   --config value, -c value               configuration file path [$AQUA_CONFIG]
+   --log-level string                     log level [$AQUA_LOG_LEVEL]
+   --config string, -c string             configuration file path [$AQUA_CONFIG]
    --disable-cosign                       Disable Cosign verification (default: false) [$AQUA_DISABLE_COSIGN]
    --disable-slsa                         Disable SLSA verification (default: false) [$AQUA_DISABLE_SLSA]
    --disable-github-artifact-attestation  Disable GitHub Artifact Attestations verification (default: false) [$AQUA_DISABLE_GITHUB_ARTIFACT_ATTESTATION]
-   --trace value                          trace output file path
-   --cpu-profile value                    cpu profile output file path
+   --trace string                         trace output file path
+   --cpu-profile string                   cpu profile output file path
    --help, -h                             show help
    --version, -v                          print the version
 ```
@@ -59,7 +59,7 @@ NAME:
    aqua init - Create a configuration file if it doesn't exist
 
 USAGE:
-   aqua init [command options] [<created file path. The default value is "aqua.yaml">]
+   aqua init [<created file path. The default value is "aqua.yaml">]
 
 DESCRIPTION:
    Create a configuration file if it doesn't exist
@@ -72,10 +72,10 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --use-import-dir, -u          Use import_dir (default: false)
-   --import-dir value, -i value  import_dir
-   --create-dir, -d              Create a directory named aqua and create aqua.yaml in it (default: false)
-   --help, -h                    show help
+   --use-import-dir, -u            Use import_dir (default: false)
+   --import-dir string, -i string  import_dir
+   --create-dir, -d                Create a directory named aqua and create aqua.yaml in it (default: false)
+   --help, -h                      show help
 ```
 
 ## aqua install
@@ -86,7 +86,7 @@ NAME:
    aqua install - Install tools
 
 USAGE:
-   aqua install [command options]
+   aqua install
 
 DESCRIPTION:
    Install tools according to the configuration files.
@@ -112,12 +112,12 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --only-link, -l         create links but skip downloading packages (default: false)
-   --test                  This flag was deprecated and had no meaning from aqua v2.0.0. This flag will be removed in aqua v3.0.0. https://github.com/aquaproj/aqua/issues/1691 (default: false)
-   --all, -a               install all aqua configuration packages (default: false)
-   --tags value, -t value  filter installed packages with tags
-   --exclude-tags value    exclude installed packages with tags
-   --help, -h              show help
+   --only-link, -l           create links but skip downloading packages (default: false)
+   --test                    This flag was deprecated and had no meaning from aqua v2.0.0. This flag will be removed in aqua v3.0.0. https://github.com/aquaproj/aqua/issues/1691 (default: false)
+   --all, -a                 install all aqua configuration packages (default: false)
+   --tags string, -t string  filter installed packages with tags
+   --exclude-tags string     exclude installed packages with tags
+   --help, -h                show help
 ```
 
 ## aqua generate
@@ -128,7 +128,7 @@ NAME:
    aqua generate - Search packages in registries and output the configuration interactively
 
 USAGE:
-   aqua generate [command options] [<registry name>,<package name> ...]
+   aqua generate [<registry name>,<package name> ...]
 
 DESCRIPTION:
    Search packages in registries and output the configuration interactively.
@@ -241,15 +241,15 @@ DESCRIPTION:
 
 
 OPTIONS:
-   -f value                 the file path of packages list. When the value is "-", the list is passed from the standard input
-   -i                       Insert packages to configuration file (default: false)
-   --pin                    Pin version (default: false)
-   -g                       Insert packages in a global configuration file (default: false)
-   --detail, -d             Output additional fields such as description and link (default: false) [$AQUA_GENERATE_WITH_DETAIL]
-   -o value                 inserted file
-   --select-version, -s     Select the installed version interactively. Default to display 30 versions, use --limit/-l to change it. (default: false)
-   --limit value, -l value  The maximum number of versions. Non-positive number refers to no limit. (default: 30)
-   --help, -h               show help
+   -f string             the file path of packages list. When the value is "-", the list is passed from the standard input
+   -i                    Insert packages to configuration file (default: false)
+   --pin                 Pin version (default: false)
+   -g                    Insert packages in a global configuration file (default: false)
+   --detail, -d          Output additional fields such as description and link (default: false) [$AQUA_GENERATE_WITH_DETAIL]
+   -o string             inserted file
+   --select-version, -s  Select the installed version interactively. Default to display 30 versions, use --limit/-l to change it. (default: false)
+   --limit int, -l int   The maximum number of versions. Non-positive number refers to no limit. (default: 30)
+   --help, -h            show help
 ```
 
 ## aqua update-aqua
@@ -260,7 +260,7 @@ NAME:
    aqua update-aqua - Update aqua
 
 USAGE:
-   aqua update-aqua [command options]
+   aqua update-aqua
 
 DESCRIPTION:
    Update aqua.
@@ -288,7 +288,7 @@ NAME:
    aqua update-checksum - Create or Update aqua-checksums.json
 
 USAGE:
-   aqua update-checksum [command options]
+   aqua update-checksum
 
 DESCRIPTION:
    Create or Update aqua-checksums.json.
@@ -323,7 +323,7 @@ NAME:
    aqua update - Update registries and packages
 
 USAGE:
-   aqua update [command options]
+   aqua update
 
 DESCRIPTION:
    Update registries and packages.
@@ -406,14 +406,14 @@ DESCRIPTION:
 
 
 OPTIONS:
-   -i                       Select packages with fuzzy finder (default: false)
-   --select-version, -s     Select the version with fuzzy finder. Default to display 30 versions, use --limit/-l to change it. (default: false)
-   --only-registry, -r      Update only registries (default: false)
-   --only-package, -p       Update only packages (default: false)
-   --limit value, -l value  The maximum number of versions. Non-positive number refers to no limit. (default: 30)
-   --tags value, -t value   filter installed packages with tags
-   --exclude-tags value     exclude installed packages with tags
-   --help, -h               show help
+   -i                        Select packages with fuzzy finder (default: false)
+   --select-version, -s      Select the version with fuzzy finder. Default to display 30 versions, use --limit/-l to change it. (default: false)
+   --only-registry, -r       Update only registries (default: false)
+   --only-package, -p        Update only packages (default: false)
+   --limit int, -l int       The maximum number of versions. Non-positive number refers to no limit. (default: 30)
+   --tags string, -t string  filter installed packages with tags
+   --exclude-tags string     exclude installed packages with tags
+   --help, -h                show help
 ```
 
 ## aqua completion
@@ -424,7 +424,7 @@ NAME:
    aqua completion - Output shell completion script for bash, zsh, or fish
 
 USAGE:
-   aqua completion [command options]
+   aqua completion [command [command options]] 
 
 DESCRIPTION:
    Output shell completion script for bash, zsh, or fish.
@@ -449,45 +449,52 @@ DESCRIPTION:
    aqua completion fish > ~/.config/fish/completions/aqua.fish
 
 
-```
-
-### aqua completion bash
-
-```console
-$ aqua completion bash --help
-NAME:
-    - Output shell completion script for bash
-
-USAGE:
-    [command options]
+COMMANDS:
+   bash  Output shell completion script for bash
+   zsh   Output shell completion script for zsh
+   fish  Output shell completion script for fish
 
 OPTIONS:
    --help, -h  show help
 ```
 
-### aqua completion zsh
+### completion bash
 
 ```console
-$ aqua completion zsh --help
+$ completion bash --help
 NAME:
-    - Output shell completion script for zsh
+   aqua completion bash - Output shell completion script for bash
 
 USAGE:
-    [command options]
+   aqua completion bash
 
 OPTIONS:
    --help, -h  show help
 ```
 
-### aqua completion fish
+### completion zsh
 
 ```console
-$ aqua completion fish --help
+$ completion zsh --help
 NAME:
-    - Output shell completion script for fish
+   aqua completion zsh - Output shell completion script for zsh
 
 USAGE:
-    [command options]
+   aqua completion zsh
+
+OPTIONS:
+   --help, -h  show help
+```
+
+### completion fish
+
+```console
+$ completion fish --help
+NAME:
+   aqua completion fish - Output shell completion script for fish
+
+USAGE:
+   aqua completion fish
 
 OPTIONS:
    --help, -h  show help
@@ -501,7 +508,7 @@ NAME:
    aqua which - Output the absolute file path of the given command
 
 USAGE:
-   aqua which [command options] <command name>
+   aqua which <command name>
 
 DESCRIPTION:
    Output the absolute file path of the given command
@@ -538,7 +545,7 @@ NAME:
    aqua info - Show information
 
 USAGE:
-   aqua info [command options]
+   aqua info
 
 DESCRIPTION:
    Show information.
@@ -557,7 +564,7 @@ NAME:
    aqua remove - Uninstall packages
 
 USAGE:
-   aqua remove [command options] [<registry name>,]<package name> [...]
+   aqua remove [<registry name>,]<package name> [...]
 
 DESCRIPTION:
    Uninstall packages.
@@ -586,10 +593,10 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --all, -a               uninstall all packages (default: false)
-   --mode value, -m value  Removed target modes. l: link, p: package [$AQUA_REMOVE_MODE]
-   -i                      Select packages with a Fuzzy Finder (default: false)
-   --help, -h              show help
+   --all, -a                 uninstall all packages (default: false)
+   --mode string, -m string  Removed target modes. l: link, p: package [$AQUA_REMOVE_MODE]
+   -i                        Select packages with a Fuzzy Finder (default: false)
+   --help, -h                show help
 ```
 
 ## aqua vacuum
@@ -600,7 +607,7 @@ NAME:
    aqua vacuum - Remove unused installed packages
 
 USAGE:
-   aqua vacuum [command options]
+   aqua vacuum
 
 DESCRIPTION:
    Remove unused installed packages.
@@ -632,9 +639,9 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --init                  Create timestamp files. (default: false)
-   --days value, -d value  Expiration days (default: 60) [$AQUA_VACUUM_DAYS]
-   --help, -h              show help
+   --init              Create timestamp files. (default: false)
+   --days int, -d int  Expiration days (default: 60) [$AQUA_VACUUM_DAYS]
+   --help, -h          show help
 ```
 
 ## aqua cp
@@ -645,7 +652,7 @@ NAME:
    aqua cp - Copy executable files in a directory
 
 USAGE:
-   aqua cp [command options] <command name> [<command name> ...]
+   aqua cp <command name> [<command name> ...]
 
 DESCRIPTION:
    Copy executable files in a directory.
@@ -675,11 +682,11 @@ DESCRIPTION:
 
 
 OPTIONS:
-   -o value                destination directory (default: "dist")
-   --all, -a               install all aqua configuration packages (default: false)
-   --tags value, -t value  filter installed packages with tags
-   --exclude-tags value    exclude installed packages with tags
-   --help, -h              show help
+   -o string                 destination directory (default: "dist")
+   --all, -a                 install all aqua configuration packages (default: false)
+   --tags string, -t string  filter installed packages with tags
+   --exclude-tags string     exclude installed packages with tags
+   --help, -h                show help
 ```
 
 ## aqua policy
@@ -690,19 +697,26 @@ NAME:
    aqua policy - Manage Policy
 
 USAGE:
-   aqua policy [command options]
+   aqua policy [command [command options]] 
 
+COMMANDS:
+   allow  Allow a policy file
+   deny   Deny a policy file
+   init   Create a policy file if it doesn't exist
+
+OPTIONS:
+   --help, -h  show help
 ```
 
-### aqua policy allow
+### policy allow
 
 ```console
-$ aqua policy allow --help
+$ policy allow --help
 NAME:
-    - Allow a policy file
+   aqua policy allow - Allow a policy file
 
 USAGE:
-    [command options]
+   aqua policy allow
 
 DESCRIPTION:
    Allow a policy file
@@ -714,15 +728,15 @@ OPTIONS:
    --help, -h  show help
 ```
 
-### aqua policy deny
+### policy deny
 
 ```console
-$ aqua policy deny --help
+$ policy deny --help
 NAME:
-    - Deny a policy file
+   aqua policy deny - Deny a policy file
 
 USAGE:
-    [command options]
+   aqua policy deny
 
 DESCRIPTION:
    Deny a policy file
@@ -734,15 +748,15 @@ OPTIONS:
    --help, -h  show help
 ```
 
-### aqua policy init
+### policy init
 
 ```console
-$ aqua policy init --help
+$ policy init --help
 NAME:
-    - Create a policy file if it doesn't exist
+   aqua policy init - Create a policy file if it doesn't exist
 
 USAGE:
-    [command options] [<created file path. The default value is "aqua-policy.yaml">]
+   aqua policy init [<created file path. The default value is "aqua-policy.yaml">]
 
 DESCRIPTION:
    Create a policy file if it doesn't exist
@@ -762,7 +776,7 @@ NAME:
    aqua init-policy - [Deprecated] Create a policy file if it doesn't exist
 
 USAGE:
-   aqua init-policy [command options] [<created file path. The default value is "aqua-policy.yaml">]
+   aqua init-policy [<created file path. The default value is "aqua-policy.yaml">]
 
 DESCRIPTION:
    [Deprecated] Create a policy file if it doesn't exist
@@ -785,7 +799,7 @@ NAME:
    aqua exec - Execute tool
 
 USAGE:
-   aqua exec [command options] <executed command> [<arg> ...]
+   aqua exec <executed command> [<arg> ...]
 
 DESCRIPTION:
    Basically you don't have to use this command, because this is used by aqua internally. aqua-proxy invokes this command.
@@ -808,7 +822,7 @@ NAME:
    aqua list - List packages in Registries
 
 USAGE:
-   aqua list [command options]
+   aqua list
 
 DESCRIPTION:
    Output the list of packages in registries.
@@ -848,7 +862,7 @@ NAME:
    aqua generate-registry - Generate a registry's package configuration
 
 USAGE:
-   aqua generate-registry [command options] <package name>
+   aqua generate-registry <package name>
 
 DESCRIPTION:
    Generate a template of Registry package configuration.
@@ -919,13 +933,13 @@ DESCRIPTION:
 
 
 OPTIONS:
-   --out-testdata value               A file path where the testdata is outputted
-   --cmd value                        A list of commands joined with commas ','
-   --generate-config value, -c value  A configuration file path
-   --limit value, -l value            the maximum number of versions (default: 0)
-   --deep                             This flag was deprecated and had no meaning from aqua v2.15.0. This flag will be removed in aqua v3.0.0. https://github.com/aquaproj/aqua/issues/2351 (default: false)
-   --init                             Generate a configuration file (default: false)
-   --help, -h                         show help
+   --out-testdata string                A file path where the testdata is outputted
+   --cmd string                         A list of commands joined with commas ','
+   --generate-config string, -c string  A configuration file path
+   --limit int, -l int                  the maximum number of versions (default: 0)
+   --deep                               This flag was deprecated and had no meaning from aqua v2.15.0. This flag will be removed in aqua v3.0.0. https://github.com/aquaproj/aqua/issues/2351 (default: false)
+   --init                               Generate a configuration file (default: false)
+   --help, -h                           show help
 ```
 
 ## aqua version
@@ -936,7 +950,7 @@ NAME:
    aqua version - Show version
 
 USAGE:
-   aqua version [command options]
+   aqua version
 
 OPTIONS:
    --help, -h  show help
@@ -950,7 +964,7 @@ NAME:
    aqua root-dir - Output the aqua root directory (AQUA_ROOT_DIR)
 
 USAGE:
-   aqua root-dir [command options]
+   aqua root-dir
 
 DESCRIPTION:
    Output the aqua root directory (AQUA_ROOT_DIR)
