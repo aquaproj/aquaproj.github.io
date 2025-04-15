@@ -46,7 +46,7 @@ Then you can ask NotebookLM questions about aqua.
 If you have any question, please contact us.
 
 - [GitHub Issues](https://github.com/aquaproj/aqua/issues/new/choose)
-- X (Formerly X):
+- X (Formerly Twitter):
   - English: [@aquaclivm](https://x.com/aquaclivm), [@szkdash_en](https://x.com/szkdash_en)
   - Japanese: [@szkdash](https://x.com/szkdash)
 - Slack
