@@ -26,18 +26,19 @@ aqua -v
 If you want to try this tutorial in the clean environment, container is useful.
 
 ```bash
-docker run --rm -ti debian:bookworm-20231009 bash
+docker run --rm -ti mirror.gcr.io/ubuntu:24.04 bash
 ```
 
 ```bash
-apt update
-apt install -y curl vim
+export DEBIAN_FRONTEND=noninteractive
+apt-get update
+apt-get install -y curl vim
 
 mkdir ~/workspace
 cd ~/workspace
 export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.1/aqua-installer
-echo "e9d4c99577c6b2ce0b62edf61f089e9b9891af1708e88c6592907d2de66e3714  aqua-installer" | sha256sum -c -
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.2/aqua-installer
+echo "9a5afb16da7191fbbc0c0240a67e79eecb0f765697ace74c70421377c99f0423  aqua-installer" | sha256sum -c -
 
 chmod +x aqua-installer
 ./aqua-installer
