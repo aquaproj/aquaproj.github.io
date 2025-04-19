@@ -65,7 +65,7 @@ The default preset updates GitHub Actions [aquaproj/aqua-installer](https://gith
 ```yaml
 - uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
   with:
-    aqua_version: v2.28.0
+    aqua_version: v2.48.3
 ```
 
 From aqua-renovate-config [2.3.0](https://github.com/aquaproj/aqua-renovate-config/releases/tag/2.3.0), `aqua_version` in `.devcontainer.json` and `.devcontainer/devcontainer.json` is also updated.

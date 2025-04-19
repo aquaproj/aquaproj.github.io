@@ -87,7 +87,7 @@ jobs:
     permissions:
       contents: read
     with:
-      aqua_version: v2.28.0
+      aqua_version: v2.48.3
       prune: true
     secrets:
       gh_token: ${{secrets.GH_TOKEN}}
@@ -175,7 +175,7 @@ Add a GitHub Actions job that runs a tampered package.
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
         with:
-          aqua_version: v2.28.0
+          aqua_version: v2.48.3
         env:
           GITHUB_TOKEN: ${{github.token}}
       - run: tfcmt -v

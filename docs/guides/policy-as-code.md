@@ -216,7 +216,7 @@ If the input `policy_allow` is set, aqua-installer runs `aqua policy allow` comm
 ```yaml
 - uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
   with:
-    aqua_version: v2.28.0
+    aqua_version: v2.48.3
     policy_allow: "true"
 ```
 
