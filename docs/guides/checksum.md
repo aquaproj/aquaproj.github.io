@@ -83,7 +83,7 @@ on:
       - aqua-checksums.json
 jobs:
   update-aqua-checksums:
-    uses: aquaproj/update-checksum-workflow/.github/workflows/update-checksum.yaml@f367004e7f17e99d30297cd9e89afad30ee1f251 # v1.0.0
+    uses: aquaproj/update-checksum-workflow/.github/workflows/update-checksum.yaml@8bce60cc4475128360bc32f00707abb874ca4a91 # v1.0.3
     permissions:
       contents: read
     with:
@@ -172,8 +172,8 @@ Add a GitHub Actions job that runs a tampered package.
       AQUA_LOG_COLOR: always
       AQUA_REQUIRE_CHECKSUM: "true"
     steps:
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
-      - uses: aquaproj/aqua-installer@6ce1f8848ec8e61f14d57bd5d7597057a6dd187c # v3.0.1
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
         with:
           aqua_version: v2.28.0
         env:
@@ -234,7 +234,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Install aqua
-        uses: aquaproj/aqua-installer@e2d0136abcf70b7a2f6f505720640750557c4b33 # v3.1.1
+        uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
         with:
           aqua_version: v2.43.0
       - name: Fix aqua-checksums.json
@@ -265,13 +265,13 @@ jobs:
         with:
           persist-credentials: false
       - name: Install aqua
-        uses: aquaproj/aqua-installer@e2d0136abcf70b7a2f6f505720640750557c4b33 # v3.1.1
+        uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
         with:
           aqua_version: v2.43.0
       - name: Fix aqua-checksums.json
         run: aqua upc -prune
       - name: Commit and push
-        uses: securefix-action/action@v0.1.0
+        uses: securefix-action/action@c5696e3325f3906c5054ad80f3b9cdd92d65173b # v0.1.0
         with:
           app_id: ${{secrets.APP_ID}}
           app_private_key: ${{secrets.APP_PRIVATE_KEY}}
@@ -300,13 +300,13 @@ jobs:
         with:
           persist-credentials: false
       - name: Install aqua
-        uses: aquaproj/aqua-installer@e2d0136abcf70b7a2f6f505720640750557c4b33 # v3.1.1
+        uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
         with:
           aqua_version: v2.43.0
       - name: Fix aqua-checksums.json
         run: aqua upc -prune
       - name: Commit and push
-        uses: suzuki-shunsuke/commit-action@v0.0.4
+        uses: suzuki-shunsuke/commit-action@cc96d3a3fd959d05e9b79ca395eb30b835aeba24 # v0.0.7
         with:
           app_id: ${{secrets.APP_ID}}
           app_private_key: ${{secrets.APP_PRIVATE_KEY}}

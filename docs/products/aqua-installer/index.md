@@ -55,13 +55,13 @@ If the version isn't specified, the latest version would be installed.
 e.g.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v3.1.1
+- uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
   with:
     aqua_version: v2.43.1
 ```
 
 ```yaml
-- uses: aquaproj/aqua-installer@v3.1.1
+- uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
   with:
     aqua_version: v2.43.1
     working_directory: foo
@@ -108,13 +108,13 @@ aqua-installer doesn't support caching, but you can cache packages and registrie
 e.g.
 
 ```yaml
-- uses: actions/cache@v3.3.1
+- uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
   with:
     path: ~/.local/share/aquaproj-aqua
     key: v2-aqua-installer-${{runner.os}}-${{runner.arch}}-${{hashFiles('aqua.yaml')}}
     restore-keys: |
       v2-aqua-installer-${{runner.os}}-${{runner.arch}}-
-- uses: aquaproj/aqua-installer@v3.1.1
+- uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
   with:
     aqua_version: v2.43.1
 ```
@@ -125,7 +125,7 @@ If you [split `aqua.yaml` using import](/docs/guides/split-config) or use local 
 e.g.
 
 ```yaml
-- uses: actions/cache@v3.3.1
+- uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
   with:
     path: ~/.local/share/aquaproj-aqua
     key: v2-aqua-installer-${{runner.os}}-${{runner.arch}}-${{hashFiles('.aqua/*.yaml')}} # Change key
@@ -137,7 +137,7 @@ aqua-installer runs aqua with [-l](https://aquaproj.github.io/docs/tutorial/inst
 If you want to cache all packages, please set `aqua_opts` to unset `-l` option.
 
 ```yaml
-- uses: aquaproj/aqua-installer@v3.1.1
+- uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
   with:
     aqua_version: v2.43.1
     aqua_opts: "" # Unset `-l` option
