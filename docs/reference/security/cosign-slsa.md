@@ -215,7 +215,7 @@ export AQUA_DISABLE_SLSA=true
 ```
 
 ```yaml
-- uses: aquaproj/aqua-installer@v3.1.1
+- uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
   with:
     aqua_version: v2.28.0
   env:

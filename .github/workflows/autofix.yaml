@@ -19,6 +19,7 @@ jobs:
       - run: aqua upc -prune
 
       - run: git ls-files | xargs nllint -s -f
+      - run: git ls-files docs | xargs pinact run -u
 
       - name: get nested property
         id: package_json
