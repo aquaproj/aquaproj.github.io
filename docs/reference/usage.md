@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] [command [command options]]
 
 VERSION:
-   2.48.1 (0f07dc7754411f8874199d2a62308fed36744f88)
+   2.48.3
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -35,8 +35,8 @@ COMMANDS:
    exec                   Execute tool
    list                   List packages in Registries
    generate-registry, gr  Generate a registry's package configuration
-   version                Show version
    root-dir               Output the aqua root directory (AQUA_ROOT_DIR)
+   version                Show version
    help, h                Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
@@ -942,20 +942,6 @@ OPTIONS:
    --help, -h                           show help
 ```
 
-## aqua version
-
-```console
-$ aqua version --help
-NAME:
-   aqua version - Show version
-
-USAGE:
-   aqua version
-
-OPTIONS:
-   --help, -h  show help
-```
-
 ## aqua root-dir
 
 ```console
@@ -977,6 +963,21 @@ DESCRIPTION:
 
 
 OPTIONS:
+   --help, -h  show help
+```
+
+## aqua version
+
+```console
+$ aqua version --help
+NAME:
+   aqua version - Show version
+
+USAGE:
+   aqua version
+
+OPTIONS:
+   --json, -j  Output version in JSON format (default: false)
    --help, -h  show help
 ```
 
