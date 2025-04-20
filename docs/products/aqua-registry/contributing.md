@@ -106,45 +106,6 @@ It gets data from GitHub Releases by GitHub API.
 By default, it gets all releases, so it takes a bit long time if the repository has a lot of releases.
 [`cmdx s` isn't perfect, but you must use it when you add new packages.](#use-cmdx-s-definitely)
 
-#### Ignore some assets and versions
-
-You can ignore some assets and versions to scaffold better configuration files.
-
-1. Create `aqua-generate-registry.yaml` by `aqua gr --init` command:
-
-```sh
-aqua gr --init <package name>
-```
-
-2. Edit `aqua-generate-registry.yaml`:
-
-Example 1. Filter assets:
-
-```yaml
-name: argoproj/argo-rollouts
-all_assets_filter: not ((Asset matches "rollouts-controller") or (Asset matches "rollout-controller"))
-```
-
-Example 2. Filter versions by `version_prefix`:
-
-```yaml
-name: grpc/grpc-go/protoc-gen-go-grpc
-version_prefix: cmd/protoc-gen-go-grpc/
-```
-
-Example 3. Filter versions by `version_filter`:
-
-```yaml
-name: crate-ci/typos
-version_filter: not (Version startsWith "varcon-")
-```
-
-3. Run `cmdx s` with `aqua-generate-registry.yaml`
-
-```sh
-cmdx s -c aqua-generate-registry.yaml
-```
-
 ### cmdx t - Test a package in containers
 
 `cmdx t [<package name>]` tests a package in containers.
@@ -225,6 +186,45 @@ Then you have to fix the code according to the error message.
 `cmdx s` supports only `github_release` type packages, so for other package types you have to fix the code.
 Even if so, you must still use `cmdx s`.
 `cmdx s` guarantees the quality of code.
+
+### :bulb: How to ignore some assets and versions
+
+You can ignore some assets and versions to scaffold better configuration files.
+
+1. Create `aqua-generate-registry.yaml` by `aqua gr --init` command:
+
+```sh
+aqua gr --init <package name>
+```
+
+2. Edit `aqua-generate-registry.yaml`:
+
+Example 1. Filter assets:
+
+```yaml
+name: argoproj/argo-rollouts
+all_assets_filter: not ((Asset matches "rollouts-controller") or (Asset matches "rollout-controller"))
+```
+
+Example 2. Filter versions by `version_prefix`:
+
+```yaml
+name: grpc/grpc-go/protoc-gen-go-grpc
+version_prefix: cmd/protoc-gen-go-grpc/
+```
+
+Example 3. Filter versions by `version_filter`:
+
+```yaml
+name: crate-ci/typos
+version_filter: not (Version startsWith "varcon-")
+```
+
+3. Run `cmdx s` with `aqua-generate-registry.yaml`
+
+```sh
+cmdx s -c aqua-generate-registry.yaml
+```
 
 ### :bulb: Set a GitHub Access token to avoid GitHub API rate limiting
 
