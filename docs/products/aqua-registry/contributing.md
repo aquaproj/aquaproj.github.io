@@ -187,6 +187,45 @@ Then you have to fix the code according to the error message.
 Even if so, you must still use `cmdx s`.
 `cmdx s` guarantees the quality of code.
 
+### :bulb: How to ignore some assets and versions
+
+You can ignore some assets and versions to scaffold better configuration files.
+
+1. Create `aqua-generate-registry.yaml` by `aqua gr --init` command:
+
+```sh
+aqua gr --init <package name>
+```
+
+2. Edit `aqua-generate-registry.yaml`:
+
+Example 1. Filter assets:
+
+```yaml
+name: argoproj/argo-rollouts
+all_assets_filter: not ((Asset matches "rollouts-controller") or (Asset matches "rollout-controller"))
+```
+
+Example 2. Filter versions by `version_prefix`:
+
+```yaml
+name: grpc/grpc-go/protoc-gen-go-grpc
+version_prefix: cmd/protoc-gen-go-grpc/
+```
+
+Example 3. Filter versions by `version_filter`:
+
+```yaml
+name: crate-ci/typos
+version_filter: not (Version startsWith "varcon-")
+```
+
+3. Run `cmdx s` with `aqua-generate-registry.yaml`
+
+```sh
+cmdx s -c aqua-generate-registry.yaml
+```
+
 ### :bulb: Set a GitHub Access token to avoid GitHub API rate limiting
 
 If you face GitHub API rate limiting, please set the GitHub Access token with environment variable `GITHUB_TOKEN` or `AQUA_GITHUB_TOKEN`.
