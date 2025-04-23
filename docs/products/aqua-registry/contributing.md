@@ -191,6 +191,20 @@ Even if so, you must still use `cmdx s`.
 
 You can ignore some assets and versions to scaffold better configuration files.
 
+:::caution
+Be careful to use this feature as it may exclude assets and versions unexpectedly.
+Especially, `all_assets_filter` may exclude assets such as checksum files.
+We recommend to scaffold codes without this feature first.
+Then if `cmdx s` can't scaffold good codes due to some noisy versions or assets, you should re-scaffold code using this feature.
+About `all_assets_filter`, we recommend specifying patterns to exclude assets (deny list) rather than specifying patterns to include assets (allow list).
+
+e.g.
+
+```yaml
+all_assets_filter: not (Asset contains "static")
+```
+:::
+
 1. Create `aqua-generate-registry.yaml` by `aqua gr --init` command:
 
 ```sh
