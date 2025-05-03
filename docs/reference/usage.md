@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] [command [command options]]
 
 VERSION:
-   2.50.0
+   2.50.1
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -24,7 +24,6 @@ COMMANDS:
    update-aqua, upa       Update aqua
    update-checksum, upc   Create or Update aqua-checksums.json
    update, up             Update registries and packages
-   completion             Output shell completion script for bash, zsh, or fish
    which                  Output the absolute file path of the given command
    info                   Show information
    remove, rm             Uninstall packages
@@ -38,6 +37,7 @@ COMMANDS:
    root-dir               Output the aqua root directory (AQUA_ROOT_DIR)
    version                Show version
    help, h                Shows a list of commands or help for one command
+   completion             Output shell completion script for bash, zsh, fish, or Powershell
 
 GLOBAL OPTIONS:
    --log-level string                     log level [$AQUA_LOG_LEVEL]
@@ -414,90 +414,6 @@ OPTIONS:
    --tags string, -t string  filter installed packages with tags
    --exclude-tags string     exclude installed packages with tags
    --help, -h                show help
-```
-
-## aqua completion
-
-```console
-$ aqua completion --help
-NAME:
-   aqua completion - Output shell completion script for bash, zsh, or fish
-
-USAGE:
-   aqua completion [command [command options]] 
-
-DESCRIPTION:
-   Output shell completion script for bash, zsh, or fish.
-   Source the output to enable completion.
-
-   e.g.
-
-   # .bashrc
-
-   if command -v aqua &> /dev/null; then
-     eval "$(aqua completion bash)"
-   fi
-
-   # .zshrc
-
-   if command -v aqua &> /dev/null; then
-     source <(aqua completion zsh)
-   fi
-
-   # fish
-
-   aqua completion fish > ~/.config/fish/completions/aqua.fish
-
-
-COMMANDS:
-   bash  Output shell completion script for bash
-   zsh   Output shell completion script for zsh
-   fish  Output shell completion script for fish
-
-OPTIONS:
-   --help, -h  show help
-```
-
-### completion bash
-
-```console
-$ completion bash --help
-NAME:
-   aqua completion bash - Output shell completion script for bash
-
-USAGE:
-   aqua completion bash
-
-OPTIONS:
-   --help, -h  show help
-```
-
-### completion zsh
-
-```console
-$ completion zsh --help
-NAME:
-   aqua completion zsh - Output shell completion script for zsh
-
-USAGE:
-   aqua completion zsh
-
-OPTIONS:
-   --help, -h  show help
-```
-
-### completion fish
-
-```console
-$ completion fish --help
-NAME:
-   aqua completion fish - Output shell completion script for fish
-
-USAGE:
-   aqua completion fish
-
-OPTIONS:
-   --help, -h  show help
 ```
 
 ## aqua which
@@ -978,6 +894,37 @@ USAGE:
 
 OPTIONS:
    --json, -j  Output version in JSON format (default: false)
+   --help, -h  show help
+```
+
+## aqua completion
+
+```console
+$ aqua completion --help
+NAME:
+   aqua completion - Output shell completion script for bash, zsh, fish, or Powershell
+
+USAGE:
+   aqua completion
+
+DESCRIPTION:
+   Output shell completion script for bash, zsh, fish, or Powershell.
+   Source the output to enable completion.
+
+   # .bashrc
+   source <(aqua completion bash)
+
+   # .zshrc
+   source <(aqua completion zsh)
+
+   # fish
+   aqua completion fish > ~/.config/fish/completions/aqua.fish
+
+   # Powershell
+   Output the script to path/to/autocomplete/aqua.ps1 an run it.
+
+
+OPTIONS:
    --help, -h  show help
 ```
 
