@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] [command [command options]]
 
 VERSION:
-   2.50.1
+   2.51.1
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -28,6 +28,7 @@ COMMANDS:
    info                   Show information
    remove, rm             Uninstall packages
    vacuum                 Remove unused installed packages
+   token                  Manage GitHub Access token
    cp                     Copy executable files in a directory
    policy                 Manage Policy
    init-policy            [Deprecated] Create a policy file if it doesn't exist
@@ -558,6 +559,62 @@ OPTIONS:
    --init              Create timestamp files. (default: false)
    --days int, -d int  Expiration days (default: 60) [$AQUA_VACUUM_DAYS]
    --help, -h          show help
+```
+
+## aqua token
+
+```console
+$ aqua token --help
+NAME:
+   aqua token - Manage GitHub Access token
+
+USAGE:
+   aqua token [command [command options]] 
+
+DESCRIPTION:
+   Manage GitHub Access token by keyring.
+
+COMMANDS:
+   set         Set GitHub Access token
+   remove, rm  Remove GitHub Access token
+
+OPTIONS:
+   --help, -h  show help
+```
+
+### token set
+
+```console
+$ token set --help
+NAME:
+   aqua token set - Set GitHub Access token
+
+USAGE:
+   aqua token set
+
+DESCRIPTION:
+   Set GitHub Access token to keyring.
+
+OPTIONS:
+   --stdin     Read GitHub Access token from stdin (default: false)
+   --help, -h  show help
+```
+
+### token remove
+
+```console
+$ token remove --help
+NAME:
+   aqua token remove - Remove GitHub Access token
+
+USAGE:
+   aqua token remove
+
+DESCRIPTION:
+   Remove GitHub Access token from keyring.
+
+OPTIONS:
+   --help, -h  show help
 ```
 
 ## aqua cp
