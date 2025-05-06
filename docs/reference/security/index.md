@@ -25,3 +25,4 @@ https://github.com/search?q=org%3Aaquaproj+label%3Asecurity
 * [Cosign and SLSA Provenance](cosign-slsa.md)
 * [Minisign](minisign.md)
 * [GitHub Artifact Attestations](github-artifact-attestations.md)
+* [Manage a GitHub access token using Keyring](keyring.md)
