@@ -175,7 +175,7 @@ You can still use `cmdx new`, but if you have any trouble with `cmdx new`, you c
 
 We don't accept pull requests not following this guide.
 Especially, we don't accept pull requests not using `cmdx s`.
-Standard Registry must support not only the latest version but also almost all versions and [variaous platforms](#supported-os-and-cpu-architecture).
+Standard Registry must support not only the latest version but also almost all versions and [various platforms](#supported-os-and-cpu-architecture).
 Many tools have so many versions that people can't check all of them manually.
 So we can't trust the code not using `cmdx s`.
 `cmdx s` checks all GitHub Releases and generates code supporting all of them (Strictly speaking, if there are too many GitHub Releases we have to restrict the number of GitHub Releases, though `cmdx s` can still check over 200 versions).
