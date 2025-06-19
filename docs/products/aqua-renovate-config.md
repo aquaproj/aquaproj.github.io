@@ -43,7 +43,7 @@ We recommend specifying the Preset version.
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config#2.2.1"
+    "github>aquaproj/aqua-renovate-config#2.8.0"
   ]
 }
 ```
@@ -74,13 +74,18 @@ From aqua-renovate-config [2.3.0](https://github.com/aquaproj/aqua-renovate-conf
 
 You can specify the file path aqua.yaml.
 This is especially useful when [you split the list of packages](/docs/guides/split-config).
+This preset takes a regular expression as argument.
+
+:::warning
+Please don't enclose the argument with `/`.
+:::
 
 e.g.
 
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:file#2.2.1(aqua/.*\\.ya?ml)"
+    "github>aquaproj/aqua-renovate-config:file#2.8.0(aqua/.*\\.ya?ml)"
   ]
 }
 ```
@@ -88,14 +93,18 @@ e.g.
 ### `installer-script` Preset
 
 The preset `installer-script` updates the shell script aqua-installer and aqua.
-You have to pass fileMatch as parameter.
+This preset takes a regular expression as argument.
+
+:::warning
+Please don't enclose the argument with `/`.
+:::
 
 e.g.
 
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:installer-script#2.2.1(scripts/.*\\.sh)"
+    "github>aquaproj/aqua-renovate-config:installer-script#2.8.0(scripts/.*\\.sh)"
   ]
 }
 ```
@@ -122,13 +131,14 @@ curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.2/aqua
 ### `aqua-renovate-config` Preset
 
 You can specify the file path of Renovate config preset.
+This preset takes a regular expression as argument.
 
 e.g.
 
 ```json
 {
   "extends": [
-    "github>aquaproj/aqua-renovate-config:aqua-renovate-config#2.2.1(default\\.json)"
+    "github>aquaproj/aqua-renovate-config:aqua-renovate-config#2.8.0(default\\.json)"
   ]
 }
 ```
