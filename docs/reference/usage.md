@@ -15,7 +15,7 @@ USAGE:
    aqua [global options] [command [command options]]
 
 VERSION:
-   2.53.2
+   2.53.3
 
 COMMANDS:
    init                   Create a configuration file if it doesn't exist
@@ -569,7 +569,7 @@ NAME:
    aqua token - Manage GitHub Access token
 
 USAGE:
-   aqua token [command [command options]] 
+   aqua token [command [command options]]
 
 DESCRIPTION:
    Manage GitHub Access token by keyring.
@@ -670,7 +670,7 @@ NAME:
    aqua policy - Manage Policy
 
 USAGE:
-   aqua policy [command [command options]] 
+   aqua policy [command [command options]]
 
 COMMANDS:
    allow  Allow a policy file
