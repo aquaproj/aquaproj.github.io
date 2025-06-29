@@ -56,14 +56,15 @@ By `aqua i`, aqua installs [aqua-proxy](https://github.com/aquaproj/aqua-proxy) 
 
 ```
 $AQUA_ROOT_DIR/
+  aqua-proxy: a symbolic link to pkgs/github_release/github.com/aquaproj/aqua-proxy/v0.2.0/aqua-proxy_darwin_amd64.tar.gz/aqua-proxy
   bin/
-    aqua-proxy -> ../pkgs/github_release/github.com/aquaproj/aqua-proxy/v0.2.0/aqua-proxy_darwin_amd64.tar.gz/aqua-proxy
+    <command>: a symbolic link to ../aqua-proxy
   pkgs/
     github_release/github.com/aquaproj/aqua-proxy/v0.2.0/aqua-proxy_darwin_amd64.tar.gz/aqua-proxy
 ```
 
 And by `aqua i`, aqua reads the configuration file and creates symbolic links to aqua-proxy in `$AQUA_ROOT_DIR/bin`.
-The symbolic link name is the package's file name.
+The symbolic link name is the command name.
 
 For example, by the following configuration symbolic links `go` and `gofmt` are created.
 
@@ -98,8 +99,8 @@ packages:
 ```
 $AQUA_ROOT_DIR/
   bin/
-    go -> aqua-proxy
-    gofmt -> aqua-proxy
+    go -> ../aqua-proxy
+    gofmt -> ../aqua-proxy
 ```
 
 Add `$AQUA_ROOT_DIR/bin` to the environment variable `PATH`.
