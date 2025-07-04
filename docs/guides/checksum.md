@@ -240,7 +240,7 @@ jobs:
       - name: Fix aqua-checksums.json
         run: aqua upc -prune
       - name: Run autofix.ci
-        uses: suzuki-shunsuke/autofixci-action@989fe99ca39af1980b3515837570511eea7c6285 # v1.3.2-2
+        uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27 # v1.3.2
 ```
 
 ### Securefix Action
