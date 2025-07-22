@@ -32,9 +32,13 @@ As of update-checksum-action v0.2.5, [ghcp](https://github.com/int128/ghcp) isn'
 
 ## Inputs
 
-- `working_directory`
-- `prune`
-- `skip_push`
+- `working_directory`: The working directory where `aqua update-checksum` is executed. If this input is not specified, the command is run on the current working directory
+- `prune`: If this input is `true`, `aqua update-checksum` is executed with `-prune` option. This option removes unused checksums from the checksum file. If this input is not specified, `false` is used.
+- `skip_push`: If this input is `true`, the action checks if the checksum file is up-to-date, but does not push a commit to update it. If this input is not specified, `false` is used.
+- `read_checksum_token`: This token overrides `AQUA_GITHUB_TOKEN` to executes `aqua update-checksum`. It must have `contents:read` permission about all repositories in tools managed by `aqua`. This input is useful to fetch checksum from private repositories.
+- `securefix_action_server_repository`: The GitHub repository for the [Securefix Action server](https://github.com/csm-actions/securefix-action). If this is set, this action uses Securefix Action to update aqua-checksums.json.
+- `securefix_action_app_id`: The GitHub App ID for the Securefix Action client.
+- `securefix_action_app_private_key`: The GitHub App private key for the Securefix Action client.
 
 ## Required Environment Variables
 
