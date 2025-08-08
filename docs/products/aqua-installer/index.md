@@ -16,14 +16,14 @@ https://github.com/aquaproj/aqua-installer
 You can install aqua by the following one liner.
 
 ```bash
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.2/aqua-installer | bash
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v4.0.2/aqua-installer | bash
 ```
 
 But the one liner is a bit dangerous because aqua-installer may be tampered.
 We recommend verifying aqua-installer's checksum before running it.
 
 ```bash
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.2/aqua-installer
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v4.0.2/aqua-installer
 echo "9a5afb16da7191fbbc0c0240a67e79eecb0f765697ace74c70421377c99f0423  aqua-installer" | sha256sum -c -
 chmod +x aqua-installer
 ./aqua-installer
@@ -45,7 +45,7 @@ You can pass the following parameters.
 e.g.
 
 ```bash
-curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.2/aqua-installer | bash -s -- -v v2.43.1
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v4.0.2/aqua-installer | bash -s -- -v v2.43.1
 ```
 
 If the version isn't specified, the latest version would be installed.
