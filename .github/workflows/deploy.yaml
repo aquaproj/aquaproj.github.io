@@ -28,7 +28,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
-      - uses: suzuki-shunsuke/gh-pages-action@83751627ca2f61dfa6a5ec9f8cc9851fbe938997 # v0.0.4
+      - uses: suzuki-shunsuke/gh-pages-action@af230da5f7a499169013bc40a079a94609a8924d # v0.0.5
         if: "! inputs.is_pr"
         with:
           publish_dir: build
