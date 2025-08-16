@@ -19,5 +19,5 @@ jobs:
           repository: aquaproj/aqua
           source_dir: website
           issue_number: 1661
-          publish_dir: build
+          publish_dir: website/build
           destination_dir: docs
