@@ -1,35 +1,22 @@
-name: Deploy
+---
+name: Deploy GitHub Pages
 on:
-  workflow_call:
-    inputs:
-      is_pr:
-        required: true
-        type: boolean
-
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+permissions: {}
 jobs:
-  deploy:
-    timeout-minutes: 20
-    runs-on: ubuntu-latest
+  deploy-doc:
+    timeout-minutes: 15
+    runs-on: ubuntu-24.04
     permissions:
-      contents: write # For peaceiris/actions-gh-pages
+      contents: write
+      issues: write
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: suzuki-shunsuke/release-doc-action@d0a80c8ada60c282df9664a7f6d2e016034ad353 # v0.0.5
         with:
-          persist-credentials: false
-      - name: get nested property
-        id: package_json
-        uses: notiz-dev/github-action-json-property@a5a9c668b16513c737c3e1f8956772c99c73f6e8 # v0.2.0
-        with:
-          path: package.json
-          prop_path: volta.node
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          node-version: ${{steps.package_json.outputs.prop}}
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build
-      - uses: suzuki-shunsuke/gh-pages-action@5df123b4f8ae31edbe71bcc9a28a9598c29b1011 # v0.0.6
-        if: "! inputs.is_pr"
-        with:
+          repository: aquaproj/aqua
+          source_dir: website
+          issue_number: 1661
           publish_dir: build
           destination_dir: docs
