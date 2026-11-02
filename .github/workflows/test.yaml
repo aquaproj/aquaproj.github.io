@@ -1,0 +1,31 @@
+---
+name: test
+on: pull_request
+permissions: {}
+concurrency:
+  group: ${{github.workflow}}-${{github.ref}}
+  cancel-in-progress: true
+jobs:
+  status-check:
+    runs-on: ubuntu-26.04
+    if: always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled'))
+    timeout-minutes: 10
+    permissions: {}
+    needs:
+      - test-doc
+    steps:
+      - run: exit 1
+
+  # Build the document of aquaproj/aqua
+  test-doc:
+    uses: suzuki-shunsuke/release-doc-action/.github/workflows/test.yaml@1cb15eb99aa8f0ae05ae28174430e49579e878fa # v0.2.0
+    with:
+      repository: aquaproj/aqua
+      # Changed files of pull requests in this repository are irrelevant to the document
+      paths: ""
+    secrets:
+      TAKUMI_GUARD_BOT_ID: ${{secrets.TAKUMI_GUARD_BOT_ID}}
+    permissions:
+      pull-requests: read
+      contents: read
+      id-token: write

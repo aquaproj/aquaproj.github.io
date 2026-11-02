@@ -2,22 +2,23 @@
 name: Deploy GitHub Pages
 on:
   workflow_dispatch:
-  pull_request:
   schedule:
     - cron: "*/30 * * * *"
 permissions: {}
+concurrency:
+  # Don't run multiple releases at the same time
+  group: ${{github.workflow}}
+  cancel-in-progress: false
 jobs:
-  deploy-doc:
-    timeout-minutes: 15
-    runs-on: ubuntu-24.04
+  # The document exists in aquaproj/aqua
+  release-doc:
+    uses: suzuki-shunsuke/release-doc-action/.github/workflows/release.yaml@1cb15eb99aa8f0ae05ae28174430e49579e878fa # v0.2.0
+    with:
+      repository: aquaproj/aqua
+      issue_number: "1661"
+    secrets:
+      TAKUMI_GUARD_BOT_ID: ${{secrets.TAKUMI_GUARD_BOT_ID}}
     permissions:
       contents: write
       issues: write
-    steps:
-      - uses: suzuki-shunsuke/release-doc-action@a9e1ea0c4ca8c62906ca2a7fd3fa33325ee43ec9 # v0.1.0
-        with:
-          repository: aquaproj/aqua
-          source_dir: website
-          issue_number: 1661
-          publish_dir: website/build
-          destination_dir: docs
+      id-token: write
