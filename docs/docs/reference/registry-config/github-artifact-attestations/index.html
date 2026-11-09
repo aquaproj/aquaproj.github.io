@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">github_artifact_attestations | aqua</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://aquaproj.github.io/docs/reference/registry-config/github-artifact-attestations"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="github_artifact_attestations | aqua"><meta data-rh="true" name="description" content="- aqua &gt;= v2.35.0"><meta data-rh="true" property="og:description" content="- aqua &gt;= v2.35.0"><link data-rh="true" rel="icon" href="https://raw.githubusercontent.com/aquaproj/aqua/main/logo/aqua_without_text.svg"><link data-rh="true" rel="canonical" href="https://aquaproj.github.io/docs/reference/registry-config/github-artifact-attestations"><link data-rh="true" rel="alternate" href="https://aquaproj.github.io/docs/reference/registry-config/github-artifact-attestations" hreflang="en"><link data-rh="true" rel="alternate" href="https://aquaproj.github.io/docs/reference/registry-config/github-artifact-attestations" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OBO5AZ814M-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Registry Configuration","item":"https://aquaproj.github.io/docs/reference/registry-config/"},{"@type":"ListItem","position":2,"name":"github_artifact_attestations","item":"https://aquaproj.github.io/docs/reference/registry-config/github-artifact-attestations"}]}</script><link rel="search" type="application/opensearchdescription+xml" title="aqua" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.a824c426.css">
-<script src="/assets/js/runtime~main.d6c62300.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.5b22d7e3.js" defer="defer"></script>
 <script src="/assets/js/main.a643c60e.js" defer="defer"></script>
 </head>
 <body>
@@ -31,46 +31,6 @@
 <p>e.g.</p>
 <div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">github_artifact_attestations</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">signer_workflow</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> suzuki</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">shunsuke/go</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">release</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">workflow/.github/workflows/release.yaml</span><br></div></code></pre></div></div>
 <p>Each of the fields added in v2.65.0 is passed to <code>gh attestation verify</code> as the flag below, and only when it is set:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table><thead><tr><th>field</th><th>flag</th><th>what it checks</th></tr></thead><tbody><tr><td>repository</td><td><code>--repo</code></td><td>the repository the artifact is attested in, as <code>owner/name</code>. It defaults to the package&#x27;s repository, so it is needed only when the attestation is in another repository</td></tr><tr><td>signer_repo</td><td><code>--signer-repo</code></td><td>the repository of the workflow that signed, without pinning the workflow&#x27;s path</td></tr><tr><td>cert_oidc_issuer</td><td><code>--cert-oidc-issuer</code></td><td>the OIDC issuer of the signing certificate. gh defaults to GitHub Actions&#x27; issuer <code>https://token.actions.githubusercontent.com</code>, so it only needs to be set for another issuer</td></tr><tr><td>deny_self_hosted_runners</td><td><code>--deny-self-hosted-runners</code></td><td>that the artifact wasn&#x27;t built on a self-hosted runner</td></tr><tr><td>source_ref</td><td><code>--source-ref</code></td><td>the ref the artifact was built from, such as <code>refs/tags/v1.2.3</code></td></tr><tr><td>source_digest</td><td><code>--source-digest</code></td><td>the commit the artifact was built from</td></tr></tbody></table>
 <p><code>signer_repo</code> is a looser alternative to <code>signer_workflow</code>, not an addition to it: gh accepts only one of them, and aqua fails without running gh when both are set. <code>signer_workflow</code> already names the repository, including a reusable workflow&#x27;s in another repository.</p>
 <p><code>source_ref</code> and <code>source_digest</code> differ for every version, so they are for a configuration that describes one version, such as an entry of aqua-registry-g2.</p>
